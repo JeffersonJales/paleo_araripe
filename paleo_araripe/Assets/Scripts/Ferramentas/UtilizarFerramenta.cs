@@ -14,6 +14,9 @@ public class UtilizarFerramenta : MonoBehaviour
 
     private Camera cam;
 
+    public event Action<FerramentaSO> EventoUsarFerramenta;
+
+
     public void Start()
     {
         cam = Camera.main;
@@ -94,8 +97,9 @@ public class UtilizarFerramenta : MonoBehaviour
             if (outrosAlvos[i].GetComponent<BlocoAreia>().interagir())
                 outrosAlvos.RemoveAt(i--);
         }
-
+        
         limparAlvos();
+        EventoUsarFerramenta?.Invoke(ferramentaEquipada);
     }
 
     private void limparAlvos()
