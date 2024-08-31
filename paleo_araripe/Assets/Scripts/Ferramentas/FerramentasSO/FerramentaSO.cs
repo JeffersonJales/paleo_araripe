@@ -5,15 +5,21 @@ public class FerramentaSO : ScriptableObject
 {   
 
     [Tooltip("Tamanho da area que a ferramenta ira limpar")]
-    [SerializeField] protected Vector3 areaEfeito = new Vector3(1, 1, 1);
+    [SerializeField] private Vector3 areaEfeito = new Vector3(1, 1, 1);
 
     [Tooltip("Quanto de energia sera necessaria para utilizar a ferramenta")]
-    [Range(0, 10)] [SerializeField] protected int energiaParaUsar = 0;                   
+    [Range(0, 10)] [SerializeField] private int energiaParaUsar = 0;                   
 
     [Tooltip("Apos usar a ferramenta, quanto tempo sera consumido")]
-    [Range(1, 10)] [SerializeField] protected int tempoGastoAposUso = 1;                
+    [Range(1, 10)] [SerializeField] private int tempoGastoAposUso = 1;
+
+    [Tooltip("Quanto de dano ele irá causar no bloco")]
+    [Range(1, 10)][SerializeField] private int dano = 1;
+
+
 
     public Vector3 AreaEfeito => areaEfeito;
     public int EnergiaParaUsar => energiaParaUsar;
-    public int TempoGastoAposUso => energiaParaUsar;
+    public int TempoGastoAposUso => tempoGastoAposUso;
+    public int Dano => dano;
 }
