@@ -987,7 +987,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   acoes: 15
   tempoEmSegundos: 60
-  porTempo: 0
+  porTempo: 1
   uiSliderTempo: {fileID: 616600773}
   controladorFerramentas: {fileID: 1112434707}
 --- !u!4 &1506665969
