@@ -1,17 +1,17 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 public class UsarFerramentas : MonoBehaviour
 {
     [SerializeField] private List<TrocarFerramentaViaBotaoUI> listaDeItensUI = new List<TrocarFerramentaViaBotaoUI>();
+    [SerializeField] private FimPartidaControlador controleFimPartida = null;
+
     [SerializeField] private FerramentaSO ferramentaEquipada;
     [SerializeField] private GameObject blocoAlvoRaycast;
     private List<GameObject> alvosFerramenta = new List<GameObject>();
 
     private Camera cam;
-    public event Action<FerramentaSO> EventoUsarFerramenta;
     public event Action<ResumoInteracaoBlocoFerramenta> EventoResumoInteracao;
 
 
@@ -22,7 +22,7 @@ public class UsarFerramentas : MonoBehaviour
         foreach(var item in listaDeItensUI)
         {
             item.aoPressionarBotao += trocarFerramenta;
-            EventoUsarFerramenta += item.aoUtilizarFerramenta;
+            EventoResumoInteracao += item.aoUtilizarFerramenta;
         }
     }
 
@@ -91,20 +91,18 @@ public class UsarFerramentas : MonoBehaviour
         }
 
         /// Realizar interação entre blocos e ferramentas
-        ResumoInteracaoBlocoFerramenta resumo;
-        new InteracaoBlocoFerramenta().interacaoFerramentaComBloco(ferramentaEquipada, blocosGenericos, out resumo);
+        ResumoInteracaoBlocoFerramenta resumo = new InteracaoBlocoFerramenta().interacaoFerramentaComBloco(ferramentaEquipada, blocosGenericos);
 
         /// Desativar os blocos que sobreviveram
-        for(var i = 0; i < resumo.BlocosDestruidos.Count; i++)
+        for(var i = 0; i < resumo.TipoInteracaoBloco.Count; i++)
         {
-            if (!resumo.BlocosDestruidos[i])
+            if (!NaturezaBlocoFerramenta.interacaoPodeResultarNaDestruicaoDoBloco(resumo.TipoInteracaoBloco[i]))
                 blocosGenericos[i].casoDeixeDeSerFocoDaFerramenta();
         }
         
         blocoAlvoRaycast = null;
         alvosFerramenta.Clear();
 
-        EventoUsarFerramenta?.Invoke(ferramentaEquipada);
         EventoResumoInteracao?.Invoke(resumo);
     }
 

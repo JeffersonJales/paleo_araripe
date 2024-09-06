@@ -1,41 +1,85 @@
 using System;
 using System.Collections.Generic;
+using static NaturezaBlocoFerramenta;
 
 public class InteracaoBlocoFerramenta {
 
-    public void interacaoFerramentaComBloco(FerramentaSO ferramenta, List<BlocoGenerico> blocosGenericos, out ResumoInteracaoBlocoFerramenta resumo)
+    private ResumoInteracaoBlocoFerramenta resumoGeral = new ResumoInteracaoBlocoFerramenta();
+
+    public ResumoInteracaoBlocoFerramenta interacaoFerramentaComBloco(FerramentaSO ferramenta, List<BlocoGenerico> blocosGenericos)
     {
-        resumo = new ResumoInteracaoBlocoFerramenta();
-        resumo.FerramentaUsada = ferramenta;
+        resumoGeral.FerramentaUsada = ferramenta;
 
         foreach (BlocoGenerico bloco in blocosGenericos)
         {
             BlocosSO blocoSO = bloco.BlocoSO;
-            resumo.BlocosAfetados.Add(blocoSO);
+            resumoGeral.BlocosAfetados.Add(blocoSO);
 
             switch (blocoSO.Tipo)
             {
                 case NaturezaBlocoFerramenta.TipoBloco.NORMAL:
-                    resumo.BlocosDestruidos.Add(interacaoFerramentaComBlocoNormal(ferramenta, bloco)); 
+                    resumoGeral.TipoInteracaoBloco.Add(interacaoFerramentaComBlocoNormal(ferramenta, bloco)); 
                     break;
 
+
+                case NaturezaBlocoFerramenta.TipoBloco.FOSSIL:
+                    resumoGeral.TipoInteracaoBloco.Add(interacaoFerramentaComBlocoFossil(ferramenta, bloco));
+                    break;
 
                 case NaturezaBlocoFerramenta.TipoBloco.AMBAR:
-                case NaturezaBlocoFerramenta.TipoBloco.FOSSIL:
+                default:
                     break;
+
             }
         }
 
+        return resumoGeral;
     }
 
-    private Boolean interacaoFerramentaComBlocoNormal(FerramentaSO ferramenta, BlocoGenerico bloco)
+    private NaturezaBlocoFerramenta.ResultadoInteracao interacaoFerramentaComBlocoNormal(FerramentaSO ferramenta, BlocoGenerico bloco)
     {
         if(NaturezaBlocoFerramenta.ferramentaQuebraBloco(ferramenta, bloco.BlocoSO))
         {
-            bloco.destruirBloco();
-            return true;
+            return blocoTomaDano(ferramenta, bloco);
         }
 
-        return false;
+        return NaturezaBlocoFerramenta.ResultadoInteracao.NULO;
     }
+
+    private NaturezaBlocoFerramenta.ResultadoInteracao interacaoFerramentaComBlocoFossil(FerramentaSO ferramenta, BlocoGenerico bloco)
+    {
+        switch (ferramenta.Interacao)
+        {
+            case NaturezaBlocoFerramenta.TipoInteracao.DELICADO:
+                resumoGeral.QuantidadeFossilColetado++;
+                return blocoColetado(ferramenta, bloco);
+
+            default:
+                ResultadoInteracao resultado = blocoTomaDano(ferramenta, bloco);
+                if (resultado == ResultadoInteracao.DESTRUIDO)
+                    resumoGeral.QuantidadeFossilDestruido++;
+
+                return resultado;
+        }
+    }
+
+    private NaturezaBlocoFerramenta.ResultadoInteracao interacaoFerramentaComBlocoAmbar(FerramentaSO ferramenta, BlocoGenerico bloco)
+    {
+        return ResultadoInteracao.DESTRUIDO;
+    }
+
+    private NaturezaBlocoFerramenta.ResultadoInteracao blocoTomaDano(FerramentaSO ferramenta, BlocoGenerico bloco)
+    {
+        if (bloco.tomarDano(ferramenta.Dano))
+            return NaturezaBlocoFerramenta.ResultadoInteracao.DESTRUIDO;
+        else
+            return NaturezaBlocoFerramenta.ResultadoInteracao.DANO;
+    }
+
+    private NaturezaBlocoFerramenta.ResultadoInteracao blocoColetado(FerramentaSO ferramenta, BlocoGenerico bloco)
+    {
+        bloco.serColetado();
+        return NaturezaBlocoFerramenta.ResultadoInteracao.COLETADO;
+    }
+
 }

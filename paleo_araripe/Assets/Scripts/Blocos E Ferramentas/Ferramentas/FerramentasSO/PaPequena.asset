@@ -18,5 +18,5 @@ MonoBehaviour:
   dano: 1
   contagemRegressivaParaReuso: 1
   quebraAte: 1
-  interacao: 1
+  interacao: 2
   sprite: {fileID: 920607830, guid: 8931e628dbfb1c349b2b6f3c78a757c0, type: 3}

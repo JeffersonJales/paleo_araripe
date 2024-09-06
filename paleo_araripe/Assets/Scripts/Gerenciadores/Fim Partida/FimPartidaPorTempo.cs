@@ -20,10 +20,6 @@ public class FimPartidaPorTempo : FimPartidaAbstrato
             acabou();
     }
 
-    public override void iniciarEspecifico()
-    {
-    }
-
     void Update()
     {
         atualizarSliderTempo();

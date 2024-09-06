@@ -28,8 +28,21 @@ public class NaturezaBlocoFerramenta
         PESADO
     }
 
+    public enum ResultadoInteracao
+    {
+        NULO = 0,
+        DANO,
+        DESTRUIDO,
+        COLETADO
+    }
+
     public static Boolean ferramentaQuebraBloco(FerramentaSO ferramenta, BlocosSO bloco)
     {
         return bloco.TipoDureza <= ferramenta.QuebraQueDureza;
+    }
+
+    public static Boolean interacaoPodeResultarNaDestruicaoDoBloco(ResultadoInteracao resultado) 
+    {
+        return resultado == ResultadoInteracao.DESTRUIDO || resultado == ResultadoInteracao.COLETADO;
     }
 }

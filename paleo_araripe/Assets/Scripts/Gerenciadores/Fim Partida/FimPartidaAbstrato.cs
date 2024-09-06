@@ -18,8 +18,6 @@ public abstract class FimPartidaAbstrato : MonoBehaviour
 
         sliderTempo = controlador.UiSliderTempo;
         this.controlador = controlador;
-
-        iniciarEspecifico();
     }
 
     public void atualizarSliderTempo()
@@ -28,5 +26,4 @@ public abstract class FimPartidaAbstrato : MonoBehaviour
     }
 
     public abstract void acabou();
-    public abstract void iniciarEspecifico();
 }

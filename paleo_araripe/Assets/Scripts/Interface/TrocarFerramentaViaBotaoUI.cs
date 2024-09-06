@@ -35,15 +35,15 @@ public class TrocarFerramentaViaBotaoUI : MonoBehaviour
         aoPressionarBotao?.Invoke(tipoFerramenta);
     }
 
-    public void aoUtilizarFerramenta(FerramentaSO ferramenta)
+    public void aoUtilizarFerramenta(ResumoInteracaoBlocoFerramenta resumo)
     {
         if (temContagemRegressiva)
         {
-            if (ferramenta.Equals(tipoFerramenta))
+            if (resumo.FerramentaUsada.Equals(tipoFerramenta))
                 iniciarContagemRegressivaFerramenta();
             else
-                diminuirContagemRegressiva(ferramenta);
-                
+                diminuirContagemRegressiva(resumo.FerramentaUsada);
+
         }
     }
 
