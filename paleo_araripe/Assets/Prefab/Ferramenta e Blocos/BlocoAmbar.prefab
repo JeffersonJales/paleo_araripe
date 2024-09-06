@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5455731207896064906}
   - component: {fileID: 5080544676809430932}
   m_Layer: 6
-  m_Name: BlocoAreiaSimples
+  m_Name: BlocoAmbar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -63,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 91d9213320ebab04596b8be80bd38e2a, type: 2}
+  - {fileID: 2100000, guid: aa2af815b171e0541a6c64625c744c27, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -119,4 +119,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vidaAtual: 1
-  blocoSO: {fileID: 11400000, guid: 7b6cede605a891f46a2fdd6580d418de, type: 2}
+  blocoSO: {fileID: 11400000, guid: 50157d6eca47418439e1adee1b803e80, type: 2}

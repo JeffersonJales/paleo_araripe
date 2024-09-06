@@ -20,16 +20,25 @@ public class BlocoGenerico : MonoBehaviour
         mr.material = blocoSO.CorMaterialNaoDestacado;
     }
 
-    public Boolean interagir()
+    
+
+    public Boolean tomarDano(int qtdDano)
     {
         Boolean destruido = false;
-        
-        if (--vidaAtual <= 0) {
+        vidaAtual -= qtdDano;
+
+        if (vidaAtual <= 0)
+        {
             destruido = true;
             destruirBloco();
         }
 
         return destruido;
+    }
+
+    public void serColetado()
+    {
+        destruirBloco();
     }
 
     public void destruirBloco()
