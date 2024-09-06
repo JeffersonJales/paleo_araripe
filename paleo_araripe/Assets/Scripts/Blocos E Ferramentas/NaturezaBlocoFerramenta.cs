@@ -28,8 +28,8 @@ public class NaturezaBlocoFerramenta
         PESADO
     }
 
-    public static Boolean ferramentaQuebraBloco(BlocoGenerico bloco, FerramentaSO ferramenta)
+    public static Boolean ferramentaQuebraBloco(FerramentaSO ferramenta, BlocosSO bloco)
     {
-        return bloco.BlocoSO.TipoDureza <= ferramenta.QuebraQueDureza;
+        return bloco.TipoDureza <= ferramenta.QuebraQueDureza;
     }
 }

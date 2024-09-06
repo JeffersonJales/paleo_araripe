@@ -6,12 +6,12 @@ public class UsarFerramentas : MonoBehaviour
 {
     [SerializeField] private List<TrocarFerramentaViaBotaoUI> listaDeItensUI = new List<TrocarFerramentaViaBotaoUI>();
     [SerializeField] private FerramentaSO ferramentaEquipada;
-    [SerializeField] private GameObject blocoAtual;
-    private List<GameObject> outrosAlvos = new List<GameObject>();
+    [SerializeField] private GameObject blocoAlvoRaycast;
+    private List<GameObject> alvosFerramenta = new List<GameObject>();
 
     private Camera cam;
-
     public event Action<FerramentaSO> EventoUsarFerramenta;
+    public event Action<ResumoInteracaoBlocoFerramenta> EventoResumoInteracao;
 
 
     public void Start()
@@ -50,12 +50,12 @@ public class UsarFerramentas : MonoBehaviour
         {
             GameObject objetoAtingido = hit.collider.gameObject;
 
-            if (objetoAtingido.Equals(blocoAtual) || !objetoAtingido.activeInHierarchy) 
+            if (objetoAtingido.Equals(blocoAlvoRaycast) || !objetoAtingido.activeInHierarchy) 
                 return;
 
             procurarBlocosAlvoFerramenta(objetoAtingido);
         }
-        else if(blocoAtual != null)
+        else if(blocoAlvoRaycast != null)
         {
             limparAlvos();
         }
@@ -64,27 +64,27 @@ public class UsarFerramentas : MonoBehaviour
     public void procurarBlocosAlvoFerramenta(GameObject alvoAtual)
     {
         /// Desativar alvos antigos
-        if (blocoAtual != null)
-            blocoAtual.GetComponent<BlocoGenerico>().casoDeixeDeSerFocoDaFerramenta();
+        if (blocoAlvoRaycast != null)
+            blocoAlvoRaycast.GetComponent<BlocoGenerico>().casoDeixeDeSerFocoDaFerramenta();
 
-        foreach (GameObject bloco in outrosAlvos)
+        foreach (GameObject bloco in alvosFerramenta)
         {
             bloco.GetComponent<BlocoGenerico>().casoDeixeDeSerFocoDaFerramenta();
         }
-        outrosAlvos.Clear();
+        alvosFerramenta.Clear();
         
         /// Atualizar alvo
-        blocoAtual = alvoAtual;
+        blocoAlvoRaycast = alvoAtual;
         alvoAtual.GetComponent<BlocoGenerico>().casoSejaFocoDaFerramenta();
 
         Vector3 area = ferramentaEquipada.AreaEfeito;
         if (area != Vector3.one) {
 
-            Collider[] colliders = Physics.OverlapBox(blocoAtual.transform.position, area / 2);
+            Collider[] colliders = Physics.OverlapBox(blocoAlvoRaycast.transform.position, area / 2);
             foreach(Collider collider in colliders)
             {
-                if(!collider.gameObject.Equals(blocoAtual)) { 
-                    outrosAlvos.Add(collider.gameObject);
+                if(!collider.gameObject.Equals(blocoAlvoRaycast)) { 
+                    alvosFerramenta.Add(collider.gameObject);
                     collider.gameObject.GetComponent<BlocoGenerico>().casoSejaFocoDaFerramenta();
                 }
             }
@@ -93,33 +93,41 @@ public class UsarFerramentas : MonoBehaviour
 
     public void usarFerramenta()
     {
-        if (ferramentaEquipada == null || blocoAtual == null) 
+        if (ferramentaEquipada == null || blocoAlvoRaycast == null) 
             return;
 
-        if (blocoAtual.GetComponent<BlocoGenerico>().interagir())
-            blocoAtual = null;
+        ResumoInteracaoBlocoFerramenta resumo;
+        InteracaoBlocoFerramenta interacao = new InteracaoBlocoFerramenta();
 
-        for(var i  = 0; i < outrosAlvos.Count; i++)
+        interacao.interacaoFerramentaComBloco(ferramentaEquipada, blocoAlvoRaycast.GetComponent<BlocoGenerico>(), out resumo);
+
+        if(resumo.BlocoDestruido)
+            blocoAlvoRaycast = null;
+
+        for(var i  = 0; i < alvosFerramenta.Count; i++)
         {
-            if (outrosAlvos[i].GetComponent<BlocoGenerico>().interagir())
-                outrosAlvos.RemoveAt(i--);
+            ResumoInteracaoBlocoFerramenta resumoBlocos;
+            interacao.interacaoFerramentaComBloco(ferramentaEquipada, alvosFerramenta[i].GetComponent<BlocoGenerico>(), out resumoBlocos);
+            if (resumoBlocos.BlocoDestruido)
+                alvosFerramenta.RemoveAt(i--);
         }
         
         limparAlvos();
         EventoUsarFerramenta?.Invoke(ferramentaEquipada);
+        EventoResumoInteracao?.Invoke(resumo);
     }
 
     private void limparAlvos()
     {
-        if (blocoAtual != null)
-            blocoAtual.GetComponent<BlocoGenerico>().casoDeixeDeSerFocoDaFerramenta();
+        if (blocoAlvoRaycast != null)
+            blocoAlvoRaycast.GetComponent<BlocoGenerico>().casoDeixeDeSerFocoDaFerramenta();
 
-        blocoAtual = null;
-        foreach (GameObject bloco in outrosAlvos)
+        blocoAlvoRaycast = null;
+        foreach (GameObject bloco in alvosFerramenta)
         {
             bloco.GetComponent<BlocoGenerico>().casoDeixeDeSerFocoDaFerramenta();
         }
-        outrosAlvos.Clear();
+        alvosFerramenta.Clear();
     }
 
     #endregion
