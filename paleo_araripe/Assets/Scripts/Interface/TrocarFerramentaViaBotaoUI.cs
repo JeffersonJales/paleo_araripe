@@ -42,7 +42,7 @@ public class TrocarFerramentaViaBotaoUI : MonoBehaviour
             if (ferramenta.Equals(tipoFerramenta))
                 iniciarContagemRegressivaFerramenta();
             else
-                diminuirContagemRegressiva();
+                diminuirContagemRegressiva(ferramenta);
                 
         }
     }
@@ -57,15 +57,18 @@ public class TrocarFerramentaViaBotaoUI : MonoBehaviour
         aoPressionarBotao?.Invoke(null);
     }
 
-    private void diminuirContagemRegressiva()
+    private void finalizarContagemRegressiva()
     {
-        if (--contadorTempo <= 0)
-        {
-            contadorTempo = 0;
-            spriteFerramenta.color = new Color(1, 1, 1, 1);
-            textMeshContadorTempo.enabled = false;
-            botao.interactable = true;
-        }
+        contadorTempo = 0;
+        spriteFerramenta.color = new Color(1, 1, 1, 1);
+        textMeshContadorTempo.enabled = false;
+        botao.interactable = true;
+    }
+
+    private void diminuirContagemRegressiva(FerramentaSO ferramenta)
+    {
+        if(--contadorTempo <= 0)
+            finalizarContagemRegressiva();
 
         textMeshContadorTempo.text = contadorTempo.ToString();
     }
