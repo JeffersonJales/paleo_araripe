@@ -58,17 +58,17 @@ public class UtilizarFerramenta : MonoBehaviour
     {
         /// Desativar alvos antigos
         if (blocoAtual != null)
-            blocoAtual.GetComponent<BlocoAreia>().casoDeixeDeSerFocoDaFerramenta();
+            blocoAtual.GetComponent<BlocoGenerico>().casoDeixeDeSerFocoDaFerramenta();
 
         foreach (GameObject bloco in outrosAlvos)
         {
-            bloco.GetComponent<BlocoAreia>().casoDeixeDeSerFocoDaFerramenta();
+            bloco.GetComponent<BlocoGenerico>().casoDeixeDeSerFocoDaFerramenta();
         }
         outrosAlvos.Clear();
         
         /// Atualizar alvo
         blocoAtual = alvoAtual;
-        alvoAtual.GetComponent<BlocoAreia>().casoSejaFocoDaFerramenta();
+        alvoAtual.GetComponent<BlocoGenerico>().casoSejaFocoDaFerramenta();
 
         Vector3 area = ferramentaEquipada.AreaEfeito;
         if (area != Vector3.one) {
@@ -78,7 +78,7 @@ public class UtilizarFerramenta : MonoBehaviour
             {
                 if(!collider.gameObject.Equals(blocoAtual)) { 
                     outrosAlvos.Add(collider.gameObject);
-                    collider.gameObject.GetComponent<BlocoAreia>().casoSejaFocoDaFerramenta();
+                    collider.gameObject.GetComponent<BlocoGenerico>().casoSejaFocoDaFerramenta();
                 }
             }
         }
@@ -89,12 +89,12 @@ public class UtilizarFerramenta : MonoBehaviour
         if (ferramentaEquipada == null || blocoAtual == null) 
             return;
 
-        if (blocoAtual.GetComponent<BlocoAreia>().interagir())
+        if (blocoAtual.GetComponent<BlocoGenerico>().interagir())
             blocoAtual = null;
 
         for(var i  = 0; i < outrosAlvos.Count; i++)
         {
-            if (outrosAlvos[i].GetComponent<BlocoAreia>().interagir())
+            if (outrosAlvos[i].GetComponent<BlocoGenerico>().interagir())
                 outrosAlvos.RemoveAt(i--);
         }
         
@@ -105,12 +105,12 @@ public class UtilizarFerramenta : MonoBehaviour
     private void limparAlvos()
     {
         if (blocoAtual != null)
-            blocoAtual.GetComponent<BlocoAreia>().casoDeixeDeSerFocoDaFerramenta();
+            blocoAtual.GetComponent<BlocoGenerico>().casoDeixeDeSerFocoDaFerramenta();
 
         blocoAtual = null;
         foreach (GameObject bloco in outrosAlvos)
         {
-            bloco.GetComponent<BlocoAreia>().casoDeixeDeSerFocoDaFerramenta();
+            bloco.GetComponent<BlocoGenerico>().casoDeixeDeSerFocoDaFerramenta();
         }
         outrosAlvos.Clear();
     }

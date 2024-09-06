@@ -15,3 +15,7 @@ MonoBehaviour:
   areaEfeito: {x: 2, y: 0, z: 2}
   energiaParaUsar: 6
   tempoGastoAposUso: 5
+  dano: 1
+  contagemRegressivaParaReuso: 0
+  quebraAte: 1
+  sprite: {fileID: -1110763505, guid: 8931e628dbfb1c349b2b6f3c78a757c0, type: 3}

@@ -16,10 +16,28 @@ public class FerramentaSO : ScriptableObject
     [Tooltip("Quanto de dano ele irá causar no bloco")]
     [Range(1, 10)][SerializeField] private int dano = 1;
 
+    [Tooltip("Após usar, quanto tempo fica sem ser usável")]
+    [Range(0, 10)][SerializeField] private int contagemRegressivaParaReuso = 0;
+
+    [Tooltip("Essa ferramenta é usada para quebrar até que tipo de bloco")]
+    [SerializeField] private NaturezaBlocoFerramenta.NivelDureza quebraAte = NaturezaBlocoFerramenta.NivelDureza.TERRA;
+
+    [Tooltip("Como se dá a interação entre bloco e ferramenta")]
+    [SerializeField] private NaturezaBlocoFerramenta.TipoInteracao interacao = NaturezaBlocoFerramenta.TipoInteracao.DELICADO;
 
 
+    [Tooltip("Sprite que representa a ferramenta")]
+    [SerializeField] private Sprite sprite;
+
+
+
+    // Getters
     public Vector3 AreaEfeito => areaEfeito;
     public int EnergiaParaUsar => energiaParaUsar;
     public int TempoGastoAposUso => tempoGastoAposUso;
     public int Dano => dano;
+    public Sprite SpriteFerramenta => sprite;
+    public int ContagemRegressivaParaReuso => contagemRegressivaParaReuso;
+    public NaturezaBlocoFerramenta.NivelDureza QuebraQueDureza => quebraAte;
+    public NaturezaBlocoFerramenta.TipoInteracao Interacao => interacao;
 }
