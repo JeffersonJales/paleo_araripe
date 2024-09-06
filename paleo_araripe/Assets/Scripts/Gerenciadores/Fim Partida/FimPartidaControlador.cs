@@ -7,14 +7,17 @@ public class FimPartidaControlador : MonoBehaviour
 {
     [Range(10, 100)]
     [SerializeField] private int acoes = 10;
-    [SerializeField] private int tempoEmSegundos = 30;
-    [SerializeField] private Boolean porTempo = true;
-
     [SerializeField] private Slider uiSliderTempo;
     [SerializeField] private UsarFerramentas controladorFerramentas;
 
     private GameObject objetosUi;
     private FimPartidaAbstrato fimPartida;
+
+    // Ocultei variáveis de tempo
+    private int tempoEmSegundos = 30;
+    private Boolean porTempo = false;
+
+
 
     public Slider UiSliderTempo => uiSliderTempo;
     public UsarFerramentas ControladorFerramentas => controladorFerramentas;

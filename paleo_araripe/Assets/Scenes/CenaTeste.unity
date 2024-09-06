@@ -979,6 +979,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
   ferramentaEquipada: {fileID: 0}
   blocoAlvoRaycast: {fileID: 0}
 --- !u!1 &1139738596
@@ -1117,8 +1118,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   acoes: 20
-  tempoEmSegundos: 60
-  porTempo: 0
   uiSliderTempo: {fileID: 616600773}
   controladorFerramentas: {fileID: 1112434707}
 --- !u!4 &1506665969
@@ -2164,7 +2163,7 @@ PrefabInstance:
     - target: {fileID: 2979184978043103557, guid: feca20e6a07db90408dcd26db4de4769,
         type: 3}
       propertyPath: listaDeItensUI.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6992568709045773767, guid: feca20e6a07db90408dcd26db4de4769,
         type: 3}

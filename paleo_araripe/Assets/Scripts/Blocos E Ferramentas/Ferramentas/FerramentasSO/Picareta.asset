@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92f59a82866084240847c7b48911b618, type: 3}
   m_Name: Picareta
   m_EditorClassIdentifier: 
-  areaEfeito: {x: 1, y: 1, z: 1}
+  areaEfeito: {x: 0, y: 0, z: 0}
   energiaParaUsar: 0
-  tempoGastoAposUso: 1
+  tempoGastoAposUso: 2
   dano: 1
-  contagemRegressivaParaReuso: 0
+  contagemRegressivaParaReuso: 3
   quebraAte: 2
   interacao: 2
   sprite: {fileID: -661477683, guid: 8931e628dbfb1c349b2b6f3c78a757c0, type: 3}
