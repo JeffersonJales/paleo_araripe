@@ -16,7 +16,7 @@ MonoBehaviour:
   energiaParaUsar: 6
   tempoGastoAposUso: 5
   dano: 1
-  contagemRegressivaParaReuso: 0
+  contagemRegressivaParaReuso: 2
   quebraAte: 1
   interacao: 1
   sprite: {fileID: -1110763505, guid: 8931e628dbfb1c349b2b6f3c78a757c0, type: 3}

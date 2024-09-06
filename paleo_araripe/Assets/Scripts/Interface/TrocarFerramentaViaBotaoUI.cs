@@ -5,19 +5,29 @@ using System;
 
 public class TrocarFerramentaViaBotaoUI : MonoBehaviour
 {
-    [SerializeField] private Image spriteFerramenta;
     [SerializeField] private FerramentaSO tipoFerramenta;
-    [SerializeField] private TextMeshProUGUI textMeshContadorTempo;
 
+    private Button botao;
+    private Image spriteFerramenta;
+    private TextMeshProUGUI textMeshContadorTempo;
+
+    private Boolean temContagemRegressiva = false;
     private int contadorTempo = 0;
-    private Boolean selecionado = false;
 
     public Action<FerramentaSO> aoPressionarBotao;
 
     public void Start()
     {
+        temContagemRegressiva = tipoFerramenta.ContagemRegressivaParaReuso > 0;
+        
+        botao = GetComponent<Button>();
+        botao.onClick.AddListener(realizarMudancaFerramenta);
+
+        textMeshContadorTempo = GetComponentInChildren<TextMeshProUGUI>();
+        textMeshContadorTempo.enabled = false;
+        
+        spriteFerramenta = GetComponentInChildren<Image>();
         spriteFerramenta.sprite = tipoFerramenta.SpriteFerramenta;
-        GetComponent<Button>().onClick.AddListener(realizarMudancaFerramenta);
     }
 
     public void realizarMudancaFerramenta()
@@ -27,6 +37,36 @@ public class TrocarFerramentaViaBotaoUI : MonoBehaviour
 
     public void aoUtilizarFerramenta(FerramentaSO ferramenta)
     {
-        
+        if (temContagemRegressiva)
+        {
+            if (ferramenta.Equals(tipoFerramenta))
+                iniciarContagemRegressivaFerramenta();
+            else
+                diminuirContagemRegressiva();
+                
+        }
+    }
+
+    private void iniciarContagemRegressivaFerramenta()
+    {
+        contadorTempo = tipoFerramenta.ContagemRegressivaParaReuso;
+        textMeshContadorTempo.enabled = true;
+        textMeshContadorTempo.text = contadorTempo.ToString();
+        spriteFerramenta.color = new Color(1, 1, 1, 0.5f);
+        botao.interactable = false;
+        aoPressionarBotao?.Invoke(null);
+    }
+
+    private void diminuirContagemRegressiva()
+    {
+        if (--contadorTempo <= 0)
+        {
+            contadorTempo = 0;
+            spriteFerramenta.color = new Color(1, 1, 1, 1);
+            textMeshContadorTempo.enabled = false;
+            botao.interactable = true;
+        }
+
+        textMeshContadorTempo.text = contadorTempo.ToString();
     }
 }
