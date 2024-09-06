@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class ResumoInteracaoBlocoFerramenta {
     private FerramentaSO ferramentaUsada = null;
+    private Boolean aoMenosUmBlocoDestruido = false;
+
     private List<Boolean> blocosDestruidos = new List<bool>();
     private List<BlocosSO> blocosAfetados = new List<BlocosSO>();
 

@@ -29,6 +29,7 @@ public class InteracaoBlocoFerramenta {
                     break;
             }
         }
+
     }
 
     private Boolean interacaoFerramentaComBlocoNormal(FerramentaSO ferramenta, BlocoGenerico bloco)
