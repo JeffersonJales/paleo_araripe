@@ -44,7 +44,7 @@ public class BlocoGenerico : MonoBehaviour
         if (emFoco) return;
         emFoco = true;
 
-        mr.material = blocoSO.CorMaterialNaoDestacado;
+        mr.material = blocoSO.CorMaterialDestacado;
     }
 
     public void casoDeixeDeSerFocoDaFerramenta()

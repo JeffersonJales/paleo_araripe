@@ -10,12 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 92f59a82866084240847c7b48911b618, type: 3}
-  m_Name: PaGrande
+  m_Name: PaPequena
   m_EditorClassIdentifier: 
-  areaEfeito: {x: 2, y: 0, z: 2}
-  energiaParaUsar: 6
-  tempoGastoAposUso: 5
+  areaEfeito: {x: 0, y: 2, z: 0}
+  energiaParaUsar: 3
+  tempoGastoAposUso: 3
   dano: 1
   contagemRegressivaParaReuso: 0
   quebraAte: 1
-  sprite: {fileID: -1110763505, guid: 8931e628dbfb1c349b2b6f3c78a757c0, type: 3}
+  interacao: 1
+  sprite: {fileID: 920607830, guid: 8931e628dbfb1c349b2b6f3c78a757c0, type: 3}

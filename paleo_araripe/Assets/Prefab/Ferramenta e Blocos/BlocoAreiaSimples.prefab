@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1975998281186755599}
   - component: {fileID: 5455731207896064906}
   - component: {fileID: 5080544676809430932}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BlocoAreiaSimples
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -119,6 +119,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vidaAtual: 1
-  corMaterialNormal: {fileID: 2100000, guid: 91d9213320ebab04596b8be80bd38e2a, type: 2}
-  corMaterialEmFoco: {fileID: 2100000, guid: 078b4fb3e1e6689479f7faa33aa2a0ff, type: 2}
   blocoSO: {fileID: 11400000, guid: 7b6cede605a891f46a2fdd6580d418de, type: 2}

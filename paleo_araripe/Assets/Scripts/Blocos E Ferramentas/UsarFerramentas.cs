@@ -1,13 +1,10 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static PlasticPipe.PlasticProtocol.Messages.Serialization.ItemHandlerMessagesSerialization;
 
-public class UtilizarFerramenta : MonoBehaviour
+public class UsarFerramentas : MonoBehaviour
 {
-    
-    [SerializeField] private FerramentaSO[] ferramentas = new FerramentaSO[3];
+    [SerializeField] private List<TrocarFerramentaViaBotaoUI> listaDeItensUI = new List<TrocarFerramentaViaBotaoUI>();
     [SerializeField] private FerramentaSO ferramentaEquipada;
     [SerializeField] private GameObject blocoAtual;
     private List<GameObject> outrosAlvos = new List<GameObject>();
@@ -20,7 +17,12 @@ public class UtilizarFerramenta : MonoBehaviour
     public void Start()
     {
         cam = Camera.main;
-        trocarParaFerramenta0();
+
+        foreach(var item in listaDeItensUI)
+        {
+            item.aoPressionarBotao += trocarFerramenta;
+            EventoUsarFerramenta += item.aoUtilizarFerramenta;
+        }
     }
 
     public void FixedUpdate()
@@ -32,14 +34,15 @@ public class UtilizarFerramenta : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
             usarFerramenta();
-
-        trocarFerramentaApertandoBotoes();
     }
 
     #region Raycast
 
     private void procurarBlocoAreia()
     {
+        if (ferramentaEquipada == null)
+            return;
+
         Ray ray = cam.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 
@@ -51,6 +54,10 @@ public class UtilizarFerramenta : MonoBehaviour
                 return;
 
             procurarBlocosAlvoFerramenta(objetoAtingido);
+        }
+        else if(blocoAtual != null)
+        {
+            limparAlvos();
         }
     }
 
@@ -119,29 +126,12 @@ public class UtilizarFerramenta : MonoBehaviour
 
 
     #region Troca de ferramentas!
-
-    private void trocarFerramentaApertandoBotoes()
-    {
-        if (Input.GetKeyDown(KeyCode.Q))
-            trocarParaFerramenta0();
-        else if (Input.GetKeyDown(KeyCode.W))
-            trocarParaFerramenta1();
-        else if (Input.GetKeyDown(KeyCode.E))
-            trocarParaFerramenta2();
-    }
-
     private void trocarFerramenta(FerramentaSO ferramenta)
     {
         ferramentaEquipada = ferramenta;
         limparAlvos();
         procurarBlocoAreia();
     }
-
-    public void trocarParaFerramenta0() { trocarFerramenta(ferramentas[0]); }
-    
-    public void trocarParaFerramenta1() { trocarFerramenta(ferramentas[1]); }
-
-    public void trocarParaFerramenta2() { trocarFerramenta(ferramentas[2]); }
 
     #endregion
 }

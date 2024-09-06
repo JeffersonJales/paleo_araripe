@@ -22,7 +22,8 @@ public class NaturezaBlocoFerramenta
 
     public enum TipoInteracao
     {
-        DELICADO = 0,
+        SONDAR = 0,
+        DELICADO,
         MODERADO,
         PESADO
     }

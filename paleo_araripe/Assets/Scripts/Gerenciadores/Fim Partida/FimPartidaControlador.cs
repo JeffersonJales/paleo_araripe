@@ -11,13 +11,13 @@ public class FimPartidaControlador : MonoBehaviour
     [SerializeField] private Boolean porTempo = true;
 
     [SerializeField] private Slider uiSliderTempo;
-    [SerializeField] private UtilizarFerramenta controladorFerramentas;
+    [SerializeField] private UsarFerramentas controladorFerramentas;
 
     private GameObject objetosUi;
     private FimPartidaAbstrato fimPartida;
 
     public Slider UiSliderTempo => uiSliderTempo;
-    public UtilizarFerramenta ControladorFerramentas => controladorFerramentas;
+    public UsarFerramentas ControladorFerramentas => controladorFerramentas;
 
 
     public void OnValidate()
