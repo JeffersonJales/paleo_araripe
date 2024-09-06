@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 832385b89f4bfb5458b41149450087de, type: 3}
+  m_Name: BlocoFerro
+  m_EditorClassIdentifier: 
+  vida: 1
+  dureza: 3
+  tipo: 0
+  modelo: {fileID: 0}
+  feedbackAoDestruir: {fileID: 0}
+  corMaterialDestacado: {fileID: 2100000, guid: 4e4d89457cc87754f95de63b162b7ffb,
+    type: 2}
+  corMaterialNaoDestacado: {fileID: 2100000, guid: 98b1e51f882c9974ca03a7d63606c520,
+    type: 2}
