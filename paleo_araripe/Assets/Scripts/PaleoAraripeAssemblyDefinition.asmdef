@@ -2,7 +2,8 @@
     "name": "PaleoAraripeAssemblyDefinition",
     "rootNamespace": "",
     "references": [
-        "GUID:6055be8ebefd69e48b49212b09b47b2f"
+        "GUID:6055be8ebefd69e48b49212b09b47b2f",
+        "GUID:f0533e11a35900d49a2e297c83c50c53"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
