@@ -4,14 +4,16 @@ using UnityEngine;
 
 public class UsarFerramentas : MonoBehaviour
 {
-    [SerializeField] private List<TrocarFerramentaViaBotaoUI> listaDeItensUI = new List<TrocarFerramentaViaBotaoUI>();
-    [SerializeField] private FimPartidaControlador controleFimPartida = null;
-
     [SerializeField] private FerramentaSO ferramentaEquipada;
     [SerializeField] private GameObject blocoAlvoRaycast;
+    [SerializeField] private LayerMask mascaraColisaoBloco;
+
+    [Range(15f, 30f)]
+    [SerializeField] private float distanciaMaximaColisaoRaycast = 20f;
+    
+    private Camera cam;
     private List<GameObject> alvosFerramenta = new List<GameObject>();
 
-    private Camera cam;
     public event Action<ResumoInteracaoBlocoFerramenta> EventoResumoInteracao;
 
 
@@ -19,7 +21,7 @@ public class UsarFerramentas : MonoBehaviour
     {
         cam = Camera.main;
 
-        foreach(var item in listaDeItensUI)
+        foreach (var item in FindObjectsOfType<TrocarFerramentaViaBotaoUI>())
         {
             item.aoPressionarBotao += trocarFerramenta;
             EventoResumoInteracao += item.aoUtilizarFerramenta;
@@ -47,7 +49,7 @@ public class UsarFerramentas : MonoBehaviour
         Ray ray = cam.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 
-        if (Physics.Raycast(ray, out hit))
+        if (Physics.Raycast(ray, out hit, distanciaMaximaColisaoRaycast, mascaraColisaoBloco))
         {
             GameObject objetoAtingido = hit.collider.gameObject;
 
