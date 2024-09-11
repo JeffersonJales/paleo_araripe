@@ -1,13 +1,10 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 
 public class NaturezaBlocoFerramenta 
 {
     public enum NivelDureza
     {
-        TERRA = 0,
+        TERRA,
         AREIA,
         PEDRA,
         FERRO,
@@ -15,14 +12,14 @@ public class NaturezaBlocoFerramenta
 
     public enum TipoBloco
     {
-        NORMAL = 0,
+        NORMAL,
         AMBAR, 
         FOSSIL
     }
 
     public enum TipoInteracao
     {
-        SONDAR = 0,
+        SONDAR,
         DELICADO,
         MODERADO,
         PESADO
@@ -30,7 +27,7 @@ public class NaturezaBlocoFerramenta
 
     public enum ResultadoInteracao
     {
-        NULO = 0,
+        NULO,
         DANO,
         DESTRUIDO,
         COLETADO
