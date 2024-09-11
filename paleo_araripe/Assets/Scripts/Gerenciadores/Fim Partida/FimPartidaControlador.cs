@@ -9,14 +9,17 @@ public class FimPartidaControlador : MonoBehaviour
     [SerializeField] private int quantidadeAcoesParaAcabar = 10;
     private int quantidadeAcoesInicial = 0;
 
+    [Range(1, 100)]
+    [SerializeField] private int quantidadeAcoesGanhasPorAmbar = 0;
+    
     [SerializeField] private int quantidadeFossils = 0;
     [SerializeField] private Slider uiSliderTempo;
-    [SerializeField] private UsarFerramentas controladorFerramentas;
+
 
     private FimPartidaAbstrato fimPartida;
 
     public Slider UiSliderTempo => uiSliderTempo;
-    public UsarFerramentas ControladorFerramentas => controladorFerramentas;
+    private UsarFerramentas controladorFerramentas;
 
 
     // Ocultei variáveis de tempo
@@ -27,8 +30,10 @@ public class FimPartidaControlador : MonoBehaviour
         tempoEmSegundos = Mathf.Clamp(tempoEmSegundos, 30, int.MaxValue); // or int.MaxValue, if you need to use an int but can't use uint.
     }
 
-    void Awake()
+    void Start()
     {
+        controladorFerramentas = GetComponent<UsarFerramentas>();
+        
         if (porTempo)
             configurarJogoPorTempo();
         else
@@ -66,7 +71,9 @@ public class FimPartidaControlador : MonoBehaviour
     public void contabilizarAcaoAposInteragirComBloco(ResumoInteracaoBlocoFerramenta resumo)
     {
         quantidadeAcoesParaAcabar -= resumo.FerramentaUsada.TempoGastoAposUso;
-        uiSliderTempo.value = (float) quantidadeAcoesParaAcabar / quantidadeAcoesInicial;
+        quantidadeAcoesParaAcabar = Math.Min(quantidadeAcoesParaAcabar + quantidadeAcoesGanhasPorAmbar * resumo.QuantidadeAmbarColetado, quantidadeAcoesInicial);
+
+        atualizarContadorTempo();
         if (quantidadeAcoesParaAcabar <= 0)
             acabouTempo();
     }
@@ -75,5 +82,10 @@ public class FimPartidaControlador : MonoBehaviour
     {
         string currentSceneName = SceneManager.GetActiveScene().name;
         SceneManager.LoadScene(currentSceneName);
+    }
+
+    private void atualizarContadorTempo()
+    {
+        uiSliderTempo.value = (float)quantidadeAcoesParaAcabar / quantidadeAcoesInicial;
     }
 }

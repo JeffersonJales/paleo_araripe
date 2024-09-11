@@ -27,6 +27,9 @@ public class InteracaoBlocoFerramenta {
                     break;
 
                 case NaturezaBlocoFerramenta.TipoBloco.AMBAR:
+                    resumoGeral.TipoInteracaoBloco.Add(interacaoFerramentaComBlocoAmbar(ferramenta, bloco));
+                    break;
+
                 default:
                     break;
 
@@ -65,7 +68,16 @@ public class InteracaoBlocoFerramenta {
 
     private NaturezaBlocoFerramenta.ResultadoInteracao interacaoFerramentaComBlocoAmbar(FerramentaSO ferramenta, BlocoGenerico bloco)
     {
-        return ResultadoInteracao.DESTRUIDO;
+        switch (ferramenta.Interacao)
+        {
+            case NaturezaBlocoFerramenta.TipoInteracao.DELICADO:
+                resumoGeral.QuantidadeAmbarColetado++;
+                return blocoColetado(ferramenta, bloco);
+
+            default:
+                return blocoTomaDano(ferramenta, bloco);
+        }
+
     }
 
     private NaturezaBlocoFerramenta.ResultadoInteracao blocoTomaDano(FerramentaSO ferramenta, BlocoGenerico bloco)

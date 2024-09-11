@@ -8,7 +8,10 @@ public class FerramentaSO : ScriptableObject
     [SerializeField] private Vector3 areaEfeito = new Vector3(1, 1, 1);
 
     [Tooltip("Quanto de energia sera necessaria para utilizar a ferramenta")]
-    [Range(0, 10)] [SerializeField] private int energiaParaUsar = 0;                   
+    [Range(0, 10)] [SerializeField] private int energiaParaUsar = 0;
+
+    [Tooltip("Quanto de inspiração a ferramenta dá após seu uso")]
+    [Range(1, 10)][SerializeField] private int inspiracao = 1;
 
     [Tooltip("Apos usar a ferramenta, quanto tempo sera consumido")]
     [Range(1, 10)] [SerializeField] private int tempoGastoAposUso = 1;
@@ -24,7 +27,6 @@ public class FerramentaSO : ScriptableObject
 
     [Tooltip("Como se dá a interação entre bloco e ferramenta")]
     [SerializeField] private NaturezaBlocoFerramenta.TipoInteracao interacao = NaturezaBlocoFerramenta.TipoInteracao.DELICADO;
-
 
     [Tooltip("Sprite que representa a ferramenta")]
     [SerializeField] private Sprite sprite;

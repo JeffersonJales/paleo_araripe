@@ -16,7 +16,8 @@ MonoBehaviour:
   dureza: 0
   tipo: 1
   modelo: {fileID: 0}
-  corMaterialDestacado: {fileID: 2100000, guid: 078b4fb3e1e6689479f7faa33aa2a0ff,
+  feedbackAoDestruir: {fileID: 0}
+  corMaterialDestacado: {fileID: 2100000, guid: 8fa5d692487e0ca4ab852e4c09396d3f,
     type: 2}
-  corMaterialNaoDestacado: {fileID: 2100000, guid: 91d9213320ebab04596b8be80bd38e2a,
+  corMaterialNaoDestacado: {fileID: 2100000, guid: d01e1bf32705a284b83fb25241f40d98,
     type: 2}
