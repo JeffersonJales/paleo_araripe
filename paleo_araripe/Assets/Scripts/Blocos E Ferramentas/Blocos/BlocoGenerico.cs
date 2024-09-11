@@ -6,12 +6,12 @@ using UnityEngine;
 public class BlocoGenerico : MonoBehaviour
 {
     [SerializeField] private int vidaAtual = 1; 
-    [SerializeField] private BlocosSO blocoSO;
+    [SerializeField] private BlocoSO blocoSO;
 
 
     private Boolean emFoco = false;
     private MeshRenderer mr = null;
-    public BlocosSO BlocoSO => blocoSO; 
+    public BlocoSO BlocoSO => blocoSO; 
 
     public void Start()
     {

@@ -14,9 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   areaEfeito: {x: 0, y: 0, z: 0}
   energiaParaUsar: 0
+  inspiracao: 1
   tempoGastoAposUso: 1
   dano: 1
   contagemRegressivaParaReuso: 0
+  daDanoEm: []
+  consegueColetar:
+  - {fileID: 11400000, guid: 50157d6eca47418439e1adee1b803e80, type: 2}
+  - {fileID: 11400000, guid: 639cd407abfca5b43a70d355e908d372, type: 2}
   quebraAte: 0
   interacao: 1
   sprite: {fileID: 1600791786, guid: 8931e628dbfb1c349b2b6f3c78a757c0, type: 3}

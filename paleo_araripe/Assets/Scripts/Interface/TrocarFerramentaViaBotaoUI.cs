@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System;
+using UnityEditor.SceneManagement;
 
 public class TrocarFerramentaViaBotaoUI : MonoBehaviour
 {
@@ -11,15 +12,19 @@ public class TrocarFerramentaViaBotaoUI : MonoBehaviour
     private Image spriteFerramenta;
     private TextMeshProUGUI textMeshContadorTempo;
 
-    private Boolean temContagemRegressiva = false;
+    private Boolean emContragemRegressiva = false;
+    private Boolean esperandoInspiracao = false;
+
     private int contadorTempo = 0;
+    private int inspiracaoNecessariaUso = 0;
 
     public Action<FerramentaSO> aoPressionarBotao;
 
     public void Start()
     {
-        temContagemRegressiva = tipoFerramenta.ContagemRegressivaParaReuso > 0;
-        
+        Boolean temContagemRegressiva = tipoFerramenta.ContagemRegressivaParaReuso > 0;
+        Boolean necessitaInspiracao = tipoFerramenta.Inspiracao < 0;
+
         botao = GetComponent<Button>();
         botao.onClick.AddListener(realizarMudancaFerramenta);
 
@@ -28,6 +33,20 @@ public class TrocarFerramentaViaBotaoUI : MonoBehaviour
         
         spriteFerramenta = GetComponentInChildren<Image>();
         spriteFerramenta.sprite = tipoFerramenta.SpriteFerramenta;
+
+        var usarFerramenta = FindObjectOfType<UsarFerramentas>();
+        if(usarFerramenta != null)
+        {
+            aoPressionarBotao += usarFerramenta.trocarFerramenta;
+
+            if (necessitaInspiracao) {
+                inspiracaoNecessariaUso = Math.Abs(tipoFerramenta.Inspiracao);
+                usarFerramenta.InspiracaoAlterada += aoAlterarInspiracao;
+            }
+
+            if (temContagemRegressiva)
+                usarFerramenta.EventoResumoInteracao += aoUtilizarFerramenta;
+        }
     }
 
     public void realizarMudancaFerramenta()
@@ -37,14 +56,10 @@ public class TrocarFerramentaViaBotaoUI : MonoBehaviour
 
     public void aoUtilizarFerramenta(ResumoInteracaoBlocoFerramenta resumo)
     {
-        if (temContagemRegressiva)
-        {
-            if (resumo.FerramentaUsada.Equals(tipoFerramenta))
-                iniciarContagemRegressivaFerramenta();
-            else
-                diminuirContagemRegressiva(resumo.FerramentaUsada);
-
-        }
+        if (resumo.FerramentaUsada.Equals(tipoFerramenta))
+            iniciarContagemRegressivaFerramenta();
+        else
+            diminuirContagemRegressiva(resumo.FerramentaUsada);
     }
 
     private void iniciarContagemRegressivaFerramenta()
@@ -71,5 +86,12 @@ public class TrocarFerramentaViaBotaoUI : MonoBehaviour
             finalizarContagemRegressiva();
 
         textMeshContadorTempo.text = contadorTempo.ToString();
+    }
+
+    private void aoAlterarInspiracao(int atual, int maximo)
+    {
+        Boolean estadoBotaoInspiracao = inspiracaoNecessariaUso <= atual;
+        if (esperandoInspiracao != estadoBotaoInspiracao)
+            esperandoInspiracao = estadoBotaoInspiracao;
     }
 }

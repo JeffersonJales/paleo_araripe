@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 828443594863835958}
   - component: {fileID: 274380966817337485}
   - component: {fileID: 1356940904641100968}
+  - component: {fileID: 4580595649398042718}
   m_Layer: 5
   m_Name: FerramentaBotaoUI
   m_TagString: Untagged
@@ -117,6 +118,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tipoFerramenta: {fileID: 11400000, guid: b347338a1257043458999d6e10ec54d1, type: 2}
+--- !u!95 &4580595649398042718
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4290308957948878291}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 796f92b12556372488d47d8a8e50700e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &5732890389583848171
 GameObject:
   m_ObjectHideFlags: 0

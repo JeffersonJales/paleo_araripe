@@ -9,11 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 832385b89f4bfb5458b41149450087de, type: 3}
+  m_Script: {fileID: 11500000, guid: b660ac561dbf46a42a0b2bdfa04eb5b5, type: 3}
   m_Name: BlocoAreia
   m_EditorClassIdentifier: 
   vida: 1
-  dureza: 1
+  dureza: 2
   tipo: 0
   modelo: {fileID: 0}
   feedbackAoDestruir: {fileID: 0}

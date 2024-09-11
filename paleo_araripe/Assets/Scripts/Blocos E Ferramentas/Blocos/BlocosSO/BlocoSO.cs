@@ -1,10 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "BlocoSO", menuName = "ScriptableObjects/Blocos", order = 2)]
 
-public class BlocosSO : ScriptableObject
+public class BlocoSO : ScriptableObject
 {
     [Range(1, 3)] 
     [SerializeField] private int vida = 1;
