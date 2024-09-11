@@ -10,7 +10,13 @@ public class UsarFerramentas : MonoBehaviour
 
     [Range(15f, 30f)]
     [SerializeField] private float distanciaMaximaColisaoRaycast = 20f;
-    
+
+
+    [Range(5, 30)]
+    [SerializeField] private int inspiracaoMaxima = 30;
+
+    private int inspiracaoAtual = 0;
+
     private Camera cam;
     private List<GameObject> alvosFerramenta = new List<GameObject>();
 

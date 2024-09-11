@@ -7,6 +7,7 @@ public class ResumoInteracaoBlocoFerramenta {
     private List<BlocosSO> blocosAfetados = new List<BlocosSO>();
     private int quantidadeFossilColetado = 0;
     private int quantidadeFossilDestruido = 0;
+    private int quantidadeAmbarColetado = 0;
 
 
     public FerramentaSO FerramentaUsada { get => ferramentaUsada; set => ferramentaUsada = value; }
@@ -14,4 +15,5 @@ public class ResumoInteracaoBlocoFerramenta {
     public List<NaturezaBlocoFerramenta.ResultadoInteracao> TipoInteracaoBloco { get => tipoInteracaoBloco; set => tipoInteracaoBloco = value; }
     public int QuantidadeFossilColetado { get => quantidadeFossilColetado; set => quantidadeFossilColetado = value; }
     public int QuantidadeFossilDestruido { get => quantidadeFossilDestruido; set => quantidadeFossilDestruido = value; }
+    public int QuantidadeAmbarColetado { get => quantidadeAmbarColetado; set => quantidadeAmbarColetado = value; }
 }
