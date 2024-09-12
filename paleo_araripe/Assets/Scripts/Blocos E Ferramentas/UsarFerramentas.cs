@@ -7,15 +7,19 @@ public class UsarFerramentas : MonoBehaviour
     [SerializeField] private FerramentaSO ferramentaEquipada;
     [SerializeField] private GameObject blocoAlvoRaycast;
     [SerializeField] private LayerMask mascaraColisaoBloco;
+    [SerializeField] private QuadroNegroSO infoJogo;
 
     [Range(15f, 30f)]
     [SerializeField] private float distanciaMaximaColisaoRaycast = 20f;
 
 
-    [Range(5, 30)]
-    [SerializeField] private int inspiracaoMaxima = 30;
+    [Range(5, 30)][SerializeField] private int inspiracaoMaxima = 30;
+    public int InspiracaoMaxima => inspiracaoMaxima;
+    [SerializeField] private Vector3 normalRaycast;
 
-    private int inspiracaoAtual = 0;
+    [SerializeField] private int inspiracaoAtual = 0;
+    public int InspiracaoAtual => inspiracaoAtual;
+
 
     private Camera cam;
     private List<GameObject> alvosFerramenta = new List<GameObject>();
@@ -23,15 +27,14 @@ public class UsarFerramentas : MonoBehaviour
     public event Action<ResumoInteracaoBlocoFerramenta> EventoResumoInteracao;
 
 
+    public void OnValidate()
+    {
+        inspiracaoAtual = Mathf.Clamp(inspiracaoAtual, 0, InspiracaoMaxima);
+    }
+
     public void Start()
     {
         cam = Camera.main;
-
-        foreach (var item in FindObjectsOfType<TrocarFerramentaViaBotaoUI>())
-        {
-            item.aoPressionarBotao += trocarFerramenta;
-            EventoResumoInteracao += item.aoUtilizarFerramenta;
-        }
     }
 
     public void FixedUpdate()
@@ -58,11 +61,12 @@ public class UsarFerramentas : MonoBehaviour
         if (Physics.Raycast(ray, out hit, distanciaMaximaColisaoRaycast, mascaraColisaoBloco))
         {
             GameObject objetoAtingido = hit.collider.gameObject;
+            Vector3 normal = hit.normal;
 
-            if (objetoAtingido.Equals(blocoAlvoRaycast) || !objetoAtingido.activeInHierarchy) 
+            if ((objetoAtingido.Equals(blocoAlvoRaycast) && normal.Equals(normalRaycast)) || !objetoAtingido.activeInHierarchy) 
                 return;
 
-            procurarBlocosAlvoFerramenta(objetoAtingido);
+            procurarBlocosAlvoFerramenta(objetoAtingido, normal);
         }
         else if(blocoAlvoRaycast != null)
         {
@@ -71,17 +75,16 @@ public class UsarFerramentas : MonoBehaviour
         }
     }
 
-    public void procurarBlocosAlvoFerramenta(GameObject alvoAtual)
+    public void procurarBlocosAlvoFerramenta(GameObject alvoAtual, Vector3 normal)
     {
+        normalRaycast = normal;
         blocoAlvoRaycast = alvoAtual;
         desativarFocoAlvos();
 
-        Vector3 area = ferramentaEquipada.AreaEfeito;
-        Collider[] colliders = Physics.OverlapBox(blocoAlvoRaycast.transform.position, area / 2);
-        foreach(Collider collider in colliders)
+        alvosFerramenta = NaturezaBlocoFerramenta.obterListaBlocosPorFerramenta(ferramentaEquipada, blocoAlvoRaycast, normal);
+        foreach(var item in alvosFerramenta)
         {
-            alvosFerramenta.Add(collider.gameObject);
-            collider.gameObject.GetComponent<BlocoGenerico>().casoSejaFocoDaFerramenta();
+            item.GetComponent<BlocoGenerico>().casoSejaFocoDaFerramenta();
         }
     }
 
@@ -101,8 +104,13 @@ public class UsarFerramentas : MonoBehaviour
         /// Realizar interação entre blocos e ferramentas
         ResumoInteracaoBlocoFerramenta resumo = new InteracaoBlocoFerramenta().interacaoFerramentaComBloco(ferramentaEquipada, blocosGenericos);
 
+        /// Inspiração
+        inspiracaoAtual = Math.Clamp(inspiracaoAtual + ferramentaEquipada.Inspiracao, 0, inspiracaoMaxima);
+        infoJogo.SetValue(QuadroNegroInfoJogoChaves.INSPIRACAO_ATUAL, inspiracaoAtual);
+        infoJogo.SetValue(QuadroNegroInfoJogoChaves.INSPIRACAO_MAXIMA, inspiracaoMaxima);
+
         /// Desativar os blocos que sobreviveram
-        for(var i = 0; i < resumo.TipoInteracaoBloco.Count; i++)
+        for (var i = 0; i < resumo.TipoInteracaoBloco.Count; i++)
         {
             if (!NaturezaBlocoFerramenta.interacaoPodeResultarNaDestruicaoDoBloco(resumo.TipoInteracaoBloco[i]))
                 blocosGenericos[i].casoDeixeDeSerFocoDaFerramenta();
@@ -127,7 +135,7 @@ public class UsarFerramentas : MonoBehaviour
 
 
     #region Troca de ferramentas!
-    private void trocarFerramenta(FerramentaSO ferramenta)
+    public void trocarFerramenta(FerramentaSO ferramenta)
     {
         ferramentaEquipada = ferramenta;
         desativarFocoAlvos();

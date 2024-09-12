@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using static NaturezaBlocoFerramenta;
 
@@ -12,75 +11,49 @@ public class InteracaoBlocoFerramenta {
 
         foreach (BlocoGenerico bloco in blocosGenericos)
         {
-            BlocosSO blocoSO = bloco.BlocoSO;
+            BlocoSO blocoSO = bloco.BlocoSO;
             resumoGeral.BlocosAfetados.Add(blocoSO);
 
-            switch (blocoSO.Tipo)
+            if (ferramenta.DaDanoEm.Contains(blocoSO))
             {
-                case NaturezaBlocoFerramenta.TipoBloco.NORMAL:
-                    resumoGeral.TipoInteracaoBloco.Add(interacaoFerramentaComBlocoNormal(ferramenta, bloco)); 
-                    break;
-
-
-                case NaturezaBlocoFerramenta.TipoBloco.FOSSIL:
-                    resumoGeral.TipoInteracaoBloco.Add(interacaoFerramentaComBlocoFossil(ferramenta, bloco));
-                    break;
-
-                case NaturezaBlocoFerramenta.TipoBloco.AMBAR:
-                    resumoGeral.TipoInteracaoBloco.Add(interacaoFerramentaComBlocoAmbar(ferramenta, bloco));
-                    break;
-
-                default:
-                    break;
-
+                resumoGeral.TipoInteracaoBloco.Add(blocoTomaDano(ferramenta, bloco));
+            }
+            else if (ferramenta.ConsegueColetar.Contains(blocoSO))
+            {
+                resumoGeral.TipoInteracaoBloco.Add(blocoColetado(ferramenta, bloco));
+            }
+            else
+            {
+                resumoGeral.TipoInteracaoBloco.Add(NaturezaBlocoFerramenta.ResultadoInteracao.NULO);
             }
         }
 
         return resumoGeral;
     }
 
-    private NaturezaBlocoFerramenta.ResultadoInteracao interacaoFerramentaComBlocoNormal(FerramentaSO ferramenta, BlocoGenerico bloco)
+    private ResultadoInteracao blocoTomaDano(FerramentaSO ferramenta, BlocoGenerico bloco)
     {
-        if(NaturezaBlocoFerramenta.ferramentaQuebraBloco(ferramenta, bloco.BlocoSO))
+        switch (bloco.BlocoSO.Tipo)
         {
-            return blocoTomaDano(ferramenta, bloco);
-        }
+            case TipoBloco.AMBAR:
+            case TipoBloco.NORMAL: 
+                return realizarDanoNoBloco(ferramenta, bloco);
+            
+            case TipoBloco.FOSSIL:
+                var resultado = realizarDanoNoBloco(ferramenta, bloco);
 
-        return NaturezaBlocoFerramenta.ResultadoInteracao.NULO;
-    }
-
-    private NaturezaBlocoFerramenta.ResultadoInteracao interacaoFerramentaComBlocoFossil(FerramentaSO ferramenta, BlocoGenerico bloco)
-    {
-        switch (ferramenta.Interacao)
-        {
-            case NaturezaBlocoFerramenta.TipoInteracao.DELICADO:
-                resumoGeral.QuantidadeFossilColetado++;
-                return blocoColetado(ferramenta, bloco);
-
-            default:
-                ResultadoInteracao resultado = blocoTomaDano(ferramenta, bloco);
-                if (resultado == ResultadoInteracao.DESTRUIDO)
+                if (resultado.Equals(ResultadoInteracao.DESTRUIDO))
                     resumoGeral.QuantidadeFossilDestruido++;
 
                 return resultado;
-        }
-    }
 
-    private NaturezaBlocoFerramenta.ResultadoInteracao interacaoFerramentaComBlocoAmbar(FerramentaSO ferramenta, BlocoGenerico bloco)
-    {
-        switch (ferramenta.Interacao)
-        {
-            case NaturezaBlocoFerramenta.TipoInteracao.DELICADO:
-                resumoGeral.QuantidadeAmbarColetado++;
-                return blocoColetado(ferramenta, bloco);
 
             default:
-                return blocoTomaDano(ferramenta, bloco);
+                return ResultadoInteracao.NULO;
         }
-
     }
 
-    private NaturezaBlocoFerramenta.ResultadoInteracao blocoTomaDano(FerramentaSO ferramenta, BlocoGenerico bloco)
+    private ResultadoInteracao realizarDanoNoBloco(FerramentaSO ferramenta, BlocoGenerico bloco)
     {
         if (bloco.tomarDano(ferramenta.Dano))
             return NaturezaBlocoFerramenta.ResultadoInteracao.DESTRUIDO;
@@ -88,8 +61,20 @@ public class InteracaoBlocoFerramenta {
             return NaturezaBlocoFerramenta.ResultadoInteracao.DANO;
     }
 
-    private NaturezaBlocoFerramenta.ResultadoInteracao blocoColetado(FerramentaSO ferramenta, BlocoGenerico bloco)
+    private ResultadoInteracao blocoColetado(FerramentaSO ferramenta, BlocoGenerico bloco)
     {
+        switch (bloco.BlocoSO.Tipo)
+        {
+            case TipoBloco.AMBAR:
+                resumoGeral.QuantidadeAmbarColetado++;
+                break;
+
+            case TipoBloco.FOSSIL:
+                resumoGeral.QuantidadeFossilColetado++;
+                break;
+        }
+        
+        
         bloco.serColetado();
         return NaturezaBlocoFerramenta.ResultadoInteracao.COLETADO;
     }

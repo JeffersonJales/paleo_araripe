@@ -1,6 +1,5 @@
 using System;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class FimPartidaControlador : MonoBehaviour
@@ -13,21 +12,21 @@ public class FimPartidaControlador : MonoBehaviour
     [SerializeField] private int quantidadeAcoesGanhasPorAmbar = 0;
     
     [SerializeField] private int quantidadeFossils = 0;
-    [SerializeField] private Slider uiSliderTempo;
+    [SerializeField] private AtualizarValorSlider uiSliderTempo;
+    public AtualizarValorSlider UiSliderTempo => uiSliderTempo;
 
 
     private FimPartidaAbstrato fimPartida;
-
-    public Slider UiSliderTempo => uiSliderTempo;
     private UsarFerramentas controladorFerramentas;
 
 
     // Ocultei variáveis de tempo
     private int tempoEmSegundos = 30;
     private Boolean porTempo = false;
+    
     public void OnValidate()
     {
-        tempoEmSegundos = Mathf.Clamp(tempoEmSegundos, 30, int.MaxValue); // or int.MaxValue, if you need to use an int but can't use uint.
+        tempoEmSegundos = Mathf.Clamp(tempoEmSegundos, 30, int.MaxValue); 
     }
 
     void Start()
@@ -45,6 +44,8 @@ public class FimPartidaControlador : MonoBehaviour
             if(item.BlocoSO.Tipo == NaturezaBlocoFerramenta.TipoBloco.FOSSIL)
                 quantidadeFossils++;
         }
+
+        uiSliderTempo.atualizarValorSlider(1f);
     }
 
     public void configurarJogoPorTempo() 
@@ -72,8 +73,8 @@ public class FimPartidaControlador : MonoBehaviour
     {
         quantidadeAcoesParaAcabar -= resumo.FerramentaUsada.TempoGastoAposUso;
         quantidadeAcoesParaAcabar = Math.Min(quantidadeAcoesParaAcabar + quantidadeAcoesGanhasPorAmbar * resumo.QuantidadeAmbarColetado, quantidadeAcoesInicial);
+        uiSliderTempo.atualizarValorSlider(quantidadeAcoesParaAcabar, quantidadeAcoesInicial);
 
-        atualizarContadorTempo();
         if (quantidadeAcoesParaAcabar <= 0)
             acabouTempo();
     }
@@ -82,10 +83,5 @@ public class FimPartidaControlador : MonoBehaviour
     {
         string currentSceneName = SceneManager.GetActiveScene().name;
         SceneManager.LoadScene(currentSceneName);
-    }
-
-    private void atualizarContadorTempo()
-    {
-        uiSliderTempo.value = (float)quantidadeAcoesParaAcabar / quantidadeAcoesInicial;
     }
 }

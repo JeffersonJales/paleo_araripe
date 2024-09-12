@@ -1,7 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 
 public class FimPartidaPorTempo : FimPartidaAbstrato
 {
@@ -9,8 +6,9 @@ public class FimPartidaPorTempo : FimPartidaAbstrato
     public override void acabou()
     {
         tempoPausado = true;
-        sliderTempo.value = 0;
         quantidadeParaAcabar = 0;
+        controlador.UiSliderTempo.atualizarValorSlider(0f);
+
         controlador.acabouTempo();
     }
 
