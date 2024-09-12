@@ -1,13 +1,11 @@
+using Unity.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class AtualizarValorSlider : MonoBehaviour
 {
     private Slider sliderUi;
-    public Slider SliderUi => sliderUi;
-
-    [Range(0f, 1f)]
-    [SerializeField] public float valorInicial = 0f;
+    [Range(0f, 1f)] public float valorInicial = 0f;
 
     public void Awake()
     {
@@ -24,4 +22,8 @@ public class AtualizarValorSlider : MonoBehaviour
     public void atualizarValorSlider(int valorA, int valorB) {
         sliderUi.value = (float)valorA / valorB;
     }
+
+
+    /// Getters / Setters
+    public Slider SliderUi => sliderUi;
 }

@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SocialPlatforms.GameCenter;
 
 public class NaturezaBlocoFerramenta 
 {
@@ -47,11 +46,6 @@ public class NaturezaBlocoFerramenta
         CAMERA
     }
 
-    public static Boolean ferramentaQuebraBloco(FerramentaSO ferramenta, BlocoSO bloco)
-    {
-        return bloco.TipoDureza <= ferramenta.QuebraQueDureza;
-    }
-
     public static Boolean interacaoPodeResultarNaDestruicaoDoBloco(ResultadoInteracao resultado) 
     {
         return resultado == ResultadoInteracao.DESTRUIDO || resultado == ResultadoInteracao.COLETADO;
@@ -61,11 +55,11 @@ public class NaturezaBlocoFerramenta
     {
         switch (ferramenta.TipoColisao)
         {
-            case TipoColisaoFerramenta.PONTO: return new ColisaoFerramentaPonto().obterBlocos(blocoFoco, normal);
-            case TipoColisaoFerramenta.ESCOVAR: return new ColisaoFerramentaEscovar().obterBlocos(blocoFoco, normal);
-            case TipoColisaoFerramenta.PERFURAR: return new ColisaoFerramentaPerfurar().obterBlocos(blocoFoco, normal);
-            case TipoColisaoFerramenta.VASCULHAR: return new ColisaoFerramentaVasculhar().obterBlocos(blocoFoco, normal);
-            case TipoColisaoFerramenta.CAMERA: return new ColisaoFerramentaCamera().obterBlocos(blocoFoco, normal);
+            case TipoColisaoFerramenta.PONTO:       return new ColisaoFerramentaPonto().obterBlocos(blocoFoco, normal);
+            case TipoColisaoFerramenta.ESCOVAR:     return new ColisaoFerramentaEscovar().obterBlocos(blocoFoco, normal);
+            case TipoColisaoFerramenta.PERFURAR:    return new ColisaoFerramentaPerfurar().obterBlocos(blocoFoco, normal);
+            case TipoColisaoFerramenta.VASCULHAR:   return new ColisaoFerramentaVasculhar().obterBlocos(blocoFoco, normal);
+            case TipoColisaoFerramenta.CAMERA:      return new ColisaoFerramentaCamera().obterBlocos(blocoFoco, normal);
                    
             case TipoColisaoFerramenta.NULO:
             default:

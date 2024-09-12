@@ -1,13 +1,13 @@
 using System.Collections.Generic;
 using UnityEngine;
+using Utilidades;
 
 public abstract class ColisaoFerramentaAbstrato
 {
     public abstract List<GameObject> obterBlocos(GameObject pontoInicial, Vector3 normal);
-    protected int obterMascaraColisao()
-    {
-        return LayerMask.NameToLayer("BlocoArqueologico");
-    }
+
+    
+    protected ColisoesBlocosChao colisoes = new ColisoesBlocosChao();
 
     protected List<GameObject> compactarCollidersEmGameObjects(Collider[] colliders)
     {
@@ -29,6 +29,4 @@ public abstract class ColisaoFerramentaAbstrato
 
         return lista;
     }
-    
-    //    Collider[] colliders = Physics.OverlapBox(blocoAlvoRaycast.transform.position, area / 2);
 }
