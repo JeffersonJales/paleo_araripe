@@ -16,7 +16,7 @@ MonoBehaviour:
   inspiracao: 2
   tempoGastoAposUso: 10
   contagemRegressivaParaReuso: 0
-  quantidadeLimiteDeUsos: 5
+  quantidadeLimiteDeUsos: 9
   daDanoEm:
   - {fileID: 11400000, guid: 50157d6eca47418439e1adee1b803e80, type: 2}
   - {fileID: 11400000, guid: abeb310aa7f7cc74f812b3a3025c7b0c, type: 2}

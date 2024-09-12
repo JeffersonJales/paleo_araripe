@@ -11,16 +11,15 @@ public class BlocoGenerico : MonoBehaviour
 
     private Boolean emFoco = false;
     private MeshRenderer mr = null;
+
     public BlocoSO BlocoSO => blocoSO; 
 
-    public void Start()
+    public void Awake()
     {
         vidaAtual = BlocoSO.Vida;
         mr = GetComponent<MeshRenderer>();
         mr.material = blocoSO.CorMaterialNaoDestacado;
     }
-
-    
 
     public Boolean tomarDano(int qtdDano)
     {
@@ -45,7 +44,6 @@ public class BlocoGenerico : MonoBehaviour
     {
         Destroy(gameObject);
     }
-
 
     // @TODO FSM
     public void casoSejaFocoDaFerramenta()

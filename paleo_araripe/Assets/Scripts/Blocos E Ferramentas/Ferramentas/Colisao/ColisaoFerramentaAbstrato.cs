@@ -1,14 +1,12 @@
 using System.Collections.Generic;
 using UnityEngine;
+using Utilidades;
 
 public abstract class ColisaoFerramentaAbstrato
 {
     public abstract List<GameObject> obterBlocos(GameObject pontoInicial, Vector3 normal);
-    protected int obterMascaraColisao()
-    {
-        return LayerMask.NameToLayer("BlocoArqueologico");
-    }
-
+    protected Colisoes colisoes = new Colisoes();
+    
     protected List<GameObject> compactarCollidersEmGameObjects(Collider[] colliders)
     {
         List <GameObject> lista = new List<GameObject>();

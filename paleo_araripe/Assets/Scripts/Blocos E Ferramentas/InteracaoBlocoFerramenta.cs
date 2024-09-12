@@ -28,7 +28,13 @@ public class InteracaoBlocoFerramenta {
             }
         }
 
-        return resumoGeral;
+        resumoGeral.AlgumBlocoDestruidoOuColeado =
+            resumoGeral.QuantidadeFossilDestruido > 0 ||
+            resumoGeral.QuantidadeFossilColetado > 0 ||
+            resumoGeral.QuantidadeAmbarColetado > 0 ||
+            resumoGeral.TipoInteracaoBloco.Contains(ResultadoInteracao.DESTRUIDO);
+
+            return resumoGeral;
     }
 
     private ResultadoInteracao blocoTomaDano(FerramentaSO ferramenta, BlocoGenerico bloco)
@@ -42,8 +48,9 @@ public class InteracaoBlocoFerramenta {
             case TipoBloco.FOSSIL:
                 var resultado = realizarDanoNoBloco(ferramenta, bloco);
 
-                if (resultado.Equals(ResultadoInteracao.DESTRUIDO))
+                if (resultado.Equals(ResultadoInteracao.DESTRUIDO)) {
                     resumoGeral.QuantidadeFossilDestruido++;
+                }
 
                 return resultado;
 

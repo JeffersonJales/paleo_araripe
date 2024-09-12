@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7899740055743425913}
   - component: {fileID: 1975998281186755599}
   - component: {fileID: 5455731207896064906}
-  - component: {fileID: 5080544676809430932}
+  - component: {fileID: -1265615800127341823}
   m_Layer: 6
   m_Name: BlocoAreia
   m_TagString: Untagged
@@ -106,7 +106,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5080544676809430932
+--- !u!114 &-1265615800127341823
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -115,7 +115,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4043340169641137449}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9adb1d2cd6e600043883f8d9e10ba5f0, type: 3}
+  m_Script: {fileID: 11500000, guid: beb705ac42d826b4f886f1dffb49b15b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   vidaAtual: 1

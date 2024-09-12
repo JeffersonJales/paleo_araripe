@@ -22,11 +22,10 @@ public class ColisaoFerramentaCamera : ColisaoFerramentaAbstrato
         Vector3 downDirection = -upDirection;
 
 
-
-        Collider[] colliders = Physics.OverlapBox(posicalInicial + rightDirection, Vector3.zero);
-        Collider[] colliders2 = Physics.OverlapBox(posicalInicial + leftDirection, Vector3.zero);
-        Collider[] colliders3 = Physics.OverlapBox(posicalInicial + upDirection, Vector3.zero);
-        Collider[] colliders4 = Physics.OverlapBox(posicalInicial + downDirection, Vector3.zero);
+        Collider[] colliders = colisoes.colisaoPonto(posicalInicial + rightDirection);
+        Collider[] colliders2 = colisoes.colisaoPonto(posicalInicial + leftDirection);
+        Collider[] colliders3 = colisoes.colisaoPonto(posicalInicial + upDirection);
+        Collider[] colliders4 = colisoes.colisaoPonto(posicalInicial + downDirection);
 
         List<GameObject> lista = compactarCollidersEmGameObjects(colliders);
         lista = adicionarMaisCollidersNaLista(colliders2, lista);

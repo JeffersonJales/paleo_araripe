@@ -93,7 +93,6 @@ public class UsarFerramentas : MonoBehaviour
         if (ferramentaEquipada == null || blocoAlvoRaycast == null) 
             return;
 
-
         /// Resgatar todos os scripts dos alvos
         List<BlocoGenerico> blocosGenericos = new List<BlocoGenerico>();
         foreach (var alvo in alvosFerramenta)
