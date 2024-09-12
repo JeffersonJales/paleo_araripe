@@ -43,7 +43,8 @@ public class NaturezaBlocoFerramenta
         PONTO,
         ESCOVAR,
         PERFURAR,
-        VASCULHAR
+        VASCULHAR,
+        CAMERA
     }
 
     public static Boolean ferramentaQuebraBloco(FerramentaSO ferramenta, BlocoSO bloco)
@@ -56,14 +57,15 @@ public class NaturezaBlocoFerramenta
         return resultado == ResultadoInteracao.DESTRUIDO || resultado == ResultadoInteracao.COLETADO;
     }
 
-    public static List<GameObject> obterListaBlocosPorFerramenta(FerramentaSO ferramenta, GameObject blocoFoco)
+    public static List<GameObject> obterListaBlocosPorFerramenta(FerramentaSO ferramenta, GameObject blocoFoco, Vector3 normal)
     {
         switch (ferramenta.TipoColisao)
         {
-            case TipoColisaoFerramenta.PONTO: return new ColisaoFerramentaPonto().obterBlocos(blocoFoco);
-            case TipoColisaoFerramenta.ESCOVAR: return new ColisaoFerramentaPonto().obterBlocos(blocoFoco);
-            case TipoColisaoFerramenta.PERFURAR: return new ColisaoFerramentaPonto().obterBlocos(blocoFoco);
-            case TipoColisaoFerramenta.VASCULHAR: return new ColisaoFerramentaPonto().obterBlocos(blocoFoco);
+            case TipoColisaoFerramenta.PONTO: return new ColisaoFerramentaPonto().obterBlocos(blocoFoco, normal);
+            case TipoColisaoFerramenta.ESCOVAR: return new ColisaoFerramentaEscovar().obterBlocos(blocoFoco, normal);
+            case TipoColisaoFerramenta.PERFURAR: return new ColisaoFerramentaPerfurar().obterBlocos(blocoFoco, normal);
+            case TipoColisaoFerramenta.VASCULHAR: return new ColisaoFerramentaVasculhar().obterBlocos(blocoFoco, normal);
+            case TipoColisaoFerramenta.CAMERA: return new ColisaoFerramentaCamera().obterBlocos(blocoFoco, normal);
                    
             case TipoColisaoFerramenta.NULO:
             default:

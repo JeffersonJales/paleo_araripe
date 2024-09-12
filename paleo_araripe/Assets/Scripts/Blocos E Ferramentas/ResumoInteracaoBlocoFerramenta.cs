@@ -9,11 +9,20 @@ public class ResumoInteracaoBlocoFerramenta {
     private int quantidadeFossilDestruido = 0;
     private int quantidadeAmbarColetado = 0;
 
-
     public FerramentaSO FerramentaUsada { get => ferramentaUsada; set => ferramentaUsada = value; }
     public List<BlocoSO> BlocosAfetados { get => blocosAfetados; set => blocosAfetados = value; }
     public List<NaturezaBlocoFerramenta.ResultadoInteracao> TipoInteracaoBloco { get => tipoInteracaoBloco; set => tipoInteracaoBloco = value; }
     public int QuantidadeFossilColetado { get => quantidadeFossilColetado; set => quantidadeFossilColetado = value; }
     public int QuantidadeFossilDestruido { get => quantidadeFossilDestruido; set => quantidadeFossilDestruido = value; }
     public int QuantidadeAmbarColetado { get => quantidadeAmbarColetado; set => quantidadeAmbarColetado = value; }
+
+    public Boolean gastouInspiaracao()
+    {
+        return ferramentaUsada.Inspiracao < 0;
+    }
+
+    public Boolean ganhouInspiraca()
+    {
+        return ferramentaUsada.Inspiracao > 0;
+    }
 }

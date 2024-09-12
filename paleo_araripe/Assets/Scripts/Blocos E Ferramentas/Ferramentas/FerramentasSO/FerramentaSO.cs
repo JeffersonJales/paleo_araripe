@@ -18,6 +18,9 @@ public class FerramentaSO : ScriptableObject
     [Tooltip("Após usar, quanto tempo fica sem ser usável")]
     [Range(0, 10)][SerializeField] private int contagemRegressivaParaReuso = 0;
 
+    [Tooltip("Quantas vezes essa ferramenta pode ser usada no jogo")]
+    [Range(0, 25)][SerializeField] private int quantidadeLimiteDeUsos = 0;
+
     [SerializeField] private List<BlocoSO> daDanoEm;
     [SerializeField] private List<BlocoSO> consegueColetar;
     [SerializeField] private NaturezaBlocoFerramenta.TipoColisaoFerramenta tipoColisao;
@@ -38,6 +41,7 @@ public class FerramentaSO : ScriptableObject
     public int Inspiracao => inspiracao;
     public Sprite SpriteFerramenta => sprite;
     public int ContagemRegressivaParaReuso => contagemRegressivaParaReuso;
+    public int QuantidadeLimiteDeUsos => quantidadeLimiteDeUsos;
     public List<BlocoSO> DaDanoEm => daDanoEm;
     public List<BlocoSO> ConsegueColetar => consegueColetar;
 
@@ -46,5 +50,5 @@ public class FerramentaSO : ScriptableObject
     public Vector3 AreaEfeito => areaEfeito;
     public NaturezaBlocoFerramenta.NivelDureza QuebraQueDureza => quebraAte;
     public NaturezaBlocoFerramenta.TipoInteracao Interacao => interacao;
-    
+
 }

@@ -10,22 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 92f59a82866084240847c7b48911b618, type: 3}
-  m_Name: Marreta
+  m_Name: Camera
   m_EditorClassIdentifier: 
   dano: 1
-  inspiracao: 2
-  tempoGastoAposUso: 10
+  inspiracao: 1
+  tempoGastoAposUso: 1
   contagemRegressivaParaReuso: 0
-  quantidadeLimiteDeUsos: 2
   daDanoEm:
   - {fileID: 11400000, guid: 50157d6eca47418439e1adee1b803e80, type: 2}
   - {fileID: 11400000, guid: abeb310aa7f7cc74f812b3a3025c7b0c, type: 2}
-  - {fileID: 11400000, guid: 39017b15453942c4ea1548e82c642532, type: 2}
   - {fileID: 11400000, guid: 639cd407abfca5b43a70d355e908d372, type: 2}
   - {fileID: 11400000, guid: 7b6cede605a891f46a2fdd6580d418de, type: 2}
   consegueColetar: []
-  tipoColisao: 1
-  sprite: {fileID: -145122202, guid: 8931e628dbfb1c349b2b6f3c78a757c0, type: 3}
-  areaEfeito: {x: 0, y: 0, z: 0}
+  tipoColisao: 5
+  sprite: {fileID: 1308264737, guid: 8931e628dbfb1c349b2b6f3c78a757c0, type: 3}
+  areaEfeito: {x: 1, y: 1, z: 1}
   quebraAte: 1
   interacao: 1

@@ -7,6 +7,7 @@ public class UsarFerramentas : MonoBehaviour
     [SerializeField] private FerramentaSO ferramentaEquipada;
     [SerializeField] private GameObject blocoAlvoRaycast;
     [SerializeField] private LayerMask mascaraColisaoBloco;
+    [SerializeField] private QuadroNegroSO infoJogo;
 
     [Range(15f, 30f)]
     [SerializeField] private float distanciaMaximaColisaoRaycast = 20f;
@@ -14,7 +15,7 @@ public class UsarFerramentas : MonoBehaviour
 
     [Range(5, 30)][SerializeField] private int inspiracaoMaxima = 30;
     public int InspiracaoMaxima => inspiracaoMaxima;
-
+    [SerializeField] private Vector3 normalRaycast;
 
     [SerializeField] private int inspiracaoAtual = 0;
     public int InspiracaoAtual => inspiracaoAtual;
@@ -24,7 +25,6 @@ public class UsarFerramentas : MonoBehaviour
     private List<GameObject> alvosFerramenta = new List<GameObject>();
 
     public event Action<ResumoInteracaoBlocoFerramenta> EventoResumoInteracao;
-    public event Action<int, int> InspiracaoAlterada;
 
 
     public void OnValidate()
@@ -61,11 +61,12 @@ public class UsarFerramentas : MonoBehaviour
         if (Physics.Raycast(ray, out hit, distanciaMaximaColisaoRaycast, mascaraColisaoBloco))
         {
             GameObject objetoAtingido = hit.collider.gameObject;
+            Vector3 normal = hit.normal;
 
-            if (objetoAtingido.Equals(blocoAlvoRaycast) || !objetoAtingido.activeInHierarchy) 
+            if ((objetoAtingido.Equals(blocoAlvoRaycast) && normal.Equals(normalRaycast)) || !objetoAtingido.activeInHierarchy) 
                 return;
 
-            procurarBlocosAlvoFerramenta(objetoAtingido);
+            procurarBlocosAlvoFerramenta(objetoAtingido, normal);
         }
         else if(blocoAlvoRaycast != null)
         {
@@ -74,12 +75,13 @@ public class UsarFerramentas : MonoBehaviour
         }
     }
 
-    public void procurarBlocosAlvoFerramenta(GameObject alvoAtual)
+    public void procurarBlocosAlvoFerramenta(GameObject alvoAtual, Vector3 normal)
     {
+        normalRaycast = normal;
         blocoAlvoRaycast = alvoAtual;
         desativarFocoAlvos();
 
-        alvosFerramenta = NaturezaBlocoFerramenta.obterListaBlocosPorFerramenta(ferramentaEquipada, blocoAlvoRaycast);
+        alvosFerramenta = NaturezaBlocoFerramenta.obterListaBlocosPorFerramenta(ferramentaEquipada, blocoAlvoRaycast, normal);
         foreach(var item in alvosFerramenta)
         {
             item.GetComponent<BlocoGenerico>().casoSejaFocoDaFerramenta();
@@ -104,7 +106,8 @@ public class UsarFerramentas : MonoBehaviour
 
         /// Inspiração
         inspiracaoAtual = Math.Clamp(inspiracaoAtual + ferramentaEquipada.Inspiracao, 0, inspiracaoMaxima);
-        InspiracaoAlterada?.Invoke(inspiracaoAtual, inspiracaoMaxima);
+        infoJogo.SetValue(QuadroNegroInfoJogoChaves.INSPIRACAO_ATUAL, inspiracaoAtual);
+        infoJogo.SetValue(QuadroNegroInfoJogoChaves.INSPIRACAO_MAXIMA, inspiracaoMaxima);
 
         /// Desativar os blocos que sobreviveram
         for (var i = 0; i < resumo.TipoInteracaoBloco.Count; i++)

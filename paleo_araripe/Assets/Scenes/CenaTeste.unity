@@ -1803,7 +1803,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 913528913}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.019623138, y: 0.00507328, z: 0.00009958397, w: 0.9997946}
+  m_LocalRotation: {x: -0.019623142, y: 0.00507328, z: 0.000099578865, w: 0.9997946}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2420,7 +2420,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1285064165}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.041721817, y: 0.0050613014, z: 0.00021138482, w: 0.9991165}
+  m_LocalRotation: {x: -0.04172179, y: 0.0050613014, z: 0.00021137504, w: 0.9991165}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2596,8 +2596,10 @@ MonoBehaviour:
   mascaraColisaoBloco:
     serializedVersion: 2
     m_Bits: 64
+  infoJogo: {fileID: 11400000, guid: bfbcf4055698aa741ae54bf570d1d906, type: 2}
   distanciaMaximaColisaoRaycast: 20
   inspiracaoMaxima: 30
+  normalRaycast: {x: 0, y: 0, z: 0}
   inspiracaoAtual: 0
 --- !u!114 &1506665971
 MonoBehaviour:
@@ -2612,6 +2614,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   valorSlider: {fileID: 2045937275}
+  informacoesJogo: {fileID: 11400000, guid: bfbcf4055698aa741ae54bf570d1d906, type: 2}
 --- !u!1001 &1597019820
 PrefabInstance:
   m_ObjectHideFlags: 0

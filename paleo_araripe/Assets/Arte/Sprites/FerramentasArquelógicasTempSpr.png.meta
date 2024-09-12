@@ -215,7 +215,7 @@ TextureImporter:
         width: 50
         height: 107
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -236,7 +236,7 @@ TextureImporter:
         width: 69
         height: 121
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -244,6 +244,27 @@ TextureImporter:
       bones: []
       spriteID: 4e76a274abde22646a433c02658723fb
       internalID: -145122202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "FerramentasArquel\xF3gicasTempSpr_6"
+      rect:
+        serializedVersion: 2
+        x: 409
+        y: 157
+        width: 140
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a63bf211c0aca1c419f41a44afb909d7
+      internalID: 1308264737
       vertices: []
       indices: 
       edges: []
@@ -265,6 +286,7 @@ TextureImporter:
       "FerramentasArquel\xF3gicasTempSpr_3": -661477683
       "FerramentasArquel\xF3gicasTempSpr_4": -1581561916
       "FerramentasArquel\xF3gicasTempSpr_5": -145122202
+      "FerramentasArquel\xF3gicasTempSpr_6": 1308264737
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
