@@ -1,23 +1,23 @@
 using UnityEngine;
 
-public class ControladorInspiracaoUI : MonoBehaviour
+public class ControladorSliderInspiracao : MonoBehaviour
 {
     [SerializeField] private AtualizarValorSlider valorSlider;
-    [SerializeField] private QuadroNegroSO informacoesJogo;
+    [SerializeField] private BlackBoardSO informacoesPartida;
     
     void Start()
     {
         UsarFerramentas usarFerramenta = FindObjectOfType<UsarFerramentas>();
 
         if (usarFerramenta != null) { 
-            usarFerramenta.EventoResumoInteracao += autualizarSliderInspiracao;
+            usarFerramenta.EventoAposRealizarUsoFerramenta += autualizarSliderInspiracao;
             atualizarValorSlider(usarFerramenta.InspiracaoAtual, usarFerramenta.InspiracaoMaxima);
         }
     }
 
     private void autualizarSliderInspiracao(ResumoInteracaoBlocoFerramenta resumo) {
         if (resumo.ganhouInspiraca() || resumo.gastouInspiaracao())
-            atualizarValorSlider(informacoesJogo.GetIntValue(QuadroNegroInfoJogoChaves.INSPIRACAO_ATUAL), informacoesJogo.GetIntValue(QuadroNegroInfoJogoChaves.INSPIRACAO_MAXIMA));
+            atualizarValorSlider(informacoesPartida.GetIntValue(BBChaveTuplaInfomacoesPartida.INSPIRACAO_ATUAL), informacoesPartida.GetIntValue(BBChaveTuplaInfomacoesPartida.INSPIRACAO_MAXIMA));
     }
 
     private void atualizarValorSlider(int inspiracaoAtual, int inspiracaoMaxima)

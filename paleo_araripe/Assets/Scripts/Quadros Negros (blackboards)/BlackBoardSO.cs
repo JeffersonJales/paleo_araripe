@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "QuadroNegro", menuName = "ScriptableObjects/Quadro Negro")]
-public class QuadroNegroSO : ScriptableObject
+public class BlackBoardSO : ScriptableObject
 {
     private Dictionary<string, object> data = new Dictionary<string, object>();
 

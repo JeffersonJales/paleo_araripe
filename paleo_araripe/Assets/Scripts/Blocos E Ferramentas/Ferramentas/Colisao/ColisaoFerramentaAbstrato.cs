@@ -5,8 +5,10 @@ using Utilidades;
 public abstract class ColisaoFerramentaAbstrato
 {
     public abstract List<GameObject> obterBlocos(GameObject pontoInicial, Vector3 normal);
-    protected Colisoes colisoes = new Colisoes();
+
     
+    protected ColisoesBlocosChao colisoes = new ColisoesBlocosChao();
+
     protected List<GameObject> compactarCollidersEmGameObjects(Collider[] colliders)
     {
         List <GameObject> lista = new List<GameObject>();
@@ -27,6 +29,4 @@ public abstract class ColisaoFerramentaAbstrato
 
         return lista;
     }
-    
-    //    Collider[] colliders = Physics.OverlapBox(blocoAlvoRaycast.transform.position, area / 2);
 }

@@ -1,17 +1,18 @@
-using log4net.Util;
 using System;
 using UnityEngine;
 
 namespace Utilidades
 {
-    public class Colisoes 
+    public class ColisoesBlocosChao 
     {
         public const string NOME_LAYER_BLOCO_ARQUEOLOGICO = "BlocoArqueologico";
         public const string NOME_LAYER_CHAO = "Chao";
-        private const int MASCARA_NAO_ENCONTRADA = -1;
 
+        private const int MASCARA_NAO_ENCONTRADA = -1;
         private int mascaraBlocoArqueologico = MASCARA_NAO_ENCONTRADA;
         private int mascaraChao = MASCARA_NAO_ENCONTRADA;
+
+        #region Máscaras de Colisão
 
         public int obterMascaraColisao(string nomeLayer)
         {
@@ -34,19 +35,21 @@ namespace Utilidades
             return mascaraChao;
         }
 
+        #endregion
+
+        public Collider[] colisaoCubica(Vector3 posicao, Vector3 metadeTamanhoCubo, Quaternion rotacao)
+        {
+            return Physics.OverlapBox(posicao, metadeTamanhoCubo, rotacao, obterMascaraBlocoArqueologico());
+        }
+
         public Collider[] colisaoPonto(Vector3 ponto)
         {
-            return Physics.OverlapBox(ponto, Vector3.zero, Quaternion.identity, obterMascaraBlocoArqueologico());
+            return colisaoCubica(ponto, Vector3.zero, Quaternion.identity);
         }
 
         public Collider pegarPrimeiroCollider(Collider[] collider)
         {
             return collider.Length > 0 ? collider[0] : null;
-        }
-
-        public Collider[] colisaoCubica(Vector3 posicao, Vector3 metadeTamanhoCubo, Quaternion rotacao)
-        {
-            return Physics.OverlapBox(posicao, metadeTamanhoCubo, rotacao, obterMascaraBlocoArqueologico());
         }
 
         public Boolean checarCuboEstaNoChao(GameObject obj)

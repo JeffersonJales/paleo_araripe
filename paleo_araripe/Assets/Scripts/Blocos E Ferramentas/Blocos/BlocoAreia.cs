@@ -1,28 +1,27 @@
 using System;
 using UnityEngine;
 using Utilidades;
-using static Codice.Client.Commands.WkTree.WorkspaceTreeNode;
 
 public class BlocoAreia : BlocoGenerico
 {
-
     private float tamanhoRaycastPraBaixo = 20f;
-    private Colisoes col = new Colisoes();
-    
-    
+    private ColisoesBlocosChao col = new ColisoesBlocosChao();
     private Boolean jaEstaNoChao = false;
+    
+    // Getters
     public bool JaEstaNoChao => jaEstaNoChao; 
 
+    
     public void Start()
     {
         jaEstaNoChao = col.checarCuboEstaNoChao(gameObject);
     }
 
+    
     private Boolean checarBlocoAbaixo()
     {
         return col.colisaoPonto(transform.position + Vector3.down).Length > 0;
     }
-
 
     public Boolean cair()
     {

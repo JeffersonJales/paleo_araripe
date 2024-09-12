@@ -8,7 +8,7 @@ public class ComportamentoBlocos : MonoBehaviour
     {
         UsarFerramentas usarFerramentas = FindObjectOfType<UsarFerramentas>();
         if (usarFerramentas != null)
-            usarFerramentas.EventoResumoInteracao += atualizarPosicaoBlocosAposInteracao;
+            usarFerramentas.EventoAposRealizarUsoFerramenta += atualizarPosicaoBlocosAposInteracao;
     }
 
     private void atualizarPosicaoBlocosAposInteracao(ResumoInteracaoBlocoFerramenta resumo)
