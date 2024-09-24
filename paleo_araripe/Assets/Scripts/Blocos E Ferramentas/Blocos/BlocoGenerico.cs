@@ -1,26 +1,25 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BlocoGenerico : MonoBehaviour
 {
-    [SerializeField] private int vidaAtual = 1; 
-    [SerializeField] private BlocosSO blocoSO;
+    [SerializeField] private BlocoSO blocoSO;
 
-
+    private int vidaAtual = 1;
     private Boolean emFoco = false;
     private MeshRenderer mr = null;
-    public BlocosSO BlocoSO => blocoSO; 
 
-    public void Start()
+    // Getters 
+    public BlocoSO BlocoSO => blocoSO; 
+
+
+    public void Awake()
     {
         vidaAtual = BlocoSO.Vida;
         mr = GetComponent<MeshRenderer>();
         mr.material = blocoSO.CorMaterialNaoDestacado;
     }
 
-    
 
     public Boolean tomarDano(int qtdDano)
     {
@@ -35,19 +34,20 @@ public class BlocoGenerico : MonoBehaviour
 
         return destruido;
     }
+   
+    public void destruirBloco()
+    {
+        Destroy(gameObject);
+    }
 
     public void serColetado()
     {
         destruirBloco();
     }
 
-    public void destruirBloco()
-    {
-        Destroy(gameObject);
-    }
 
+    #region Feedback Bloco é Alvo da ferramenta
 
-    // @TODO FSM
     public void casoSejaFocoDaFerramenta()
     {
         if (emFoco) return;
@@ -63,4 +63,7 @@ public class BlocoGenerico : MonoBehaviour
 
         mr.material = blocoSO.CorMaterialNaoDestacado;
     }
+    
+    #endregion
+
 }

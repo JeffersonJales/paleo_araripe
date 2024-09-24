@@ -9,14 +9,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 832385b89f4bfb5458b41149450087de, type: 3}
+  m_Script: {fileID: 11500000, guid: b660ac561dbf46a42a0b2bdfa04eb5b5, type: 3}
   m_Name: BlocoAmbar
   m_EditorClassIdentifier: 
   vida: 1
-  dureza: 0
+  dureza: 1
   tipo: 1
   modelo: {fileID: 0}
-  corMaterialDestacado: {fileID: 2100000, guid: 078b4fb3e1e6689479f7faa33aa2a0ff,
+  feedbackAoDestruir: {fileID: 0}
+  corMaterialDestacado: {fileID: 2100000, guid: 8fa5d692487e0ca4ab852e4c09396d3f,
     type: 2}
-  corMaterialNaoDestacado: {fileID: 2100000, guid: 91d9213320ebab04596b8be80bd38e2a,
+  corMaterialNaoDestacado: {fileID: 2100000, guid: d01e1bf32705a284b83fb25241f40d98,
     type: 2}

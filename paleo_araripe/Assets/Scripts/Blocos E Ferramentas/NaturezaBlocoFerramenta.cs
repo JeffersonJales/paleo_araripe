@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,7 +6,8 @@ public class NaturezaBlocoFerramenta
 {
     public enum NivelDureza
     {
-        TERRA = 0,
+        NULO,
+        TERRA,
         AREIA,
         PEDRA,
         FERRO,
@@ -15,14 +15,14 @@ public class NaturezaBlocoFerramenta
 
     public enum TipoBloco
     {
-        NORMAL = 0,
+        NORMAL,
         AMBAR, 
         FOSSIL
     }
 
     public enum TipoInteracao
     {
-        SONDAR = 0,
+        SONDAR,
         DELICADO,
         MODERADO,
         PESADO
@@ -30,19 +30,40 @@ public class NaturezaBlocoFerramenta
 
     public enum ResultadoInteracao
     {
-        NULO = 0,
+        NULO,
         DANO,
         DESTRUIDO,
         COLETADO
     }
 
-    public static Boolean ferramentaQuebraBloco(FerramentaSO ferramenta, BlocosSO bloco)
+    public enum TipoColisaoFerramenta
     {
-        return bloco.TipoDureza <= ferramenta.QuebraQueDureza;
+        NULO,
+        PONTO,
+        ESCOVAR,
+        PERFURAR,
+        VASCULHAR,
+        CAMERA
     }
 
     public static Boolean interacaoPodeResultarNaDestruicaoDoBloco(ResultadoInteracao resultado) 
     {
         return resultado == ResultadoInteracao.DESTRUIDO || resultado == ResultadoInteracao.COLETADO;
+    }
+
+    public static List<GameObject> obterListaBlocosPorFerramenta(FerramentaSO ferramenta, GameObject blocoFoco, Vector3 normal)
+    {
+        switch (ferramenta.TipoColisao)
+        {
+            case TipoColisaoFerramenta.PONTO:       return new ColisaoFerramentaPonto().obterBlocos(blocoFoco, normal);
+            case TipoColisaoFerramenta.ESCOVAR:     return new ColisaoFerramentaEscovar().obterBlocos(blocoFoco, normal);
+            case TipoColisaoFerramenta.PERFURAR:    return new ColisaoFerramentaPerfurar().obterBlocos(blocoFoco, normal);
+            case TipoColisaoFerramenta.VASCULHAR:   return new ColisaoFerramentaVasculhar().obterBlocos(blocoFoco, normal);
+            case TipoColisaoFerramenta.CAMERA:      return new ColisaoFerramentaCamera().obterBlocos(blocoFoco, normal);
+                   
+            case TipoColisaoFerramenta.NULO:
+            default:
+                return new List<GameObject>();
+        }
     }
 }

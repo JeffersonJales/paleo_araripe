@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92f59a82866084240847c7b48911b618, type: 3}
+  m_Name: PaPequena
+  m_EditorClassIdentifier: 
+  areaEfeito: {x: 0, y: 2, z: 0}
+  energiaParaUsar: 3
+  inspiracao: 1
+  tempoGastoAposUso: 3
+  dano: 1
+  contagemRegressivaParaReuso: 1
+  quebraAte: 2
+  interacao: 2
+  sprite: {fileID: 920607830, guid: 8931e628dbfb1c349b2b6f3c78a757c0, type: 3}
