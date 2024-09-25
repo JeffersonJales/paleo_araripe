@@ -12,7 +12,7 @@ public class UsarFerramentas : MonoBehaviour
     [SerializeField] private int inspiracaoAtual = 0;
     [Range(5, 50)][SerializeField] private int inspiracaoMaxima = 50;
     
-    [SerializeField] private BlackBoardSO bbInformacoesPartida;
+    [SerializeField] private BlackBoardInformacoesPartida bbInformacoesPartida;
 
     private Camera cam;
     private Vector3 normalRaycast;
@@ -67,8 +67,8 @@ public class UsarFerramentas : MonoBehaviour
 
         /// Inspiração
         inspiracaoAtual = Math.Clamp(inspiracaoAtual + ferramentaEquipada.Inspiracao, 0, inspiracaoMaxima);
-        bbInformacoesPartida.SetValue(BBChaveTuplaInfomacoesPartida.INSPIRACAO_ATUAL, inspiracaoAtual);
-        bbInformacoesPartida.SetValue(BBChaveTuplaInfomacoesPartida.INSPIRACAO_MAXIMA, inspiracaoMaxima);
+        bbInformacoesPartida.SetValue(bbInformacoesPartida.INSPIRACAO_ATUAL, inspiracaoAtual);
+        bbInformacoesPartida.SetValue(bbInformacoesPartida.INSPIRACAO_MAXIMA, inspiracaoMaxima);
 
         /// Desativar os blocos que sobreviveram
         for (var i = 0; i < resumo.TipoInteracaoBloco.Count; i++)

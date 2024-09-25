@@ -8,7 +8,7 @@ public class TrocarFerramentaViaBotaoUI : MonoBehaviour
     [SerializeField] private FerramentaSO tipoFerramenta;
     [SerializeField] private TextMeshProUGUI textMeshContadorTempo;
     [SerializeField] private TextMeshProUGUI textMeshContadorJogadas;
-    [SerializeField] private BlackBoardSO quadroNegroInformacaoes;
+    [SerializeField] private BlackBoardInformacoesPartida quadroNegroInformacaoes;
     [SerializeField] private Boolean esperandoInspiracao = false;
 
     [SerializeField] private int desabilitadoQtd = 0;
@@ -20,6 +20,8 @@ public class TrocarFerramentaViaBotaoUI : MonoBehaviour
     private int inspiracaoNecessariaUso = 0;
     private int quantidadeUsosRestantes = 0;
     private UsarFerramentas usarFerramenta;
+
+    public FerramentaSO TipoFerramenta { get => tipoFerramenta; set => tipoFerramenta = value; }
 
     public void Start()
     {
@@ -97,12 +99,12 @@ public class TrocarFerramentaViaBotaoUI : MonoBehaviour
 
     private void verificarUsoDeAcordoComInspiracao(ResumoInteracaoBlocoFerramenta resumo)
     {
-        if (esperandoInspiracao && resumo.ganhouInspiraca() && quadroNegroInformacaoes.GetIntValue(BBChaveTuplaInfomacoesPartida.INSPIRACAO_ATUAL) >= inspiracaoNecessariaUso)
+        if (esperandoInspiracao && resumo.ganhouInspiraca() && quadroNegroInformacaoes.GetIntValue(quadroNegroInformacaoes.INSPIRACAO_ATUAL) >= inspiracaoNecessariaUso)
         {
             esperandoInspiracao = false;
             tentarHabilitarBotao();
         }
-        else if (!esperandoInspiracao && resumo.gastouInspiaracao() && quadroNegroInformacaoes.GetIntValue(BBChaveTuplaInfomacoesPartida.INSPIRACAO_ATUAL) < inspiracaoNecessariaUso)
+        else if (!esperandoInspiracao && resumo.gastouInspiaracao() && quadroNegroInformacaoes.GetIntValue(quadroNegroInformacaoes.INSPIRACAO_ATUAL) < inspiracaoNecessariaUso)
         {
             esperandoInspiracao = true;
             tentarDesabilitarBotao();

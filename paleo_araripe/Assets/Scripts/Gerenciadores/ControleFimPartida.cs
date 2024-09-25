@@ -4,8 +4,8 @@ using UnityEngine.SceneManagement;
 
 public class ControleFimPartida : MonoBehaviour
 {
-    [Range(10, 100)]
-    [SerializeField] private int acoesParaFimJogo = 10;
+    [Range(10, 1000)]
+    [SerializeField] private int acoesParaFimJogo = 100;
 
     [Range(1, 100)]
     [SerializeField] private int acoesGanhasPorAmbar = 0;
