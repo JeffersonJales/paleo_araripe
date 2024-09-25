@@ -146,6 +146,7 @@ GameObject:
   - component: {fileID: 828443594863835958}
   - component: {fileID: 274380966817337485}
   - component: {fileID: 1356940904641100968}
+  - component: {fileID: 8857026810649655926}
   - component: {fileID: 4580595649398042718}
   m_Layer: 5
   m_Name: FerramentaBotaoUI
@@ -255,9 +256,24 @@ MonoBehaviour:
   tipoFerramenta: {fileID: 11400000, guid: b347338a1257043458999d6e10ec54d1, type: 2}
   textMeshContadorTempo: {fileID: 3135300556352340839}
   textMeshContadorJogadas: {fileID: 2545093875198616615}
-  quadroNegroInformacaoes: {fileID: 11400000, guid: bfbcf4055698aa741ae54bf570d1d906,
+  quadroNegroInformacaoes: {fileID: 11400000, guid: e0d7bcb58947cde41b2b9a22378f1503,
     type: 2}
+  esperandoInspiracao: 0
   desabilitadoQtd: 0
+--- !u!114 &8857026810649655926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4290308957948878291}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 238bf1b90fea32840ae7d602bb7066c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  novaFerramenta: {fileID: 0}
+  ferramentaOriginal: {fileID: 0}
 --- !u!95 &4580595649398042718
 Animator:
   serializedVersion: 5

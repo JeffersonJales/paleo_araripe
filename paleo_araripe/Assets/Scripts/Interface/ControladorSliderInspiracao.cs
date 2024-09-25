@@ -3,7 +3,7 @@ using UnityEngine;
 public class ControladorSliderInspiracao : MonoBehaviour
 {
     [SerializeField] private AtualizarValorSlider valorSlider;
-    [SerializeField] private BlackBoardSO informacoesPartida;
+    [SerializeField] private BlackBoardInformacoesPartida informacoesPartida;
     
     void Start()
     {
@@ -17,7 +17,7 @@ public class ControladorSliderInspiracao : MonoBehaviour
 
     private void autualizarSliderInspiracao(ResumoInteracaoBlocoFerramenta resumo) {
         if (resumo.ganhouInspiraca() || resumo.gastouInspiaracao())
-            atualizarValorSlider(informacoesPartida.GetIntValue(BBChaveTuplaInfomacoesPartida.INSPIRACAO_ATUAL), informacoesPartida.GetIntValue(BBChaveTuplaInfomacoesPartida.INSPIRACAO_MAXIMA));
+            atualizarValorSlider(informacoesPartida.GetIntValue(informacoesPartida.INSPIRACAO_ATUAL), informacoesPartida.GetIntValue(informacoesPartida.INSPIRACAO_MAXIMA));
     }
 
     private void atualizarValorSlider(int inspiracaoAtual, int inspiracaoMaxima)

@@ -9,6 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92d9a1679b4bc2c40a84942e2edc7091, type: 3}
-  m_Name: BBPInformacoesPartida
+  m_Script: {fileID: 11500000, guid: e65310dbd6572c9458c17fb17d6a5582, type: 3}
+  m_Name: BBInformacaoPartida
   m_EditorClassIdentifier: 

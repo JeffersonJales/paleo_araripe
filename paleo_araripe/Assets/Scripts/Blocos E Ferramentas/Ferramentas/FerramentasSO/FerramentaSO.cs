@@ -5,7 +5,7 @@ using UnityEngine;
 public class FerramentaSO : ScriptableObject
 {   
     [Tooltip("Quanto de dano ele irá causar no bloco")]
-    [Range(1, 10)][SerializeField] private int dano = 1; 
+    [Range(0, 10)][SerializeField] private int dano = 1; 
     
     [Tooltip("Quanto de inspiração a ferramenta gasta / dá ao jogador")]
     [Range(-10, 10)][SerializeField] private int inspiracao = 1;
