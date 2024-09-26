@@ -17,7 +17,9 @@ public class NaturezaBlocoFerramenta
     {
         NORMAL,
         AMBAR, 
-        FOSSIL
+        FOSSIL,
+        INSPIRACAO,
+        EXPLOSIVO,
     }
 
     public enum TipoInteracao
@@ -43,7 +45,9 @@ public class NaturezaBlocoFerramenta
         ESCOVAR,
         PERFURAR,
         VASCULHAR,
-        CAMERA
+        CAMERA,
+        EXPLOSAO,
+        EXPLOSIVO,
     }
 
     public static Boolean interacaoPodeResultarNaDestruicaoDoBloco(ResultadoInteracao resultado) 
@@ -60,10 +64,25 @@ public class NaturezaBlocoFerramenta
             case TipoColisaoFerramenta.PERFURAR:    return new ColisaoFerramentaPerfurar().obterBlocos(blocoFoco, normal);
             case TipoColisaoFerramenta.VASCULHAR:   return new ColisaoFerramentaVasculhar().obterBlocos(blocoFoco, normal);
             case TipoColisaoFerramenta.CAMERA:      return new ColisaoFerramentaCamera().obterBlocos(blocoFoco, normal);
+            case TipoColisaoFerramenta.EXPLOSAO:    return new ColisaoFerramentaExplosao().obterBlocos(blocoFoco, normal);
+            case TipoColisaoFerramenta.EXPLOSIVO:   return new ColisaoFerramentaExplosivo().obterBlocos(blocoFoco, normal);
                    
             case TipoColisaoFerramenta.NULO:
             default:
                 return new List<GameObject>();
         }
+    }
+
+    public static List<BlocoGenerico> obterListaBlocosGenericosPorFerramenta(FerramentaSO ferramenta, GameObject blocoFoco, Vector3 normal)
+    {
+        List<GameObject> objetosAlvo = obterListaBlocosPorFerramenta(ferramenta, blocoFoco, normal);
+        
+        List<BlocoGenerico> blocosGenericos = new List<BlocoGenerico>();
+        foreach (var alvo in objetosAlvo)
+        {
+            blocosGenericos.Add(alvo.GetComponent<BlocoGenerico>());
+        }
+
+        return blocosGenericos;
     }
 }

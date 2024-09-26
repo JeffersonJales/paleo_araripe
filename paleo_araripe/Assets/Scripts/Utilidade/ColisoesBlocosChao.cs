@@ -52,6 +52,16 @@ namespace Utilidades
             return collider.Length > 0 ? collider[0] : null;
         }
 
+        public Boolean checarSeEspacoEstaOcupado(Vector3 ponto)
+        {
+            return colisaoPonto(ponto).Length > 0;
+        }
+
+        public Boolean checarSeEspacoEstaVazio(Vector3 ponto)
+        {
+            return !checarSeEspacoEstaOcupado(ponto);
+        }
+        
         public Boolean checarCuboEstaNoChao(GameObject obj)
         {
             Collider[] col = Physics.OverlapBox(obj.gameObject.transform.position + (obj.gameObject.transform.localScale / 2), new Vector3(0.1f, 0.1f, 0.1f), Quaternion.identity, obterMascaraChao());

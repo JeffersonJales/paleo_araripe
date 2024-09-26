@@ -10,19 +10,25 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 92f59a82866084240847c7b48911b618, type: 3}
-  m_Name: Colherim
+  m_Name: Explosivo
   m_EditorClassIdentifier: 
-  dano: 1
-  inspiracao: 2
-  tempoGastoAposUso: 10
+  dano: 3
+  inspiracao: 1
+  tempoGastoAposUso: 1
   contagemRegressivaParaReuso: 0
-  quantidadeLimiteDeUsos: 9
+  quantidadeLimiteDeUsos: 0
   daDanoEm:
   - {fileID: 11400000, guid: 50157d6eca47418439e1adee1b803e80, type: 2}
   - {fileID: 11400000, guid: abeb310aa7f7cc74f812b3a3025c7b0c, type: 2}
+  - {fileID: 11400000, guid: ac3b9955425249e4abd229095d5f46c4, type: 2}
+  - {fileID: 11400000, guid: 8e3a9d642b547324791b6566eefe115a, type: 2}
+  - {fileID: 11400000, guid: 948b906aa994b674da1255685c6961fa, type: 2}
+  - {fileID: 11400000, guid: 523480e4ce20fef43934acafd2f93a43, type: 2}
   - {fileID: 11400000, guid: 639cd407abfca5b43a70d355e908d372, type: 2}
+  - {fileID: 11400000, guid: b98a8ec268e4cec418bd525ee1ef56be, type: 2}
+  - {fileID: 11400000, guid: 39017b15453942c4ea1548e82c642532, type: 2}
   - {fileID: 11400000, guid: 7b6cede605a891f46a2fdd6580d418de, type: 2}
-  - {fileID: 11400000, guid: 15c977b1fe45ea7428a04dab50f190b2, type: 2}
+  - {fileID: 11400000, guid: 1a1efc0480aa40e49b57abfbf69de412, type: 2}
   consegueColetar: []
-  tipoColisao: 1
-  sprite: {fileID: 920607830, guid: 8931e628dbfb1c349b2b6f3c78a757c0, type: 3}
+  tipoColisao: 7
+  sprite: {fileID: 21300000, guid: 103366ab3e76ff84981fd4fd61d075ad, type: 3}

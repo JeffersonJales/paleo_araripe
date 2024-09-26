@@ -65,17 +65,21 @@ public class UsarFerramentas : MonoBehaviour
         /// Realizar interação entre blocos e ferramentas
         ResumoInteracaoBlocoFerramenta resumo = new InteracaoBlocoFerramenta().interacaoFerramentaComBloco(ferramentaEquipada, blocosGenericos);
 
-        /// Inspiração
-        inspiracaoAtual = Math.Clamp(inspiracaoAtual + ferramentaEquipada.Inspiracao, 0, inspiracaoMaxima);
+        /// Ganho de Inspiracação
+        inspiracaoAtual = Math.Clamp(inspiracaoAtual + ferramentaEquipada.Inspiracao + resumo.QuantidadeInspiracaoGanha, 0, inspiracaoMaxima);
         bbInformacoesPartida.SetValue(bbInformacoesPartida.INSPIRACAO_ATUAL, inspiracaoAtual);
         bbInformacoesPartida.SetValue(bbInformacoesPartida.INSPIRACAO_MAXIMA, inspiracaoMaxima);
 
-        /// Desativar os blocos que sobreviveram
-        for (var i = 0; i < resumo.TipoInteracaoBloco.Count; i++)
+        foreach(var alvo in blocosGenericos)
         {
-            if (!NaturezaBlocoFerramenta.interacaoPodeResultarNaDestruicaoDoBloco(resumo.TipoInteracaoBloco[i]))
-                blocosGenericos[i].casoDeixeDeSerFocoDaFerramenta();
+            if (alvo.estaVivo())
+                alvo.casoDeixeDeSerFocoDaFerramenta();
         }
+
+        /// Desativar os blocos que sobreviveram
+       // for (var i = 0; i < resumo.TipoInteracaoBloco.Count; i++)
+         //   if (!NaturezaBlocoFerramenta.interacaoPodeResultarNaDestruicaoDoBloco(resumo.TipoInteracaoBloco[i]))
+       // }
 
         blocoAlvoRaycast = null;
         alvosFerramenta.Clear();

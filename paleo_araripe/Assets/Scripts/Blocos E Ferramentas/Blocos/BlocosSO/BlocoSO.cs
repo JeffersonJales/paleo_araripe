@@ -8,17 +8,20 @@ public class BlocoSO : ScriptableObject
     [SerializeField] private int vida = 1;
     [SerializeField] private NaturezaBlocoFerramenta.NivelDureza dureza = NaturezaBlocoFerramenta.NivelDureza.TERRA;
     [SerializeField] private NaturezaBlocoFerramenta.TipoBloco tipo = NaturezaBlocoFerramenta.TipoBloco.NORMAL;
-    [SerializeField] private GameObject modelo;
     [SerializeField] private GameObject feedbackAoDestruir;
+    [SerializeField] private GameObject feedbackAoColetar;
     [SerializeField] private Material corMaterialDestacado = null;
     [SerializeField] private Material corMaterialNaoDestacado = null;
 
     public int Vida => vida;
-    public GameObject Modelo => modelo;
+
     public NaturezaBlocoFerramenta.NivelDureza TipoDureza => dureza;
     public NaturezaBlocoFerramenta.TipoBloco Tipo => tipo;
-    public Material CorMaterialDestacado => corMaterialDestacado; 
+
+    public GameObject FeedbackAoColetar => feedbackAoColetar;
+    public GameObject FeedbackAoDestruir => feedbackAoDestruir;
+
+    public Material CorMaterialDestacado => corMaterialDestacado;
     public Material CorMaterialNaoDestacado => corMaterialNaoDestacado;
-    public GameObject FeedbackAoDestruir => feedbackAoDestruir; 
 }
 

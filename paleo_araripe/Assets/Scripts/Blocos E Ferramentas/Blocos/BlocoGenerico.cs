@@ -7,17 +7,22 @@ public class BlocoGenerico : MonoBehaviour
 
     private int vidaAtual = 1;
     private Boolean emFoco = false;
-    private MeshRenderer mr = null;
+    protected MeshRenderer mr = null;
+    protected BoxCollider bc = null;
+
 
     // Getters 
     public BlocoSO BlocoSO => blocoSO; 
 
 
-    public void Awake()
+    public virtual void Awake()
     {
         vidaAtual = BlocoSO.Vida;
+
         mr = GetComponent<MeshRenderer>();
         mr.material = blocoSO.CorMaterialNaoDestacado;
+
+        bc = GetComponent<BoxCollider>();
     }
 
 
@@ -31,16 +36,29 @@ public class BlocoGenerico : MonoBehaviour
             destruido = true;
             destruirBloco();
         }
+        else
+            aoTomarDano();
 
         return destruido;
     }
-   
-    public void destruirBloco()
+
+    public Boolean estaVivo()
     {
+        return vidaAtual > 0 && bc.enabled;
+    }
+
+    public virtual void aoTomarDano()
+    {
+
+    }
+   
+    public virtual void destruirBloco()
+    {
+        bc.enabled = false;
         Destroy(gameObject);
     }
 
-    public void serColetado()
+    public virtual void serColetado()
     {
         destruirBloco();
     }
@@ -66,4 +84,22 @@ public class BlocoGenerico : MonoBehaviour
     
     #endregion
 
+
+    public void ouvirResumoInteracaoFerramenta(Action<ResumoInteracaoBlocoFerramenta> acao)
+    {
+        UsarFerramentas usoFerramenta = FindObjectOfType<UsarFerramentas>();
+        if (usoFerramenta != null)
+        {
+            usoFerramenta.EventoAposRealizarUsoFerramenta += acao;
+        }
+    }
+
+    public void pararDeOuvirInteracaoFerramenta(Action<ResumoInteracaoBlocoFerramenta> acao)
+    {
+        UsarFerramentas usoFerramenta = FindObjectOfType<UsarFerramentas>();
+        if (usoFerramenta != null)
+        {
+            usoFerramenta.EventoAposRealizarUsoFerramenta -= acao;
+        }
+    }
 }
