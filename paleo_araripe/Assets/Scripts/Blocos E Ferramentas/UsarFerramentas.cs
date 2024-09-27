@@ -5,6 +5,7 @@ using Utilidades;
 
 public class UsarFerramentas : MonoBehaviour
 {
+    [SerializeField] private Boolean ativado = true;
     [SerializeField] private FerramentaSO ferramentaEquipada;
     [SerializeField] private GameObject blocoAlvoRaycast;
     [Range(15f, 30f)][SerializeField] private float distanciaMaximaColisaoRaycast = 20f;
@@ -45,7 +46,7 @@ public class UsarFerramentas : MonoBehaviour
 
     public void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (ativado && Input.GetMouseButtonDown(0))
             utilizarFerramentaEquipada();
     }
 

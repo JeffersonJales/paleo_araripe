@@ -7,9 +7,10 @@ public class BlocoGenerico : MonoBehaviour
 
     private int vidaAtual = 1;
     private Boolean emFoco = false;
+    private Boolean emFocoCristal = false;
+    
     protected MeshRenderer mr = null;
     protected BoxCollider bc = null;
-
 
     // Getters 
     public BlocoSO BlocoSO => blocoSO; 
@@ -19,10 +20,10 @@ public class BlocoGenerico : MonoBehaviour
     {
         vidaAtual = BlocoSO.Vida;
 
+        bc = GetComponent<BoxCollider>();
+    
         mr = GetComponent<MeshRenderer>();
         mr.material = blocoSO.CorMaterialNaoDestacado;
-
-        bc = GetComponent<BoxCollider>();
     }
 
 
@@ -34,7 +35,7 @@ public class BlocoGenerico : MonoBehaviour
         if (vidaAtual <= 0)
         {
             destruido = true;
-            destruirBloco();
+            aoSerDestruido();
         }
         else
             aoTomarDano();
@@ -52,17 +53,17 @@ public class BlocoGenerico : MonoBehaviour
 
     }
    
-    public virtual void destruirBloco()
+    public virtual void aoSerDestruido()
     {
         bc.enabled = false;
         Destroy(gameObject);
     }
 
-    public virtual void serColetado()
+    public virtual void aoSerColetado()
     {
-        destruirBloco();
+        aoSerDestruido();
     }
-
+    
 
     #region Feedback Bloco é Alvo da ferramenta
 
@@ -81,25 +82,20 @@ public class BlocoGenerico : MonoBehaviour
 
         mr.material = blocoSO.CorMaterialNaoDestacado;
     }
-    
+
     #endregion
 
+    #region Feedback Bloco alvo do cristal
 
-    public void ouvirResumoInteracaoFerramenta(Action<ResumoInteracaoBlocoFerramenta> acao)
+    public void casoSejaFocoDoCristal()
     {
-        UsarFerramentas usoFerramenta = FindObjectOfType<UsarFerramentas>();
-        if (usoFerramenta != null)
-        {
-            usoFerramenta.EventoAposRealizarUsoFerramenta += acao;
-        }
+        emFocoCristal = true;
     }
 
-    public void pararDeOuvirInteracaoFerramenta(Action<ResumoInteracaoBlocoFerramenta> acao)
+    public void casoDeixeDeSerFocoDoCristal()
     {
-        UsarFerramentas usoFerramenta = FindObjectOfType<UsarFerramentas>();
-        if (usoFerramenta != null)
-        {
-            usoFerramenta.EventoAposRealizarUsoFerramenta -= acao;
-        }
+        emFocoCristal = false;
     }
+
+    #endregion
 }

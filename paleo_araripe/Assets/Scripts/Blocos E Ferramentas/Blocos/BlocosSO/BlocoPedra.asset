@@ -13,10 +13,12 @@ MonoBehaviour:
   m_Name: BlocoPedra
   m_EditorClassIdentifier: 
   vida: 1
+  sofreDanoQuandoCuboCaiNele: 0
   dureza: 3
   tipo: 0
-  modelo: {fileID: 0}
+  identificador: 11
   feedbackAoDestruir: {fileID: 0}
+  feedbackAoColetar: {fileID: 0}
   corMaterialDestacado: {fileID: 2100000, guid: 984119aebf94b6443baa873b7401a6ac,
     type: 2}
   corMaterialNaoDestacado: {fileID: 2100000, guid: dc38059890a73ab439f2b2dc99793534,

@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Utilidades
@@ -42,6 +43,11 @@ namespace Utilidades
             return Physics.OverlapBox(posicao, metadeTamanhoCubo, rotacao, obterMascaraBlocoArqueologico());
         }
 
+        public Collider[] colisaoCubica(Vector3 posicao, Vector3 metadeTamanhoCubo)
+        {
+            return colisaoCubica(posicao, metadeTamanhoCubo, Quaternion.identity);
+        }
+
         public Collider[] colisaoPonto(Vector3 ponto)
         {
             return colisaoCubica(ponto, Vector3.zero, Quaternion.identity);
@@ -50,6 +56,22 @@ namespace Utilidades
         public Collider pegarPrimeiroCollider(Collider[] collider)
         {
             return collider.Length > 0 ? collider[0] : null;
+        }
+
+        public GameObject pegarPrimeiroObjeto(Collider[] collider)
+        {
+            return collider.Length > 0 ? collider[0].gameObject : null;
+        }
+
+        public List<GameObject> transformarCollidersEmGameObjects(Collider[] collider)
+        {
+            List<GameObject> objs = new List<GameObject>(); 
+            foreach(var i in collider)
+            {
+                objs.Add(i.gameObject);
+            }
+
+            return objs;
         }
 
         public Boolean checarSeEspacoEstaOcupado(Vector3 ponto)

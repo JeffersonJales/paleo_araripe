@@ -81,10 +81,11 @@ public class InteracaoBlocoFerramenta {
     {
         if (bloco.tomarDano(ferramenta.Dano)) {
             resumoGeral.BlocosDestruidos.Add(bloco.gameObject);
-            return NaturezaBlocoFerramenta.ResultadoInteracao.DESTRUIDO;
+
+            return ResultadoInteracao.DESTRUIDO;
         }
         else
-            return NaturezaBlocoFerramenta.ResultadoInteracao.DANO;
+            return ResultadoInteracao.DANO;
     }
 
     private ResultadoInteracao blocoColetado(FerramentaSO ferramenta, BlocoGenerico bloco)
@@ -108,7 +109,7 @@ public class InteracaoBlocoFerramenta {
         }
         
         
-        bloco.serColetado();
+        bloco.aoSerColetado();
         return ResultadoInteracao.COLETADO;
     }
 

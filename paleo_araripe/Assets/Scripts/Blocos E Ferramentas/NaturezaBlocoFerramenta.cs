@@ -22,6 +22,26 @@ public class NaturezaBlocoFerramenta
         EXPLOSIVO,
     }
 
+    public enum IdentificadorBloco
+    {
+        AMBAR,
+        AREIA,
+        ARGILA,
+        CALCARIO,
+        CRISTAL, 
+        INSPIRACAO,
+        EXPLOSIVO,
+        FANTASMA,
+        FERRO,
+        FOSSIL,
+        OBSIDIANO,
+        PEDRA,
+        TERRA,
+        VIDRO,
+        RAIZ,
+        DESORGANIZADOR,
+    }
+
     public enum TipoInteracao
     {
         SONDAR,
@@ -48,6 +68,7 @@ public class NaturezaBlocoFerramenta
         CAMERA,
         EXPLOSAO,
         EXPLOSIVO,
+        RAIZ,
     }
 
     public static Boolean interacaoPodeResultarNaDestruicaoDoBloco(ResultadoInteracao resultado) 
@@ -66,6 +87,7 @@ public class NaturezaBlocoFerramenta
             case TipoColisaoFerramenta.CAMERA:      return new ColisaoFerramentaCamera().obterBlocos(blocoFoco, normal);
             case TipoColisaoFerramenta.EXPLOSAO:    return new ColisaoFerramentaExplosao().obterBlocos(blocoFoco, normal);
             case TipoColisaoFerramenta.EXPLOSIVO:   return new ColisaoFerramentaExplosivo().obterBlocos(blocoFoco, normal);
+            case TipoColisaoFerramenta.RAIZ:        return new ColisaoFerramentaRaiz().obterBlocos(blocoFoco, normal);
                    
             case TipoColisaoFerramenta.NULO:
             default:
@@ -85,4 +107,5 @@ public class NaturezaBlocoFerramenta
 
         return blocosGenericos;
     }
+
 }

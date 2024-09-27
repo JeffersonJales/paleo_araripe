@@ -11,22 +11,21 @@ public class BlocoFantasma : BlocoGenerico
 
     public void OnDestroy()
     {
-        pararDeOuvirInteracaoFerramenta(aoUtilizarFerramenta);
+        UtilitariosGamePlay.pararOuvirResumoInteracaoFerramentaBloco(aoUtilizarFerramenta);
     }
 
 
-    public override void destruirBloco()
+    public override void aoSerDestruido()
     {
         bc.enabled = false;
         mr.enabled = false;
         turnosDesativados = 0;
-        ouvirResumoInteracaoFerramenta(aoUtilizarFerramenta);
-
+        UtilitariosGamePlay.ouvirResumoInteracaoFerramentaBloco(aoUtilizarFerramenta);
     }
 
-    public override void serColetado()
+    public override void aoSerColetado()
     {
-        destruirBloco();
+        aoSerDestruido();
     }
 
     private void reativarBloco()
@@ -38,7 +37,7 @@ public class BlocoFantasma : BlocoGenerico
         {
             mr.enabled = true;
             bc.enabled = true;
-            pararDeOuvirInteracaoFerramenta(aoUtilizarFerramenta);
+            UtilitariosGamePlay.pararOuvirResumoInteracaoFerramentaBloco(aoUtilizarFerramenta);
         }
 
     }

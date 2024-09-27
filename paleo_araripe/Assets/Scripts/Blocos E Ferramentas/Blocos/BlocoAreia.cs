@@ -1,6 +1,8 @@
+using log4net.Util;
 using System;
 using UnityEngine;
 using Utilidades;
+using static Codice.Client.Commands.WkTree.WorkspaceTreeNode;
 
 public class BlocoAreia : BlocoGenerico
 {
@@ -28,19 +30,43 @@ public class BlocoAreia : BlocoGenerico
         if (jaEstaNoChao || checarBlocoAbaixo())
             return false;
 
-        Ray ray = new Ray(transform.position, Vector3.down);
-        RaycastHit hit;
-        if (Physics.Raycast(ray, out hit, tamanhoRaycastPraBaixo, col.obterMascaraBlocoArqueologico()))
-        {
-            transform.position = hit.collider.gameObject.transform.position + Vector3.up;
-        }
-        else {
-            if (Physics.Raycast(ray, out hit, tamanhoRaycastPraBaixo, col.obterMascaraChao()))
-                transform.position = new Vector3(transform.position.x, hit.collider.gameObject.transform.position.y + 0.5f, transform.position.z);
-
-            jaEstaNoChao = true;
-        }
+        if (!verificarBlocoAbaixo())
+            cairAteChao();
      
         return true;
+    }
+
+    private Boolean verificarBlocoAbaixo()
+    {
+        Ray ray = new Ray(transform.position, Vector3.down);
+        RaycastHit hit;
+
+        if (Physics.Raycast(ray, out hit, tamanhoRaycastPraBaixo, col.obterMascaraBlocoArqueologico())){
+            var blocInfo = hit.collider.gameObject.GetComponent<BlocoGenerico>();
+            if (blocInfo.BlocoSO.SofreDanoQuandoCuboCaiNele && blocInfo.tomarDano(1))
+            {
+                return verificarBlocoAbaixo();
+            }
+            else 
+            { 
+                transform.position = hit.collider.gameObject.transform.position + Vector3.up;
+            }
+
+            return true;
+        }
+
+
+        return false;
+    }
+
+    private void cairAteChao()
+    {
+        Ray ray = new Ray(transform.position, Vector3.down);
+        RaycastHit hit;
+
+        if (Physics.Raycast(ray, out hit, tamanhoRaycastPraBaixo, col.obterMascaraChao()))
+            transform.position = new Vector3(transform.position.x, hit.collider.gameObject.transform.position.y + 0.5f, transform.position.z);
+
+        jaEstaNoChao = true;
     }
 }

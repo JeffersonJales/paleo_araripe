@@ -13,10 +13,12 @@ MonoBehaviour:
   m_Name: BlocoAreia
   m_EditorClassIdentifier: 
   vida: 1
+  sofreDanoQuandoCuboCaiNele: 0
   dureza: 2
   tipo: 0
-  modelo: {fileID: 0}
+  identificador: 1
   feedbackAoDestruir: {fileID: 0}
+  feedbackAoColetar: {fileID: 0}
   corMaterialDestacado: {fileID: 2100000, guid: 165e2992c97765d4bb8de1537e989556,
     type: 2}
   corMaterialNaoDestacado: {fileID: 2100000, guid: aa2af815b171e0541a6c64625c744c27,

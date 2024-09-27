@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b660ac561dbf46a42a0b2bdfa04eb5b5, type: 3}
-  m_Name: BlocoFerro
+  m_Name: BlocoRaiz
   m_EditorClassIdentifier: 
   vida: 1
   sofreDanoQuandoCuboCaiNele: 0
-  dureza: 4
-  tipo: 0
-  identificador: 8
+  dureza: 1
+  tipo: 4
+  identificador: 14
   feedbackAoDestruir: {fileID: 0}
   feedbackAoColetar: {fileID: 0}
-  corMaterialDestacado: {fileID: 2100000, guid: 4e4d89457cc87754f95de63b162b7ffb,
+  corMaterialDestacado: {fileID: 2100000, guid: 078b4fb3e1e6689479f7faa33aa2a0ff,
     type: 2}
-  corMaterialNaoDestacado: {fileID: 2100000, guid: 98b1e51f882c9974ca03a7d63606c520,
+  corMaterialNaoDestacado: {fileID: 2100000, guid: 91d9213320ebab04596b8be80bd38e2a,
     type: 2}

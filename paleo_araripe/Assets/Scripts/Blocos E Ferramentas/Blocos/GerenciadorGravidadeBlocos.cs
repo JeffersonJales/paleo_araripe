@@ -2,21 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ComportamentoBlocos : MonoBehaviour
+public class GerenciadorGravidadeBlocos : MonoBehaviour
 {
     void Start()
     {
-        UsarFerramentas usarFerramentas = FindObjectOfType<UsarFerramentas>();
-        if (usarFerramentas != null)
-            usarFerramentas.EventoAposRealizarUsoFerramenta += atualizarPosicaoBlocosAposInteracao;
+        UtilitariosGamePlay.ouvirResumoInteracaoFerramentaBloco(atualizarPosicaoBlocosAposInteracao);
     }
+
 
     private void atualizarPosicaoBlocosAposInteracao(ResumoInteracaoBlocoFerramenta resumo)
     {
         if (resumo.AlgumBlocoDestruidoOuColeado)
            StartCoroutine(ExecutarAposSegundos(0.1f));
-    }
 
+    }   
+    
+    // Bloco cair - Areia
     private void comportamentoBlocosAreia()
     {
         Debug.Log("Tentar derrubar blocos");
@@ -51,5 +52,4 @@ public class ComportamentoBlocos : MonoBehaviour
         yield return new WaitForSeconds(segundos);
         comportamentoBlocosAreia();
     }
-
 }

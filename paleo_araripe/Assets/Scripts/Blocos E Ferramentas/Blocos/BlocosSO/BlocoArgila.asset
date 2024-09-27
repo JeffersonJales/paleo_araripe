@@ -13,8 +13,10 @@ MonoBehaviour:
   m_Name: BlocoArgila
   m_EditorClassIdentifier: 
   vida: 3
+  sofreDanoQuandoCuboCaiNele: 0
   dureza: 1
   tipo: 0
+  identificador: 2
   feedbackAoDestruir: {fileID: 0}
   feedbackAoColetar: {fileID: 0}
   corMaterialDestacado: {fileID: 2100000, guid: 078b4fb3e1e6689479f7faa33aa2a0ff,

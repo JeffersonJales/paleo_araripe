@@ -13,10 +13,12 @@ MonoBehaviour:
   m_Name: BlocoObsidiano
   m_EditorClassIdentifier: 
   vida: 1
+  sofreDanoQuandoCuboCaiNele: 0
   dureza: 1
   tipo: 0
-  modelo: {fileID: 0}
+  identificador: 10
   feedbackAoDestruir: {fileID: 0}
+  feedbackAoColetar: {fileID: 0}
   corMaterialDestacado: {fileID: 2100000, guid: 078b4fb3e1e6689479f7faa33aa2a0ff,
     type: 2}
   corMaterialNaoDestacado: {fileID: 2100000, guid: 91d9213320ebab04596b8be80bd38e2a,

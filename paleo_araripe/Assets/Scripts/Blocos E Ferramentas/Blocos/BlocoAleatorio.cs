@@ -15,8 +15,7 @@ public class BlocoAleatorio : BlocoGenerico
 
     public void Start()
     {
-        ouvirResumoInteracaoFerramenta(modificarBloco);
-
+        UtilitariosGamePlay.ouvirResumoInteracaoFerramentaBloco(modificarBloco);
         if (blocosPossiveis.Count > 0)
             instanciarBloco();
         else
@@ -25,7 +24,7 @@ public class BlocoAleatorio : BlocoGenerico
 
     public void OnDestroy()
     {
-        pararDeOuvirInteracaoFerramenta(modificarBloco);
+        UtilitariosGamePlay.pararOuvirResumoInteracaoFerramentaBloco(modificarBloco);
         if(blocoAtual != null)
             Destroy(blocoAtual);
     }

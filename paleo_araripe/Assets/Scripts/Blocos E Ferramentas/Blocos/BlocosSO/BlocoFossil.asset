@@ -13,10 +13,12 @@ MonoBehaviour:
   m_Name: BlocoFossil
   m_EditorClassIdentifier: 
   vida: 2
+  sofreDanoQuandoCuboCaiNele: 1
   dureza: 1
   tipo: 2
-  modelo: {fileID: 0}
+  identificador: 9
   feedbackAoDestruir: {fileID: 0}
+  feedbackAoColetar: {fileID: 0}
   corMaterialDestacado: {fileID: 2100000, guid: 1a8695df0394492478ec961de9b9d2fb,
     type: 2}
   corMaterialNaoDestacado: {fileID: 2100000, guid: e77d97edfe0a38c4c8a98ad987911c22,
