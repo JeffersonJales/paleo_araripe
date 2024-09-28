@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5455731207896064906}
   - component: {fileID: 5080544676809430932}
   m_Layer: 6
-  m_Name: BlocoAmbar 1
+  m_Name: BlocoObsidiano
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -118,5 +118,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9adb1d2cd6e600043883f8d9e10ba5f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vidaAtual: 1
-  blocoSO: {fileID: 11400000, guid: 50157d6eca47418439e1adee1b803e80, type: 2}
+  blocoSO: {fileID: 11400000, guid: 1a1efc0480aa40e49b57abfbf69de412, type: 2}

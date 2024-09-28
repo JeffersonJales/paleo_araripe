@@ -13,10 +13,12 @@ MonoBehaviour:
   m_Name: BlocoFerro
   m_EditorClassIdentifier: 
   vida: 1
+  sofreDanoQuandoCuboCaiNele: 0
   dureza: 4
   tipo: 0
-  modelo: {fileID: 0}
+  identificador: 8
   feedbackAoDestruir: {fileID: 0}
+  feedbackAoColetar: {fileID: 0}
   corMaterialDestacado: {fileID: 2100000, guid: 4e4d89457cc87754f95de63b162b7ffb,
     type: 2}
   corMaterialNaoDestacado: {fileID: 2100000, guid: 98b1e51f882c9974ca03a7d63606c520,

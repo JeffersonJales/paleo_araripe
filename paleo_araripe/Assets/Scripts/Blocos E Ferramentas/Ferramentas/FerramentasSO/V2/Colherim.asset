@@ -22,9 +22,14 @@ MonoBehaviour:
   - {fileID: 11400000, guid: abeb310aa7f7cc74f812b3a3025c7b0c, type: 2}
   - {fileID: 11400000, guid: 639cd407abfca5b43a70d355e908d372, type: 2}
   - {fileID: 11400000, guid: 7b6cede605a891f46a2fdd6580d418de, type: 2}
+  - {fileID: 11400000, guid: 15c977b1fe45ea7428a04dab50f190b2, type: 2}
+  - {fileID: 11400000, guid: 2de183769ed2d7c42a95d53e2466b8fd, type: 2}
+  - {fileID: 11400000, guid: c5cd46b27d7ef3942b43999df795fdb7, type: 2}
+  - {fileID: 11400000, guid: aca5a73eadd90904bb191cd0db200ff2, type: 2}
+  - {fileID: 11400000, guid: 2dfdfd94342d83046978870ed03c2113, type: 2}
+  - {fileID: 11400000, guid: 6eb1d8badaed1b64288054020a896ae7, type: 2}
+  - {fileID: 11400000, guid: 3ada4565231bc3b41bbe5db982ccbc4f, type: 2}
+  - {fileID: 11400000, guid: b5966e5e886a8964c9858026f124ddf6, type: 2}
   consegueColetar: []
   tipoColisao: 1
   sprite: {fileID: 920607830, guid: 8931e628dbfb1c349b2b6f3c78a757c0, type: 3}
-  areaEfeito: {x: 1, y: 1, z: 1}
-  quebraAte: 1
-  interacao: 1

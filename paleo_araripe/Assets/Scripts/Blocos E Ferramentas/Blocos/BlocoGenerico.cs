@@ -6,45 +6,68 @@ public class BlocoGenerico : MonoBehaviour
     [SerializeField] private BlocoSO blocoSO;
 
     private int vidaAtual = 1;
-    private Boolean emFoco = false;
-    private MeshRenderer mr = null;
+    private bool emFoco = false;
+    private bool emFocoCristal = false;
+    
+    protected MeshRenderer mr = null;
+    protected BoxCollider bc = null;
 
     // Getters 
     public BlocoSO BlocoSO => blocoSO; 
 
 
-    public void Awake()
+    public virtual void Awake()
     {
         vidaAtual = BlocoSO.Vida;
+
+        bc = GetComponent<BoxCollider>();
+    
         mr = GetComponent<MeshRenderer>();
         mr.material = blocoSO.CorMaterialNaoDestacado;
     }
 
-
-    public Boolean tomarDano(int qtdDano)
+    public void participarColisao(bool estado)
     {
-        Boolean destruido = false;
+        bc.enabled = estado; 
+    }
+
+    public bool tomarDano(int qtdDano)
+    {
+        bool destruido = false;
         vidaAtual -= qtdDano;
 
         if (vidaAtual <= 0)
         {
             destruido = true;
-            destruirBloco();
+            aoSerDestruido();
         }
+        else
+            aoTomarDano();
 
         return destruido;
     }
-   
-    public void destruirBloco()
+
+    public bool estaVivo()
     {
+        return vidaAtual > 0 && bc.enabled;
+    }
+
+    public virtual void aoTomarDano()
+    {
+
+    }
+   
+    public virtual void aoSerDestruido()
+    {
+        bc.enabled = false;
         Destroy(gameObject);
     }
 
-    public void serColetado()
+    public virtual void aoSerColetado()
     {
-        destruirBloco();
+        aoSerDestruido();
     }
-
+    
 
     #region Feedback Bloco é Alvo da ferramenta
 
@@ -63,7 +86,20 @@ public class BlocoGenerico : MonoBehaviour
 
         mr.material = blocoSO.CorMaterialNaoDestacado;
     }
-    
+
     #endregion
 
+    #region Feedback Bloco alvo do cristal
+
+    public void casoSejaFocoDoCristal()
+    {
+        emFocoCristal = true;
+    }
+
+    public void casoDeixeDeSerFocoDoCristal()
+    {
+        emFocoCristal = false;
+    }
+
+    #endregion
 }

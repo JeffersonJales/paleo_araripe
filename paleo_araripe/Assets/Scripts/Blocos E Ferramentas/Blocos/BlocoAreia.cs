@@ -1,12 +1,12 @@
+using log4net.Util;
 using System;
 using UnityEngine;
 using Utilidades;
 
 public class BlocoAreia : BlocoGenerico
 {
-    private float tamanhoRaycastPraBaixo = 20f;
     private ColisoesBlocosChao col = new ColisoesBlocosChao();
-    private Boolean jaEstaNoChao = false;
+    private bool jaEstaNoChao = false;
     
     // Getters
     public bool JaEstaNoChao => jaEstaNoChao; 
@@ -18,29 +18,28 @@ public class BlocoAreia : BlocoGenerico
     }
 
     
-    private Boolean checarBlocoAbaixo()
+    private bool checarBlocoAbaixo()
     {
         return col.colisaoPonto(transform.position + Vector3.down).Length > 0;
     }
 
-    public Boolean cair()
+    public bool cair()
     {
         if (jaEstaNoChao || checarBlocoAbaixo())
             return false;
 
-        Ray ray = new Ray(transform.position, Vector3.down);
-        RaycastHit hit;
-        if (Physics.Raycast(ray, out hit, tamanhoRaycastPraBaixo, col.obterMascaraBlocoArqueologico()))
-        {
-            transform.position = hit.collider.gameObject.transform.position + Vector3.up;
+        if (col.checarBlocoAbaixo(gameObject)) 
+        { 
+            col.cairSobOutroCubo(gameObject, true);
         }
-        else {
-            if (Physics.Raycast(ray, out hit, tamanhoRaycastPraBaixo, col.obterMascaraChao()))
-                transform.position = new Vector3(transform.position.x, hit.collider.gameObject.transform.position.y + 0.5f, transform.position.z);
-
+        else 
+        { 
+            col.posicionarBlocoAcimaDoChao(gameObject);
             jaEstaNoChao = true;
         }
-     
+
+
+
         return true;
     }
 }

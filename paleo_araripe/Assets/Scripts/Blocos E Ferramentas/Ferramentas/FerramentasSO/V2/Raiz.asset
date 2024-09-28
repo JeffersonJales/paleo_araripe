@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92f59a82866084240847c7b48911b618, type: 3}
+  m_Name: Raiz
+  m_EditorClassIdentifier: 
+  dano: 1
+  inspiracao: 1
+  tempoGastoAposUso: 1
+  contagemRegressivaParaReuso: 0
+  quantidadeLimiteDeUsos: 0
+  daDanoEm:
+  - {fileID: 11400000, guid: 7b6cede605a891f46a2fdd6580d418de, type: 2}
+  - {fileID: 11400000, guid: 1a1efc0480aa40e49b57abfbf69de412, type: 2}
+  - {fileID: 11400000, guid: 639cd407abfca5b43a70d355e908d372, type: 2}
+  - {fileID: 11400000, guid: 2dfdfd94342d83046978870ed03c2113, type: 2}
+  consegueColetar: []
+  tipoColisao: 8
+  sprite: {fileID: 0}
