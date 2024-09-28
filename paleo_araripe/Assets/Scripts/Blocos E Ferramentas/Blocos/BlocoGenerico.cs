@@ -6,8 +6,8 @@ public class BlocoGenerico : MonoBehaviour
     [SerializeField] private BlocoSO blocoSO;
 
     private int vidaAtual = 1;
-    private Boolean emFoco = false;
-    private Boolean emFocoCristal = false;
+    private bool emFoco = false;
+    private bool emFocoCristal = false;
     
     protected MeshRenderer mr = null;
     protected BoxCollider bc = null;
@@ -26,10 +26,14 @@ public class BlocoGenerico : MonoBehaviour
         mr.material = blocoSO.CorMaterialNaoDestacado;
     }
 
-
-    public Boolean tomarDano(int qtdDano)
+    public void participarColisao(bool estado)
     {
-        Boolean destruido = false;
+        bc.enabled = estado; 
+    }
+
+    public bool tomarDano(int qtdDano)
+    {
+        bool destruido = false;
         vidaAtual -= qtdDano;
 
         if (vidaAtual <= 0)
@@ -43,7 +47,7 @@ public class BlocoGenerico : MonoBehaviour
         return destruido;
     }
 
-    public Boolean estaVivo()
+    public bool estaVivo()
     {
         return vidaAtual > 0 && bc.enabled;
     }

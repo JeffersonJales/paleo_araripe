@@ -6,7 +6,9 @@ public class UtilitariosGamePlay : MonoBehaviour
 {
 
     public static readonly float UNIDADE_TAMANHO_CUBO = 1;
-    
+    public static readonly float UNIDADE_METADE_TAMANHO_CUBO = 0.5f;
+
+
     void Awake()
     {
         DontDestroyOnLoad(this);

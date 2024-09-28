@@ -40,6 +40,9 @@ public class NaturezaBlocoFerramenta
         VIDRO,
         RAIZ,
         DESORGANIZADOR,
+        EMPURRADOR,
+        PUXADOR,
+        GRAVIDADE,
     }
 
     public enum TipoInteracao

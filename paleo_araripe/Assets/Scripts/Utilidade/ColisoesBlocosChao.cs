@@ -1,6 +1,8 @@
+using log4net.Util;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 namespace Utilidades
 {
@@ -12,6 +14,7 @@ namespace Utilidades
         private const int MASCARA_NAO_ENCONTRADA = -1;
         private int mascaraBlocoArqueologico = MASCARA_NAO_ENCONTRADA;
         private int mascaraChao = MASCARA_NAO_ENCONTRADA;
+        private float tamanhoMinimoRaio = 20f;
 
         #region Máscaras de Colisão
 
@@ -37,6 +40,18 @@ namespace Utilidades
         }
 
         #endregion
+
+
+        public GameObject obterBlocoPorRaycast(Vector3 posicao, Vector3 direcao)
+        {
+            Ray ray = new Ray(posicao, direcao);
+            RaycastHit hit;
+
+            if (Physics.Raycast(ray, out hit, UtilitariosGamePlay.UNIDADE_TAMANHO_CUBO * tamanhoMinimoRaio, obterMascaraBlocoArqueologico()))
+                return hit.collider.gameObject;
+
+            return null;
+        }
 
         public Collider[] colisaoCubica(Vector3 posicao, Vector3 metadeTamanhoCubo, Quaternion rotacao)
         {
@@ -88,6 +103,50 @@ namespace Utilidades
         {
             Collider[] col = Physics.OverlapBox(obj.gameObject.transform.position + (obj.gameObject.transform.localScale / 2), new Vector3(0.1f, 0.1f, 0.1f), Quaternion.identity, obterMascaraChao());
             return col.Length > 0;
+        }
+
+        public Boolean checarBlocoAbaixo(GameObject obj)
+        {
+            Ray ray = new Ray(obj.transform.position, Vector3.down);
+            return Physics.Raycast(ray, tamanhoMinimoRaio, obterMascaraBlocoArqueologico());
+        }
+
+        public void posicionarBlocoAcimaDoChao(GameObject obj) {
+            Ray ray = new Ray(obj.transform.position, Vector3.down);
+            RaycastHit hit;
+
+            if (Physics.Raycast(ray, out hit, tamanhoMinimoRaio, obterMascaraChao()))
+                obj.transform.position = new Vector3(obj.transform.position.x, hit.collider.gameObject.transform.position.y + (UtilitariosGamePlay.UNIDADE_TAMANHO_CUBO / 2), obj.transform.position.z);
+        }
+        
+        public void posicionarBlocoAbaixoDoChao(GameObject obj) {
+            Ray ray = new Ray(obj.transform.position, Vector3.down);
+            RaycastHit hit;
+
+            if (Physics.Raycast(ray, out hit, tamanhoMinimoRaio, obterMascaraChao()))
+                obj.transform.position = new Vector3(obj.transform.position.x, hit.collider.gameObject.transform.position.y - (UtilitariosGamePlay.UNIDADE_TAMANHO_CUBO / 2), obj.transform.position.z);
+
+        }
+    
+        public void cairSobOutroCubo(GameObject obj, Boolean aplicarDano)
+        {
+            Ray ray = new Ray(obj.transform.position, Vector3.down);
+            RaycastHit hit;
+
+            if (Physics.Raycast(ray, out hit, tamanhoMinimoRaio, obterMascaraBlocoArqueologico()))
+            {
+                var blocInfo = hit.collider.gameObject.GetComponent<BlocoGenerico>();
+                if (aplicarDano && blocInfo.BlocoSO.SofreDanoQuandoCuboCaiNele && blocInfo.tomarDano(1))
+                {
+                    cairSobOutroCubo(obj, aplicarDano);
+                }
+                else
+                {
+                    obj.transform.position = hit.collider.gameObject.transform.position + Vector3.up;
+                }
+            }
+            else
+                posicionarBlocoAcimaDoChao(obj);
         }
     }
 }
