@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 733089e30fdf43d4c9667fe90cc252c7
+guid: 08c0c8e56f475a54c8743c9e86d589fc
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -34,16 +34,16 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
-    wrapU: 0
-    wrapV: 0
+    wrapU: 1
+    wrapV: 1
     wrapW: 0
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -95,18 +95,107 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: ToolsTexture._0
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 1693
+        width: 327
+        height: 306
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 895dbc846fc69b242af41c97d54e6d1a
+      internalID: 354023705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ToolsTexture._1
+      rect:
+        serializedVersion: 2
+        x: 451
+        y: 1681
+        width: 402
+        height: 299
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae8a51aae4ed971429f56314853cae9a
+      internalID: 1753730830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ToolsTexture._2
+      rect:
+        serializedVersion: 2
+        x: 906
+        y: 1671
+        width: 381
+        height: 334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fcfc4f76b772d9342823197d45d836d0
+      internalID: 687392902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ToolsTexture._3
+      rect:
+        serializedVersion: 2
+        x: 1332
+        y: 1647
+        width: 449
+        height: 361
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 176ef48af9751e747bedc69137dd49e5
+      internalID: 1548123354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: a4966b5a7a2013a44a6735859d034879
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      ToolsTexture._0: 354023705
+      ToolsTexture._1: 1753730830
+      ToolsTexture._2: 687392902
+      ToolsTexture._3: 1548123354
+      ToolsTexture._4: 1766337436
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
