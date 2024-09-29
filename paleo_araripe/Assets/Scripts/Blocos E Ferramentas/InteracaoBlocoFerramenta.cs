@@ -1,12 +1,12 @@
+using System;
 using System.Collections.Generic;
-using System.Numerics;
 using static NaturezaBlocoFerramenta;
 
 public class InteracaoBlocoFerramenta {
 
     private ResumoInteracaoBlocoFerramenta resumoGeral = new ResumoInteracaoBlocoFerramenta();
 
-    public ResumoInteracaoBlocoFerramenta interacaoFerramentaComBloco(FerramentaSO ferramenta, List<BlocoGenerico> blocosGenericos)
+    public ResumoInteracaoBlocoFerramenta interacaoFerramentaComBloco(FerramentaSO ferramenta, List<BlocoGenerico> blocosGenericos, bool podeAplicarCongelamento)
     {
         foreach (BlocoGenerico bloco in blocosGenericos)
         {
@@ -15,11 +15,11 @@ public class InteracaoBlocoFerramenta {
 
             if (ferramenta.DaDanoEm.Contains(blocoSO))
             {
-                resumoGeral.TipoInteracaoBloco.Add(blocoTomaDano(ferramenta, bloco));
+                resumoGeral.TipoInteracaoBloco.Add(blocoTomaDano(ferramenta, bloco, podeAplicarCongelamento));
             }
             else if (ferramenta.ConsegueColetar.Contains(blocoSO))
             {
-                resumoGeral.TipoInteracaoBloco.Add(blocoColetado(ferramenta, bloco));
+                resumoGeral.TipoInteracaoBloco.Add(blocoColetado(ferramenta, bloco, podeAplicarCongelamento));
             }
             else
             {
@@ -30,21 +30,15 @@ public class InteracaoBlocoFerramenta {
         resumoGeral.FerramentaUsada = ferramenta;
 
         resumoGeral.AlgumBlocoDestruidoOuColeado =
-            resumoGeral.QuantidadeFossilDestruido > 0 ||
-            resumoGeral.QuantidadeFossilColetado > 0 ||
-            resumoGeral.QuantidadeAmbarColetado > 0 ||
+            resumoGeral.QuantidadeFossilDestruido > 0   ||
+            resumoGeral.QuantidadeFossilColetado > 0    ||
+            resumoGeral.QuantidadeAmbarColetado > 0     ||
             resumoGeral.TipoInteracaoBloco.Contains(ResultadoInteracao.DESTRUIDO);
 
         return resumoGeral;
     }
-
-    public ResumoInteracaoBlocoFerramenta interacaoFerramentaComBloco(FerramentaSO ferramenta, List<BlocoGenerico> blocosGenericos, ResumoInteracaoBlocoFerramenta resumo)
-    {
-        resumoGeral = resumo;
-        return interacaoFerramentaComBloco(ferramenta, blocosGenericos);
-    }
-
-    private ResultadoInteracao blocoTomaDano(FerramentaSO ferramenta, BlocoGenerico bloco)
+    
+    private ResultadoInteracao blocoTomaDano(FerramentaSO ferramenta, BlocoGenerico bloco, bool podeAplicarCongelamento)
     {
         ResultadoInteracao resultado;
 
@@ -72,6 +66,13 @@ public class InteracaoBlocoFerramenta {
 
             case TipoBloco.EXPLOSIVO:
                 return tentarExplodir(realizarDanoNoBloco(ferramenta, bloco), bloco);
+
+            case TipoBloco.GELO:
+                if (podeAplicarCongelamento)
+                    resumoGeral.FerramentaCongelada = true;
+
+                return realizarDanoNoBloco(ferramenta, bloco);
+
             default:
                 return ResultadoInteracao.NULO;
         }
@@ -88,7 +89,7 @@ public class InteracaoBlocoFerramenta {
             return ResultadoInteracao.DANO;
     }
 
-    private ResultadoInteracao blocoColetado(FerramentaSO ferramenta, BlocoGenerico bloco)
+    private ResultadoInteracao blocoColetado(FerramentaSO ferramenta, BlocoGenerico bloco, bool podeAplicarCongelamento)
     {
         switch (bloco.BlocoSO.Tipo)
         {
@@ -103,6 +104,12 @@ public class InteracaoBlocoFerramenta {
             case TipoBloco.INSPIRACAO:
                 receberInspiracao(ResultadoInteracao.COLETADO, bloco);
                 break;
+
+            case TipoBloco.GELO:
+                if (podeAplicarCongelamento)
+                    resumoGeral.FerramentaCongelada = true;
+
+                return ResultadoInteracao.NULO;
 
             default:
                 return ResultadoInteracao.NULO;
@@ -127,7 +134,7 @@ public class InteracaoBlocoFerramenta {
         if (resultadoDano.Equals(ResultadoInteracao.DESTRUIDO)) {
             var blocoExplosivo = (BlocoExplosivo)bloco;
             var listaBlocos = obterListaBlocosGenericosPorFerramenta(blocoExplosivo.FerramentaExplosiva, blocoExplosivo.gameObject, UnityEngine.Vector3.up);
-            interacaoFerramentaComBloco(blocoExplosivo.FerramentaExplosiva, listaBlocos);
+            interacaoFerramentaComBloco(blocoExplosivo.FerramentaExplosiva, listaBlocos, false);
         }
 
         return resultadoDano;

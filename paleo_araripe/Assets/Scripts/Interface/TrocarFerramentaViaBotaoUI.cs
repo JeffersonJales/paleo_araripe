@@ -9,7 +9,7 @@ public class TrocarFerramentaViaBotaoUI : MonoBehaviour
     [SerializeField] private TextMeshProUGUI textMeshContadorTempo;
     [SerializeField] private TextMeshProUGUI textMeshContadorJogadas;
     [SerializeField] private BlackBoardInformacoesPartida quadroNegroInformacaoes;
-    [SerializeField] private Boolean esperandoInspiracao = false;
+    [SerializeField] private bool esperandoInspiracao = false;
 
     [SerializeField] private int desabilitadoQtd = 0;
 
@@ -20,6 +20,7 @@ public class TrocarFerramentaViaBotaoUI : MonoBehaviour
     private int inspiracaoNecessariaUso = 0;
     private int quantidadeUsosRestantes = 0;
     private UsarFerramentas usarFerramenta;
+    private bool emResfriamento = false;
 
     public FerramentaSO TipoFerramenta { get => tipoFerramenta; set => tipoFerramenta = value; }
 
@@ -36,18 +37,20 @@ public class TrocarFerramentaViaBotaoUI : MonoBehaviour
         {
             configurarComportamentoBotao();
 
-            Boolean temContagemRegressiva = tipoFerramenta.ContagemRegressivaParaReuso > 0;
-            Boolean necessitaInspiracao = tipoFerramenta.Inspiracao < 0;
-            Boolean temQuantidadeLimite = tipoFerramenta.QuantidadeLimiteDeUsos > 0;
+            bool temContagemRegressiva = tipoFerramenta.ContagemRegressivaParaReuso > 0;
+            bool necessitaInspiracao = tipoFerramenta.Inspiracao < 0;
+            bool temQuantidadeLimite = tipoFerramenta.QuantidadeLimiteDeUsos > 0;
 
             if (necessitaInspiracao)
                 configurarInspiracao();
 
-            if (temContagemRegressiva)
-                configurarContagemRegressiva();
+            //if (temContagemRegressiva)
+                // configurarContagemRegressiva();
 
             if (temQuantidadeLimite)
                 configurarQuantidadeUsoLimitado();
+
+            configurarCongelamento();
         }
     }
 
@@ -121,21 +124,21 @@ public class TrocarFerramentaViaBotaoUI : MonoBehaviour
     public void verificarContagemRegressivaAposUsoDeFerramenta(ResumoInteracaoBlocoFerramenta resumo)
     {
         if (resumo.FerramentaUsada.Equals(tipoFerramenta))
-            iniciarContagemRegressiva();
+            iniciarContagemRegressiva(tipoFerramenta.ContagemRegressivaParaReuso);
         else
-            diminuirContagemRegressiva(resumo.FerramentaUsada);
+            diminuirContagemRegressiva();
     }
 
-    private void iniciarContagemRegressiva()
+    private void iniciarContagemRegressiva(int contagemRegressiva)
     {
-        contadorTempo = tipoFerramenta.ContagemRegressivaParaReuso;
+        contadorTempo = contagemRegressiva;
         textMeshContadorTempo.enabled = true;
         textMeshContadorTempo.text = contadorTempo.ToString();
         tentarDesabilitarBotao();
         eventoTentativaTrocaFerramenta?.Invoke(null);
     }
 
-    private void diminuirContagemRegressiva(FerramentaSO ferramenta)
+    private void diminuirContagemRegressiva()
     {
         if (contadorTempo > 0)
         {
@@ -180,4 +183,21 @@ public class TrocarFerramentaViaBotaoUI : MonoBehaviour
 
     #endregion
 
+    #region Congelamento
+    private void configurarCongelamento()
+    {
+        usarFerramenta.EventoAposRealizarUsoFerramenta += verificarFerramentaFoiCongelada;
+    }
+
+    private void verificarFerramentaFoiCongelada(ResumoInteracaoBlocoFerramenta resumo)
+    {
+        if (resumo.FerramentaCongelada && resumo.FerramentaUsada.Equals(tipoFerramenta))
+        {
+            iniciarContagemRegressiva(UtilitariosGamePlay.TURNOS_FERRAMENTA_CONGELADA);
+        }
+        else
+            diminuirContagemRegressiva();
+    }
+    
+    #endregion
 }

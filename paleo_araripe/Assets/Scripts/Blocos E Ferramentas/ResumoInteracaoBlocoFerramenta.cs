@@ -12,7 +12,9 @@ public class ResumoInteracaoBlocoFerramenta {
     private int quantidadeFossilDestruido = 0;
     private int quantidadeAmbarColetado = 0;
     private int quantidadeInspiracaoGanha = 0;
-    private Boolean algumBlocoDestruidoOuColeado = false;
+    private bool algumBlocoDestruidoOuColeado = false;
+
+    private bool ferramentaCongelada = false;
 
     public FerramentaSO FerramentaUsada { get => ferramentaUsada; set => ferramentaUsada = value; }
     public List<BlocoSO> BlocosAfetados { get => blocosAfetados; set => blocosAfetados = value; }
@@ -23,6 +25,7 @@ public class ResumoInteracaoBlocoFerramenta {
     public bool AlgumBlocoDestruidoOuColeado { get => algumBlocoDestruidoOuColeado; set => algumBlocoDestruidoOuColeado = value; }
     public int QuantidadeInspiracaoGanha { get => quantidadeInspiracaoGanha; set => quantidadeInspiracaoGanha = value; }
     public List<GameObject> BlocosDestruidos { get => blocosDestruidos; set => blocosDestruidos = value; }
+    public bool FerramentaCongelada { get => ferramentaCongelada; set => ferramentaCongelada = value; }
 
     public Boolean gastouInspiaracao()
     {

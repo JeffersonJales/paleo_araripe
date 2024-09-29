@@ -7,7 +7,7 @@ public class BlocoSO : ScriptableObject
 {
     [Range(1, 3)] 
     [SerializeField] private int vida = 1;
-    [SerializeField] private Boolean sofreDanoQuandoCuboCaiNele = false;
+    [SerializeField] private bool sofreDanoQuandoCuboCaiNele = false;
 
     [SerializeField] private NaturezaBlocoFerramenta.NivelDureza dureza = NaturezaBlocoFerramenta.NivelDureza.TERRA;
     [SerializeField] private NaturezaBlocoFerramenta.TipoBloco tipo = NaturezaBlocoFerramenta.TipoBloco.NORMAL;

@@ -89,23 +89,23 @@ namespace Utilidades
             return objs;
         }
 
-        public Boolean checarSeEspacoEstaOcupado(Vector3 ponto)
+        public bool checarSeEspacoEstaOcupado(Vector3 ponto)
         {
             return colisaoPonto(ponto).Length > 0;
         }
 
-        public Boolean checarSeEspacoEstaVazio(Vector3 ponto)
+        public bool checarSeEspacoEstaVazio(Vector3 ponto)
         {
             return !checarSeEspacoEstaOcupado(ponto);
         }
         
-        public Boolean checarCuboEstaNoChao(GameObject obj)
+        public bool checarCuboEstaNoChao(GameObject obj)
         {
-            Collider[] col = Physics.OverlapBox(obj.gameObject.transform.position + (obj.gameObject.transform.localScale / 2), new Vector3(0.1f, 0.1f, 0.1f), Quaternion.identity, obterMascaraChao());
+            Collider[] col = Physics.OverlapBox(obj.gameObject.transform.position + new Vector3(0, UtilitariosGamePlay.UNIDADE_METADE_TAMANHO_CUBO, 0), Vector3.one / 5 , Quaternion.identity, obterMascaraChao());
             return col.Length > 0;
         }
 
-        public Boolean checarBlocoAbaixo(GameObject obj)
+        public bool checarBlocoAbaixo(GameObject obj)
         {
             Ray ray = new Ray(obj.transform.position, Vector3.down);
             return Physics.Raycast(ray, tamanhoMinimoRaio, obterMascaraBlocoArqueologico());
@@ -128,7 +128,7 @@ namespace Utilidades
 
         }
     
-        public void cairSobOutroCubo(GameObject obj, Boolean aplicarDano)
+        public void cairSobOutroCubo(GameObject obj, bool aplicarDano)
         {
             Ray ray = new Ray(obj.transform.position, Vector3.down);
             RaycastHit hit;
@@ -136,7 +136,7 @@ namespace Utilidades
             if (Physics.Raycast(ray, out hit, tamanhoMinimoRaio, obterMascaraBlocoArqueologico()))
             {
                 var blocInfo = hit.collider.gameObject.GetComponent<BlocoGenerico>();
-                if (aplicarDano && blocInfo.BlocoSO.SofreDanoQuandoCuboCaiNele && blocInfo.tomarDano(1))
+                if (aplicarDano && blocInfo.BlocoSO.SofreDanoQuandoCuboCaiNele && blocInfo.tomarDano(UtilitariosGamePlay.DANO_QUEDA_BLOCO_SOB_BLOCO))
                 {
                     cairSobOutroCubo(obj, aplicarDano);
                 }

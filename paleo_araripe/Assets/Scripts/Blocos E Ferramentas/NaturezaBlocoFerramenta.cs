@@ -20,6 +20,7 @@ public class NaturezaBlocoFerramenta
         FOSSIL,
         INSPIRACAO,
         EXPLOSIVO,
+        GELO,
     }
 
     public enum IdentificadorBloco
@@ -43,6 +44,10 @@ public class NaturezaBlocoFerramenta
         EMPURRADOR,
         PUXADOR,
         GRAVIDADE,
+        LAVA,
+        LAVA_FRESCA,
+        GELO,
+        FERRAMENTA,
     }
 
     public enum TipoInteracao
