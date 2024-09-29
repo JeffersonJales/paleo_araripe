@@ -15,7 +15,7 @@ MonoBehaviour:
   vida: 1
   sofreDanoQuandoCuboCaiNele: 0
   dureza: 1
-  tipo: 0
+  tipo: 5
   identificador: 21
   feedbackAoDestruir: {fileID: 0}
   feedbackAoColetar: {fileID: 0}
