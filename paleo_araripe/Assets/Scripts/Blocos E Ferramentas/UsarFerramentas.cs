@@ -64,7 +64,7 @@ public class UsarFerramentas : MonoBehaviour
         }
 
         /// Realizar interação entre blocos e ferramentas
-        ResumoInteracaoBlocoFerramenta resumo = new InteracaoBlocoFerramenta().interacaoFerramentaComBloco(ferramentaEquipada, blocosGenericos);
+        ResumoInteracaoBlocoFerramenta resumo = new InteracaoBlocoFerramenta().interacaoFerramentaComBloco(ferramentaEquipada, blocosGenericos, true);
 
         /// Ganho de Inspiracação
         inspiracaoAtual = Math.Clamp(inspiracaoAtual + ferramentaEquipada.Inspiracao + resumo.QuantidadeInspiracaoGanha, 0, inspiracaoMaxima);
@@ -76,11 +76,6 @@ public class UsarFerramentas : MonoBehaviour
             if (alvo.estaVivo())
                 alvo.casoDeixeDeSerFocoDaFerramenta();
         }
-
-        /// Desativar os blocos que sobreviveram
-       // for (var i = 0; i < resumo.TipoInteracaoBloco.Count; i++)
-         //   if (!NaturezaBlocoFerramenta.interacaoPodeResultarNaDestruicaoDoBloco(resumo.TipoInteracaoBloco[i]))
-       // }
 
         blocoAlvoRaycast = null;
         alvosFerramenta.Clear();

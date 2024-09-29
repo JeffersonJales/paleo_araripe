@@ -30,6 +30,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 6eb1d8badaed1b64288054020a896ae7, type: 2}
   - {fileID: 11400000, guid: 3ada4565231bc3b41bbe5db982ccbc4f, type: 2}
   - {fileID: 11400000, guid: b5966e5e886a8964c9858026f124ddf6, type: 2}
+  - {fileID: 11400000, guid: fbe43649889755d40b1ebbac1f8ba6d4, type: 2}
   consegueColetar: []
   tipoColisao: 1
   sprite: {fileID: 920607830, guid: 8931e628dbfb1c349b2b6f3c78a757c0, type: 3}
