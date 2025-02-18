@@ -19,7 +19,7 @@ MonoBehaviour:
   identificador: 1
   feedbackAoDestruir: {fileID: 0}
   feedbackAoColetar: {fileID: 0}
-  corMaterialDestacado: {fileID: 2100000, guid: 165e2992c97765d4bb8de1537e989556,
+  corMaterialDestacado: {fileID: 2100000, guid: 57c60ea52370d14458233541e169fb06,
     type: 2}
-  corMaterialNaoDestacado: {fileID: 2100000, guid: aa2af815b171e0541a6c64625c744c27,
+  corMaterialNaoDestacado: {fileID: 2100000, guid: d679c4169bce7fb4a895cc396eb3156e,
     type: 2}

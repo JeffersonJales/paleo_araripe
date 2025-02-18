@@ -25,7 +25,7 @@ public class BlocoSO : ScriptableObject
 
     public GameObject FeedbackAoColetar => feedbackAoColetar;
     public GameObject FeedbackAoDestruir => feedbackAoDestruir;
-
+    
     public Material CorMaterialDestacado => corMaterialDestacado;
     public Material CorMaterialNaoDestacado => corMaterialNaoDestacado;
     

@@ -16,6 +16,7 @@ MonoBehaviour:
   inspiracao: -6
   tempoGastoAposUso: 25
   contagemRegressivaParaReuso: 2
+  quantidadeLimiteDeUsos: 0
   daDanoEm:
   - {fileID: 11400000, guid: 50157d6eca47418439e1adee1b803e80, type: 2}
   - {fileID: 11400000, guid: abeb310aa7f7cc74f812b3a3025c7b0c, type: 2}
@@ -24,7 +25,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 7b6cede605a891f46a2fdd6580d418de, type: 2}
   consegueColetar: []
   tipoColisao: 3
-  sprite: {fileID: -661477683, guid: 8931e628dbfb1c349b2b6f3c78a757c0, type: 3}
-  areaEfeito: {x: 0, y: 2, z: 0}
-  quebraAte: 1
-  interacao: 1
+  sprite: {fileID: 354023705, guid: 08c0c8e56f475a54c8743c9e86d589fc, type: 3}
