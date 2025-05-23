@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7899740055743425913}
   - component: {fileID: 1975998281186755599}
   - component: {fileID: 5455731207896064906}
-  - component: {fileID: 8812865358558751294}
+  - component: {fileID: 654766612238986044}
   m_Layer: 6
   m_Name: BlocoCristal
   m_TagString: Untagged
@@ -106,7 +106,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &8812865358558751294
+--- !u!114 &654766612238986044
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -115,9 +115,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 4043340169641137449}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4c28fdefcfdb9294ebcca384b98e4041, type: 3}
+  m_Script: {fileID: 11500000, guid: e706311c61a34f64a8a7588f6dc1ccda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blocoSO: {fileID: 11400000, guid: 2de183769ed2d7c42a95d53e2466b8fd, type: 2}
-  turnosMostrandoObjetivos: 1
-  refBlocoFossil: {fileID: 11400000, guid: 639cd407abfca5b43a70d355e908d372, type: 2}
+  blocoSO: {fileID: 0}
+  inspiracao: 2

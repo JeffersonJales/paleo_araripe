@@ -12,7 +12,9 @@ public class ControleFimPartida : MonoBehaviour
     [SerializeField] private int quantidadeFossils = 0;
 
     [SerializeField] private AtualizarValorSlider uiSliderTempo; // Slider para mostrar quantidade de tempo
-    
+
+    [SerializeField] private Animator animacaoCarregamento;
+
     private UsarFerramentas controladorFerramentas;
     private int quantidadeAcoesInicial = 0;
 
@@ -28,7 +30,7 @@ public class ControleFimPartida : MonoBehaviour
         controladorFerramentas.EventoAposRealizarUsoFerramenta += verificarFimFosseis;
         controladorFerramentas.EventoAposRealizarUsoFerramenta += verificarFimSemAcoes;
 
-        /// Catar quantidade de fóssies para acabar o jogo
+        /// Catar quantidade de fï¿½ssies para acabar o jogo
         BlocoGenerico[] blocosGenericosNaCena = FindObjectsOfType<BlocoGenerico>();
         foreach(var item in blocosGenericosNaCena)
         {
@@ -58,8 +60,7 @@ public class ControleFimPartida : MonoBehaviour
 
     public void finalizarPartida()
     {
-        string currentSceneName = SceneManager.GetActiveScene().name;
-        SceneManager.LoadScene(currentSceneName);
+        animacaoCarregamento.SetTrigger("carregar");
     }
 
 }

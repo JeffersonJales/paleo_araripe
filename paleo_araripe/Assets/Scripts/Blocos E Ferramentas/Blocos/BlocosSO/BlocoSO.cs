@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class BlocoSO : ScriptableObject
 {
-    [Range(1, 3)] 
+    [Range(1, 5)] 
     [SerializeField] private int vida = 1;
     [SerializeField] private bool sofreDanoQuandoCuboCaiNele = false;
 
