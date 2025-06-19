@@ -1,5 +1,3 @@
-using log4net.Util;
-using System;
 using UnityEngine;
 
 namespace PaleoAraripe {

@@ -2834,7 +2834,7 @@ PrefabInstance:
     - target: {fileID: 4703351473907931196, guid: 034a633730110ba4abba70efd20f4261,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5824694374252799661, guid: 034a633730110ba4abba70efd20f4261,
         type: 3}
@@ -2971,7 +2971,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &517431067
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3107,9 +3107,9 @@ RectTransform:
   - {fileID: 1663296881}
   m_Father: {fileID: 1401084006}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 350, y: -500}
   m_SizeDelta: {x: 480, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &567512053
@@ -3156,14 +3156,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1073920959}
-        m_TargetAssemblyTypeName: MenuPrincipal, PaleoAraripeAssemblyDefinition
+      - m_Target: {fileID: 517431071}
+        m_TargetAssemblyTypeName: PaleoAraripe.MenuPrincipal, PaleoAraripeAssemblyDefinition
         m_MethodName: Jogar
-        m_Mode: 1
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -3629,9 +3629,9 @@ RectTransform:
   - {fileID: 455656881}
   m_Father: {fileID: 1401084006}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 350, y: -144}
   m_SizeDelta: {x: 480, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &639195447
@@ -3678,10 +3678,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1073920959}
-        m_TargetAssemblyTypeName: MenuPrincipal, PaleoAraripeAssemblyDefinition
+      - m_Target: {fileID: 517431071}
+        m_TargetAssemblyTypeName: PaleoAraripe.MenuPrincipal, PaleoAraripeAssemblyDefinition
         m_MethodName: Jogar
-        m_Mode: 1
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -4870,9 +4870,9 @@ RectTransform:
   - {fileID: 1656978315}
   m_Father: {fileID: 1401084006}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 350, y: -678}
   m_SizeDelta: {x: 480, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &893473524
@@ -4919,14 +4919,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1073920959}
-        m_TargetAssemblyTypeName: MenuPrincipal, PaleoAraripeAssemblyDefinition
+      - m_Target: {fileID: 517431071}
+        m_TargetAssemblyTypeName: PaleoAraripe.MenuPrincipal, PaleoAraripeAssemblyDefinition
         m_MethodName: Jogar
-        m_Mode: 1
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -5713,30 +5713,13 @@ GameObject:
   - component: {fileID: 1073920962}
   - component: {fileID: 1073920961}
   - component: {fileID: 1073920960}
-  - component: {fileID: 1073920959}
   m_Layer: 5
-  m_Name: CanvasChoosStage
+  m_Name: CanvasEscolherEstagio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1073920959
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1073920958}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf463f2cc5f332345ae2f166b8028731, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  telaPrincipal: {fileID: 80254031}
-  telaSobre: {fileID: 0}
-  menuFrameRate: 10
-  animacaoCarregamento: {fileID: 517036258}
+  m_IsActive: 0
 --- !u!114 &1073920960
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7871,9 +7854,9 @@ RectTransform:
   - {fileID: 433716656}
   m_Father: {fileID: 1401084006}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 350, y: -856}
   m_SizeDelta: {x: 480, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1509124153
@@ -7920,14 +7903,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1073920959}
-        m_TargetAssemblyTypeName: MenuPrincipal, PaleoAraripeAssemblyDefinition
+      - m_Target: {fileID: 517431071}
+        m_TargetAssemblyTypeName: PaleoAraripe.MenuPrincipal, PaleoAraripeAssemblyDefinition
         m_MethodName: Jogar
-        m_Mode: 1
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 4
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -8053,10 +8036,22 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 517431071}
-        m_TargetAssemblyTypeName: MenuPrincipal, PaleoAraripeAssemblyDefinition
-        m_MethodName: Jogar
-        m_Mode: 1
+      - m_Target: {fileID: 1073920958}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 517431066}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -9284,9 +9279,9 @@ RectTransform:
   - {fileID: 1488305001}
   m_Father: {fileID: 1401084006}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 350, y: -322}
   m_SizeDelta: {x: 480, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1734124624
@@ -9333,14 +9328,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1073920959}
-        m_TargetAssemblyTypeName: MenuPrincipal, PaleoAraripeAssemblyDefinition
+      - m_Target: {fileID: 517431071}
+        m_TargetAssemblyTypeName: PaleoAraripe.MenuPrincipal, PaleoAraripeAssemblyDefinition
         m_MethodName: Jogar
-        m_Mode: 1
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
