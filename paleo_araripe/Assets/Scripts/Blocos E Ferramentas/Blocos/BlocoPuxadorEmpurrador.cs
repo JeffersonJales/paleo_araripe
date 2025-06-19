@@ -1,7 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Utilidades;
+
+namespace PaleoAraripe {
 
 public class BlocoPuxadorEmpurrador : BlocoGenerico
 {
@@ -75,4 +76,6 @@ public class BlocoPuxadorEmpurrador : BlocoGenerico
     {
 
     }
+}
+
 }

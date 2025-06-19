@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
+namespace PaleoAraripe {
+
 public class UtilitariosGamePlay : MonoBehaviour
 {
 
@@ -15,7 +17,7 @@ public class UtilitariosGamePlay : MonoBehaviour
         DontDestroyOnLoad(this);
     }
 
-    // Não utilizar isso no Awake
+    // Nï¿½o utilizar isso no Awake
     public static void ouvirResumoInteracaoFerramentaBloco(Action<ResumoInteracaoBlocoFerramenta> acao)
     {
         UsarFerramentas usoFerramenta = FindObjectOfType<UsarFerramentas>();
@@ -83,5 +85,7 @@ public class UtilitariosGamePlay : MonoBehaviour
         return FindObjectsOfType<T>();
     }
 
+
+}
 
 }

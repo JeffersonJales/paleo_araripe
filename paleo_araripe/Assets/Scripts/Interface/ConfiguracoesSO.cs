@@ -1,6 +1,7 @@
 using UnityEngine;
 using System;
 
+namespace PaleoAraripe {
 /// <summary>
 /// ScriptableObject responsável por gerenciar e persistir as configurações do jogo.
 /// Utiliza PlayerPrefs para salvar as configurações entre sessões.
@@ -126,4 +127,5 @@ public class ConfiguracoesSO : ScriptableObject
         _modoArestaDestacada = PlayerPrefs.GetInt(KEY_ARESTA_DESTACADA, 0) == 1;
         _modoBlocoDestacado = PlayerPrefs.GetInt(KEY_BLOCO_DESTACADO, 0) == 1;
     }
+}
 }

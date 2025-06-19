@@ -1,146 +1,147 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
-using Utilidades;
 
-public class UsarFerramentas : MonoBehaviour
-{
-    [SerializeField] private Boolean ativado = true;
-    [SerializeField] private FerramentaSO ferramentaEquipada;
-    [SerializeField] private GameObject blocoAlvoRaycast;
-    [Range(15f, 30f)][SerializeField] private float distanciaMaximaColisaoRaycast = 20f;
-    
-    [SerializeField] private int inspiracaoAtual = 0;
-    [Range(5, 50)][SerializeField] private int inspiracaoMaxima = 50;
-    
-    [SerializeField] private BlackBoardInformacoesPartida bbInformacoesPartida;
-
-    private Camera cam;
-    private Vector3 normalRaycast;
-    private LayerMask mascaraColisaoBloco;
-
-    private List<GameObject> alvosFerramenta = new List<GameObject>();
-    public event Action<ResumoInteracaoBlocoFerramenta> EventoAposRealizarUsoFerramenta;
-
-    // Inspector
-    public void OnValidate()
+namespace PaleoAraripe {
+    public class UsarFerramentas : MonoBehaviour
     {
-        inspiracaoAtual = Mathf.Clamp(inspiracaoAtual, 0, InspiracaoMaxima);
-    }
+        [SerializeField] private Boolean ativado = true;
+        [SerializeField] private FerramentaSO ferramentaEquipada;
+        [SerializeField] private GameObject blocoAlvoRaycast;
+        [Range(15f, 30f)][SerializeField] private float distanciaMaximaColisaoRaycast = 20f;
+        
+        [SerializeField] private int inspiracaoAtual = 0;
+        [Range(5, 50)][SerializeField] private int inspiracaoMaxima = 50;
+        
+        [SerializeField] private BlackBoardInformacoesPartida bbInformacoesPartida;
 
-    // Getters / Setters 
-    public int InspiracaoAtual => inspiracaoAtual;
-    public int InspiracaoMaxima => inspiracaoMaxima;
+        private Camera cam;
+        private Vector3 normalRaycast;
+        private LayerMask mascaraColisaoBloco;
 
+        private List<GameObject> alvosFerramenta = new List<GameObject>();
+        public event Action<ResumoInteracaoBlocoFerramenta> EventoAposRealizarUsoFerramenta;
 
-    public void Start()
-    {
-        cam = Camera.main;
-        mascaraColisaoBloco = new ColisoesBlocosChao().obterMascaraBlocoArqueologico();
-    }
-
-    public void FixedUpdate()
-    {
-        procurarBlocoAlvoRaycast();
-    }
-
-    public void Update()
-    {
-        if (ativado && Input.GetMouseButtonDown(0))
-            utilizarFerramentaEquipada();
-    }
-
-    
-    public void utilizarFerramentaEquipada()
-    {
-        if (ferramentaEquipada == null || blocoAlvoRaycast == null)
-            return;
-
-        /// Resgatar todos os scripts dos alvos
-        List<BlocoGenerico> blocosGenericos = new List<BlocoGenerico>();
-        foreach (var alvo in alvosFerramenta)
+        // Inspector
+        public void OnValidate()
         {
-            blocosGenericos.Add(alvo.GetComponent<BlocoGenerico>());
+            inspiracaoAtual = Mathf.Clamp(inspiracaoAtual, 0, InspiracaoMaxima);
         }
 
-        /// Realizar interação entre blocos e ferramentas
-        ResumoInteracaoBlocoFerramenta resumo = new InteracaoBlocoFerramenta().interacaoFerramentaComBloco(ferramentaEquipada, blocosGenericos, true);
+        // Getters / Setters 
+        public int InspiracaoAtual => inspiracaoAtual;
+        public int InspiracaoMaxima => inspiracaoMaxima;
 
-        /// Ganho de Inspiracação
-        inspiracaoAtual = Math.Clamp(inspiracaoAtual + ferramentaEquipada.Inspiracao + resumo.QuantidadeInspiracaoGanha, 0, inspiracaoMaxima);
-        bbInformacoesPartida.SetValue(bbInformacoesPartida.INSPIRACAO_ATUAL, inspiracaoAtual);
-        bbInformacoesPartida.SetValue(bbInformacoesPartida.INSPIRACAO_MAXIMA, inspiracaoMaxima);
 
-        foreach(var alvo in blocosGenericos)
+        public void Start()
         {
-            if (alvo.estaVivo())
-                alvo.casoDeixeDeSerFocoDaFerramenta();
+            cam = Camera.main;
+            mascaraColisaoBloco = new ColisoesBlocosChao().obterMascaraBlocoArqueologico();
         }
 
-        blocoAlvoRaycast = null;
-        alvosFerramenta.Clear();
-
-        EventoAposRealizarUsoFerramenta?.Invoke(resumo);
-    }
-
-    private void procurarBlocoAlvoRaycast()
-    {
-        if (ferramentaEquipada == null)
-            return;
-
-        Ray ray = cam.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
-
-        if (Physics.Raycast(ray, out hit, distanciaMaximaColisaoRaycast, mascaraColisaoBloco))
+        public void FixedUpdate()
         {
-            GameObject objetoAtingido = hit.collider.gameObject;
-            Vector3 normal = hit.normal;
+            procurarBlocoAlvoRaycast();
+        }
 
-            if ((objetoAtingido.Equals(blocoAlvoRaycast) && normal.Equals(normalRaycast)) || !objetoAtingido.activeInHierarchy) 
+        public void Update()
+        {
+            if (ativado && Input.GetMouseButtonDown(0))
+                utilizarFerramentaEquipada();
+        }
+
+        
+        public void utilizarFerramentaEquipada()
+        {
+            if (ferramentaEquipada == null || blocoAlvoRaycast == null)
                 return;
 
-            procurarAlvos(objetoAtingido, normal);
-        }
-        else if(blocoAlvoRaycast != null)
-        {
+            /// Resgatar todos os scripts dos alvos
+            List<BlocoGenerico> blocosGenericos = new List<BlocoGenerico>();
+            foreach (var alvo in alvosFerramenta)
+            {
+                blocosGenericos.Add(alvo.GetComponent<BlocoGenerico>());
+            }
+
+            /// Realizar interaÃ§Ã£o entre blocos e ferramentas
+            ResumoInteracaoBlocoFerramenta resumo = new InteracaoBlocoFerramenta().interacaoFerramentaComBloco(ferramentaEquipada, blocosGenericos, true);
+
+            /// Ganho de Inspiracao
+            inspiracaoAtual = Math.Clamp(inspiracaoAtual + ferramentaEquipada.Inspiracao + resumo.QuantidadeInspiracaoGanha, 0, inspiracaoMaxima);
+            bbInformacoesPartida.SetValue(bbInformacoesPartida.INSPIRACAO_ATUAL, inspiracaoAtual);
+            bbInformacoesPartida.SetValue(bbInformacoesPartida.INSPIRACAO_MAXIMA, inspiracaoMaxima);
+
+            foreach(var alvo in blocosGenericos)
+            {
+                if (alvo.estaVivo())
+                    alvo.casoDeixeDeSerFocoDaFerramenta();
+            }
+
             blocoAlvoRaycast = null;
+            alvosFerramenta.Clear();
+
+            EventoAposRealizarUsoFerramenta?.Invoke(resumo);
+        }
+
+        private void procurarBlocoAlvoRaycast()
+        {
+            if (ferramentaEquipada == null)
+                return;
+
+            Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+
+            if (Physics.Raycast(ray, out hit, distanciaMaximaColisaoRaycast, mascaraColisaoBloco))
+            {
+                GameObject objetoAtingido = hit.collider.gameObject;
+                Vector3 normal = hit.normal;
+
+                if ((objetoAtingido.Equals(blocoAlvoRaycast) && normal.Equals(normalRaycast)) || !objetoAtingido.activeInHierarchy) 
+                    return;
+
+                procurarAlvos(objetoAtingido, normal);
+            }
+            else if(blocoAlvoRaycast != null)
+            {
+                blocoAlvoRaycast = null;
+                desativarFocoAlvos();
+            }
+        }
+
+        
+        #region Feedback Visual Blocos Marcados
+        public void procurarAlvos(GameObject alvoAtual, Vector3 normal)
+        {
+            normalRaycast = normal;
+            blocoAlvoRaycast = alvoAtual;
             desativarFocoAlvos();
+
+            alvosFerramenta = NaturezaBlocoFerramenta.obterListaBlocosPorFerramenta(ferramentaEquipada, blocoAlvoRaycast, normal);
+            foreach (var item in alvosFerramenta)
+            {
+                item.GetComponent<BlocoGenerico>().casoSejaFocoDaFerramenta();
+            }
         }
-    }
 
-    
-    #region Feedback Visual Blocos Marcados
-    public void procurarAlvos(GameObject alvoAtual, Vector3 normal)
-    {
-        normalRaycast = normal;
-        blocoAlvoRaycast = alvoAtual;
-        desativarFocoAlvos();
-
-        alvosFerramenta = NaturezaBlocoFerramenta.obterListaBlocosPorFerramenta(ferramentaEquipada, blocoAlvoRaycast, normal);
-        foreach (var item in alvosFerramenta)
+        private void desativarFocoAlvos()
         {
-            item.GetComponent<BlocoGenerico>().casoSejaFocoDaFerramenta();
+            foreach (GameObject bloco in alvosFerramenta)
+            {
+                bloco.GetComponent<BlocoGenerico>().casoDeixeDeSerFocoDaFerramenta();
+            }
+            alvosFerramenta.Clear();
         }
-    }
+        #endregion
 
-    private void desativarFocoAlvos()
-    {
-        foreach (GameObject bloco in alvosFerramenta)
+        #region Troca de ferramentas!
+        public void trocarFerramentaEquipada(FerramentaSO ferramenta)
         {
-            bloco.GetComponent<BlocoGenerico>().casoDeixeDeSerFocoDaFerramenta();
+            ferramentaEquipada = ferramenta;
+            desativarFocoAlvos();
+            procurarBlocoAlvoRaycast();
         }
-        alvosFerramenta.Clear();
+
+        #endregion
+
     }
-    #endregion
-
-    #region Troca de ferramentas!
-    public void trocarFerramentaEquipada(FerramentaSO ferramenta)
-    {
-        ferramentaEquipada = ferramenta;
-        desativarFocoAlvos();
-        procurarBlocoAlvoRaycast();
-    }
-
-    #endregion
-
 }

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-namespace Utilidades
+namespace PaleoAraripe
 {
     public class ColisoesBlocosChao 
     {
@@ -16,7 +16,7 @@ namespace Utilidades
         private int mascaraChao = MASCARA_NAO_ENCONTRADA;
         private float tamanhoMinimoRaio = 20f;
 
-        #region Máscaras de Colisão
+        #region Mï¿½scaras de Colisï¿½o
 
         public int obterMascaraColisao(string nomeLayer)
         {

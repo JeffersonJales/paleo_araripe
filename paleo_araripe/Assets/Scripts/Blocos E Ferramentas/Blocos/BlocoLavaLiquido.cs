@@ -1,27 +1,29 @@
 using UnityEngine;
 
-public class BlocoLavaLiquido : BlocoGenerico
-{
-    [SerializeField] private GameObject refBlocoPedra;
-    [SerializeField] private int turnosParaLavaSecar = 3;
-
-    public void Start()
+namespace PaleoAraripe {
+    public class BlocoLavaLiquido : BlocoGenerico
     {
-        UtilitariosGamePlay.ouvirResumoInteracaoFerramentaBloco(verificarPassagemTempoEndurecer);
-    }
+        [SerializeField] private GameObject refBlocoPedra;
+        [SerializeField] private int turnosParaLavaSecar = 3;
 
-
-    public void OnDestroy()
-    {
-        UtilitariosGamePlay.pararOuvirResumoInteracaoFerramentaBloco(verificarPassagemTempoEndurecer);
-    }
-
-    public void verificarPassagemTempoEndurecer(ResumoInteracaoBlocoFerramenta resumo)
-    {
-        if (--turnosParaLavaSecar < 0)
+        public void Start()
         {
-            Instantiate(refBlocoPedra, transform.position, Quaternion.identity, transform.parent);
-            Destroy(gameObject);
+            UtilitariosGamePlay.ouvirResumoInteracaoFerramentaBloco(verificarPassagemTempoEndurecer);
+        }
+
+
+        public void OnDestroy()
+        {
+            UtilitariosGamePlay.pararOuvirResumoInteracaoFerramentaBloco(verificarPassagemTempoEndurecer);
+        }
+
+        public void verificarPassagemTempoEndurecer(ResumoInteracaoBlocoFerramenta resumo)
+        {
+            if (--turnosParaLavaSecar < 0)
+            {
+                Instantiate(refBlocoPedra, transform.position, Quaternion.identity, transform.parent);
+                Destroy(gameObject);
+            }
         }
     }
 }

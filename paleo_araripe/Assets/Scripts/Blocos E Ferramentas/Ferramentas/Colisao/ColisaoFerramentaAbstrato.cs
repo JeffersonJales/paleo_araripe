@@ -1,32 +1,33 @@
 using System.Collections.Generic;
 using UnityEngine;
-using Utilidades;
 
-public abstract class ColisaoFerramentaAbstrato
-{
-    public abstract List<GameObject> obterBlocos(GameObject pontoInicial, Vector3 normal);
-
-    
-    protected ColisoesBlocosChao colisoes = new ColisoesBlocosChao();
-
-    protected List<GameObject> compactarCollidersEmGameObjects(Collider[] colliders)
+namespace PaleoAraripe {
+    public abstract class ColisaoFerramentaAbstrato
     {
-        List <GameObject> lista = new List<GameObject>();
-        foreach(Collider collider in colliders)
+        public abstract List<GameObject> obterBlocos(GameObject pontoInicial, Vector3 normal);
+
+        
+        protected ColisoesBlocosChao colisoes = new ColisoesBlocosChao();
+
+        protected List<GameObject> compactarCollidersEmGameObjects(Collider[] colliders)
         {
-            lista.Add(collider.gameObject);
+            List <GameObject> lista = new List<GameObject>();
+            foreach(Collider collider in colliders)
+            {
+                lista.Add(collider.gameObject);
+            }
+
+            return lista;
         }
 
-        return lista;
-    }
-
-    protected List<GameObject> adicionarMaisCollidersNaLista(Collider[] colliders, List<GameObject> lista)
-    {
-        foreach (Collider collider in colliders)
+        protected List<GameObject> adicionarMaisCollidersNaLista(Collider[] colliders, List<GameObject> lista)
         {
-            lista.Add(collider.gameObject);
-        }
+            foreach (Collider collider in colliders)
+            {
+                lista.Add(collider.gameObject);
+            }
 
-        return lista;
+            return lista;
+        }
     }
 }

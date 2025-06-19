@@ -1,8 +1,5 @@
-
-using System;
+namespace PaleoAraripe {
 using UnityEngine;
-using Utilidades;
-
 public class BlocoFantasma : BlocoGenerico
 {
 
@@ -48,4 +45,5 @@ public class BlocoFantasma : BlocoGenerico
             reativarBloco();
     }
 
+}
 }

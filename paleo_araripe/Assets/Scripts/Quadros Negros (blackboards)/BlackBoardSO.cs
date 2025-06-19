@@ -1,38 +1,40 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "QuadroNegro", menuName = "ScriptableObjects/Quadro Negro")]
-public class BlackBoardSO : ScriptableObject
-{
-    private Dictionary<string, object> data = new Dictionary<string, object>();
-
-    public void SetValue(string key, object value)
+namespace PaleoAraripe {
+    [CreateAssetMenu(fileName = "QuadroNegro", menuName = "ScriptableObjects/Quadro Negro")]
+    public class BlackBoardSO : ScriptableObject
     {
-        if (data.ContainsKey(key))
-        {
-            data[key] = value;
-        }
-        else
-        {
-            data.Add(key, value);
-        }
-    }
+        private Dictionary<string, object> data = new Dictionary<string, object>();
 
-    public T GetValue<T>(string key)
-    {
-        if (data.ContainsKey(key))
+        public void SetValue(string key, object value)
         {
-            return (T)data[key];
+            if (data.ContainsKey(key))
+            {
+                data[key] = value;
+            }
+            else
+            {
+                data.Add(key, value);
+            }
         }
-        return default;
-    }
 
-    public int GetIntValue(string key)
-    {
-        if (data.ContainsKey(key))
+        public T GetValue<T>(string key)
         {
-            return (int)data[key];
+            if (data.ContainsKey(key))
+            {
+                return (T)data[key];
+            }
+            return default;
         }
-        return default;
+
+        public int GetIntValue(string key)
+        {
+            if (data.ContainsKey(key))
+            {
+                return (int)data[key];
+            }
+            return default;
+        }
     }
 }

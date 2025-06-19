@@ -1,47 +1,47 @@
-using System;
-using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 
-[CustomEditor(typeof(SobrescreverDadosFerramenta))]
-public class EditorSobrescreverDadosFerramenta : Editor
+namespace PaleoAraripe
 {
-    public override void OnInspectorGUI()
+    [CustomEditor(typeof(SobrescreverDadosFerramenta))]
+    public class EditorSobrescreverDadosFerramenta : Editor
     {
-
-        DrawDefaultInspector();
-        SobrescreverDadosFerramenta componenteAlvo = (SobrescreverDadosFerramenta)target;
-
-        if (componenteAlvo.novaFerramenta != null)
+        public override void OnInspectorGUI()
         {
 
-            EditorGUILayout.LabelField("Propriedades da nova ferramenta", EditorStyles.boldLabel);
-            GUILayout.Space(5);
+            DrawDefaultInspector();
+            SobrescreverDadosFerramenta componenteAlvo = (SobrescreverDadosFerramenta)target;
 
-            Editor editor = CreateEditor(componenteAlvo.novaFerramenta);
-            editor.OnInspectorGUI();
-
-            GUILayout.Space(25);
-
-            if (GUILayout.Button("Aplicar Sobrescrita"))
-                componenteAlvo.aplicarSobrescrita();
-
-            GUILayout.Space(10);
-
-            if (GUILayout.Button("Reverter para Original"))
-                componenteAlvo.reverterModificacoes();
-
-            GUILayout.Space(10);
-
-            if (GUILayout.Button("Salvar Ferramenta Nova"))
+            if (componenteAlvo.novaFerramenta != null)
             {
-                string path = EditorUtility.SaveFilePanelInProject("Salvar Ferramenta", "NovaFerramenta", "asset", "Escolha onde salvar o ScriptableObject");
 
-                if (!string.IsNullOrEmpty(path))
-                    componenteAlvo.salvarFerramentaNova(path);
+                EditorGUILayout.LabelField("Propriedades da nova ferramenta", EditorStyles.boldLabel);
+                GUILayout.Space(5);
+
+                Editor editor = CreateEditor(componenteAlvo.novaFerramenta);
+                editor.OnInspectorGUI();
+
+                GUILayout.Space(25);
+
+                if (GUILayout.Button("Aplicar Sobrescrita"))
+                    componenteAlvo.aplicarSobrescrita();
+
+                GUILayout.Space(10);
+
+                if (GUILayout.Button("Reverter para Original"))
+                    componenteAlvo.reverterModificacoes();
+
+                GUILayout.Space(10);
+
+                if (GUILayout.Button("Salvar Ferramenta Nova"))
+                {
+                    string path = EditorUtility.SaveFilePanelInProject("Salvar Ferramenta", "NovaFerramenta", "asset", "Escolha onde salvar o ScriptableObject");
+
+                    if (!string.IsNullOrEmpty(path))
+                        componenteAlvo.salvarFerramentaNova(path);
+                }
+
             }
-
         }
     }
-
 }

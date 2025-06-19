@@ -1,5 +1,7 @@
 using UnityEngine;
 
+namespace PaleoAraripe {
+
 public class BlocoCalcario : BlocoGenerico
 {
     [SerializeField] private GameObject fumaca;
@@ -31,5 +33,7 @@ public class BlocoCalcario : BlocoGenerico
         if (refFumaca != null) 
             Destroy(refFumaca);
     }
+
+}
 
 }

@@ -1,5 +1,6 @@
 using UnityEngine;
-using Utilidades;
+
+namespace PaleoAraripe {
 
 public class BlocoLava : BlocoGenerico
 {
@@ -27,4 +28,6 @@ public class BlocoLava : BlocoGenerico
                 instanciarBlocoLiquido(col, Instantiate(refLavaLiquida, posicaoProximoBloco, Quaternion.identity, objetoAnterior.transform.parent), colisoes);
         }
     }
+}
+
 }

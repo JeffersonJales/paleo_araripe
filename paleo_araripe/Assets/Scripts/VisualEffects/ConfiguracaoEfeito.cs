@@ -1,5 +1,7 @@
 using UnityEngine;
 
+namespace PaleoAraripe {
+
 [CreateAssetMenu(fileName = "NovaConfiguracaoEfeito", menuName = "ScriptableObjects/Efeitos/Configuracao Efeito")]
 public class ConfiguracaoEfeito : ScriptableObject
 {
@@ -21,4 +23,6 @@ public class ConfiguracaoEfeito : ScriptableObject
     public float DuracaoTremor => duracaoTremor;
     public float Cooldown => cooldown;
     public LayerMask LayerMask => layerMask;
+}
+
 } 

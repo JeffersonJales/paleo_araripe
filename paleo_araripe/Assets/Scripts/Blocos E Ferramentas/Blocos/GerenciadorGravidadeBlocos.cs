@@ -2,54 +2,57 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GerenciadorGravidadeBlocos : MonoBehaviour
+namespace PaleoAraripe
 {
-    void Start()
+    public class GerenciadorGravidadeBlocos : MonoBehaviour
     {
-        UtilitariosGamePlay.ouvirResumoInteracaoFerramentaBloco(atualizarPosicaoBlocosAposInteracao);
-    }
+        void Start()
+        {
+            UtilitariosGamePlay.ouvirResumoInteracaoFerramentaBloco(atualizarPosicaoBlocosAposInteracao);
+        }
 
 
-    private void atualizarPosicaoBlocosAposInteracao(ResumoInteracaoBlocoFerramenta resumo)
-    {
-        if (resumo.AlgumBlocoDestruidoOuColeado)
-           StartCoroutine(ExecutarAposSegundos(0.1f));
+        private void atualizarPosicaoBlocosAposInteracao(ResumoInteracaoBlocoFerramenta resumo)
+        {
+            if (resumo.AlgumBlocoDestruidoOuColeado)
+               StartCoroutine(ExecutarAposSegundos(0.1f));
 
-    }   
+        }   
     
-    // Bloco cair - Areia
-    private void comportamentoBlocosAreia()
-    {
-        Debug.Log("Tentar derrubar blocos");
-
-        BlocoAreia[] blocosAreia = FindObjectsOfType<BlocoAreia>();
-        if (blocosAreia.Length == 0)
-            return;
-
-        List<BlocoAreia> blocosPodemCair = new List<BlocoAreia>();
-        List<BlocoAreia> blocosNaoCairam = new List<BlocoAreia>();
-
-        /// Pegar blocos de areia que podem cair
-        foreach (var i in blocosAreia)
+        // Bloco cair - Areia
+        private void comportamentoBlocosAreia()
         {
-            if (!i.JaEstaNoChao)
-                blocosPodemCair.Add(i);
+            Debug.Log("Tentar derrubar blocos");
+
+            BlocoAreia[] blocosAreia = FindObjectsOfType<BlocoAreia>();
+            if (blocosAreia.Length == 0)
+                return;
+
+            List<BlocoAreia> blocosPodemCair = new List<BlocoAreia>();
+            List<BlocoAreia> blocosNaoCairam = new List<BlocoAreia>();
+
+            /// Pegar blocos de areia que podem cair
+            foreach (var i in blocosAreia)
+            {
+                if (!i.JaEstaNoChao)
+                    blocosPodemCair.Add(i);
+            }
+
+            /// Fazer os que podem cair, iniciar queda
+            foreach (var i in blocosPodemCair)
+            {
+                if (!i.cair())
+                    blocosNaoCairam.Add(i);
+            }
+
+            if (blocosPodemCair.Count != blocosNaoCairam.Count)
+               StartCoroutine(ExecutarAposSegundos(0.1f));
         }
 
-        /// Fazer os que podem cair, iniciar queda
-        foreach (var i in blocosPodemCair)
+        IEnumerator ExecutarAposSegundos(float segundos)
         {
-            if (!i.cair())
-                blocosNaoCairam.Add(i);
+            yield return new WaitForSeconds(segundos);
+            comportamentoBlocosAreia();
         }
-
-        if (blocosPodemCair.Count != blocosNaoCairam.Count)
-           StartCoroutine(ExecutarAposSegundos(0.1f));
-    }
-
-    IEnumerator ExecutarAposSegundos(float segundos)
-    {
-        yield return new WaitForSeconds(segundos);
-        comportamentoBlocosAreia();
     }
 }
