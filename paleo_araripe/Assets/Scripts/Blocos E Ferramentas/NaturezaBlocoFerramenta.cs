@@ -78,6 +78,7 @@ namespace PaleoAraripe {
             EXPLOSAO,
             EXPLOSIVO,
             RAIZ,
+            LUPA
         }
 
         public static Boolean interacaoPodeResultarNaDestruicaoDoBloco(ResultadoInteracao resultado) 
@@ -89,7 +90,9 @@ namespace PaleoAraripe {
         {
             switch (ferramenta.TipoColisao)
             {
+                case TipoColisaoFerramenta.LUPA: 
                 case TipoColisaoFerramenta.PONTO:       return new ColisaoFerramentaPonto().obterBlocos(blocoFoco, normal);
+                
                 case TipoColisaoFerramenta.ESCOVAR:     return new ColisaoFerramentaEscovar().obterBlocos(blocoFoco, normal);
                 case TipoColisaoFerramenta.PERFURAR:    return new ColisaoFerramentaPerfurar().obterBlocos(blocoFoco, normal);
                 case TipoColisaoFerramenta.VASCULHAR:   return new ColisaoFerramentaVasculhar().obterBlocos(blocoFoco, normal);
@@ -97,7 +100,7 @@ namespace PaleoAraripe {
                 case TipoColisaoFerramenta.EXPLOSAO:    return new ColisaoFerramentaExplosao().obterBlocos(blocoFoco, normal);
                 case TipoColisaoFerramenta.EXPLOSIVO:   return new ColisaoFerramentaExplosivo().obterBlocos(blocoFoco, normal);
                 case TipoColisaoFerramenta.RAIZ:        return new ColisaoFerramentaRaiz().obterBlocos(blocoFoco, normal);
-                   
+
                 case TipoColisaoFerramenta.NULO:
                 default:
                     return new List<GameObject>();

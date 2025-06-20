@@ -97,6 +97,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blocoSO: {fileID: 11400000, guid: 7b6cede605a891f46a2fdd6580d418de, type: 2}
+  nomeBloco: "Aleat\xF3rio"
+  descricaoBloco: "Bloco aleat\xF3rio"
   blocosPossiveis:
   - {fileID: 4043340169641137449, guid: e6edd34af69efcd48a9c3c627a260db1, type: 3}
   - {fileID: 4043340169641137449, guid: e93ca1309320db04e9f158957c8b0254, type: 3}

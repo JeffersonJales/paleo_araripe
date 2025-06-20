@@ -119,5 +119,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blocoSO: {fileID: 11400000, guid: fbe43649889755d40b1ebbac1f8ba6d4, type: 2}
+  nomeBloco: Nome
+  descricaoBloco: "Descri\xE7\xE3o Bloco"
   refLavaLiquida: {fileID: 4043340169641137449, guid: d856932d2ddcfeb44a2e7923f007a845,
     type: 3}

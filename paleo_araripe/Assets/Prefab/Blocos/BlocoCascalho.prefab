@@ -119,5 +119,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blocoSO: {fileID: 11400000, guid: 2dfdfd94342d83046978870ed03c2113, type: 2}
+  nomeBloco: Nome
+  descricaoBloco: Descricao Bloco
   fumaca: {fileID: 4265573759784102627, guid: e15a4269e1d07054bbecf43e3b6be847, type: 3}
   tempoFumacaAtiva: 2

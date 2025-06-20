@@ -119,5 +119,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blocoSO: {fileID: 11400000, guid: aca5a73eadd90904bb191cd0db200ff2, type: 2}
+  nomeBloco: Nome
+  descricaoBloco: "Descri\xE7\xE3o Bloco"
   ferramentaExplosiva: {fileID: 11400000, guid: 2d5c4c9bcece4564a86b24fc1020459b,
     type: 2}

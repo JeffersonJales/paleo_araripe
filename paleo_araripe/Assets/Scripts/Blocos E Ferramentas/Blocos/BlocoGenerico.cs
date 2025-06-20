@@ -7,6 +7,9 @@ namespace PaleoAraripe
     {
         [SerializeField] private BlocoSO blocoSO;
 
+        [SerializeField] private string nomeBloco = "Nome Bloco";
+        [SerializeField] private string descricaoBloco = "Descricao Bloco";
+
         private int vidaAtual = 1;
         private bool emFoco = false;
         private bool emFocoCristal = false;
@@ -16,6 +19,8 @@ namespace PaleoAraripe
 
         // Getters 
         public BlocoSO BlocoSO => blocoSO;
+        public string NomeBloco => nomeBloco;
+        public string DescricaoBloco => descricaoBloco;
 
 
         public virtual void Awake()

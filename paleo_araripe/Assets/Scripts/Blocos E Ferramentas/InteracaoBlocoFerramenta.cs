@@ -27,6 +27,8 @@ namespace PaleoAraripe {
                 {
                     resumoGeral.TipoInteracaoBloco.Add(ResultadoInteracao.NULO);
                 }
+
+                PopupInformacaoBloco(ferramenta, bloco);
             }
 
             resumoGeral.FerramentaUsada = ferramenta;
@@ -140,6 +142,14 @@ namespace PaleoAraripe {
             }
 
             return resultadoDano;
+        }
+    
+        private void PopupInformacaoBloco(FerramentaSO ferramenta, BlocoGenerico bloco)
+        {
+            if(ferramenta.TipoColisao == TipoColisaoFerramenta.LUPA)
+            {
+                UtilitariosGamePlay.AbrirPopupInformacao(bloco);
+            }
         }
     }
 }

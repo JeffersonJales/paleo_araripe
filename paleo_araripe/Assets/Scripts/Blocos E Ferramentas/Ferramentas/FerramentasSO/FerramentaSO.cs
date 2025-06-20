@@ -12,7 +12,7 @@ namespace PaleoAraripe {
         [Range(-10, 10)][SerializeField] private int inspiracao = 1;
 
         [Tooltip("Apos usar a ferramenta, quanto tempo sera consumido")]
-        [Range(1, 50)] [SerializeField] private int tempoGastoAposUso = 1;
+        [Range(0, 50)] [SerializeField] private int tempoGastoAposUso = 1;
 
         [Tooltip("Após usar, quanto tempo fica sem ser usável")]
         [Range(0, 10)][SerializeField] private int contagemRegressivaParaReuso = 0;

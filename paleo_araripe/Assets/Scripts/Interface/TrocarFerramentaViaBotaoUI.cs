@@ -67,6 +67,7 @@ namespace PaleoAraripe {
 
         public void forcarTrocaFerramenta()
         {
+            UtilitariosGamePlay.FecharPopupInformacao();
             eventoTentativaTrocaFerramenta?.Invoke(tipoFerramenta);
         }
 

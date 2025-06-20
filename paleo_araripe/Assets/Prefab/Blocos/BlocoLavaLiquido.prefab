@@ -119,6 +119,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blocoSO: {fileID: 11400000, guid: 8a9095526fd9d8047834687af758f1af, type: 2}
+  nomeBloco: Nome
+  descricaoBloco: "Descri\xE7\xE3o Bloco"
   refBlocoPedra: {fileID: 4043340169641137449, guid: ce107ff0b6a34bf499a32bf5152c2ef3,
     type: 3}
   turnosParaLavaSecar: 3

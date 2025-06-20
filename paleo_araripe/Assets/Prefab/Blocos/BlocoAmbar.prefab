@@ -119,3 +119,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blocoSO: {fileID: 11400000, guid: 50157d6eca47418439e1adee1b803e80, type: 2}
+  nomeBloco: "Gen\xE9rico"
+  descricaoBloco: "Descri\xE7\xE3o Bloco"

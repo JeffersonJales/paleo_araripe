@@ -118,5 +118,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9adb1d2cd6e600043883f8d9e10ba5f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vidaAtual: 1
   blocoSO: {fileID: 11400000, guid: 523480e4ce20fef43934acafd2f93a43, type: 2}
+  nomeBloco: Nome
+  descricaoBloco: "Descri\xE7\xE3o Bloco"

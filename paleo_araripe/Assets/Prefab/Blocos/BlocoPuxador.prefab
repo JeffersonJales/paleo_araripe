@@ -119,5 +119,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blocoSO: {fileID: 11400000, guid: 3ada4565231bc3b41bbe5db982ccbc4f, type: 2}
+  nomeBloco: Nome
+  descricaoBloco: "Descri\xE7\xE3o Bloco"
   puxar: 1
   direcaoEfeitos: 030000000200000004000000050000000000000001000000

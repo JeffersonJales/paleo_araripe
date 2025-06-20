@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92f59a82866084240847c7b48911b618, type: 3}
+  m_Name: 8Lupa
+  m_EditorClassIdentifier: 
+  dano: 0
+  inspiracao: 0
+  tempoGastoAposUso: 0
+  contagemRegressivaParaReuso: 0
+  quantidadeLimiteDeUsos: 0
+  daDanoEm: []
+  consegueColetar: []
+  tipoColisao: 9
+  sprite: {fileID: -485456278, guid: 6c1471129b61878459d1543b529dc857, type: 3}
