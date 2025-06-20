@@ -401,7 +401,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   particulaImpacto: {fileID: 1589098030}
-  configuracaoEfeito: {fileID: 0}
+  configuracaoEfeito: {fileID: 11400000, guid: dbc0b3cb040b67b4b99821dd53269535, type: 2}
 --- !u!114 &49073080
 MonoBehaviour:
   m_ObjectHideFlags: 0
