@@ -14,7 +14,7 @@ namespace PaleoAraripe {
         [Range(5, 50)][SerializeField] private int inspiracaoMaxima = 50;
         
         [SerializeField] private BlackBoardInformacoesPartida bbInformacoesPartida;
-
+        [SerializeField] private BlockHitEffect blockHitEffect;
         private Camera cam;
         private Vector3 normalRaycast;
         private LayerMask mascaraColisaoBloco;
@@ -137,6 +137,7 @@ namespace PaleoAraripe {
         public void trocarFerramentaEquipada(FerramentaSO ferramenta)
         {
             ferramentaEquipada = ferramenta;
+            blockHitEffect.ConfigurarEfeito(ferramenta.configuracaoEfeitoVisual);
             desativarFocoAlvos();
             procurarBlocoAlvoRaycast();
         }

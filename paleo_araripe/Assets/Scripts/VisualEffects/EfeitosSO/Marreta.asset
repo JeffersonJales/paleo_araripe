@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Marreta
   m_EditorClassIdentifier: 
   intensidadeTremor: 0.1
-  duracaoTremor: 0.3
+  duracaoTremor: 0.2
   cooldown: 0.5
   layerMask:
     serializedVersion: 2

@@ -8,7 +8,7 @@ namespace PaleoAraripe {
     {
         [SerializeField] private GameObject telaPrincipal;
         [SerializeField] private GameObject telaSobre;
-        [SerializeField] private int menuFrameRate = 30;
+        [SerializeField] private int menuFrameRate = 60;
         [SerializeField] private Animator animacaoCarregamento;
 
         private void Start()
@@ -19,6 +19,7 @@ namespace PaleoAraripe {
         public void Jogar(int levelSelecionado)
         {
             GerenciadorDados.Instance.levelSelecionado = levelSelecionado;
+            GerenciadorDados.Instance.jogoFinalizado = false;
             animacaoCarregamento.SetTrigger("carregar");
         }
         public void AbrirSobre()

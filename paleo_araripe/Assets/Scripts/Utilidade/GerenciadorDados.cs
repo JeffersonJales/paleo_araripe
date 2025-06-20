@@ -6,5 +6,6 @@ namespace PaleoAraripe {
     public class GerenciadorDados : Singleton<GerenciadorDados>
     {
         public int levelSelecionado;
+        public bool jogoFinalizado;
     }
 }
