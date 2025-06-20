@@ -12,6 +12,7 @@ namespace PaleoAraripe
         }
         void Update()
         {
+            if (!GerenciadorDados.Instance.jogoFinalizado)
             MovimentoMouse();
             CameraPodeMover();
         }

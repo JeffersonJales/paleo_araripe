@@ -16,6 +16,8 @@ namespace PaleoAraripe {
 
         [SerializeField] private Animator animacaoCarregamento;
 
+        [SerializeField] private GameObject telaFinal;
+
         private UsarFerramentas controladorFerramentas;
         private int quantidadeAcoesInicial = 0;
 
@@ -61,8 +63,13 @@ namespace PaleoAraripe {
 
         public void finalizarPartida()
         {
-            animacaoCarregamento.SetTrigger("carregar");
+            GerenciadorDados.Instance.jogoFinalizado = true;
+            telaFinal.SetActive(true);
         }
 
+        public void VoltarParaMenu()
+        {
+            animacaoCarregamento.SetTrigger("carregar");
+        }
     }
 }

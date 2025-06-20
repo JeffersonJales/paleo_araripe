@@ -3071,7 +3071,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   telaPrincipal: {fileID: 1302724987}
   telaSobre: {fileID: 1153493736}
-  menuFrameRate: 10
+  menuFrameRate: 30
   animacaoCarregamento: {fileID: 517036258}
 --- !u!1 &567512051
 GameObject:
@@ -10092,8 +10092,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee4359e2fdffc9b4abd702df89db03ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _destroyOnLoad: 1
+  _destroyOnLoad: 0
   levelSelecionado: 0
+  jogoFinalizado: 0
 --- !u!4 &2033697292
 Transform:
   m_ObjectHideFlags: 0

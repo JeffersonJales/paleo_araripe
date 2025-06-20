@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2b8b21731b95e64cb1be125e116b032, type: 3}
   m_Name: Pa
   m_EditorClassIdentifier: 
-  intensidadeTremor: 0.1
+  intensidadeTremor: 0.2
   duracaoTremor: 0.3
   cooldown: 0.5
   layerMask:
