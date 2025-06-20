@@ -5,10 +5,9 @@ namespace PaleoAraripe
 {
     public class BlocoGenerico : MonoBehaviour
     {
+        [SerializeField] private string nome = "Nome Bloco";
+        [SerializeField] private string descricao = "Descricao Bloco";
         [SerializeField] private BlocoSO blocoSO;
-
-        [SerializeField] private string nomeBloco = "Nome Bloco";
-        [SerializeField] private string descricaoBloco = "Descricao Bloco";
 
         private int vidaAtual = 1;
         private bool emFoco = false;
@@ -19,8 +18,8 @@ namespace PaleoAraripe
 
         // Getters 
         public BlocoSO BlocoSO => blocoSO;
-        public string NomeBloco => nomeBloco;
-        public string DescricaoBloco => descricaoBloco;
+        public string Nome => nome;
+        public string Descricao => descricao;
 
 
         public virtual void Awake()

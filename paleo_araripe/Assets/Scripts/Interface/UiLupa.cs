@@ -17,8 +17,8 @@ namespace PaleoAraripe
 
         public void LigarPopup(BlocoGenerico bloco)
         {
-            titulo.SetText(bloco.NomeBloco);
-            descricao.SetText(bloco.DescricaoBloco);
+            titulo.SetText(bloco.Nome);
+            descricao.SetText(bloco.Descricao);
      
             containerUi.SetActive(true);
         }
