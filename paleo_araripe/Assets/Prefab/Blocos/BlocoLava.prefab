@@ -118,7 +118,7 @@ GameObject:
   - component: {fileID: 5329838929949431190}
   - component: {fileID: 911217079102819469}
   - component: {fileID: -7610706270188324982}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BlocoLava
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -159,6 +159,8 @@ MonoBehaviour:
   blocoSO: {fileID: 11400000, guid: 8a9095526fd9d8047834687af758f1af, type: 2}
   objetoBloco: {fileID: 2253281318628583883}
   efeitoNenhum: {fileID: 11400000, guid: fe49917676096e9498a7886bd9dcf9ef, type: 2}
+  particulaImune: {fileID: 5259933331206925448, guid: c572ab481577c444fb377b7cda0b44b9,
+    type: 3}
   refBlocoPedra: {fileID: 4043340169641137449, guid: ce107ff0b6a34bf499a32bf5152c2ef3,
     type: 3}
   turnosParaLavaSecar: 3
@@ -346,6 +348,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: EscombrosDeTerra
+      objectReference: {fileID: 0}
+    - target: {fileID: 7644950659938722963, guid: 94727cbf2e30be141bdb918f947f2e2e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -11,6 +11,7 @@ namespace PaleoAraripe
         [SerializeField] private BlocoSO blocoSO;
         [SerializeField] private GameObject objetoBloco;
         [SerializeField] private ConfiguracaoEfeito efeitoNenhum;
+        [SerializeField] private GameObject particulaImune;
 
         private Vector3 pontoImpacto;
         private Animator animatorBloco;
@@ -92,6 +93,10 @@ namespace PaleoAraripe
                 efeitoVida = 4;
             animatorBloco.SetInteger("estado", efeitoVida);
             animatorBloco.SetTrigger("hit");
+        }
+        public virtual void aoSerImune()
+        {
+            efeitoDeDano.IniciarEfeito(blocoSO.ConfiguracaoEfeitoVisual, particulaImune, pontoImpacto);
         }
         public virtual void aoTomarDano()
         {

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: -6356890865453197170}
   - component: {fileID: -5329565940393551951}
   - component: {fileID: -5884182607102350472}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BlocoArgila
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53,6 +53,8 @@ MonoBehaviour:
   blocoSO: {fileID: 11400000, guid: ac3b9955425249e4abd229095d5f46c4, type: 2}
   objetoBloco: {fileID: 6819945710641066265}
   efeitoNenhum: {fileID: 11400000, guid: fe49917676096e9498a7886bd9dcf9ef, type: 2}
+  particulaImune: {fileID: 5259933331206925448, guid: c572ab481577c444fb377b7cda0b44b9,
+    type: 3}
   inspiracao: 1
 --- !u!95 &-5329565940393551951
 Animator:
@@ -211,6 +213,7 @@ MonoBehaviour:
   blocoSO: {fileID: 11400000, guid: ac3b9955425249e4abd229095d5f46c4, type: 2}
   objetoBloco: {fileID: 0}
   efeitoNenhum: {fileID: 0}
+  particulaImune: {fileID: 0}
   inspiracao: 1
 --- !u!1001 &6053627840715850639
 PrefabInstance:
@@ -363,6 +366,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: EscombrosDeTerra
+      objectReference: {fileID: 0}
+    - target: {fileID: 7644950659938722963, guid: 94727cbf2e30be141bdb918f947f2e2e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

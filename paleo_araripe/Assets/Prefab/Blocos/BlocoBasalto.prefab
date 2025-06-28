@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5080544676809430932}
   - component: {fileID: -2333116233588182636}
   - component: {fileID: -1847902186830071150}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BlocoBasalto
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53,6 +53,8 @@ MonoBehaviour:
   blocoSO: {fileID: 11400000, guid: adc76a1886d807c449db1312efaa3bd0, type: 2}
   objetoBloco: {fileID: 5891454293468679331}
   efeitoNenhum: {fileID: 11400000, guid: fe49917676096e9498a7886bd9dcf9ef, type: 2}
+  particulaImune: {fileID: 5259933331206925448, guid: c572ab481577c444fb377b7cda0b44b9,
+    type: 3}
 --- !u!95 &-2333116233588182636
 Animator:
   serializedVersion: 5
@@ -269,6 +271,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: EscombrosDeTerra
+      objectReference: {fileID: 0}
+    - target: {fileID: 7644950659938722963, guid: 94727cbf2e30be141bdb918f947f2e2e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
