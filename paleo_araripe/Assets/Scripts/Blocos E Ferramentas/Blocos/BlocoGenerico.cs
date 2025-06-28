@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using static UnityEngine.UI.GridLayoutGroup;
 
 namespace PaleoAraripe
 {
@@ -8,10 +9,15 @@ namespace PaleoAraripe
         [SerializeField] private string nome = "Nome Bloco";
         [SerializeField] private string descricao = "Descricao Bloco";
         [SerializeField] private BlocoSO blocoSO;
+        [SerializeField] private GameObject objetoBloco;
+        [SerializeField] private ConfiguracaoEfeito efeitoNenhum;
 
+        private Vector3 pontoImpacto;
+        private Animator animatorBloco;
         private int vidaAtual = 1;
         private bool emFoco = false;
         private bool emFocoCristal = false;
+        private BlockHitEffect efeitoDeDano;
 
         protected MeshRenderer mr = null;
         protected BoxCollider bc = null;
@@ -21,17 +27,30 @@ namespace PaleoAraripe
         public string Nome => nome;
         public string Descricao => descricao;
 
+        private string corSelecionada = "FFFFFF";
+        private string corNormal = "D6D6D6";
+
 
         public virtual void Awake()
         {
             vidaAtual = BlocoSO.Vida;
 
-            bc = GetComponent<BoxCollider>();
+            efeitoDeDano = GetComponent<BlockHitEffect>();
 
-            mr = GetComponent<MeshRenderer>();
-            mr.material = blocoSO.CorMaterialNaoDestacado;
+            animatorBloco = GetComponent<Animator>();
+
+            bc = objetoBloco.GetComponent<BoxCollider>();
+
+            mr = objetoBloco.GetComponent<MeshRenderer>();
+            if (ColorUtility.TryParseHtmlString(corNormal, out Color corFinal))
+            {
+                mr.material.SetColor("_BaseColor", corFinal);
+            }
         }
-
+        public void SetPontoImpacto(Vector3 ponto)
+        {
+            pontoImpacto = ponto;
+        }
         public void participarColisao(bool estado)
         {
             bc.enabled = estado;
@@ -57,21 +76,40 @@ namespace PaleoAraripe
         {
             return vidaAtual > 0 && bc.enabled;
         }
-
+        public void DefinirVidaVisual()
+        {
+            float percent = (float)vidaAtual * 100f / (float)BlocoSO.Vida;
+            int efeitoVida;
+            if (percent >= 80f)
+                efeitoVida = 0;
+            else if (percent >= 60f)
+                efeitoVida = 1;
+            else if (percent >= 40f)
+                efeitoVida = 2;
+            else if (percent >= 20f)
+                efeitoVida = 3;
+            else
+                efeitoVida = 4;
+            animatorBloco.SetInteger("estado", efeitoVida);
+            animatorBloco.SetTrigger("hit");
+        }
         public virtual void aoTomarDano()
         {
-
+            efeitoDeDano.IniciarEfeito(blocoSO.ConfiguracaoEfeitoVisual, blocoSO.FeedbackAoTomarDano, pontoImpacto);
+            DefinirVidaVisual();
+            animatorBloco.SetTrigger("atingido");
         }
 
         public virtual void aoSerDestruido()
         {
-            bc.enabled = false;
-            Destroy(gameObject);
+            efeitoDeDano.IniciarEfeito(blocoSO.ConfiguracaoEfeitoVisual, blocoSO.FeedbackAoDestruir, pontoImpacto);
+            animatorBloco.SetTrigger("quebrou");
         }
 
         public virtual void aoSerColetado()
         {
-            aoSerDestruido();
+            efeitoDeDano.IniciarEfeito(efeitoNenhum, blocoSO.FeedbackAoColetar, pontoImpacto);
+            animatorBloco.SetTrigger("quebrou");
         }
 
 
@@ -82,7 +120,10 @@ namespace PaleoAraripe
             if (emFoco) return;
             emFoco = true;
 
-            mr.material = blocoSO.CorMaterialDestacado;
+            if (ColorUtility.TryParseHtmlString(corSelecionada, out Color corFinal))
+            {
+                mr.material.SetColor("_BaseColor", corFinal);
+            }
         }
 
         public void casoDeixeDeSerFocoDaFerramenta()
@@ -90,7 +131,10 @@ namespace PaleoAraripe
             if (!emFoco) return;
             emFoco = false;
 
-            mr.material = blocoSO.CorMaterialNaoDestacado;
+            if (ColorUtility.TryParseHtmlString(corNormal, out Color corFinal))
+            {
+                mr.material.SetColor("_BaseColor", corFinal);
+            }
         }
 
         #endregion

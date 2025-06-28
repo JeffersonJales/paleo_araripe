@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vida: 2
   sofreDanoQuandoCuboCaiNele: 0
-  dureza: 1
   tipo: 0
-  identificador: 5
-  feedbackAoDestruir: {fileID: 0}
-  feedbackAoColetar: {fileID: 0}
-  corMaterialDestacado: {fileID: 2100000, guid: d679c4169bce7fb4a895cc396eb3156e,
-    type: 2}
-  corMaterialNaoDestacado: {fileID: 2100000, guid: 57c60ea52370d14458233541e169fb06,
+  feedbackAoDestruir: {fileID: 5259933331206925448, guid: 4f626cea5f0df104dbd9cb15e4aa0249,
+    type: 3}
+  feedbackAoColetar: {fileID: 2163020385281261394, guid: c96cf78dceba80141b36478489032a7f,
+    type: 3}
+  feedbackAoTomarDano: {fileID: 3196785060868092243, guid: 77fb5e678f617c144890aa5e2ba5c94a,
+    type: 3}
+  configuracaoEfeitoVisual: {fileID: 11400000, guid: 36b827e9a423cee4aa10c5263f45ef06,
     type: 2}

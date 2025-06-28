@@ -26,8 +26,6 @@ namespace PaleoAraripe {
         public void OnDestroy()
         {
             UtilitariosGamePlay.pararOuvirResumoInteracaoFerramentaBloco(modificarBloco);
-            if(blocoAtual != null)
-                Destroy(blocoAtual);
         }
 
         private void modificarBloco(ResumoInteracaoBlocoFerramenta resumo)

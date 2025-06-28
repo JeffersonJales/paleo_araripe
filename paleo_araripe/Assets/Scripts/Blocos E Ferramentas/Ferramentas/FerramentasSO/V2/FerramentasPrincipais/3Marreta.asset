@@ -19,10 +19,7 @@ MonoBehaviour:
   quantidadeLimiteDeUsos: 0
   daDanoEm:
   - {fileID: 11400000, guid: 50157d6eca47418439e1adee1b803e80, type: 2}
-  - {fileID: 11400000, guid: abeb310aa7f7cc74f812b3a3025c7b0c, type: 2}
-  - {fileID: 11400000, guid: 39017b15453942c4ea1548e82c642532, type: 2}
-  - {fileID: 11400000, guid: 639cd407abfca5b43a70d355e908d372, type: 2}
-  - {fileID: 11400000, guid: 7b6cede605a891f46a2fdd6580d418de, type: 2}
+  - {fileID: 11400000, guid: 6aa11c4dd58a2c047956956321a08c96, type: 2}
   consegueColetar: []
   tipoColisao: 1
   sprite: {fileID: -937240953, guid: 6c1471129b61878459d1543b529dc857, type: 3}

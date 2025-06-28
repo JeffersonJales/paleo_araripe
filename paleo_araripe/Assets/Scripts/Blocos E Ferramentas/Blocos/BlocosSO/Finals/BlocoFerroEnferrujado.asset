@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b660ac561dbf46a42a0b2bdfa04eb5b5, type: 3}
+  m_Name: BlocoFerroEnferrujado
+  m_EditorClassIdentifier: 
+  vida: 4
+  sofreDanoQuandoCuboCaiNele: 0
+  tipo: 5
+  feedbackAoDestruir: {fileID: 5259933331206925448, guid: 4f626cea5f0df104dbd9cb15e4aa0249,
+    type: 3}
+  feedbackAoColetar: {fileID: 2163020385281261394, guid: c96cf78dceba80141b36478489032a7f,
+    type: 3}
+  feedbackAoTomarDano: {fileID: 3196785060868092243, guid: 77fb5e678f617c144890aa5e2ba5c94a,
+    type: 3}
+  configuracaoEfeitoVisual: {fileID: 11400000, guid: 427585c2ac05d094c882e0f3c91fc28c,
+    type: 2}

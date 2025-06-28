@@ -11,12 +11,6 @@ namespace PaleoAraripe {
         public static readonly float UNIDADE_TAMANHO_CUBO = 1;
         public static readonly float UNIDADE_METADE_TAMANHO_CUBO = 0.5f;
         public static readonly int DANO_QUEDA_BLOCO_SOB_BLOCO = 1;
-        public static readonly int TURNOS_FERRAMENTA_CONGELADA = 2;
-
-        void Awake()
-        {
-            DontDestroyOnLoad(this);
-        }
 
         // N�o utilizar isso no Awake
         public static void ouvirResumoInteracaoFerramentaBloco(Action<ResumoInteracaoBlocoFerramenta> acao)
@@ -53,19 +47,6 @@ namespace PaleoAraripe {
             return FindObjectsOfType<BlocoGenerico>();
         }
 
-        public static List<BlocoGenerico> obterBlocos(NaturezaBlocoFerramenta.IdentificadorBloco identificadorUnico)
-        {
-            List<BlocoGenerico> blocos = new List<BlocoGenerico>(); 
-            foreach(var i in obterBlocos())
-            {
-                if (i.BlocoSO.Identificador.Equals(identificadorUnico))
-                {
-                    blocos.Add(i);
-                }
-            }
-
-            return blocos;
-        }
 
         public static List<BlocoGenerico> obterBlocos(BlocoSO blocoSO)
         {
