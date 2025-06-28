@@ -5,53 +5,17 @@ using UnityEngine;
 namespace PaleoAraripe {
     public class BlockHitEffect : MonoBehaviour
     {
-        [SerializeField] private GameObject particulaImpacto;
-        [SerializeField] private ConfiguracaoEfeito configuracaoEfeito;
-
-        private ParticleSystem impactoParticulaComponente;
+        private ConfiguracaoEfeito configuracaoEfeito;
         private bool estaTremendo = false;
-        private bool podeClicar = true;
         private Vector3 posicaoOriginalCamera;
 
-        public void ConfigurarEfeito(ConfiguracaoEfeito novaConfiguracao)
+        public void IniciarEfeito(ConfiguracaoEfeito _configuracaoEfeito, GameObject particula, Vector3 pontoImpacto)
         {
-            configuracaoEfeito = novaConfiguracao;
-        }
-
-        private void Start()
-        {
-            impactoParticulaComponente = particulaImpacto.GetComponent<ParticleSystem>();
-        }
-
-        private void Update()
-        {
-            if (Input.GetMouseButtonDown(0) && podeClicar)
-            {
-                DetectarClique();
-            }
-        }
-
-        private void DetectarClique()
-        {
-            Ray raio = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-
-            if (Physics.Raycast(raio, out hit, Mathf.Infinity, configuracaoEfeito.LayerMask))
-            {
-                posicaoOriginalCamera = Camera.main.transform.position;
-                Vector3 pontoImpacto = hit.point;
-                StartCoroutine(CicloDeVidaParticula(pontoImpacto));
-                if (!estaTremendo)
-                    StartCoroutine(CorrotinaTremor());
-                StartCoroutine(CooldownCoroutine());
-            }
-        }
-
-        private IEnumerator CooldownCoroutine()
-        {
-            podeClicar = false;
-            yield return new WaitForSeconds(configuracaoEfeito.Cooldown);
-            podeClicar = true;
+            configuracaoEfeito = _configuracaoEfeito;
+            posicaoOriginalCamera = Camera.main.transform.position;
+            Instantiate(particula, pontoImpacto, Quaternion.identity);
+            if (!estaTremendo)
+                StartCoroutine(CorrotinaTremor());
         }
 
         private IEnumerator CorrotinaTremor()
@@ -80,17 +44,6 @@ namespace PaleoAraripe {
             // Garante que a câmera volte exatamente para a posição original
             Camera.main.transform.position = posicaoOriginalCamera;
             estaTremendo = false;
-        }
-
-        private IEnumerator CicloDeVidaParticula(Vector3 pontoImpacto)
-        {
-            if (particulaImpacto != null)
-            {
-                particulaImpacto.transform.position = pontoImpacto;
-                particulaImpacto.SetActive(true);
-                yield return new WaitForSeconds(impactoParticulaComponente.main.duration);
-                particulaImpacto.SetActive(false);
-            }
         }
     }
 }

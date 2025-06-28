@@ -26,8 +26,6 @@ namespace PaleoAraripe {
 
         [Tooltip("Sprite que representa a ferramenta")]
         [SerializeField] private Sprite sprite;
-        [Tooltip("Configuração dos efeitos visuais de uso da ferramenta")]
-        [SerializeField] public ConfiguracaoEfeito configuracaoEfeitoVisual;
 
 
         // Getters

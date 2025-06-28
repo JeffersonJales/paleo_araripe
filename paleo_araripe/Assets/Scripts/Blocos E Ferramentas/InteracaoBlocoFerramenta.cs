@@ -25,7 +25,7 @@ namespace PaleoAraripe {
                 }
                 else
                 {
-                    resumoGeral.TipoInteracaoBloco.Add(ResultadoInteracao.NULO);
+                    resumoGeral.TipoInteracaoBloco.Add(blocoImune(bloco));
                 }
 
                 PopupInformacaoBloco(ferramenta, bloco);
@@ -92,7 +92,11 @@ namespace PaleoAraripe {
             else
                 return ResultadoInteracao.DANO;
         }
-
+        private ResultadoInteracao blocoImune(BlocoGenerico bloco)
+        {
+            bloco.aoSerImune();
+            return ResultadoInteracao.NULO;
+        }
         private ResultadoInteracao blocoColetado(FerramentaSO ferramenta, BlocoGenerico bloco, bool podeAplicarCongelamento)
         {
             switch (bloco.BlocoSO.Tipo)

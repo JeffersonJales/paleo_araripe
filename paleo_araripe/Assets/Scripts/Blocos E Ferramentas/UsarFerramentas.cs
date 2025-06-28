@@ -1,14 +1,16 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace PaleoAraripe {
-    public class UsarFerramentas : MonoBehaviour
-    {
+    public class UsarFerramentas : Singleton<UsarFerramentas> {
+
         [SerializeField] private Boolean ativado = true;
         [SerializeField] private FerramentaSO ferramentaEquipada;
+        [SerializeField] private FerramentaSO ferramentaDesequipada;
         [SerializeField] private GameObject blocoAlvoRaycast;
-        [Range(15f, 30f)][SerializeField] private float distanciaMaximaColisaoRaycast = 20f;
+        [Range(15f, 100f)][SerializeField] private float distanciaMaximaColisaoRaycast = 1000f;
         
         [SerializeField] private int inspiracaoAtual = 0;
         [Range(5, 50)][SerializeField] private int inspiracaoMaxima = 50;
@@ -17,11 +19,14 @@ namespace PaleoAraripe {
         [SerializeField] private BlockHitEffect blockHitEffect;
         private Camera cam;
         private Vector3 normalRaycast;
-        private LayerMask mascaraColisaoBloco;
+        [SerializeField] private LayerMask mascaraColisaoBloco;
 
         private List<GameObject> alvosFerramenta = new List<GameObject>();
         public event Action<ResumoInteracaoBlocoFerramenta> EventoAposRealizarUsoFerramenta;
 
+        [SerializeField] private Sprite ImagemVazia;
+        [SerializeField] private Image ferramentaAtiva;
+        [SerializeField] public int TURNOS_FERRAMENTA_CONGELADA = 2;
         // Inspector
         public void OnValidate()
         {
@@ -41,7 +46,7 @@ namespace PaleoAraripe {
 
         public void FixedUpdate()
         {
-            procurarBlocoAlvoRaycast();
+            ProcurarBlocoAlvoRaycast();
         }
 
         public void Update()
@@ -83,17 +88,17 @@ namespace PaleoAraripe {
             EventoAposRealizarUsoFerramenta?.Invoke(resumo);
         }
 
-        private void procurarBlocoAlvoRaycast()
+        private void ProcurarBlocoAlvoRaycast()
         {
             if (ferramentaEquipada == null)
                 return;
 
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
-
             if (Physics.Raycast(ray, out hit, distanciaMaximaColisaoRaycast, mascaraColisaoBloco))
             {
-                GameObject objetoAtingido = hit.collider.gameObject;
+                GameObject objetoAtingido = hit.collider.transform.parent.gameObject;
+                objetoAtingido.GetComponent<BlocoGenerico>().SetPontoImpacto(hit.point);
                 Vector3 normal = hit.normal;
 
                 if ((objetoAtingido.Equals(blocoAlvoRaycast) && normal.Equals(normalRaycast)) || !objetoAtingido.activeInHierarchy) 
@@ -136,10 +141,14 @@ namespace PaleoAraripe {
         #region Troca de ferramentas!
         public void trocarFerramentaEquipada(FerramentaSO ferramenta)
         {
+            if (ferramenta == null) ferramenta = ferramentaDesequipada;
             ferramentaEquipada = ferramenta;
-            blockHitEffect.ConfigurarEfeito(ferramenta.configuracaoEfeitoVisual);
             desativarFocoAlvos();
-            procurarBlocoAlvoRaycast();
+            ProcurarBlocoAlvoRaycast();
+            if (ferramentaAtiva == null)
+                ferramentaAtiva.sprite = ImagemVazia;
+            else
+                ferramentaAtiva.sprite = ferramenta.SpriteFerramenta;
         }
 
         #endregion

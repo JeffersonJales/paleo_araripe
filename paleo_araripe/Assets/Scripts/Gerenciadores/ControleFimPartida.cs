@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -66,7 +67,6 @@ namespace PaleoAraripe {
             GerenciadorDados.Instance.jogoFinalizado = true;
             telaFinal.SetActive(true);
         }
-
         public void VoltarParaMenu()
         {
             animacaoCarregamento.SetTrigger("carregar");

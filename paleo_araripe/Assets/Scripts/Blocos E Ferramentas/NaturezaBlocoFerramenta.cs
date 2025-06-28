@@ -4,16 +4,7 @@ using UnityEngine;
 
 namespace PaleoAraripe {
     public class NaturezaBlocoFerramenta 
-    {
-        public enum NivelDureza
-        {
-            NULO,
-            TERRA,
-            AREIA,
-            PEDRA,
-            FERRO,
-        }   
-
+    { 
         public enum TipoBloco
         {
             NORMAL,
@@ -22,41 +13,6 @@ namespace PaleoAraripe {
             INSPIRACAO,
             EXPLOSIVO,
             GELO,
-        }
-
-        public enum IdentificadorBloco
-        {
-            AMBAR,
-            AREIA,
-            ARGILA,
-            CALCARIO,
-            CRISTAL, 
-            INSPIRACAO,
-            EXPLOSIVO,
-            FANTASMA,
-            FERRO,
-            FOSSIL,
-            OBSIDIANO,
-            PEDRA,
-            TERRA,
-            VIDRO,
-            RAIZ,
-            DESORGANIZADOR,
-            EMPURRADOR,
-            PUXADOR,
-            GRAVIDADE,
-            LAVA,
-            LAVA_FRESCA,
-            GELO,
-            FERRAMENTA,
-        }
-
-        public enum TipoInteracao
-        {
-            SONDAR,
-            DELICADO,
-            MODERADO,
-            PESADO
         }
 
         public enum ResultadoInteracao

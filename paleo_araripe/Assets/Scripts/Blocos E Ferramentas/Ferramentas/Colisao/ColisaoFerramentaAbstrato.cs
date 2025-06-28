@@ -14,7 +14,7 @@ namespace PaleoAraripe {
             List <GameObject> lista = new List<GameObject>();
             foreach(Collider collider in colliders)
             {
-                lista.Add(collider.gameObject);
+                lista.Add(collider.transform.parent.gameObject);
             }
 
             return lista;
@@ -24,7 +24,7 @@ namespace PaleoAraripe {
         {
             foreach (Collider collider in colliders)
             {
-                lista.Add(collider.gameObject);
+                lista.Add(collider.transform.parent.gameObject);
             }
 
             return lista;

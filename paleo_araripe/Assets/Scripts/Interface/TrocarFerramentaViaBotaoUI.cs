@@ -195,7 +195,7 @@ namespace PaleoAraripe {
         {
             if (resumo.FerramentaCongelada && resumo.FerramentaUsada.Equals(tipoFerramenta))
             {
-                iniciarContagemRegressiva(UtilitariosGamePlay.TURNOS_FERRAMENTA_CONGELADA);
+                iniciarContagemRegressiva(UsarFerramentas.Instance.TURNOS_FERRAMENTA_CONGELADA);
             }
             else
                 diminuirContagemRegressiva();

@@ -10,29 +10,22 @@ namespace PaleoAraripe
         [SerializeField] private int vida = 1;
         [SerializeField] private bool sofreDanoQuandoCuboCaiNele = false;
 
-        [SerializeField] private NaturezaBlocoFerramenta.NivelDureza dureza = NaturezaBlocoFerramenta.NivelDureza.TERRA;
         [SerializeField] private NaturezaBlocoFerramenta.TipoBloco tipo = NaturezaBlocoFerramenta.TipoBloco.NORMAL;
-        [SerializeField] private NaturezaBlocoFerramenta.IdentificadorBloco identificador = NaturezaBlocoFerramenta.IdentificadorBloco.AMBAR;
     
         [SerializeField] private GameObject feedbackAoDestruir;
         [SerializeField] private GameObject feedbackAoColetar;
-        [SerializeField] private Material corMaterialDestacado = null;
-        [SerializeField] private Material corMaterialNaoDestacado = null;
+        [SerializeField] private GameObject feedbackAoTomarDano;
+        [SerializeField] private ConfiguracaoEfeito configuracaoEfeitoVisual;
 
         public int Vida => vida;
 
-        public NaturezaBlocoFerramenta.NivelDureza TipoDureza => dureza;
         public NaturezaBlocoFerramenta.TipoBloco Tipo => tipo;
 
         public GameObject FeedbackAoColetar => feedbackAoColetar;
         public GameObject FeedbackAoDestruir => feedbackAoDestruir;
-    
-        public Material CorMaterialDestacado => corMaterialDestacado;
-        public Material CorMaterialNaoDestacado => corMaterialNaoDestacado;
-    
+        public GameObject FeedbackAoTomarDano => feedbackAoTomarDano;
+        public ConfiguracaoEfeito ConfiguracaoEfeitoVisual => configuracaoEfeitoVisual;
         public bool SofreDanoQuandoCuboCaiNele => sofreDanoQuandoCuboCaiNele;
-
-        public NaturezaBlocoFerramenta.IdentificadorBloco Identificador => identificador;
     }
 }
 
