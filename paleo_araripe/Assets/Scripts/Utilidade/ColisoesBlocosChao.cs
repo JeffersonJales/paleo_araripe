@@ -13,7 +13,7 @@ namespace PaleoAraripe
         private int mascaraChao = MASCARA_NAO_ENCONTRADA;
         private float tamanhoMinimoRaio = 20f;
 
-        #region M�scaras de Colis�o
+        #region Mascaras de Colisao
 
         public int obterMascaraColisao(string nomeLayer)
         {

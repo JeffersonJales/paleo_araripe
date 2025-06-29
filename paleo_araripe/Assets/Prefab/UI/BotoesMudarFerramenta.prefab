@@ -50,6 +50,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2843984742007614907}
     m_Modifications:
+    - target: {fileID: 274380966817337485, guid: 98669338885524748a4cb420bfabae12,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: forcarTrocaFerramenta
+      objectReference: {fileID: 0}
+    - target: {fileID: 274380966817337485, guid: 98669338885524748a4cb420bfabae12,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PaleoAraripe.TrocarFerramentaViaBotaoUI, PaleoAraripeAssemblyDefinition
+      objectReference: {fileID: 0}
     - target: {fileID: 1356940904641100968, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
       propertyPath: tipoFerramenta
@@ -89,12 +99,12 @@ PrefabInstance:
     - target: {fileID: 6503644205157795944, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
       propertyPath: m_Pivot.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6503644205157795944, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
       propertyPath: m_Pivot.y
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6503644205157795944, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
@@ -104,7 +114,7 @@ PrefabInstance:
     - target: {fileID: 6503644205157795944, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6503644205157795944, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
@@ -114,7 +124,7 @@ PrefabInstance:
     - target: {fileID: 6503644205157795944, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6503644205157795944, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
@@ -164,12 +174,12 @@ PrefabInstance:
     - target: {fileID: 6503644205157795944, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 26.599976
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6503644205157795944, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -133.79999
+      value: 130
       objectReference: {fileID: 0}
     - target: {fileID: 6503644205157795944, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
@@ -186,6 +196,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7753419505283150678, guid: 98669338885524748a4cb420bfabae12,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -937240953, guid: 6c1471129b61878459d1543b529dc857,
+        type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -205,6 +221,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2843984742007614907}
     m_Modifications:
+    - target: {fileID: 274380966817337485, guid: 98669338885524748a4cb420bfabae12,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: forcarTrocaFerramenta
+      objectReference: {fileID: 0}
+    - target: {fileID: 274380966817337485, guid: 98669338885524748a4cb420bfabae12,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PaleoAraripe.TrocarFerramentaViaBotaoUI, PaleoAraripeAssemblyDefinition
+      objectReference: {fileID: 0}
     - target: {fileID: 1356940904641100968, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
       propertyPath: tipoFerramenta
@@ -239,12 +265,12 @@ PrefabInstance:
     - target: {fileID: 6503644205157795944, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
       propertyPath: m_Pivot.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6503644205157795944, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
       propertyPath: m_Pivot.y
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6503644205157795944, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
@@ -254,7 +280,7 @@ PrefabInstance:
     - target: {fileID: 6503644205157795944, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6503644205157795944, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
@@ -264,7 +290,7 @@ PrefabInstance:
     - target: {fileID: 6503644205157795944, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6503644205157795944, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
@@ -314,12 +340,12 @@ PrefabInstance:
     - target: {fileID: 6503644205157795944, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 26.599976
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6503644205157795944, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -28
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6503644205157795944, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
@@ -336,6 +362,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7753419505283150678, guid: 98669338885524748a4cb420bfabae12,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 934639231, guid: 6c1471129b61878459d1543b529dc857,
+        type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -355,6 +387,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2843984742007614907}
     m_Modifications:
+    - target: {fileID: 274380966817337485, guid: 98669338885524748a4cb420bfabae12,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: forcarTrocaFerramenta
+      objectReference: {fileID: 0}
+    - target: {fileID: 274380966817337485, guid: 98669338885524748a4cb420bfabae12,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PaleoAraripe.TrocarFerramentaViaBotaoUI, PaleoAraripeAssemblyDefinition
+      objectReference: {fileID: 0}
     - target: {fileID: 1356940904641100968, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
       propertyPath: tipoFerramenta
@@ -394,12 +436,12 @@ PrefabInstance:
     - target: {fileID: 6503644205157795944, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
       propertyPath: m_Pivot.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6503644205157795944, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
       propertyPath: m_Pivot.y
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6503644205157795944, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
@@ -409,7 +451,7 @@ PrefabInstance:
     - target: {fileID: 6503644205157795944, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6503644205157795944, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
@@ -419,7 +461,7 @@ PrefabInstance:
     - target: {fileID: 6503644205157795944, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6503644205157795944, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
@@ -469,12 +511,12 @@ PrefabInstance:
     - target: {fileID: 6503644205157795944, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 26.599976
+      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 6503644205157795944, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -186.70001
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6503644205157795944, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
@@ -491,6 +533,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7753419505283150678, guid: 98669338885524748a4cb420bfabae12,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 77942842, guid: 6c1471129b61878459d1543b529dc857,
+        type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -510,6 +558,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2843984742007614907}
     m_Modifications:
+    - target: {fileID: 274380966817337485, guid: 98669338885524748a4cb420bfabae12,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: forcarTrocaFerramenta
+      objectReference: {fileID: 0}
+    - target: {fileID: 274380966817337485, guid: 98669338885524748a4cb420bfabae12,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PaleoAraripe.TrocarFerramentaViaBotaoUI, PaleoAraripeAssemblyDefinition
+      objectReference: {fileID: 0}
     - target: {fileID: 1356940904641100968, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
       propertyPath: tipoFerramenta
@@ -549,12 +607,12 @@ PrefabInstance:
     - target: {fileID: 6503644205157795944, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
       propertyPath: m_Pivot.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6503644205157795944, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
       propertyPath: m_Pivot.y
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6503644205157795944, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
@@ -564,7 +622,7 @@ PrefabInstance:
     - target: {fileID: 6503644205157795944, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6503644205157795944, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
@@ -574,7 +632,7 @@ PrefabInstance:
     - target: {fileID: 6503644205157795944, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6503644205157795944, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
@@ -624,12 +682,12 @@ PrefabInstance:
     - target: {fileID: 6503644205157795944, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 26.599976
+      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 6503644205157795944, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -239.9
+      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 6503644205157795944, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
@@ -646,6 +704,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7753419505283150678, guid: 98669338885524748a4cb420bfabae12,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1925693624, guid: 6c1471129b61878459d1543b529dc857,
+        type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -665,6 +729,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2843984742007614907}
     m_Modifications:
+    - target: {fileID: 274380966817337485, guid: 98669338885524748a4cb420bfabae12,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: forcarTrocaFerramenta
+      objectReference: {fileID: 0}
+    - target: {fileID: 274380966817337485, guid: 98669338885524748a4cb420bfabae12,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PaleoAraripe.TrocarFerramentaViaBotaoUI, PaleoAraripeAssemblyDefinition
+      objectReference: {fileID: 0}
     - target: {fileID: 1356940904641100968, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
       propertyPath: tipoFerramenta
@@ -704,12 +778,12 @@ PrefabInstance:
     - target: {fileID: 6503644205157795944, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
       propertyPath: m_Pivot.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6503644205157795944, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
       propertyPath: m_Pivot.y
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6503644205157795944, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
@@ -719,7 +793,7 @@ PrefabInstance:
     - target: {fileID: 6503644205157795944, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6503644205157795944, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
@@ -729,7 +803,7 @@ PrefabInstance:
     - target: {fileID: 6503644205157795944, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6503644205157795944, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
@@ -779,12 +853,12 @@ PrefabInstance:
     - target: {fileID: 6503644205157795944, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 26.599976
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6503644205157795944, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -81.100006
+      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 6503644205157795944, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
@@ -801,6 +875,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7753419505283150678, guid: 98669338885524748a4cb420bfabae12,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1203265189, guid: 6c1471129b61878459d1543b529dc857,
+        type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -820,6 +900,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2843984742007614907}
     m_Modifications:
+    - target: {fileID: 274380966817337485, guid: 98669338885524748a4cb420bfabae12,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: forcarTrocaFerramenta
+      objectReference: {fileID: 0}
+    - target: {fileID: 274380966817337485, guid: 98669338885524748a4cb420bfabae12,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PaleoAraripe.TrocarFerramentaViaBotaoUI, PaleoAraripeAssemblyDefinition
+      objectReference: {fileID: 0}
     - target: {fileID: 1356940904641100968, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
       propertyPath: tipoFerramenta
@@ -859,12 +949,12 @@ PrefabInstance:
     - target: {fileID: 6503644205157795944, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
       propertyPath: m_Pivot.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6503644205157795944, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
       propertyPath: m_Pivot.y
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6503644205157795944, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
@@ -874,7 +964,7 @@ PrefabInstance:
     - target: {fileID: 6503644205157795944, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6503644205157795944, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
@@ -884,7 +974,7 @@ PrefabInstance:
     - target: {fileID: 6503644205157795944, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6503644205157795944, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
@@ -934,12 +1024,12 @@ PrefabInstance:
     - target: {fileID: 6503644205157795944, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 26.599976
+      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 6503644205157795944, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -294.6
+      value: 130
       objectReference: {fileID: 0}
     - target: {fileID: 6503644205157795944, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
@@ -956,6 +1046,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7753419505283150678, guid: 98669338885524748a4cb420bfabae12,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 546312848, guid: 6c1471129b61878459d1543b529dc857,
+        type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -975,6 +1071,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2843984742007614907}
     m_Modifications:
+    - target: {fileID: 274380966817337485, guid: 98669338885524748a4cb420bfabae12,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: forcarTrocaFerramenta
+      objectReference: {fileID: 0}
+    - target: {fileID: 274380966817337485, guid: 98669338885524748a4cb420bfabae12,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PaleoAraripe.TrocarFerramentaViaBotaoUI, PaleoAraripeAssemblyDefinition
+      objectReference: {fileID: 0}
     - target: {fileID: 1356940904641100968, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
       propertyPath: tipoFerramenta
@@ -1014,12 +1120,12 @@ PrefabInstance:
     - target: {fileID: 6503644205157795944, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
       propertyPath: m_Pivot.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6503644205157795944, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
       propertyPath: m_Pivot.y
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6503644205157795944, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
@@ -1029,7 +1135,7 @@ PrefabInstance:
     - target: {fileID: 6503644205157795944, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6503644205157795944, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
@@ -1039,7 +1145,7 @@ PrefabInstance:
     - target: {fileID: 6503644205157795944, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6503644205157795944, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
@@ -1089,12 +1195,12 @@ PrefabInstance:
     - target: {fileID: 6503644205157795944, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 26.599976
+      value: 130
       objectReference: {fileID: 0}
     - target: {fileID: 6503644205157795944, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -351.3
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6503644205157795944, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
@@ -1111,6 +1217,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7753419505283150678, guid: 98669338885524748a4cb420bfabae12,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -485456278, guid: 6c1471129b61878459d1543b529dc857,
+        type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

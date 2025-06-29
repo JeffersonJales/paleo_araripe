@@ -24,9 +24,8 @@ namespace PaleoAraripe {
         private List<GameObject> alvosFerramenta = new List<GameObject>();
         public event Action<ResumoInteracaoBlocoFerramenta> EventoAposRealizarUsoFerramenta;
 
-        [SerializeField] private Sprite ImagemVazia;
-        [SerializeField] private Image ferramentaAtiva;
         [SerializeField] public int TURNOS_FERRAMENTA_CONGELADA = 2;
+
         // Inspector
         public void OnValidate()
         {
@@ -141,14 +140,13 @@ namespace PaleoAraripe {
         #region Troca de ferramentas!
         public void trocarFerramentaEquipada(FerramentaSO ferramenta)
         {
-            if (ferramenta == null) ferramenta = ferramentaDesequipada;
+            if (ferramenta == null) 
+                ferramenta = ferramentaDesequipada;
+            
             ferramentaEquipada = ferramenta;
+
             desativarFocoAlvos();
             ProcurarBlocoAlvoRaycast();
-            if (ferramentaAtiva == null)
-                ferramentaAtiva.sprite = ImagemVazia;
-            else
-                ferramentaAtiva.sprite = ferramenta.SpriteFerramenta;
         }
 
         #endregion

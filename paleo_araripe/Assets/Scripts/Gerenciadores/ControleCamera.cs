@@ -10,10 +10,12 @@ namespace PaleoAraripe
         {
             cameraBrain = GetComponent<CinemachineBrain>();
         }
+
         void Update()
         {
             if (!GerenciadorDados.Instance.jogoFinalizado)
-            MovimentoMouse();
+                MovimentoMouse();
+            
             CameraPodeMover();
         }
         void CameraPodeMover()

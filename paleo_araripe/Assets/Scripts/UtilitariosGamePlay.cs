@@ -11,6 +11,7 @@ namespace PaleoAraripe {
         public static readonly float UNIDADE_METADE_TAMANHO_CUBO = 0.5f;
         public static readonly int DANO_QUEDA_BLOCO_SOB_BLOCO = 1;
 
+
         // N�o utilizar isso no Awake
         public static void ouvirResumoInteracaoFerramentaBloco(Action<ResumoInteracaoBlocoFerramenta> acao)
         {
@@ -20,6 +21,7 @@ namespace PaleoAraripe {
                 usoFerramenta.EventoAposRealizarUsoFerramenta += acao;
             }
         }
+
     
         public static void pararOuvirResumoInteracaoFerramentaBloco(Action<ResumoInteracaoBlocoFerramenta> acao)
         {
@@ -29,6 +31,12 @@ namespace PaleoAraripe {
                 usoFerramenta.EventoAposRealizarUsoFerramenta -= acao;
             }
         }
+
+        public static void UtilizarFerramenta(FerramentaSO ferramenta)
+        {
+
+        }
+
 
         public static List<GameObject> obterBlocosGameObjects()
         {
