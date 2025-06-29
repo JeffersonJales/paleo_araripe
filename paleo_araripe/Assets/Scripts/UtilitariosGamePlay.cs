@@ -15,26 +15,30 @@ namespace PaleoAraripe {
         // N�o utilizar isso no Awake
         public static void ouvirResumoInteracaoFerramentaBloco(Action<ResumoInteracaoBlocoFerramenta> acao)
         {
-            UsarFerramentas usoFerramenta = FindObjectOfType<UsarFerramentas>();
-            if (usoFerramenta != null)
+            ControladorFerramenta controladorFerramenta = FindObjectOfType<ControladorFerramenta>();
+            if (controladorFerramenta != null)
             {
-                usoFerramenta.EventoAposRealizarUsoFerramenta += acao;
+                controladorFerramenta.EventoAposRealizarUsoFerramenta += acao;
             }
         }
 
     
         public static void pararOuvirResumoInteracaoFerramentaBloco(Action<ResumoInteracaoBlocoFerramenta> acao)
         {
-            UsarFerramentas usoFerramenta = FindObjectOfType<UsarFerramentas>();
-            if (usoFerramenta != null)
+            ControladorFerramenta controladorFerramenta = FindObjectOfType<ControladorFerramenta>();
+            if (controladorFerramenta != null)
             {
-                usoFerramenta.EventoAposRealizarUsoFerramenta -= acao;
+                controladorFerramenta.EventoAposRealizarUsoFerramenta -= acao;
             }
         }
 
-        public static void UtilizarFerramenta(FerramentaSO ferramenta)
+        public static void UtilizarFerramentaEquipada()
         {
-
+            ControladorFerramenta controladorFerramenta = FindObjectOfType<ControladorFerramenta>();
+            if(controladorFerramenta != null)
+            {
+                controladorFerramenta.utilizarFerramentaEquipada();
+            }
         }
 
 

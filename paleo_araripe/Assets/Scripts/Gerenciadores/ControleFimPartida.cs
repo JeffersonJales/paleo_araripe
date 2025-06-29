@@ -19,7 +19,7 @@ namespace PaleoAraripe {
 
         [SerializeField] private GameObject telaFinal;
 
-        private UsarFerramentas controladorFerramentas;
+        private ControladorFerramenta controladorFerramentas;
         private int quantidadeAcoesInicial = 0;
 
         /// Getters / Setters
@@ -28,7 +28,7 @@ namespace PaleoAraripe {
 
         void Start()
         {
-            controladorFerramentas = GetComponent<UsarFerramentas>();
+            controladorFerramentas = GetComponent<ControladorFerramenta>();
 
             quantidadeAcoesInicial = acoesParaFimJogo;
             controladorFerramentas.EventoAposRealizarUsoFerramenta += verificarFimFosseis;

@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 namespace PaleoAraripe {
-    public class UsarFerramentas : Singleton<UsarFerramentas> {
+    public class ControladorFerramenta : Singleton<ControladorFerramenta> {
 
         [SerializeField] private Boolean ativado = true;
         [SerializeField] private FerramentaSO ferramentaEquipada;
@@ -19,7 +19,7 @@ namespace PaleoAraripe {
         [SerializeField] private BlockHitEffect blockHitEffect;
         private Camera cam;
         private Vector3 normalRaycast;
-        [SerializeField] private LayerMask mascaraColisaoBloco;
+        private LayerMask mascaraColisaoBloco;
 
         private List<GameObject> alvosFerramenta = new List<GameObject>();
         public event Action<ResumoInteracaoBlocoFerramenta> EventoAposRealizarUsoFerramenta;

@@ -12,7 +12,6 @@ namespace PaleoAraripe
         private Button btn;
         private FerramentaSO ferramentaAtual;
         private bool noSmartphone = true;
-
         void Start()
         {
             noSmartphone = Application.isMobilePlatform;
@@ -20,7 +19,7 @@ namespace PaleoAraripe
             img = GetComponent<Image>();
             btn = GetComponent<Button>();
 
-            btn.onClick.AddListener(UtilizarFerramentaAtual);
+            btn.onClick.AddListener(UtilizarFerramentaEquipada);
             btn.enabled = false;
 
             foreach (TrocarFerramentaViaBotaoUI item in FindObjectsOfType<TrocarFerramentaViaBotaoUI>())
@@ -38,12 +37,9 @@ namespace PaleoAraripe
             }
         }
 
-        private void UtilizarFerramentaAtual()
+        private void UtilizarFerramentaEquipada()
         {
-            if (ferramentaAtual == null)
-                return;
-
-            UtilitariosGamePlay.UtilizarFerramenta(ferramentaAtual);
+            UtilitariosGamePlay.UtilizarFerramentaEquipada();
         }
 
         private void TrocouFerramenta(FerramentaSO ferramentSo)

@@ -8,7 +8,7 @@ namespace PaleoAraripe {
         
         void Start()
         {
-            UsarFerramentas usarFerramenta = FindObjectOfType<UsarFerramentas>();
+            ControladorFerramenta usarFerramenta = FindObjectOfType<ControladorFerramenta>();
 
             if (usarFerramenta != null) { 
                 usarFerramenta.EventoAposRealizarUsoFerramenta += autualizarSliderInspiracao;
