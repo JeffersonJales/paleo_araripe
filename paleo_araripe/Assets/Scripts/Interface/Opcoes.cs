@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System;
+using TMPro;
 
 namespace PaleoAraripe {
     public class Opcoes : MonoBehaviour
@@ -13,8 +14,8 @@ namespace PaleoAraripe {
         [SerializeField] private GameObject modalAcessibilidade;
         [SerializeField] private Slider sliderMusica;
         [SerializeField] private Slider sliderSFX;
-        [SerializeField] private Dropdown dropdownGrafico;
-        [SerializeField] private Dropdown dropdownFonte;
+        [SerializeField] private TMP_Dropdown dropdownGrafico;
+        [SerializeField] private TMP_Dropdown dropdownFonte;
         [SerializeField] private Toggle arestasDestacadas;
         [SerializeField] private Toggle blocosDestacados;
 
@@ -41,17 +42,21 @@ namespace PaleoAraripe {
 
         public void AplicarModoGrafico() 
         {
-            // 0 = Performance (Low)
-            // 1 = Gráfico (High)
+            // 0 = Performance (Baixo)
+            // 1 = Balanced (Medio)
+            // 2 = Gráfico (Alto)
             int modoSelecionado = dropdownGrafico.value;
             
             switch (modoSelecionado)
             {
                 case 0: // Performance
-                    QualitySettings.SetQualityLevel(0); // Low
+                    QualitySettings.SetQualityLevel(0); // Baixo
                     break;
-                case 1: // Gráfico
-                    QualitySettings.SetQualityLevel(2); // High
+                case 1: // Balanced
+                    QualitySettings.SetQualityLevel(1); // Medio
+                    break;
+                case 2: // Gráfico
+                    QualitySettings.SetQualityLevel(2); // Alto
                     break;
             }
         }
