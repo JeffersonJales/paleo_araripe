@@ -67,7 +67,7 @@ namespace PaleoAraripe
         IEnumerator AjustarVolumeMusica(float volume, float tempo, bool destruirAudio = false)
         {
             float tempoPassado = 0f;
-            float ajusteVolume = ((volume - source.volume) / tempo) * Time.deltaTime;
+            float ajusteVolume = ((volume - source.volume) / tempo) * Time.deltaTime * 2;
          
             while (tempoPassado < tempo)
             {
@@ -75,6 +75,8 @@ namespace PaleoAraripe
                 tempoPassado += Time.deltaTime;
                 yield return null; 
             }
+
+            source.volume = volume;
 
             if (destruirAudio)
                 Destroy(gameObject);
