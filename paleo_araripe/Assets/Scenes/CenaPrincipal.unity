@@ -571,7 +571,7 @@ Transform:
   m_GameObject: {fileID: 49073071}
   serializedVersion: 2
   m_LocalRotation: {x: 0.02862716, y: 0.006045258, z: -0.00017313285, w: 0.9995719}
-  m_LocalPosition: {x: -0.18558435, y: 3.9248188, z: -17.095867}
+  m_LocalPosition: {x: -0.18558447, y: 3.9248188, z: -17.095867}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -634,6 +634,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92394fc6b00656c43861cc901dd3c3cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  velocidadeX: 300
+  velocidadeY: 2
 --- !u!114 &49073078
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2323,7 +2325,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 419662298}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.08509967, y: 0.0060258014, z: -0.00051467016, w: 0.9963541}
+  m_LocalRotation: {x: 0.085099675, y: 0.0060258014, z: -0.00051467016, w: 0.9963541}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3838,6 +3840,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f34acc28c8aef0418280420736ad28d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  usarFerramentaBotao: 0
 --- !u!4 &795872897 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4345741769610201934, guid: f37c8cfcbf935f6428718bf11e4a8de8,
@@ -4607,8 +4610,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 913528913}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.048898567, y: 0.006040506, z: -0.00029573124, w: 0.99878544}
-  m_LocalPosition: {x: 0.00000011920929, y: 0, z: 0}
+  m_LocalRotation: {x: 0.048898574, y: 0.006040506, z: -0.0002957313, w: 0.99878544}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5790,7 +5793,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1285064165}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.026805708, y: 0.006045568, z: -0.00016211694, w: 0.9996224}
+  m_LocalRotation: {x: 0.026805716, y: 0.006045568, z: -0.00016211698, w: 0.9996224}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -7166,9 +7169,6 @@ MonoBehaviour:
   bbInformacoesPartida: {fileID: 11400000, guid: e0d7bcb58947cde41b2b9a22378f1503,
     type: 2}
   blockHitEffect: {fileID: 0}
-  mascaraColisaoBloco:
-    serializedVersion: 2
-    m_Bits: 0
   TURNOS_FERRAMENTA_CONGELADA: 2
 --- !u!114 &1506665971
 MonoBehaviour:

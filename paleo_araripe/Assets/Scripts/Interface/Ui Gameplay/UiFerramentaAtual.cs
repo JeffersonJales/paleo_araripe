@@ -1,6 +1,3 @@
-using PlasticGui.WorkspaceWindow;
-using System;
-using System.Net.NetworkInformation;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,14 +7,17 @@ namespace PaleoAraripe
     {
         private Image img;
         private Button btn;
+        [SerializeField] private bool usarFerramentaBotao = false;
+
         void Start()
         {
 
             img = GetComponent<Image>();
             btn = GetComponent<Button>();
 
-            btn.onClick.AddListener(UtilizarFerramentaEquipada);
             btn.enabled = false;
+            if(usarFerramentaBotao)
+                btn.onClick.AddListener(UtilizarFerramentaEquipada);
 
             foreach (TrocarFerramentaViaBotaoUI item in FindObjectsOfType<TrocarFerramentaViaBotaoUI>())
             {

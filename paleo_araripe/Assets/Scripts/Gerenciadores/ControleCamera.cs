@@ -4,28 +4,32 @@ namespace PaleoAraripe
 {
     public class ControleCamera : MonoBehaviour
     {
-        private bool podeMover;
-        private CinemachineBrain cameraBrain;
+        private CinemachineFreeLook freeLookCamera;
+        [SerializeField] private float velocidadeX = 300f;
+        [SerializeField] private float velocidadeY = 2f;
 
         void Start()
         {
-            cameraBrain = GetComponent<CinemachineBrain>();
+            freeLookCamera = FindAnyObjectByType<CinemachineFreeLook>();
         }
 
         void Update()
         {
-            if (!GerenciadorDados.Instance.jogoFinalizado)
-                MovimentoMouse();
-            
-            CameraPodeMover();
+            AtualizaVelocidadeCamera();
         }
-        void CameraPodeMover()
+
+        void AtualizaVelocidadeCamera()
         {
-            cameraBrain.enabled = podeMover;
-        }
-        void MovimentoMouse()
-        {
-            podeMover = UtilitariosInput.LiberarCamera();
+            if (UtilitariosInput.LiberarCamera() && !GerenciadorDados.Instance.jogoFinalizado)
+            {
+                freeLookCamera.m_XAxis.m_MaxSpeed = velocidadeX;
+                freeLookCamera.m_YAxis.m_MaxSpeed = velocidadeY;
+            }
+            else
+            {
+                freeLookCamera.m_XAxis.m_MaxSpeed = 0f;
+                freeLookCamera.m_YAxis.m_MaxSpeed = 0f;
+            }
         }
     }
 }

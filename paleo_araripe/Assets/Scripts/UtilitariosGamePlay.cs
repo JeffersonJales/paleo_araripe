@@ -89,5 +89,6 @@ namespace PaleoAraripe {
             var lupa = FindObjectOfType<UiLupa>();
             lupa!.DesligarPopup();
         }
+
     }
 }

@@ -1,8 +1,4 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using static Codice.Client.Commands.WkTree.WorkspaceTreeNode;
 
 namespace PaleoAraripe
 {
@@ -10,7 +6,7 @@ namespace PaleoAraripe
     {
         public static readonly int MOUSE_BOTAO_ESQUERDO = 0;
         public static readonly int MOUSE_BOTAO_DIREITO = 1;
-        public static readonly bool isSmartphone = true; // Application.isMobilePlatform;
+        public static readonly bool isSmartphone = Application.isMobilePlatform;
 
         public static bool LiberarCamera()
         {
@@ -21,17 +17,18 @@ namespace PaleoAraripe
 
         public static bool InteracaoUsarFerramenta()
         {
-            return isSmartphone ? 
-                false : 
+            return isSmartphone ?
+                Input.GetMouseButtonDown(MOUSE_BOTAO_ESQUERDO) : 
                 Input.GetMouseButtonDown(MOUSE_BOTAO_ESQUERDO);
         }
 
         public static Ray ObterRaioProcurarBloco(Camera camera)
         {
             return isSmartphone ?
-                new Ray(camera.transform.position, camera.transform.forward) :
+                camera.ScreenPointToRay(Input.mousePosition):
                 camera.ScreenPointToRay(Input.mousePosition);
         }
+
 
     }
 }
