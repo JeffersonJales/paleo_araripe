@@ -50,11 +50,10 @@ namespace PaleoAraripe {
 
         public void Update()
         {
-            if (ativado && Input.GetMouseButtonDown(0))
+            if (ativado && UtilitariosInput.InteracaoUsarFerramenta())
                 utilizarFerramentaEquipada();
         }
 
-        
         public void utilizarFerramentaEquipada()
         {
             if (ferramentaEquipada == null || blocoAlvoRaycast == null)
@@ -92,7 +91,7 @@ namespace PaleoAraripe {
             if (ferramentaEquipada == null)
                 return;
 
-            Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+            Ray ray = UtilitariosInput.ObterRaioProcurarBloco(cam);
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit, distanciaMaximaColisaoRaycast, mascaraColisaoBloco))
             {

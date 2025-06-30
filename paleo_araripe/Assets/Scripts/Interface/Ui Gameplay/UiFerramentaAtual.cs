@@ -10,11 +10,8 @@ namespace PaleoAraripe
     {
         private Image img;
         private Button btn;
-        private FerramentaSO ferramentaAtual;
-        private bool noSmartphone = true;
         void Start()
         {
-            noSmartphone = Application.isMobilePlatform;
 
             img = GetComponent<Image>();
             btn = GetComponent<Button>();
@@ -46,7 +43,7 @@ namespace PaleoAraripe
         {
             bool temFerramenta = ferramentSo != null;
             img.enabled = temFerramenta;
-            btn.enabled = temFerramenta && noSmartphone;
+            btn.enabled = temFerramenta && UtilitariosInput.isSmartphone;
 
             if (!temFerramenta)
                 return;

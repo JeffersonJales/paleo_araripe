@@ -6,6 +6,7 @@ namespace PaleoAraripe
     {
         private bool podeMover;
         private CinemachineBrain cameraBrain;
+
         void Start()
         {
             cameraBrain = GetComponent<CinemachineBrain>();
@@ -24,11 +25,7 @@ namespace PaleoAraripe
         }
         void MovimentoMouse()
         {
-            podeMover = Input.GetMouseButton(1);
-        }
-        void MovimentoTouch()
-        {
-            //TODO: MOVIMENTO DO TOUCH: não lembro a sintaxe, vou ter que dar uma estudada para lembrar
+            podeMover = UtilitariosInput.LiberarCamera();
         }
     }
 }
