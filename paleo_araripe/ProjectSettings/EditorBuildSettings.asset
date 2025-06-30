@@ -10,8 +10,5 @@ EditorBuildSettings:
     guid: a253524a43be9654d894065bfcef097f
   - enabled: 1
     path: Assets/Scenes/CenaPrincipal.unity
-    guid: e921316625b16b742b02235c1dc15f63
-  - enabled: 0
-    path: Assets/Scenes/CenaCarregamento.unity
-    guid: 99c9720ab356a0642a771bea13969a05
+    guid: 25d9fd078dd396b419a5982ed9d26a29
   m_configObjects: {}

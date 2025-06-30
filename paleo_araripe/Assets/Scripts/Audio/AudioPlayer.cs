@@ -1,0 +1,83 @@
+using System.Collections;
+using UnityEngine;
+
+namespace PaleoAraripe
+{
+    public class AudioPlayer : MonoBehaviour
+    {
+        public AudioSource source;
+        private bool morrendo = false;
+        Coroutine rotinaAjusteVolume;
+
+        void Awake()
+        {
+            source = GetComponent<AudioSource>();
+            source.volume = 0;
+            source.playOnAwake = false;
+        }
+
+        private void OnDestroy()
+        {
+            StopAllCoroutines();
+        }
+
+        private void ConfigurarSource(AudioClip clip, bool loop, float volume, float tempoAumentarVolume)
+        {
+            source.volume = 0;
+            source.loop = loop;
+            source.clip = clip;
+            
+            rotinaAjusteVolume = StartCoroutine(AjustarVolumeMusica(volume, tempoAumentarVolume));
+
+            if (!source.loop)
+                StartCoroutine(DestruirAudioIntro(clip.length));
+        }
+
+        public AudioSource TocarAudio(AudioClip clip, float volume, float tempoAumentarVolume, bool loop)
+        {
+            ConfigurarSource(clip, loop, volume, tempoAumentarVolume);
+            source.Play();
+            return source;
+        }
+
+        public AudioSource TocarAudio(AudioClip clip, double tempoSchelude, float volume, float tempoAumentarVolume, bool loop)
+        {
+            ConfigurarSource(clip, loop, volume, tempoAumentarVolume);
+            source.PlayScheduled(tempoSchelude);
+            return source;
+        }
+
+        IEnumerator DestruirAudioIntro(float tempo)
+        {
+            yield return new WaitForSeconds(tempo);
+            Destroy(gameObject);
+        }
+
+
+        public void PararAudio(float volume, float tempo)
+        {
+            if (morrendo)
+                return;
+
+            morrendo = true;
+            StopCoroutine(rotinaAjusteVolume);
+            StartCoroutine(AjustarVolumeMusica(volume, tempo, true));
+        }
+
+        IEnumerator AjustarVolumeMusica(float volume, float tempo, bool destruirAudio = false)
+        {
+            float tempoPassado = 0f;
+            float ajusteVolume = ((volume - source.volume) / tempo) * Time.deltaTime;
+         
+            while (tempoPassado < tempo)
+            {
+                source.volume = Mathf.Clamp(source.volume + ajusteVolume, 0, 1);
+                tempoPassado += Time.deltaTime;
+                yield return null; 
+            }
+
+            if (destruirAudio)
+                Destroy(gameObject);
+        }
+    }
+}
