@@ -15,8 +15,6 @@ namespace PaleoAraripe
         {
             DontDestroyOnLoad(gameObject);
             SceneManager.sceneLoaded += OnSceneLoaded;
-
-            TocarMusica("MenuPrincipal");
         }
 
         void OnDestroy()
