@@ -28,8 +28,8 @@ namespace PaleoAraripe
         public string Nome => nome;
         public string Descricao => descricao;
 
-        private string corSelecionada = "FFFFFF";
-        private string corNormal = "D6D6D6";
+        private string corSelecionada = "D6D6D6";
+        private string corNormal = "FFFFFF";
 
 
         public virtual void Awake()

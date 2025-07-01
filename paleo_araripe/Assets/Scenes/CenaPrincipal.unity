@@ -2219,7 +2219,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 419662298}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.08509967, y: 0.0060258014, z: -0.00051467016, w: 0.9963541}
+  m_LocalRotation: {x: 0.085099675, y: 0.0060258014, z: -0.00051467016, w: 0.9963541}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -4509,7 +4509,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 913528913}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.048898567, y: 0.006040506, z: -0.00029573124, w: 0.99878544}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -5692,7 +5692,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1285064165}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.026805708, y: 0.006045568, z: -0.00016211694, w: 0.9996224}
+  m_LocalRotation: {x: 0.026805716, y: 0.006045568, z: -0.00016211698, w: 0.9996224}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -7003,7 +7003,6 @@ GameObject:
   - component: {fileID: 1506665968}
   - component: {fileID: 1506665970}
   - component: {fileID: 1506665971}
-  - component: {fileID: 1506665973}
   m_Layer: 0
   m_Name: ControladorJogo
   m_TagString: Untagged
@@ -7029,6 +7028,12 @@ MonoBehaviour:
   uiSliderTempo: {fileID: 616600774}
   animacaoCarregamento: {fileID: 459078764}
   telaFinal: {fileID: 937248642}
+  estagios:
+  - {fileID: 8589770015909426026, guid: b1081c6fc7fc28d4bad85d7b9845ab55, type: 3}
+  - {fileID: 3020766713697100334, guid: 05dc04aadf240c04b84aafd63e4c6b47, type: 3}
+  - {fileID: 7565563461506326485, guid: 5b13db786d798f8429d66356a5d6b1d5, type: 3}
+  - {fileID: 7704677050312196888, guid: 08f375e0c2c268c49974b73ea4fa9471, type: 3}
+  - {fileID: 7163095651777510737, guid: 30d3933a97af0eb41ac1b0f9353268df, type: 3}
 --- !u!4 &1506665969
 Transform:
   m_ObjectHideFlags: 0
@@ -7083,24 +7088,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   valorSlider: {fileID: 2045937275}
   informacoesPartida: {fileID: 11400000, guid: e0d7bcb58947cde41b2b9a22378f1503, type: 2}
---- !u!114 &1506665973
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1506665967}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dac7417aa8498ab45acd58c8af86ee39, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  estagios:
-  - {fileID: 8589770015909426026, guid: b1081c6fc7fc28d4bad85d7b9845ab55, type: 3}
-  - {fileID: 3020766713697100334, guid: 05dc04aadf240c04b84aafd63e4c6b47, type: 3}
-  - {fileID: 7565563461506326485, guid: 5b13db786d798f8429d66356a5d6b1d5, type: 3}
-  - {fileID: 7704677050312196888, guid: 08f375e0c2c268c49974b73ea4fa9471, type: 3}
-  - {fileID: 7163095651777510737, guid: 30d3933a97af0eb41ac1b0f9353268df, type: 3}
 --- !u!4 &1513268852 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1810836374240881437, guid: 962996e23ffcbc44d92fb20cd03940cd,

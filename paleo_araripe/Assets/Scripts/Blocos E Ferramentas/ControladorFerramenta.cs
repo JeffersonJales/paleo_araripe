@@ -36,12 +36,32 @@ namespace PaleoAraripe {
         public int InspiracaoAtual => inspiracaoAtual;
         public int InspiracaoMaxima => inspiracaoMaxima;
 
-
         public void Start()
         {
             cam = Camera.main;
             mascaraColisaoBloco = new ColisoesBlocosChao().obterMascaraBlocoArqueologico();
+            ConfigurarListeners();
         }
+
+        public void OnDestroy()
+        {
+            DesconfigurarListeners();
+        }
+
+        private void ConfigurarListeners()
+        {
+            var controleFim = FindObjectOfType<ControladorEstadoPartida>();
+            if (controleFim != null)
+                controleFim.AoFinalizarPartida += AoFinalizarPartida;
+        }
+
+        private void DesconfigurarListeners()
+        {
+            var controleFim = FindObjectOfType<ControladorEstadoPartida>();
+            if (controleFim != null)
+                controleFim.AoFinalizarPartida -= AoFinalizarPartida;
+        }
+
 
         public void FixedUpdate()
         {
@@ -50,7 +70,7 @@ namespace PaleoAraripe {
 
         public void Update()
         {
-            if (ativado && UtilitariosInput.InteracaoUsarFerramenta())
+            if (UtilitariosInput.InteracaoUsarFerramenta() && ativado)
                 utilizarFerramentaEquipada();
         }
 
@@ -111,6 +131,10 @@ namespace PaleoAraripe {
             }
         }
 
+        private void AoFinalizarPartida()
+        {
+            ativado = false;
+        }
         
         #region Feedback Visual Blocos Marcados
         public void procurarAlvos(GameObject alvoAtual, Vector3 normal)
