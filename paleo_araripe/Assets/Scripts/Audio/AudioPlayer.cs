@@ -23,14 +23,17 @@ namespace PaleoAraripe
 
         private void ConfigurarSource(AudioClip clip, bool loop, float volume, float tempoAumentarVolume)
         {
-            source.volume = 0;
+            source.volume = volume;
             source.loop = loop;
             source.clip = clip;
-            
-            rotinaAjusteVolume = StartCoroutine(AjustarVolumeMusica(volume, tempoAumentarVolume));
+
+            if (tempoAumentarVolume > 0) {
+                source.volume = 0;
+                rotinaAjusteVolume = StartCoroutine(AjustarVolumeMusica(volume, tempoAumentarVolume));
+            }
 
             if (!source.loop)
-                StartCoroutine(DestruirAudioIntro(clip.length));
+                StartCoroutine(DestruirPlayer(clip.length));
         }
 
         public AudioSource TocarAudio(AudioClip clip, float volume, float tempoAumentarVolume, bool loop)
@@ -47,12 +50,18 @@ namespace PaleoAraripe
             return source;
         }
 
-        IEnumerator DestruirAudioIntro(float tempo)
+        public AudioSource TocarSFX(AudioClip clip, float volume)
+        {
+            ConfigurarSource(clip, false, volume, 0);
+            source.Play();
+            return source;
+        }
+
+        IEnumerator DestruirPlayer(float tempo)
         {
             yield return new WaitForSeconds(tempo);
             Destroy(gameObject);
         }
-
 
         public void PararAudio(float volume, float tempo)
         {
@@ -68,14 +77,13 @@ namespace PaleoAraripe
         {
             float tempoPassado = 0f;
             float ajusteVolume = ((volume - source.volume) / tempo) * Time.deltaTime * 2;
-         
+                
             while (tempoPassado < tempo)
             {
                 source.volume = Mathf.Clamp(source.volume + ajusteVolume, 0, 1);
                 tempoPassado += Time.deltaTime;
                 yield return null; 
             }
-
             source.volume = volume;
 
             if (destruirAudio)

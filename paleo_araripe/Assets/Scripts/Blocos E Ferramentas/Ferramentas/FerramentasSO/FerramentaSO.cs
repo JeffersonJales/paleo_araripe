@@ -27,6 +27,9 @@ namespace PaleoAraripe {
         [Tooltip("Sprite que representa a ferramenta")]
         [SerializeField] private Sprite sprite;
 
+        [Tooltip("Sons que a ferramenta pode executar ao serem usadas")]
+        [SerializeField] private List<AudioClip> sfxs;
+
 
         // Getters
         public int TempoGastoAposUso => tempoGastoAposUso;
@@ -38,5 +41,6 @@ namespace PaleoAraripe {
         public List<BlocoSO> DaDanoEm => daDanoEm;
         public List<BlocoSO> ConsegueColetar => consegueColetar;
         public NaturezaBlocoFerramenta.TipoColisaoFerramenta TipoColisao => tipoColisao;
+        public List<AudioClip> Sfxs => sfxs;
     }
 }

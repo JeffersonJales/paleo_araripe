@@ -39,6 +39,8 @@ namespace PaleoAraripe {
                 resumoGeral.QuantidadeAmbarColetado > 0     ||
                 resumoGeral.TipoInteracaoBloco.Contains(ResultadoInteracao.DESTRUIDO);
 
+            TocarAudioInteracaoFerramenta(ferramenta);
+
             return resumoGeral;
         }
         
@@ -81,7 +83,7 @@ namespace PaleoAraripe {
                     return ResultadoInteracao.NULO;
             }
         }
-
+        
         private ResultadoInteracao realizarDanoNoBloco(FerramentaSO ferramenta, BlocoGenerico bloco)
         {
             if (bloco.tomarDano(ferramenta.Dano)) {
@@ -92,11 +94,13 @@ namespace PaleoAraripe {
             else
                 return ResultadoInteracao.DANO;
         }
+        
         private ResultadoInteracao blocoImune(BlocoGenerico bloco)
         {
             bloco.aoSerImune();
             return ResultadoInteracao.NULO;
         }
+        
         private ResultadoInteracao blocoColetado(FerramentaSO ferramenta, BlocoGenerico bloco, bool podeAplicarCongelamento)
         {
             switch (bloco.BlocoSO.Tipo)
@@ -127,7 +131,7 @@ namespace PaleoAraripe {
             bloco.aoSerColetado();
             return ResultadoInteracao.COLETADO;
         }
-
+        
         private void receberInspiracao(ResultadoInteracao resultadoInteracao, BlocoGenerico bloco)
         {
             if (resultadoInteracao.Equals(ResultadoInteracao.DESTRUIDO) || resultadoInteracao.Equals(ResultadoInteracao.COLETADO))
@@ -136,7 +140,7 @@ namespace PaleoAraripe {
                 resumoGeral.QuantidadeInspiracaoGanha += blocoInspiracao.Inspiracao;
             }
         }
-
+        
         private ResultadoInteracao tentarExplodir(ResultadoInteracao resultadoDano, BlocoGenerico bloco)
         {
             if (resultadoDano.Equals(ResultadoInteracao.DESTRUIDO)) {
@@ -147,13 +151,22 @@ namespace PaleoAraripe {
 
             return resultadoDano;
         }
-    
+        
         private void PopupInformacaoBloco(FerramentaSO ferramenta, BlocoGenerico bloco)
         {
             if(ferramenta.TipoColisao == TipoColisaoFerramenta.LUPA)
             {
                 UtilitariosGamePlay.AbrirPopupInformacao(bloco);
             }
+        }
+    
+        private void TocarAudioInteracaoFerramenta(FerramentaSO ferramenta)
+        {
+            if (ferramenta.Sfxs.Count == 0)
+                return;
+
+            Random random = new Random();
+            UtilitarioAudio.TocarSFX(ferramenta.Sfxs[random.Next(ferramenta.Sfxs.Count)]);
         }
     }
 }

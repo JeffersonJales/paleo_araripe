@@ -1575,6 +1575,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabAudioPlayer: {fileID: 577602220375076594, guid: 2ac9b5b41e769ad42a9a6c8a44414592,
     type: 3}
+  audioMixerBGM: {fileID: 5144864237043532763, guid: 0dd4302a29be763499c333ca9d7b0d2e,
+    type: 2}
+  audioMixerSFX: {fileID: -9010941234112558382, guid: 0dd4302a29be763499c333ca9d7b0d2e,
+    type: 2}
 --- !u!81 &491523810
 AudioListener:
   m_ObjectHideFlags: 0

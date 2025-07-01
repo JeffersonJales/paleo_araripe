@@ -31,3 +31,7 @@ MonoBehaviour:
   consegueColetar: []
   tipoColisao: 3
   sprite: {fileID: 546312848, guid: 6c1471129b61878459d1543b529dc857, type: 3}
+  sfxs:
+  - {fileID: 8300000, guid: ff061e240a514f342836c7deff7ab3af, type: 3}
+  - {fileID: 8300000, guid: 0885402cd584d314888b2b31eb121461, type: 3}
+  - {fileID: 8300000, guid: fb6d96b876f16224da946a645fe87c99, type: 3}

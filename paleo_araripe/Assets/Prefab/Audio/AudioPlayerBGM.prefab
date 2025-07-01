@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3343047744186310482}
   - component: {fileID: 8078332558406646054}
   m_Layer: 0
-  m_Name: AudioPlayer
+  m_Name: AudioPlayerBGM
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6479d629fe256f41bb0512669ecf014, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  source: {fileID: 0}
 --- !u!82 &8078332558406646054
 AudioSource:
   m_ObjectHideFlags: 0

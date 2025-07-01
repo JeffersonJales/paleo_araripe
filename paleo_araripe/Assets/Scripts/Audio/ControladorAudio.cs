@@ -1,19 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 namespace PaleoAraripe
 {
     public class ControladorAudio : MonoBehaviour
     {
 
+        [Range(0f, 1f)][SerializeField] private float volumeBGM = 1;
+        [Range(0f, 1f)][SerializeField] private float volumeSFX = 1;
+
+
         [SerializeField] private GameObject prefabAudioPlayer;
+        [SerializeField] private AudioMixerGroup audioMixerBGM;
+        [SerializeField] private AudioMixerGroup audioMixerSFX;
+
         private List<AudioPlayer> audioPlayers = new List<AudioPlayer>();
 
         private const float TEMPO_AUMENTAR_VOLUME = 2f;
         private const float TEMPO_DIMINUIR_VOLUME = 1f;
-        private const float VOLUME_MAXIMO = 0.5f;
-        private const float VOLUME_MINIMO = 0;
+        public float VolumeBGM { set { volumeBGM = value; } }
+        public float VolumeSFX { set { volumeSFX = value; } }
+
 
         void Start()
         {
@@ -25,41 +34,42 @@ namespace PaleoAraripe
             foreach (AudioPlayer player in audioPlayers)
             {
                 if(player != null)
-                    player.PararAudio(VOLUME_MINIMO, TEMPO_DIMINUIR_VOLUME);
+                    player.PararAudio(0, TEMPO_DIMINUIR_VOLUME);
             }
             audioPlayers.Clear();
         }
 
-        public void PararTodosAudios(bool realmenteParar)
-        {
-            if(realmenteParar)
-                PararTodosAudios();
-        }
-
-        private AudioPlayer InstanciarAudioPlayer()
+        private AudioPlayer InstanciarAudioPlayer(AudioMixerGroup mixer, bool adicionarPlayer = true)
         {
             AudioPlayer audioPlayer = Instantiate(prefabAudioPlayer, transform).GetComponent<AudioPlayer>();
-            audioPlayers.Add(audioPlayer);
-
+            audioPlayer.source.outputAudioMixerGroup = mixer;
+            
+            if(adicionarPlayer)
+                audioPlayers.Add(audioPlayer);
+            
             return audioPlayer;
         }
 
-        public void TocarAudioComIntro(AudioClip clip, AudioClip intro, float volumeMaximo = VOLUME_MAXIMO, float tempo = TEMPO_AUMENTAR_VOLUME,  bool pararOutrosAudios = true)
+        public void TocarAudioComIntro(AudioClip clip, AudioClip intro, float volume = 1, float tempo = TEMPO_AUMENTAR_VOLUME)
         {
-            PararTodosAudios(pararOutrosAudios);
+            PararTodosAudios();
 
             double tempoSchedule = AudioSettings.dspTime + 1f;
-            InstanciarAudioPlayer().TocarAudio(intro, tempoSchedule, volumeMaximo, tempo, false);
+            InstanciarAudioPlayer(audioMixerBGM).TocarAudio(intro, tempoSchedule, volume * volumeBGM, tempo, false);
 
             tempoSchedule += (double) intro.samples / intro.frequency;
-            InstanciarAudioPlayer().TocarAudio(clip, tempoSchedule, volumeMaximo, tempo, true);
+            InstanciarAudioPlayer(audioMixerBGM).TocarAudio(clip, tempoSchedule, volume * volumeBGM, tempo, true);
         }
 
-        public void TocarAudio(AudioClip clip, float volumeMaximo = VOLUME_MAXIMO, float tempo = TEMPO_AUMENTAR_VOLUME, bool pararOutrosAudios = true)
+        public void TocarAudio(AudioClip clip, float volumeMaximo = 1, float tempo = TEMPO_AUMENTAR_VOLUME)
         {
-            PararTodosAudios(pararOutrosAudios);
-            InstanciarAudioPlayer().TocarAudio(clip, volumeMaximo, tempo, true);
+            PararTodosAudios();
+            InstanciarAudioPlayer(audioMixerBGM).TocarAudio(clip, volumeMaximo, tempo, true);
         }
 
+        public void TocarSfx(AudioClip clip, float volume = 1)
+        {
+            InstanciarAudioPlayer(audioMixerSFX, false).TocarSFX(clip, volume * volumeSFX);
+        }
     }
 }
