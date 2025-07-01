@@ -28,25 +28,18 @@ namespace PaleoAraripe
         public string Nome => nome;
         public string Descricao => descricao;
 
-        private string corSelecionada = "D6D6D6";
-        private string corNormal = "FFFFFF";
-
+        [SerializeField] private Color corSelecionado = new Color(0.839f, 0.839f, 0.839f, 0);
+        private Color corNaoSelecionado;
 
         public virtual void Awake()
         {
             vidaAtual = BlocoSO.Vida;
-
             efeitoDeDano = GetComponent<BlockHitEffect>();
-
             animatorBloco = GetComponent<Animator>();
-
             bc = objetoBloco.GetComponent<BoxCollider>();
-
             mr = objetoBloco.GetComponent<MeshRenderer>();
-            if (ColorUtility.TryParseHtmlString(corNormal, out Color corFinal))
-            {
-                mr.material.SetColor("_BaseColor", corFinal);
-            }
+
+            corNaoSelecionado = mr.material.GetColor("_BaseColor");
         }
         public void SetPontoImpacto(Vector3 ponto)
         {
@@ -125,10 +118,7 @@ namespace PaleoAraripe
             if (emFoco) return;
             emFoco = true;
 
-            if (ColorUtility.TryParseHtmlString(corSelecionada, out Color corFinal))
-            {
-                mr.material.SetColor("_BaseColor", corFinal);
-            }
+            mr.material.SetColor("_BaseColor", corSelecionado);
         }
 
         public void casoDeixeDeSerFocoDaFerramenta()
@@ -136,10 +126,7 @@ namespace PaleoAraripe
             if (!emFoco) return;
             emFoco = false;
 
-            if (ColorUtility.TryParseHtmlString(corNormal, out Color corFinal))
-            {
-                mr.material.SetColor("_BaseColor", corFinal);
-            }
+            mr.material.SetColor("_BaseColor", corNaoSelecionado);
         }
 
         #endregion
