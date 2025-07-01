@@ -283,7 +283,7 @@ GameObject:
   - component: {fileID: 2508495524492677064}
   - component: {fileID: 2652459850507079356}
   - component: {fileID: 2259783912368858130}
-  - component: {fileID: 721383662245830988}
+  - component: {fileID: 4401241175239298590}
   m_Layer: 5
   m_Name: CanvasFossilDex
   m_TagString: Untagged
@@ -380,7 +380,7 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &721383662245830988
+--- !u!114 &4401241175239298590
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -389,13 +389,49 @@ MonoBehaviour:
   m_GameObject: {fileID: 565078075536529530}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf463f2cc5f332345ae2f166b8028731, type: 3}
+  m_Script: {fileID: 11500000, guid: 20d1825e7f31d314d9ea6ffb0406111b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  telaPrincipal: {fileID: 0}
-  telaSobre: {fileID: 0}
-  menuFrameRate: 10
-  animacaoCarregamento: {fileID: 0}
+  titulo: {fileID: 5277811945364603407}
+  descricao: {fileID: 4463874337611498541}
+  imagem: {fileID: 3090901574611077853}
+  imagemBloqueado: {fileID: -1806633564, guid: 6c1471129b61878459d1543b529dc857, type: 3}
+  imagemBotaoInterrogacao: {fileID: -485456278, guid: 6c1471129b61878459d1543b529dc857,
+    type: 3}
+  itens:
+  - {fileID: 11400000, guid: 28e68b9ecf44a3b46bdefa1b9f097898, type: 2}
+  - {fileID: 11400000, guid: 759ec6c4e3174f14b9b2ceaf391c8fc3, type: 2}
+  - {fileID: 11400000, guid: a18ddafce7c72cd449d3b208d39bb240, type: 2}
+  - {fileID: 11400000, guid: 2d4ee995d7623f143bd726a920c0e4bc, type: 2}
+  - {fileID: 11400000, guid: 85a593c37d8bbe64aad8ca1433b7de53, type: 2}
+  - {fileID: 11400000, guid: 2d3442ec756855646be04b7c7a7e74ef, type: 2}
+  - {fileID: 11400000, guid: ff46fb1561d1e3a4e890f4113b18f2db, type: 2}
+  - {fileID: 11400000, guid: 38dbcb6d01e1b904abb3e58f653439d5, type: 2}
+  - {fileID: 11400000, guid: fc01f3d8b355b3949a293fc0d09cffc2, type: 2}
+  - {fileID: 11400000, guid: 3c80c66e242b30542a2187a9913b3927, type: 2}
+  - {fileID: 11400000, guid: 5d9364159a7763f4396f6f9722c0a526, type: 2}
+  - {fileID: 11400000, guid: 0c24a3f2710d16343982cd265b41f3ab, type: 2}
+  - {fileID: 11400000, guid: 1f03fac0dbba64a44a6dd7405cd9891b, type: 2}
+  - {fileID: 11400000, guid: 8f40ef9301cea544cbaf4ac434e67b35, type: 2}
+  - {fileID: 11400000, guid: 708ae005e65abe34196d67444027441b, type: 2}
+  - {fileID: 11400000, guid: b210a906ac2f1f7418828a33b1d44a0d, type: 2}
+  botoes:
+  - {fileID: 6766541151922156975}
+  - {fileID: 8128755798854087620}
+  - {fileID: 6806782102179184641}
+  - {fileID: 3516562900047322532}
+  - {fileID: 7030688523077907027}
+  - {fileID: 3988472874737190678}
+  - {fileID: 2899662772169906837}
+  - {fileID: 7021568433077977181}
+  - {fileID: 7225076287230271841}
+  - {fileID: 1584451522924263764}
+  - {fileID: 8635074055547170453}
+  - {fileID: 6641018012555995959}
+  - {fileID: 8924295065257831590}
+  - {fileID: 3512729436107985098}
+  - {fileID: 7975857415176957728}
+  - {fileID: 165032261412583722}
 --- !u!1 &706099215390382057
 GameObject:
   m_ObjectHideFlags: 0
@@ -2086,7 +2122,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 8173539619940533446}
   m_Direction: 0
   m_Value: 0
-  m_Size: 0.48014763
+  m_Size: 0.48014766
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -5089,7 +5125,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 3459475783038152859}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.7189333
+  m_Size: 0.7189334
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
