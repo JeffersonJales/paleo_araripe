@@ -11,7 +11,7 @@ namespace PaleoAraripe
         [Range(0f, 1f)][SerializeField] private float volumeBGM = 1;
         [Range(0f, 1f)][SerializeField] private float volumeSFX = 1;
 
-
+        [SerializeField] private AudioMixer audioMixer;
         [SerializeField] private GameObject prefabAudioPlayer;
         [SerializeField] private AudioMixerGroup audioMixerBGM;
         [SerializeField] private AudioMixerGroup audioMixerSFX;
@@ -27,6 +27,8 @@ namespace PaleoAraripe
         void Start()
         {
             DontDestroyOnLoad(gameObject);
+            SetarVolumeMusica(PlayerPrefs.GetFloat("VolumeMusica", 0));
+            SetarVolumeSFX(PlayerPrefs.GetFloat("VolumeSFX", 0));
         }
 
         public void PararTodosAudios()
@@ -70,6 +72,15 @@ namespace PaleoAraripe
         public void TocarSfx(AudioClip clip, float volume = 1)
         {
             InstanciarAudioPlayer(audioMixerSFX, false).TocarSFX(clip, volume * volumeSFX);
+        }
+
+        public void SetarVolumeMusica(float volume)
+        {
+            audioMixer.SetFloat("MusicVolume", volume);
+        }
+        public void SetarVolumeSFX(float volume)
+        {
+            audioMixer.SetFloat("SFXVolume", volume);
         }
     }
 }

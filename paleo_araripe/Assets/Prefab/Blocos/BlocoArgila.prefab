@@ -101,7 +101,7 @@ GameObject:
   - component: {fileID: 1336880813335337013}
   - component: {fileID: 8783932906382237706}
   - component: {fileID: 1856748965584551589}
-  - component: {fileID: 1006395973694314762}
+  - component: {fileID: 3607293434099510275}
   m_Layer: 6
   m_Name: Bloco
   m_TagString: Untagged
@@ -196,7 +196,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 100, y: 100, z: 100}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1006395973694314762
+--- !u!114 &3607293434099510275
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -205,16 +205,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 6819945710641066265}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e706311c61a34f64a8a7588f6dc1ccda, type: 3}
+  m_Script: {fileID: 11500000, guid: 5d69beaa2a0f5d94f97f6dd1102dfb56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nome: Nome Bloco
-  descricao: Descricao Bloco
-  blocoSO: {fileID: 11400000, guid: ac3b9955425249e4abd229095d5f46c4, type: 2}
-  objetoBloco: {fileID: 0}
-  efeitoNenhum: {fileID: 0}
-  particulaImune: {fileID: 0}
-  inspiracao: 1
+  normal: {fileID: 2100000, guid: 04c53378125d5d5438ff3fc5cc7ac6a1, type: 2}
+  cor: {fileID: 2100000, guid: 7dd66ceaa9eca274c8d9cf01dd1d89bb, type: 2}
+  aresta: {fileID: 2100000, guid: 000530e6d7c040f42aa5e572d6628a44, type: 2}
+  arestaECor: {fileID: 2100000, guid: 4700357c86c119442a068185acdc46b9, type: 2}
 --- !u!1001 &6053627840715850639
 PrefabInstance:
   m_ObjectHideFlags: 0

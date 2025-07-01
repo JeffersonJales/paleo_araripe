@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System.Collections;
 
 namespace PaleoAraripe {
     public class Opcoes : MonoBehaviour
@@ -18,11 +19,16 @@ namespace PaleoAraripe {
 
         private void Start()
         {
-            // Inicializa os sliders com os valores salvos
+            configuracoes.CarregarConfiguracoes();
+            dropdownGrafico.value = configuracoes.QualidadeVisual;
             sliderMusica.value = configuracoes.VolumeMusica;
             sliderSFX.value = configuracoes.VolumeSFX;
+            dropdownFonte.value = configuracoes.IncrementoFonte;
+            arestasDestacadas.isOn = configuracoes.ModoArestaDestacada;
+            blocosDestacados.isOn = configuracoes.ModoBlocoDestacado;
+            dropdownGrafico.RefreshShownValue();
+            dropdownFonte.RefreshShownValue();
         }
-
         public void AplicarVolumeMusica()
         {
             // Atualiza o volume da música com o valor do slider (0-100)
@@ -42,29 +48,13 @@ namespace PaleoAraripe {
             // 0 = Performance (Baixo)
             // 1 = Balanced (Medio)
             // 2 = Gráfico (Alto)
-            int modoSelecionado = dropdownGrafico.value;
-            
-            switch (modoSelecionado)
-            {
-                case 0: // Performance
-                    QualitySettings.SetQualityLevel(0); // Baixo
-                    break;
-                case 1: // Balanced
-                    QualitySettings.SetQualityLevel(1); // Medio
-                    break;
-                case 2: // Gráfico
-                    QualitySettings.SetQualityLevel(2); // Alto
-                    break;
-            }
+            configuracoes.QualidadeVisual = dropdownGrafico.value;
         }
 
         public void AplicarTamanhoFonte()
         {
-            // O valor do dropdown pode ser normal, que irá manter a fonte padrão, e grande que irá incrementar a fonte em 5 pontos
-            if (dropdownFonte.value == 0)
-                configuracoes.IncrementoFonte = 0;
-            else
-                configuracoes.IncrementoFonte = 5;
+            // O valor do dropdown pode ser normal, que irá manter a fonte padrão, e grande que irá incrementar a fonte
+            configuracoes.IncrementoFonte = dropdownFonte.value;
         }
 
         public void AplicarArestasDestacadas()
@@ -91,6 +81,16 @@ namespace PaleoAraripe {
         public void Voltar()
         {
             // Fecha o menu de configurações e retorna para o menu principal
+            canvasConfiguracao.SetActive(false);
+            canvasPrincipal.SetActive(true);
+        }
+        public void Salvar()
+        {
+            QualitySettings.SetQualityLevel(configuracoes.QualidadeVisual);
+            SetarTamanhoFonte.mudarTamanhoFonte.Invoke(configuracoes.IncrementoFonte == 0);
+            UtilitarioAudio.SetarVolumeMusica(sliderMusica.value);
+            UtilitarioAudio.SetarVolumeSFX(sliderSFX.value);
+            PlayerPrefs.Save();
             canvasConfiguracao.SetActive(false);
             canvasPrincipal.SetActive(true);
         }

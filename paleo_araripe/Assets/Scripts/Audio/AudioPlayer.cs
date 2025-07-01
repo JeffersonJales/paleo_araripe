@@ -35,7 +35,10 @@ namespace PaleoAraripe
             if (!source.loop)
                 StartCoroutine(DestruirPlayer(clip.length));
         }
-
+        public void ConfigurarVolume(float volume)
+        {
+            source.volume = volume;
+        }
         public AudioSource TocarAudio(AudioClip clip, float volume, float tempoAumentarVolume, bool loop)
         {
             ConfigurarSource(clip, loop, volume, tempoAumentarVolume);

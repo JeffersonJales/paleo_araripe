@@ -171,6 +171,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   volumeBGM: 1
   volumeSFX: 1
+  audioMixer: {fileID: 24100000, guid: 0dd4302a29be763499c333ca9d7b0d2e, type: 2}
   prefabAudioPlayer: {fileID: 577602220375076594, guid: 2ac9b5b41e769ad42a9a6c8a44414592,
     type: 3}
   audioMixerBGM: {fileID: 5144864237043532763, guid: 0dd4302a29be763499c333ca9d7b0d2e,
@@ -262,6 +263,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _destroyOnLoad: 0
+  configuracoes: {fileID: 11400000, guid: e4a97a6d5f377c348b42a0976775f7f0, type: 2}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6438069411628831916}
   - component: {fileID: 4942860409356671662}
   - component: {fileID: 522100164976689066}
+  - component: {fileID: 1517847920521340835}
   m_Layer: 6
   m_Name: Bloco
   m_TagString: Untagged
@@ -84,6 +85,22 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &1517847920521340835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 834864197848946425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d69beaa2a0f5d94f97f6dd1102dfb56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  normal: {fileID: 2100000, guid: 04c53378125d5d5438ff3fc5cc7ac6a1, type: 2}
+  cor: {fileID: 2100000, guid: 7dd66ceaa9eca274c8d9cf01dd1d89bb, type: 2}
+  aresta: {fileID: 2100000, guid: 000530e6d7c040f42aa5e572d6628a44, type: 2}
+  arestaECor: {fileID: 2100000, guid: 4700357c86c119442a068185acdc46b9, type: 2}
 --- !u!1 &4043340169641137449
 GameObject:
   m_ObjectHideFlags: 0

@@ -31,12 +31,12 @@ namespace PaleoAraripe
     
         public static void SetarVolumeMusica(float volume)
         {
-            ObterControladorAudio().VolumeBGM = volume;
+            ObterControladorAudio().SetarVolumeMusica(volume);
         }
 
         public static void SetarVolumeSFX(float volume)
         {
-            ObterControladorAudio().VolumeSFX = volume;
+            ObterControladorAudio().SetarVolumeSFX(volume);
         }
     }
 }

@@ -102,6 +102,7 @@ GameObject:
   - component: {fileID: 6458375243590023057}
   - component: {fileID: 6156190310518576803}
   - component: {fileID: 3154396004852953122}
+  - component: {fileID: 5893030414051515290}
   m_Layer: 6
   m_Name: Bloco
   m_TagString: Untagged
@@ -196,6 +197,22 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 100, y: 100, z: 100}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5893030414051515290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8847421597488883458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d69beaa2a0f5d94f97f6dd1102dfb56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  normal: {fileID: 2100000, guid: f8f0fe79bdf45ea40b4da41c261e604f, type: 2}
+  cor: {fileID: 2100000, guid: 406f0992c698a2248a505eeb66b31edf, type: 2}
+  aresta: {fileID: 2100000, guid: 2db4074a69ffa42479819d0919f7ca68, type: 2}
+  arestaECor: {fileID: 2100000, guid: 09c8a35b10a7b29489e3391ce8be47a1, type: 2}
 --- !u!1001 &3108079486922041283
 PrefabInstance:
   m_ObjectHideFlags: 0

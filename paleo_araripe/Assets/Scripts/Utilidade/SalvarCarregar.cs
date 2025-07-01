@@ -3,11 +3,17 @@ using UnityEngine;
 namespace PaleoAraripe {
     public class SalvarCarregar : Singleton<SalvarCarregar>
     {
+        [SerializeField] private ConfiguracoesSO configuracoes;
         private const int TOTAL_NIVEIS = 5;
         private const int TOTAL_FOSSEIS = 20;
         private const string KEY_NIVEIS = "NiveisCompletos";
         private const string KEY_FOSSEIS = "FosseisEncontrados";
 
+        private void Start()
+        {
+            Carregar(out bool[] niveis, out bool[] fosseis);
+            //PlayerPrefs.DeleteAll();
+        }
         // Salva o progresso dos níveis e fósseis
         public void Salvar(bool[] niveisCompletos, bool[] fosseisEncontrados)
         {
