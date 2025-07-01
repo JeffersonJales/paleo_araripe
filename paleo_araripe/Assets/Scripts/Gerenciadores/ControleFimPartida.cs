@@ -24,7 +24,7 @@ namespace PaleoAraripe {
 
         /// Getters / Setters
         public AtualizarValorSlider UiSliderTempo => uiSliderTempo;
-
+        public Action AoFinalizarPartida;
 
         void Start()
         {
@@ -50,6 +50,8 @@ namespace PaleoAraripe {
             quantidadeFossils -= resumo.QuantidadeFossilDestruido;
             if (quantidadeFossils <= 0)
                 finalizarPartida();
+
+            AoFinalizarPartida?.Invoke();
         }
 
         public void verificarFimSemAcoes(ResumoInteracaoBlocoFerramenta resumo)

@@ -8,9 +8,6 @@ namespace PaleoAraripe
     public class ControladorAudio : MonoBehaviour
     {
 
-        [Range(0f, 1f)][SerializeField] private float volumeBGM = 1;
-        [Range(0f, 1f)][SerializeField] private float volumeSFX = 1;
-
         [SerializeField] private AudioMixer audioMixer;
         [SerializeField] private GameObject prefabAudioPlayer;
         [SerializeField] private AudioMixerGroup audioMixerBGM;
@@ -20,9 +17,6 @@ namespace PaleoAraripe
 
         private const float TEMPO_AUMENTAR_VOLUME = 2f;
         private const float TEMPO_DIMINUIR_VOLUME = 1f;
-        public float VolumeBGM { set { volumeBGM = value; } }
-        public float VolumeSFX { set { volumeSFX = value; } }
-
 
         void Start()
         {
@@ -57,10 +51,10 @@ namespace PaleoAraripe
             PararTodosAudios();
 
             double tempoSchedule = AudioSettings.dspTime + 1f;
-            InstanciarAudioPlayer(audioMixerBGM).TocarAudio(intro, tempoSchedule, volume * volumeBGM, tempo, false);
+            InstanciarAudioPlayer(audioMixerBGM).TocarAudio(intro, tempoSchedule, volume, tempo, false);
 
             tempoSchedule += (double) intro.samples / intro.frequency;
-            InstanciarAudioPlayer(audioMixerBGM).TocarAudio(clip, tempoSchedule, volume * volumeBGM, tempo, true);
+            InstanciarAudioPlayer(audioMixerBGM).TocarAudio(clip, tempoSchedule, volume, tempo, true);
         }
 
         public void TocarAudio(AudioClip clip, float volumeMaximo = 1, float tempo = TEMPO_AUMENTAR_VOLUME)
@@ -71,7 +65,7 @@ namespace PaleoAraripe
 
         public void TocarSfx(AudioClip clip, float volume = 1)
         {
-            InstanciarAudioPlayer(audioMixerSFX, false).TocarSFX(clip, volume * volumeSFX);
+            InstanciarAudioPlayer(audioMixerSFX, false).TocarSFX(clip, volume);
         }
 
         public void SetarVolumeMusica(float volume)
