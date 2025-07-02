@@ -6,7 +6,7 @@ using UnityEngine.UI;
 namespace PaleoAraripe {
     public class ControladorFerramenta : Singleton<ControladorFerramenta> {
 
-        [SerializeField] private Boolean ativado = true;
+        [SerializeField] private bool ativado = true;
         [SerializeField] private FerramentaSO ferramentaEquipada;
         [SerializeField] private FerramentaSO ferramentaDesequipada;
         [SerializeField] private GameObject blocoAlvoRaycast;

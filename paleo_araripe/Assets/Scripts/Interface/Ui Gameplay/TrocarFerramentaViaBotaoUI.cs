@@ -45,12 +45,6 @@ namespace PaleoAraripe {
                 if (necessitaInspiracao)
                     configurarInspiracao();
 
-                //if (temContagemRegressiva)
-                    // configurarContagemRegressiva();
-
-                if (temQuantidadeLimite)
-                    configurarQuantidadeUsoLimitado();
-
                 configurarCongelamento();
             }
         }
@@ -113,20 +107,26 @@ namespace PaleoAraripe {
             {
                 esperandoInspiracao = true;
                 tentarDesabilitarBotao();
+
+                if(resumo.FerramentaUsada == tipoFerramenta)
+                    eventoTentativaTrocaFerramenta?.Invoke(null);
             }
         }
         #endregion
 
-        #region Contagem Regressiva para usar novamente
-        private void configurarContagemRegressiva()
+
+        #region Congelamento
+        private void configurarCongelamento()
         {
-            usarFerramenta.EventoAposRealizarUsoFerramenta += verificarContagemRegressivaAposUsoDeFerramenta;
+            usarFerramenta.EventoAposRealizarUsoFerramenta += verificarFerramentaFoiCongelada;
         }
 
-        public void verificarContagemRegressivaAposUsoDeFerramenta(ResumoInteracaoBlocoFerramenta resumo)
+        private void verificarFerramentaFoiCongelada(ResumoInteracaoBlocoFerramenta resumo)
         {
-            if (resumo.FerramentaUsada.Equals(tipoFerramenta))
-                iniciarContagemRegressiva(tipoFerramenta.ContagemRegressivaParaReuso);
+            if (resumo.FerramentaCongelada && resumo.FerramentaUsada.Equals(tipoFerramenta))
+            {
+                iniciarContagemRegressiva(ControladorFerramenta.Instance.TURNOS_FERRAMENTA_CONGELADA);
+            }
             else
                 diminuirContagemRegressiva();
         }
@@ -157,50 +157,7 @@ namespace PaleoAraripe {
             textMeshContadorTempo.enabled = false;
             tentarHabilitarBotao();
         }
-        #endregion
 
-        #region Limite de usos da ferramenta
-        private void configurarQuantidadeUsoLimitado()
-        {
-            usarFerramenta.EventoAposRealizarUsoFerramenta += diminuirQuantidadeDeUsos;
-            quantidadeUsosRestantes = tipoFerramenta.QuantidadeLimiteDeUsos;
-            textMeshContadorJogadas.enabled = true;
-            textMeshContadorJogadas.text = quantidadeUsosRestantes.ToString();
-        }
-
-        private void diminuirQuantidadeDeUsos(ResumoInteracaoBlocoFerramenta resumo)
-        {
-            if (resumo.FerramentaUsada.Equals(tipoFerramenta))
-            {
-                if (--quantidadeUsosRestantes <= 0)
-                {
-                    tentarDesabilitarBotao();
-                    eventoTentativaTrocaFerramenta?.Invoke(null);
-                    usarFerramenta.EventoAposRealizarUsoFerramenta -= diminuirQuantidadeDeUsos;
-                }
-
-                textMeshContadorJogadas.text = quantidadeUsosRestantes.ToString();
-            }
-        }
-
-        #endregion
-
-        #region Congelamento
-        private void configurarCongelamento()
-        {
-            usarFerramenta.EventoAposRealizarUsoFerramenta += verificarFerramentaFoiCongelada;
-        }
-
-        private void verificarFerramentaFoiCongelada(ResumoInteracaoBlocoFerramenta resumo)
-        {
-            if (resumo.FerramentaCongelada && resumo.FerramentaUsada.Equals(tipoFerramenta))
-            {
-                iniciarContagemRegressiva(ControladorFerramenta.Instance.TURNOS_FERRAMENTA_CONGELADA);
-            }
-            else
-                diminuirContagemRegressiva();
-        }
-        
         #endregion
     }
 }
