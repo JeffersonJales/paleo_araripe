@@ -52,6 +52,10 @@ namespace PaleoAraripe
                 slides[i].SetActive(i == slideAtual);
             }
         }
+        public void LiberarPrimeiroFossil()
+        {
+            SalvarCarregar.Instance.MarcarFossilEncontrado(0);
+        }
 
         private void AtualizarBotoes()
         {
