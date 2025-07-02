@@ -4,6 +4,9 @@ using UnityEngine;
 
 namespace PaleoAraripe
 {
+    /// <summary>
+    /// Classe responsável por configurar o material do cubo de acordo com as preferências de destaque de cor e aresta.
+    /// </summary>
     public class ConfiguracaoMaterialCubo : MonoBehaviour
     {
         [SerializeField] private Material normal;

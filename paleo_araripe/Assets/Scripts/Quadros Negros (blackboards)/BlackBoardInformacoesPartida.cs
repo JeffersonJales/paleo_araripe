@@ -1,6 +1,9 @@
 using UnityEngine;
 
 namespace PaleoAraripe {
+    /// <summary>
+    /// ScriptableObject que armazena informações específicas da partida, como inspiração atual e máxima, para uso em blackboard.
+    /// </summary>
     [CreateAssetMenu(fileName = "QuadroNegroPartida", menuName = "ScriptableObjects/Quadro Negro/Info Partida")]
     public class BlackBoardInformacoesPartida : BlackBoardSO
     {

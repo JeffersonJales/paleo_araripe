@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace PaleoAraripe {
+    /// <summary>
+    /// Classe de colisão para ferramentas do tipo câmera, encontra blocos ao redor do ponto inicial em quatro direções.
+    /// </summary>
     public class ColisaoFerramentaCamera : ColisaoFerramentaAbstrato
     {
         public override List<GameObject> obterBlocos(GameObject pontoInicial, Vector3 normal)

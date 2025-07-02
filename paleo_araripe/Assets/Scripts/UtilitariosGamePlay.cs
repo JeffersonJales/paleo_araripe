@@ -4,6 +4,9 @@ using UnityEngine;
 
 namespace PaleoAraripe {
 
+    /// <summary>
+    /// Classe utilitária com métodos estáticos para facilitar interações e operações comuns no gameplay, como manipulação de blocos e popups.
+    /// </summary>
     public class UtilitariosGamePlay : MonoBehaviour
     {
 

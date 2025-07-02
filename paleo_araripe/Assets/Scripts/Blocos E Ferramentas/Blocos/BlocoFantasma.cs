@@ -1,5 +1,8 @@
 namespace PaleoAraripe {
 using UnityEngine;
+/// <summary>
+/// Classe que define o comportamento do bloco fantasma, que pode sumir e reaparecer após alguns turnos.
+/// </summary>
 public class BlocoFantasma : BlocoGenerico
 {
 

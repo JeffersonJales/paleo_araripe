@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace PaleoAraripe {
+    /// <summary>
+    /// Classe responsável por aplicar efeitos visuais de impacto em blocos, como tremor de câmera e partículas.
+    /// </summary>
     public class BlockHitEffect : MonoBehaviour
     {
         private ConfiguracaoEfeito configuracaoEfeito;

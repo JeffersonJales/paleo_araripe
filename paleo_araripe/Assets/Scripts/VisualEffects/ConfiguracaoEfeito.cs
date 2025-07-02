@@ -2,6 +2,9 @@ using UnityEngine;
 
 namespace PaleoAraripe {
 
+/// <summary>
+/// ScriptableObject que armazena configurações de efeitos visuais, como intensidade e duração do tremor.
+/// </summary>
 [CreateAssetMenu(fileName = "NovaConfiguracaoEfeito", menuName = "ScriptableObjects/Efeitos/Configuracao Efeito")]
     public class ConfiguracaoEfeito : ScriptableObject
     {

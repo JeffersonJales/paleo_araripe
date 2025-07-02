@@ -2,6 +2,9 @@ using UnityEngine;
 
 namespace PaleoAraripe {
 
+/// <summary>
+/// Classe que define o comportamento do bloco de lava, incluindo a propagação para blocos líquidos ao ser destruído.
+/// </summary>
 public class BlocoLava : BlocoGenerico
 {
 

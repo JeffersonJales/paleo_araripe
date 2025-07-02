@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace PaleoAraripe {
+    /// <summary>
+    /// Classe que armazena o resumo de uma interação entre ferramenta e bloco, incluindo resultados, blocos afetados e efeitos especiais.
+    /// </summary>
     public class ResumoInteracaoBlocoFerramenta {
         private FerramentaSO ferramentaUsada = null;
         private List<NaturezaBlocoFerramenta.ResultadoInteracao> tipoInteracaoBloco = new List<NaturezaBlocoFerramenta.ResultadoInteracao>();

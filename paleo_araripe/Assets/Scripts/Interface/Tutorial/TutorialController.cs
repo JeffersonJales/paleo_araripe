@@ -5,12 +5,15 @@ using UnityEngine.UI;
 
 namespace PaleoAraripe
 {
+    /// <summary>
+    /// Classe responsável por controlar a navegação entre os slides do tutorial, gerenciando botões e exibição dos slides.
+    /// </summary>
     public class TutorialController : MonoBehaviour
     {
         [Header("Slides do Tutorial")]
         public GameObject[] slides;
 
-        [Header("Bot�es")]
+        [Header("Botões")]
         public Button botaoAvancar;
         public Button botaoVoltar;
 

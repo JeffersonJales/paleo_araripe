@@ -4,7 +4,7 @@ using System;
 namespace PaleoAraripe
 {
     /// <summary>
-    /// ScriptableObject respons�vel por armazenar as informa��es dos itens da fossildex
+    /// ScriptableObject responsável por armazenar as informações de um item da Fossildex, como ID, título, descrição e imagem.
     /// </summary>
     [CreateAssetMenu(fileName = "ItemFossildex", menuName = "Fossildex")]
     public class FossildexItemSO : ScriptableObject

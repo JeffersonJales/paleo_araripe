@@ -1,6 +1,9 @@
 using UnityEngine;
 
 namespace PaleoAraripe {
+    /// <summary>
+    /// Classe singleton responsável por salvar e carregar o progresso do jogador, incluindo níveis completos e fósseis encontrados.
+    /// </summary>
     public class SalvarCarregar : Singleton<SalvarCarregar>
     {
         [SerializeField] private ConfiguracoesSO configuracoes;

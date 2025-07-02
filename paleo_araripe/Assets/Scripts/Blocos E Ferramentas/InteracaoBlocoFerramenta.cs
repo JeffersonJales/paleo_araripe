@@ -4,6 +4,9 @@ using static PaleoAraripe.NaturezaBlocoFerramenta;
 
 namespace PaleoAraripe {
 
+    /// <summary>
+    /// Classe responsável por processar a interação entre ferramentas e blocos, determinando resultados como dano, coleta, destruição e efeitos especiais.
+    /// </summary>
     public class InteracaoBlocoFerramenta {
 
         private ResumoInteracaoBlocoFerramenta resumoGeral = new ResumoInteracaoBlocoFerramenta();

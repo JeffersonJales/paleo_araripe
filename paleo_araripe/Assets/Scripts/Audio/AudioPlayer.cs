@@ -3,6 +3,10 @@ using UnityEngine;
 
 namespace PaleoAraripe
 {
+    /// <summary>
+    /// Classe responsável por controlar a reprodução de áudios (BGM e SFX) no jogo.
+    /// Permite tocar, parar, ajustar volume e destruir automaticamente o objeto após o término do áudio.
+    /// </summary>
     public class AudioPlayer : MonoBehaviour
     {
         public AudioSource source;

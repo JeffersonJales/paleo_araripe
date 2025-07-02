@@ -2,6 +2,9 @@ using System;
 using UnityEngine;
 
 namespace PaleoAraripe {
+    /// <summary>
+    /// Classe que define o comportamento do bloco desorganizador, que ao ser destruído desorganiza blocos ao redor.
+    /// </summary>
     public class BlocoDesorganizador : BlocoGenerico
     {
         private ColisoesBlocosChao col = new ColisoesBlocosChao();

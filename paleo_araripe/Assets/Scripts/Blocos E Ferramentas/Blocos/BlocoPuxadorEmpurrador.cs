@@ -4,6 +4,9 @@ using UnityEngine;
 
 namespace PaleoAraripe {
 
+/// <summary>
+/// Classe que define o comportamento do bloco puxador/empurrador, capaz de mover outros blocos em diferentes direções.
+/// </summary>
 public class BlocoPuxadorEmpurrador : BlocoGenerico
 {
     public enum EFEITO_PUXAR

@@ -3,6 +3,9 @@ using UnityEngine.UI;
 
 namespace PaleoAraripe
 {
+    /// <summary>
+    /// Classe responsável por exibir a ferramenta atualmente equipada na interface e permitir seu uso em dispositivos móveis.
+    /// </summary>
     public class UiFerramentaAtual : MonoBehaviour
     {
         private Image img;

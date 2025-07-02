@@ -3,6 +3,9 @@ using UnityEngine;
 
 namespace PaleoAraripe
 {
+    /// <summary>
+    /// Classe utilitária para lidar com colisões e checagens de blocos no chão, incluindo máscaras, raycasts e manipulação de posições.
+    /// </summary>
     public class ColisoesBlocosChao 
     {
         public const string NOME_LAYER_BLOCO_ARQUEOLOGICO = "BlocoArqueologico";

@@ -4,6 +4,9 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace PaleoAraripe {
+    /// <summary>
+    /// Classe responsável pelo menu principal do jogo, incluindo navegação entre telas, início do jogo e controle de animações.
+    /// </summary>
     public class MenuPrincipal : MonoBehaviour
     {
         [SerializeField] private GameObject telaPrincipal;

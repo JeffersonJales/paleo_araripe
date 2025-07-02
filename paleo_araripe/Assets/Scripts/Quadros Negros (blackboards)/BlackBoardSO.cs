@@ -2,6 +2,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace PaleoAraripe {
+    /// <summary>
+    /// ScriptableObject base para blackboards, permitindo armazenamento e recuperação de valores genéricos por chave.
+    /// </summary>
     [CreateAssetMenu(fileName = "QuadroNegro", menuName = "ScriptableObjects/Quadro Negro")]
     public class BlackBoardSO : ScriptableObject
     {

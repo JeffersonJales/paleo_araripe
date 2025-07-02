@@ -2,6 +2,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace PaleoAraripe {
+    /// <summary>
+    /// Classe responsável por representar um bloco que pode se transformar aleatoriamente em outros blocos possíveis.
+    /// Gerencia a troca e destruição do bloco atual conforme as interações do jogo.
+    /// </summary>
     public class BlocoAleatorio : BlocoGenerico
     {
         [SerializeField] private List<GameObject> blocosPossiveis = new List<GameObject>();

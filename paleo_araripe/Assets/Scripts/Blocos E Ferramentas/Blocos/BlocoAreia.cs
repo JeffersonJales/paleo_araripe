@@ -1,6 +1,9 @@
 using UnityEngine;
 
 namespace PaleoAraripe {
+    /// <summary>
+    /// Classe que define o comportamento do bloco de areia, incluindo lógica de queda e verificação de contato com o chão.
+    /// </summary>
     public class BlocoAreia : BlocoGenerico
     {
         private ColisoesBlocosChao col = new ColisoesBlocosChao();

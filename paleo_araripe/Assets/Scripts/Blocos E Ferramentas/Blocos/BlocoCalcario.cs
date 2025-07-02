@@ -2,6 +2,9 @@ using UnityEngine;
 
 namespace PaleoAraripe {
 
+/// <summary>
+/// Classe que define o comportamento do bloco de calcário, incluindo efeito de fumaça ao ser destruído.
+/// </summary>
 public class BlocoCalcario : BlocoGenerico
 {
     [SerializeField] private GameObject fumaca;

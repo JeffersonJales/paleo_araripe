@@ -2,6 +2,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace PaleoAraripe {
+    /// <summary>
+    /// Classe de colisão para ferramentas do tipo perfurar, encontra blocos em uma linha na direção da normal.
+    /// </summary>
     public class ColisaoFerramentaPerfurar : ColisaoFerramentaAbstrato
     {
         public override List<GameObject> obterBlocos(GameObject pontoInicial, Vector3 normal) { 

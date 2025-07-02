@@ -1,6 +1,9 @@
 using UnityEngine;
 
 namespace PaleoAraripe {
+    /// <summary>
+    /// Classe que define o comportamento do bloco de gravidade, que faz outros blocos caírem ao ser destruído.
+    /// </summary>
     public class BlocoGravidade : BlocoGenerico
     {
         private ColisoesBlocosChao col = new ColisoesBlocosChao();

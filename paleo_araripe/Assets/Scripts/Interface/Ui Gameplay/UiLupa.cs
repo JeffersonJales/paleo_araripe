@@ -3,6 +3,9 @@ using UnityEngine;
 
 namespace PaleoAraripe
 {
+    /// <summary>
+    /// Classe responsável por exibir o popup de informações detalhadas de um bloco quando a lupa é usada.
+    /// </summary>
     public class UiLupa : MonoBehaviour
     {
         [SerializeField] private GameObject containerUi;

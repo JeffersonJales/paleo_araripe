@@ -4,6 +4,9 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace PaleoAraripe {
+    /// <summary>
+    /// Classe responsável por controlar o estado da partida, incluindo lógica de fim de jogo, contagem de ações, fósseis e integração com UI.
+    /// </summary>
     public class ControladorEstadoPartida : MonoBehaviour
     {
         [Range(10, 1000)]
@@ -42,6 +45,7 @@ namespace PaleoAraripe {
 
             /// Catar quantidade de fssies para acabar o jogo
             BlocoGenerico[] blocosGenericosNaCena = FindObjectsOfType<BlocoGenerico>();
+            quantidadeFossils = 0;
             foreach(var item in blocosGenericosNaCena)
             {
                 if(item.BlocoSO.Tipo == NaturezaBlocoFerramenta.TipoBloco.FOSSIL)

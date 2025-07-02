@@ -6,6 +6,9 @@ using UnityEngine;
 
 namespace PaleoAraripe
 {
+    /// <summary>
+    /// Classe responsável por alterar dinamicamente o tamanho da fonte de textos na interface, conforme configuração do usuário.
+    /// </summary>
     public class SetarTamanhoFonte : MonoBehaviour
     {
         public static Action<bool> mudarTamanhoFonte;

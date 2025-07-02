@@ -2,6 +2,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace PaleoAraripe {
+    /// <summary>
+    /// Classe de colisão para ferramentas do tipo raiz, encontra blocos dois níveis abaixo do ponto inicial.
+    /// </summary>
     public class ColisaoFerramentaRaiz : ColisaoFerramentaAbstrato
     {
         public override List<GameObject> obterBlocos(GameObject pontoInicial, Vector3 normal)

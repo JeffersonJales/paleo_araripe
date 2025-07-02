@@ -4,6 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 
 namespace PaleoAraripe {
+    /// <summary>
+    /// Classe responsável por controlar a lógica de uso das ferramentas pelo jogador, incluindo seleção, interação com blocos e feedback visual.
+    /// </summary>
     public class ControladorFerramenta : Singleton<ControladorFerramenta> {
 
         [SerializeField] private bool ativado = true;

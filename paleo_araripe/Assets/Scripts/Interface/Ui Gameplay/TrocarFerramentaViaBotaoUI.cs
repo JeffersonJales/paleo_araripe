@@ -4,6 +4,9 @@ using TMPro;
 using System;
 
 namespace PaleoAraripe {
+    /// <summary>
+    /// Classe responsável por gerenciar a troca de ferramentas via botões na interface, incluindo lógica de inspiração, cooldown e congelamento.
+    /// </summary>
     public class TrocarFerramentaViaBotaoUI : MonoBehaviour
     {
         [SerializeField] private FerramentaSO tipoFerramenta;

@@ -1,6 +1,9 @@
 using UnityEngine;
 
 namespace PaleoAraripe {
+    /// <summary>
+    /// Classe responsável por atualizar o slider de inspiração na interface de acordo com as ações do jogador.
+    /// </summary>
     public class ControladorSliderInspiracao : MonoBehaviour
     {
         [SerializeField] private AtualizarValorSlider valorSlider;

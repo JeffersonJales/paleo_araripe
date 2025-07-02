@@ -2,6 +2,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace PaleoAraripe {
+    /// <summary>
+    /// ScriptableObject que representa uma ferramenta de escavação no jogo.
+    /// Armazena atributos como dano, inspiração, limites de uso, tipos de colisão, sprites e sons.
+    /// Permite configurar facilmente diferentes ferramentas pelo Inspector.
+    /// </summary>
     [CreateAssetMenu(fileName = "Data", menuName = "ScriptableObjects/FerramentasEscavacao", order = 1)]
     public class FerramentaSO : ScriptableObject
     {   

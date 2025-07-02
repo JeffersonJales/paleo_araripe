@@ -2,6 +2,9 @@ using UnityEngine;
 
 namespace PaleoAraripe
 {
+    /// <summary>
+    /// Classe utilitária estática para facilitar o acesso e controle global do áudio no jogo.
+    /// </summary>
     public class UtilitarioAudio : MonoBehaviour
     {
         public static ControladorAudio controladorAudio = null;

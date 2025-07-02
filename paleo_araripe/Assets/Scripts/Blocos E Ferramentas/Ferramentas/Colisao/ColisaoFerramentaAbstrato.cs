@@ -2,6 +2,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace PaleoAraripe {
+    /// <summary>
+    /// Classe abstrata base para colisão de ferramentas, define a interface e utilitários para encontrar blocos afetados por uma ferramenta.
+    /// </summary>
     public abstract class ColisaoFerramentaAbstrato
     {
         public abstract List<GameObject> obterBlocos(GameObject pontoInicial, Vector3 normal);

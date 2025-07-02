@@ -1,6 +1,9 @@
 using UnityEngine;
 
 namespace PaleoAraripe {
+    /// <summary>
+    /// Classe que define o comportamento do bloco de lava líquida, que pode se solidificar após alguns turnos.
+    /// </summary>
     public class BlocoLavaLiquido : BlocoGenerico
     {
         [SerializeField] private GameObject refBlocoPedra;

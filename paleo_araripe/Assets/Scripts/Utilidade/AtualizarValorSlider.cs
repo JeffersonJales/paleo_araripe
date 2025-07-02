@@ -3,6 +3,9 @@ using UnityEngine;
 using UnityEngine.UI;
 
 namespace PaleoAraripe {
+    /// <summary>
+    /// Classe responsável por atualizar o valor de um Slider na interface, permitindo diferentes formas de atualização.
+    /// </summary>
     public class AtualizarValorSlider : MonoBehaviour
     {
         private Slider sliderUi;

@@ -3,6 +3,9 @@ using UnityEngine.SceneManagement;
 
 namespace PaleoAraripe
 {
+    /// <summary>
+    /// Classe responsável por tocar a música de fundo (BGM) correta de acordo com a cena carregada.
+    /// </summary>
     public class BgmPorCena : MonoBehaviour
     {
         public AudioClip menu;

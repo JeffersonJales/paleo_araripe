@@ -5,6 +5,9 @@ using UnityEngine.Audio;
 
 namespace PaleoAraripe
 {
+    /// <summary>
+    /// Classe responsável por gerenciar todos os áudios do jogo, incluindo BGM, SFX, volumes e instanciamento de players.
+    /// </summary>
     public class ControladorAudio : MonoBehaviour
     {
 

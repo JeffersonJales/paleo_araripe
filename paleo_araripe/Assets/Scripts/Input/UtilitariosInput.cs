@@ -2,6 +2,9 @@ using UnityEngine;
 
 namespace PaleoAraripe
 {
+    /// <summary>
+    /// Classe utilitária para centralizar e padronizar o acesso aos inputs do jogador, tanto para PC quanto para mobile.
+    /// </summary>
     public class UtilitariosInput : MonoBehaviour
     {
         public static readonly int MOUSE_BOTAO_ESQUERDO = 0;

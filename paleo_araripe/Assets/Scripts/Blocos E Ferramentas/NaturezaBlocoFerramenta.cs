@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace PaleoAraripe {
+    /// <summary>
+    /// Classe utilitária que define os tipos de blocos, resultados de interação e métodos para obter alvos de ferramentas.
+    /// </summary>
     public class NaturezaBlocoFerramenta 
     { 
         public enum TipoBloco

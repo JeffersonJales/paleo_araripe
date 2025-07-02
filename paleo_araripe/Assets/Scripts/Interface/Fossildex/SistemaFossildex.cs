@@ -6,6 +6,9 @@ using UnityEngine.UI;
 
 namespace PaleoAraripe
 {
+    /// <summary>
+    /// Classe responsável por gerenciar a interface e lógica da Fossildex, exibindo informações dos fósseis desbloqueados e bloqueados.
+    /// </summary>
     public class SistemaFossildex : MonoBehaviour
     {
         [SerializeField] private TMP_Text titulo;

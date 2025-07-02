@@ -4,6 +4,9 @@ using TMPro;
 using System.Collections;
 
 namespace PaleoAraripe {
+    /// <summary>
+    /// Classe responsável pelo menu de opções/configurações do jogo, permitindo ajuste de volume, gráficos, fonte e destaque de arestas.
+    /// </summary>
     public class Opcoes : MonoBehaviour
     {
         [SerializeField] private ConfiguracoesSO configuracoes;

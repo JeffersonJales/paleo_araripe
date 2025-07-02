@@ -4,6 +4,9 @@ using static UnityEngine.UI.GridLayoutGroup;
 
 namespace PaleoAraripe
 {
+    /// <summary>
+    /// Classe base para todos os blocos do jogo, contendo propriedades e métodos comuns de interação, dano, coleta e feedback visual.
+    /// </summary>
     public class BlocoGenerico : MonoBehaviour
     {
         [SerializeField] private string nome = "Nome Bloco";
