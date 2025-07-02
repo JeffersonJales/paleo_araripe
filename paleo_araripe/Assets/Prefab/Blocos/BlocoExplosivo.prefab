@@ -171,13 +171,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 965d854aa73404d46867bac2d8f9274f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nome: Nome Bloco
-  descricao: Descricao Bloco
+  nome: Bloco Explosivo
+  descricao: "Muito cuidado! Se quebrado, explode e causa dano em \xE1rea (3x3x3).
+    Ferramentas: <sprite=6> <sprite=0> <sprite=4>"
   blocoSO: {fileID: 11400000, guid: c5cd46b27d7ef3942b43999df795fdb7, type: 2}
   objetoBloco: {fileID: 1864736629641025603}
   efeitoNenhum: {fileID: 11400000, guid: fe49917676096e9498a7886bd9dcf9ef, type: 2}
   particulaImune: {fileID: 5259933331206925448, guid: c572ab481577c444fb377b7cda0b44b9,
     type: 3}
+  corSelecionado: {r: 0.839, g: 0.839, b: 0.839, a: 0}
   ferramentaExplosiva: {fileID: 11400000, guid: 1a0b060fec0d5a84e84aa29053a3ac04,
     type: 2}
 --- !u!95 &9043906537615404408

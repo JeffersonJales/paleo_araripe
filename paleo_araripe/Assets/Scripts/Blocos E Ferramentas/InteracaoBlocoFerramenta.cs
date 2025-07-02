@@ -156,6 +156,7 @@ namespace PaleoAraripe {
         {
             if(ferramenta.TipoColisao == TipoColisaoFerramenta.LUPA)
             {
+                resumoGeral.UsouLupa = true;
                 UtilitariosGamePlay.AbrirPopupInformacao(bloco);
             }
         }

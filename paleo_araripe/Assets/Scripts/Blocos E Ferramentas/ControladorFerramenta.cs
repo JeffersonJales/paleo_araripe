@@ -103,7 +103,8 @@ namespace PaleoAraripe {
             blocoAlvoRaycast = null;
             alvosFerramenta.Clear();
 
-            EventoAposRealizarUsoFerramenta?.Invoke(resumo);
+            if(!resumo.UsouLupa)
+                EventoAposRealizarUsoFerramenta?.Invoke(resumo);
         }
 
         private void ProcurarBlocoAlvoRaycast()

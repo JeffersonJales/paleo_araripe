@@ -88,7 +88,7 @@ namespace PaleoAraripe {
         private void salvarFosseisColetados()
         {
             int qtdFosseisColetados = quantidadeFosseisFase - quantidadeFossils;
-            int indiceFossilInicial = lvlCarregado * qtdFosseisColetados;
+            int indiceFossilInicial = lvlCarregado * quantidadeFosseisFase;
             for (int i = 0; i < qtdFosseisColetados; i++)
             {
                 SalvarCarregar.Instance.MarcarFossilEncontrado(indiceFossilInicial + i);

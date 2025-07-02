@@ -48,13 +48,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e5cb3de59a7cd6439615778504e51fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nome: Nome Bloco
-  descricao: Descricao Bloco
+  nome: Ferro
+  descricao: 'Muito resistente. Depois de 3 rodadas, enferruja e vira ferrugem. Ferramentas:
+    <sprite=0> <sprite=4>'
   blocoSO: {fileID: 11400000, guid: 523480e4ce20fef43934acafd2f93a43, type: 2}
   objetoBloco: {fileID: 7587259333133177905}
   efeitoNenhum: {fileID: 11400000, guid: fe49917676096e9498a7886bd9dcf9ef, type: 2}
   particulaImune: {fileID: 5259933331206925448, guid: c572ab481577c444fb377b7cda0b44b9,
     type: 3}
+  corSelecionado: {r: 0.839, g: 0.839, b: 0.839, a: 0}
   refBlocoPedra: {fileID: 4043340169641137449, guid: e32a2adb5d5b4ab478273a79e441e79e,
     type: 3}
   turnosParaLavaSecar: 2

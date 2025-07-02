@@ -48,13 +48,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e706311c61a34f64a8a7588f6dc1ccda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nome: Nome Bloco
-  descricao: Descricao Bloco
+  nome: Cascalho
+  descricao: "Inst\xE1vel e pontudo. Ao ser quebrado, reduz 2 pontos da sua inspira\xE7\xE3o.
+    Ferramentas: <sprite=3> <sprite=2> <sprite=6>"
   blocoSO: {fileID: 11400000, guid: c3bc847b2b4bea944863d4d55b1a3811, type: 2}
   objetoBloco: {fileID: 5163106322689748682}
   efeitoNenhum: {fileID: 11400000, guid: fe49917676096e9498a7886bd9dcf9ef, type: 2}
   particulaImune: {fileID: 5259933331206925448, guid: c572ab481577c444fb377b7cda0b44b9,
     type: 3}
+  corSelecionado: {r: 0.839, g: 0.839, b: 0.839, a: 0}
   inspiracao: -2
 --- !u!95 &-9086252592883918731
 Animator:

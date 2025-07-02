@@ -14,8 +14,8 @@ namespace PaleoAraripe {
         private int quantidadeAmbarColetado = 0;
         private int quantidadeInspiracaoGanha = 0;
         private bool algumBlocoDestruidoOuColeado = false;
-
         private bool ferramentaCongelada = false;
+        private bool usouLupa = false;
 
         public FerramentaSO FerramentaUsada { get => ferramentaUsada; set => ferramentaUsada = value; }
         public List<BlocoSO> BlocosAfetados { get => blocosAfetados; set => blocosAfetados = value; }
@@ -27,6 +27,7 @@ namespace PaleoAraripe {
         public int QuantidadeInspiracaoGanha { get => quantidadeInspiracaoGanha; set => quantidadeInspiracaoGanha = value; }
         public List<GameObject> BlocosDestruidos { get => blocosDestruidos; set => blocosDestruidos = value; }
         public bool FerramentaCongelada { get => ferramentaCongelada; set => ferramentaCongelada = value; }
+        public bool UsouLupa { get => usouLupa; set => usouLupa = value; }
 
         public Boolean gastouInspiaracao()
         {

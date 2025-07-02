@@ -81,13 +81,13 @@ namespace PaleoAraripe {
         public static void AbrirPopupInformacao(BlocoGenerico bloco)
         {
             var lupa = FindObjectOfType<UiLupa>();
-            lupa!.LigarPopup(bloco);
+            lupa?.LigarPopup(bloco);
         }
 
         public static void FecharPopupInformacao()
         {
             var lupa = FindObjectOfType<UiLupa>();
-            lupa!.DesligarPopup();
+            lupa?.DesligarPopup();
         }
 
     }

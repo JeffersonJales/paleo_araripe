@@ -171,13 +171,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9adb1d2cd6e600043883f8d9e10ba5f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nome: Nome Bloco
-  descricao: Descricao Bloco
+  nome: Pedra
+  descricao: "S\xF3lida e resistente. Um desafio comum para escavadores persistentes.
+    Ferramentas: <sprite=6> <sprite=0> <sprite=4>"
   blocoSO: {fileID: 11400000, guid: 39017b15453942c4ea1548e82c642532, type: 2}
   objetoBloco: {fileID: 2430003958065653928}
   efeitoNenhum: {fileID: 11400000, guid: fe49917676096e9498a7886bd9dcf9ef, type: 2}
   particulaImune: {fileID: 5259933331206925448, guid: c572ab481577c444fb377b7cda0b44b9,
     type: 3}
+  corSelecionado: {r: 0.839, g: 0.839, b: 0.839, a: 0}
 --- !u!95 &9212187935031165013
 Animator:
   serializedVersion: 5

@@ -48,13 +48,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9adb1d2cd6e600043883f8d9e10ba5f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nome: Nome Bloco
-  descricao: Descricao Bloco
+  nome: Cristal Opaco
+  descricao: "Brilha como se fosse valioso, mas n\xE3o passa de uma ilus\xE3o. Ferramentas:
+    <sprite=3> <sprite=2> <sprite=6> <sprite=0> <sprite=4>"
   blocoSO: {fileID: 11400000, guid: 8255ea00378259f4d97d2b46e67660c9, type: 2}
   objetoBloco: {fileID: 6780149898996235746}
   efeitoNenhum: {fileID: 11400000, guid: fe49917676096e9498a7886bd9dcf9ef, type: 2}
   particulaImune: {fileID: 5259933331206925448, guid: c572ab481577c444fb377b7cda0b44b9,
     type: 3}
+  corSelecionado: {r: 0.839, g: 0.839, b: 0.839, a: 0}
 --- !u!95 &-1383364268282784986
 Animator:
   serializedVersion: 5

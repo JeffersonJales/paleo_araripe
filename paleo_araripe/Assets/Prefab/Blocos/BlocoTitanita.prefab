@@ -171,13 +171,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9adb1d2cd6e600043883f8d9e10ba5f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nome: Nome Bloco
-  descricao: Descricao Bloco
+  nome: Titanita
+  descricao: "Indestrut\xEDvel. Nada consegue romper esse bloco. Ferramentas: nenhuma"
   blocoSO: {fileID: 11400000, guid: 1a1efc0480aa40e49b57abfbf69de412, type: 2}
   objetoBloco: {fileID: 307466592679722925}
   efeitoNenhum: {fileID: 11400000, guid: fe49917676096e9498a7886bd9dcf9ef, type: 2}
   particulaImune: {fileID: 5259933331206925448, guid: c572ab481577c444fb377b7cda0b44b9,
     type: 3}
+  corSelecionado: {r: 0.839, g: 0.839, b: 0.839, a: 0}
 --- !u!95 &-4990358582515035453
 Animator:
   serializedVersion: 5

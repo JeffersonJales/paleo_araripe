@@ -48,13 +48,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c8136ad6dc596f4a87d4ca0df3b407d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nome: Nome Bloco
-  descricao: Descricao Bloco
+  nome: "Calc\xE1rio"
+  descricao: "Extremamente fr\xE1gil. Ao quebr\xE1-lo, libera uma nuvem escura ao
+    redor por 3 a\xE7\xF5es. Ferramentas: <sprite=3> <sprite=2> <sprite=6> <sprite=0>
+    <sprite=4>"
   blocoSO: {fileID: 11400000, guid: 6aa11c4dd58a2c047956956321a08c96, type: 2}
   objetoBloco: {fileID: 8847421597488883458}
   efeitoNenhum: {fileID: 11400000, guid: fe49917676096e9498a7886bd9dcf9ef, type: 2}
   particulaImune: {fileID: 5259933331206925448, guid: c572ab481577c444fb377b7cda0b44b9,
     type: 3}
+  corSelecionado: {r: 0.839, g: 0.839, b: 0.839, a: 0}
   fumaca: {fileID: 5922641065777019504, guid: 95538dba7e4e34d49ae8515685ff674f, type: 3}
   tempoFumacaAtiva: 5
 --- !u!95 &2768861466906702541

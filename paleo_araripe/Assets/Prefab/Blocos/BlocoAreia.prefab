@@ -48,13 +48,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e706311c61a34f64a8a7588f6dc1ccda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nome: Nome Bloco
-  descricao: Descricao Bloco
+  nome: Areia
+  descricao: "Solta e trai\xE7oeira. Quebrar este bloco reduz sua inspira\xE7\xE3o
+    em 1 ponto. Ferramentas: <sprite=3> <sprite=2> <sprite=6>"
   blocoSO: {fileID: 11400000, guid: abeb310aa7f7cc74f812b3a3025c7b0c, type: 2}
   objetoBloco: {fileID: 6194585509976259406}
   efeitoNenhum: {fileID: 11400000, guid: fe49917676096e9498a7886bd9dcf9ef, type: 2}
   particulaImune: {fileID: 5259933331206925448, guid: c572ab481577c444fb377b7cda0b44b9,
     type: 3}
+  corSelecionado: {r: 0.839, g: 0.839, b: 0.839, a: 0}
   inspiracao: -1
 --- !u!95 &8041331436723404028
 Animator:

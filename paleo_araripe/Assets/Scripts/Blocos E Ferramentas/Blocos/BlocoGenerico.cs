@@ -7,7 +7,8 @@ namespace PaleoAraripe
     public class BlocoGenerico : MonoBehaviour
     {
         [SerializeField] private string nome = "Nome Bloco";
-        [SerializeField] private string descricao = "Descricao Bloco";
+        [TextArea(5, 10)][SerializeField] private string descricao = "Descricao Bloco";
+
         [SerializeField] private BlocoSO blocoSO;
         [SerializeField] private GameObject objetoBloco;
         [SerializeField] private ConfiguracaoEfeito efeitoNenhum;
@@ -25,8 +26,8 @@ namespace PaleoAraripe
 
         // Getters 
         public BlocoSO BlocoSO => blocoSO;
-        public string Nome => nome;
-        public string Descricao => descricao;
+        public string Nome {get => nome; set => nome = value;} 
+        public string Descricao { get => descricao; set => descricao = value; }
 
         [SerializeField] private Color corSelecionado = new Color(0.839f, 0.839f, 0.839f, 0);
         private Color corNaoSelecionado;

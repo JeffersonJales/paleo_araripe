@@ -46,6 +46,10 @@ namespace PaleoAraripe {
 
             blocoAtual = Instantiate(blocosPossiveis[posicaoAtual], transform.position, transform.rotation);
 
+            BlocoGenerico bg = blocoAtual.GetComponent<BlocoGenerico>();
+            bg.Nome = Nome;
+            bg.Descricao = Descricao;
+
             if (++posicaoAtual >= blocosPossiveis.Count)
                 posicaoAtual = 0;
         }
