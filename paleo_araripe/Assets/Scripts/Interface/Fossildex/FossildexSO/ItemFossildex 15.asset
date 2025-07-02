@@ -12,7 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f2359bca083fd140aead65fa0da9bed, type: 3}
   m_Name: ItemFossildex 15
   m_EditorClassIdentifier: 
-  fossilID: 0
-  titulo: 
-  descricao: 
-  imagem: {fileID: 0}
+  fossilID: 15
+  titulo: Araripichthys castilhoi
+  descricao: "Peixe de at\xE9 23 cm, com corpo alto e comprimido, cabe\xE7a triangular
+    e nadadeira dorsal grande. N\xE3o possui nadadeira p\xE9lvica e tem cauda furcada.
+    Suas escamas s\xE3o pequenas, cicloides e sobrepostas. \xC9 raro e encontrado
+    no Membro Romualdo da Forma\xE7\xE3o Santana."
+  imagem: {fileID: 21300000, guid: 190276be4a8572b468ea2303c95a01bf, type: 3}

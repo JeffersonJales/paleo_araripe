@@ -12,7 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f2359bca083fd140aead65fa0da9bed, type: 3}
   m_Name: ItemFossildex 3
   m_EditorClassIdentifier: 
-  fossilID: 0
-  titulo: 
-  descricao: 
-  imagem: {fileID: 0}
+  fossilID: 3
+  titulo: Angaturama limai
+  descricao: "Angaturama limai pertence ao grupo dos espinossauros, que s\xE3o formas
+    carn\xEDvoras caracterizadas por grande vela nas costas (formada pela extens\xE3o
+    das v\xE9rtebras dorsais) e pela posi\xE7\xE3o das narinas na regi\xE3o m\xE9dia
+    da cabe\xE7a e n\xE3o na ponta do focinho, como na maioria dos dinossauros. Al\xE9m
+    disso, Angaturama e os demais espinossaur\xEDdeos possuem um cr\xE2nio muito
+    longo e uma denti\xE7\xE3o semelhante a dos crocodilomorfos modernos. Estas caracter\xEDsticas
+    levaram os paleont\xF3logos a levantar a hip\xF3tese de que estes dinossauros
+    deveriam viver muito tempo dentro da \xE1gua a procura de alimentos, sobretudo
+    peixes."
+  imagem: {fileID: 21300000, guid: f058907e7fcef0d438bda3270b3676e8, type: 3}

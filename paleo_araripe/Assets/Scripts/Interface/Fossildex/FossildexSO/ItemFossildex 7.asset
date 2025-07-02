@@ -12,7 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f2359bca083fd140aead65fa0da9bed, type: 3}
   m_Name: ItemFossildex 7
   m_EditorClassIdentifier: 
-  fossilID: 0
-  titulo: 
-  descricao: 
-  imagem: {fileID: 0}
+  fossilID: 7
+  titulo: Tupandactylus imperator
+  descricao: "Tupandactylus imperator foi um pterossauro com uma enorme crista em
+    forma de \"L\", possivelmente usada para exibi\xE7\xE3o e aerodin\xE2mica. Com
+    cerca de 2,5 metros de envergadura, viveu h\xE1 115 milh\xF5es de anos na Chapada
+    do Araripe, onde se alimentava de frutas e pequenos peixes."
+  imagem: {fileID: 21300000, guid: f0b1393534713f14f82ab4ea874ed83d, type: 3}

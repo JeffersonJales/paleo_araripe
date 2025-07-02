@@ -12,7 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f2359bca083fd140aead65fa0da9bed, type: 3}
   m_Name: ItemFossildex 4
   m_EditorClassIdentifier: 
-  fossilID: 0
-  titulo: 
-  descricao: 
-  imagem: {fileID: 0}
+  fossilID: 4
+  titulo: Dastilbe crandalli
+  descricao: "Um dos principais grupos de f\xF3sseis preservados na Bacia do Araripe
+    s\xE3o os peixes. Estima-se que j\xE1 foram coletados milhares de exemplares,
+    tanto nas camadas de calc\xE1rio laminado da Forma\xE7\xE3o Crato, como tamb\xE9m
+    nos n\xF3dulos calc\xE1rios da Forma\xE7\xE3o Romualdo. A diversidade da fauna
+    de peixes da Forma\xE7\xE3o Crato \xE9 relativamente restrita. A esp\xE9cie mais
+    abundante \xE9 chamada de Dastilbe cradalli (Chanidae), do qual s\xE3o encontrados
+    desde formas bem jovens com menos de cinco cent\xEDmetros at\xE9 adultos, passando
+    de 25 cent\xEDmetros."
+  imagem: {fileID: 21300000, guid: f5229377cf5e7c7498efb9ae9521e735, type: 3}

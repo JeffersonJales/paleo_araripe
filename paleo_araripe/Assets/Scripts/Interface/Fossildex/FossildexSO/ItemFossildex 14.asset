@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f2359bca083fd140aead65fa0da9bed, type: 3}
   m_Name: ItemFossildex 14
   m_EditorClassIdentifier: 
-  fossilID: 0
-  titulo: 
-  descricao: 
-  imagem: {fileID: 0}
+  fossilID: 14
+  titulo: Beurlenia araripensis Martins
+  descricao: "F\xF3ssil de um camar\xE3o, Crustacea do Lago Crato"
+  imagem: {fileID: 21300000, guid: 13eec61740e55bd46b882343cf6eedd3, type: 3}
