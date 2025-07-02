@@ -8,6 +8,7 @@ namespace PaleoAraripe {
     {
         [SerializeField] private GameObject telaPrincipal;
         [SerializeField] private GameObject telaSobre;
+        [SerializeField] private GameObject telaTutorial;
         [SerializeField] private int menuFrameRate = 60;
         [SerializeField] private Animator animacaoCarregamento;
 
@@ -27,9 +28,19 @@ namespace PaleoAraripe {
             telaPrincipal.SetActive(false);
             telaSobre.SetActive(true);
         }
+        public void AbrirTutorial()
+        {
+            telaPrincipal.SetActive(false);
+            telaTutorial.SetActive(true);
+        }
         public void FecharSobre()
         {
             telaSobre.SetActive(false);
+            telaPrincipal.SetActive(true);
+        }
+        public void FecharTutorial()
+        {
+            telaTutorial.SetActive(false);
             telaPrincipal.SetActive(true);
         }
     }
