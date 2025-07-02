@@ -12,7 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f2359bca083fd140aead65fa0da9bed, type: 3}
   m_Name: ItemFossildex 5
   m_EditorClassIdentifier: 
-  fossilID: 0
-  titulo: 
-  descricao: 
-  imagem: {fileID: 0}
+  fossilID: 5
+  titulo: Aranha fossilizada
+  descricao: "A Forma\xE7\xE3o Crato \xE9 uma das fontes mais abundantes de aranhas
+    mesoz\xF3icas. Embora existam poucas esp\xE9cies descritas, j\xE1 foram coletados
+    na Chapada do Araripe centenas de f\xF3sseis de indiv\xEDduos machos, f\xEAmeas
+    e jovens. Entre esses, destacam-se grandes exemplares de diplur\xEDdeos (tar\xE2ntulas)
+    que constru\xEDam teias especializadas na captura de insetos saltadores, como
+    grilos e gafanhotos, os mais abundantes da Forma\xE7\xE3o Crato."
+  imagem: {fileID: 21300000, guid: 3fc052abebfddf846ad82c35e9968549, type: 3}

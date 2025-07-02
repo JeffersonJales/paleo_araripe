@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f2359bca083fd140aead65fa0da9bed, type: 3}
   m_Name: ItemFossildex 6
   m_EditorClassIdentifier: 
-  fossilID: 0
-  titulo: 
-  descricao: 
-  imagem: {fileID: 0}
+  fossilID: 6
+  titulo: Reptilia Squamata
+  descricao: "F\xF3ssil de Lagarto do Lago Crato"
+  imagem: {fileID: 21300000, guid: cedeb4db6ff112247abc4170f08ff8f9, type: 3}
