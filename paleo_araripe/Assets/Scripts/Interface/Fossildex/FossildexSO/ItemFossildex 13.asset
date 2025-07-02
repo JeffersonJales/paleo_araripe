@@ -12,7 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f2359bca083fd140aead65fa0da9bed, type: 3}
   m_Name: ItemFossildex 13
   m_EditorClassIdentifier: 
-  fossilID: 0
-  titulo: 
-  descricao: 
-  imagem: {fileID: 0}
+  fossilID: 13
+  titulo: Thalassodromeus sethi
+  descricao: "Thalassodromeus possu\xEDa uma enorme crista \xF3ssea com canais sangu\xEDneos,
+    possivelmente usada para regular a temperatura corporal, e um \"bico\" em forma
+    de tesoura, semelhante ao de aves talha-mar, sugerindo que pescava com o bico
+    dentro da \xE1gua."
+  imagem: {fileID: 21300000, guid: 6f9821b7b3524f145a4e9d56be6d6c67, type: 3}

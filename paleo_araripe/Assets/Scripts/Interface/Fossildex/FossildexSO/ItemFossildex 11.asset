@@ -12,7 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f2359bca083fd140aead65fa0da9bed, type: 3}
   m_Name: ItemFossildex 11
   m_EditorClassIdentifier: 
-  fossilID: 0
-  titulo: 
-  descricao: 
-  imagem: {fileID: 0}
+  fossilID: 11
+  titulo: Vinctifer Comptoni
+  descricao: "Peixe com cerca de 60 cm, rostro alongado e pr\xE9-dent\xE1rio triangular
+    menor que o pr\xE9-maxilar. Possui escamas brilhantes com gano\xEDna e articula\xE7\xE3o
+    \u201Cpeg-and-socket\u201D, corpo coberto por tr\xEAs fileiras de escamas altas
+    e dentes finos na parte posterior. \xC9 comum na Forma\xE7\xE3o Santana, especialmente
+    no Membro Romualdo."
+  imagem: {fileID: 21300000, guid: eb7972556fbf2754694ed9d22835514f, type: 3}

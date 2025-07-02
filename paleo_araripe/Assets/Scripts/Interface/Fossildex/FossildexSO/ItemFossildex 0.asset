@@ -13,6 +13,11 @@ MonoBehaviour:
   m_Name: ItemFossildex 0
   m_EditorClassIdentifier: 
   fossilID: 0
-  titulo: 
-  descricao: 
-  imagem: {fileID: 0}
+  titulo: Protoischnurus axelrodoru
+  descricao: "Escorpi\xE3o fossilizado em calc\xE1rio laminado, procedente da Chapada
+    do Araripe, Cear\xE1. Este exemplar \xE9 excepcional pela sua raridade e excelente
+    estado de preserva\xE7\xE3o. A Chapada do Araripe \xE9 um dos principais jazigos
+    do mundo a encerrar f\xF3sseis de artr\xF3podes terrestres. Al\xE9m dos escorpi\xF5es,
+    ali ocorrem restos fossilizados de aranhas e insetos que viveram durante o per\xEDodo
+    Cret\xE1ceo, h\xE1 cerca de 110 milh\xF5es de anos."
+  imagem: {fileID: 21300000, guid: 15603ff507b6c244996970d3b1bd9e46, type: 3}

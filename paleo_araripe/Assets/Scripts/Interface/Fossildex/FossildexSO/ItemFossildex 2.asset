@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f2359bca083fd140aead65fa0da9bed, type: 3}
   m_Name: ItemFossildex 2
   m_EditorClassIdentifier: 
-  fossilID: 0
-  titulo: 
-  descricao: 
-  imagem: {fileID: 0}
+  fossilID: 2
+  titulo: Pena
+  descricao: "F\xF3ssil de pena"
+  imagem: {fileID: 21300000, guid: a602f080c3805854caa151afd8f6473d, type: 3}
