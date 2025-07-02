@@ -9,13 +9,11 @@ namespace PaleoAraripe {
         [SerializeField] private ConfiguracoesSO configuracoes;
         [SerializeField] private GameObject canvasConfiguracao;
         [SerializeField] private GameObject canvasPrincipal;
-        [SerializeField] private GameObject modalAcessibilidade;
         [SerializeField] private Slider sliderMusica;
         [SerializeField] private Slider sliderSFX;
         [SerializeField] private TMP_Dropdown dropdownGrafico;
         [SerializeField] private TMP_Dropdown dropdownFonte;
         [SerializeField] private Toggle arestasDestacadas;
-        [SerializeField] private Toggle blocosDestacados;
 
         private void Start()
         {
@@ -25,7 +23,6 @@ namespace PaleoAraripe {
             sliderSFX.value = configuracoes.VolumeSFX;
             dropdownFonte.value = configuracoes.IncrementoFonte;
             arestasDestacadas.isOn = configuracoes.ModoArestaDestacada;
-            blocosDestacados.isOn = configuracoes.ModoBlocoDestacado;
             dropdownGrafico.RefreshShownValue();
             dropdownFonte.RefreshShownValue();
         }
@@ -62,20 +59,6 @@ namespace PaleoAraripe {
             // Alterna o modo de destaque das arestas entre ativado e desativado
             // através do toggle no menu de configurações
             configuracoes.ModoArestaDestacada = !configuracoes.ModoArestaDestacada;
-        }
-
-        public void AplicarBlocosDestacados()
-        {
-            // Alterna o modo de destaque dos blocos entre ativado e desativado
-            // através do toggle no menu de configurações
-            configuracoes.ModoBlocoDestacado = !configuracoes.ModoBlocoDestacado;
-        }
-
-        public void AbrirModalAcessibilidade(int típoAcessibilidade)
-        {
-            // Abre o modal de acessibilidade com base no tipo selecionado
-            // e exibe as opções específicas para cada tipo
-            modalAcessibilidade.SetActive(true);
         }
 
         public void Voltar()

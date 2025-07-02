@@ -18,7 +18,6 @@ namespace PaleoAraripe {
         private const string KEY_VOLUME_SFX = "VolumeSFX";
         private const string KEY_INCREMENTO_FONTE = "IncrementoFonte";
         private const string KEY_ARESTA_DESTACADA = "ArestaDestacada";
-        private const string KEY_BLOCO_DESTACADO = "BlocoDestacado";
         private const string KEY_QUALIDADE_VISUAL = "QualidadeVisual";
 
         // Valores padrão das configurações
@@ -27,7 +26,6 @@ namespace PaleoAraripe {
         private int _incrementoFonte = 0;
         private int _qualidadeVisual = 1;
         private bool _modoArestaDestacada = false;
-        private bool _modoBlocoDestacado = false;
 
         /// <summary>
         /// Propriedade para controlar o volume da música.
@@ -108,21 +106,6 @@ namespace PaleoAraripe {
         }
 
         /// <summary>
-        /// Propriedade para controlar o modo de destaque dos blocos.
-        /// Salva automaticamente no PlayerPrefs quando alterado.
-        /// </summary>
-        public bool ModoBlocoDestacado
-        {
-            get => _modoBlocoDestacado;
-            set
-            {
-                _modoBlocoDestacado = value;
-                PlayerPrefs.SetInt(KEY_BLOCO_DESTACADO, value ? 1 : 0);
-                PlayerPrefs.Save();
-            }
-        }
-
-        /// <summary>
         /// Carrega todas as configurações salvas no PlayerPrefs.
         /// Se não houver configurações salvas, usa os valores padrão.
         /// </summary>
@@ -133,7 +116,6 @@ namespace PaleoAraripe {
             _volumeMusica = PlayerPrefs.GetFloat(KEY_VOLUME_MUSICA, 0);
             _volumeSFX = PlayerPrefs.GetFloat(KEY_VOLUME_SFX, 0);
             _modoArestaDestacada = PlayerPrefs.GetInt(KEY_ARESTA_DESTACADA, 0) == 1;
-            _modoBlocoDestacado = PlayerPrefs.GetInt(KEY_BLOCO_DESTACADO, 0) == 1;
         }
     }
 }
