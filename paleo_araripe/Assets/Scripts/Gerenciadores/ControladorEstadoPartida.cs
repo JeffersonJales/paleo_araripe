@@ -14,8 +14,8 @@ namespace PaleoAraripe {
 
         [Range(1, 100)]
         [SerializeField] private int acoesGanhasPorAmbar = 0;
-        [SerializeField] private int quantidadeFossils = 0;
-        private int quantidadeFosseisFase = 0;
+        [SerializeField] private int fosseisParaColetar = 0;
+        private int fosseisColetados = 0;
 
         [SerializeField] private AtualizarValorSlider uiSliderTempo; // Slider para mostrar quantidade de tempo
 
@@ -45,14 +45,13 @@ namespace PaleoAraripe {
 
             /// Catar quantidade de fssies para acabar o jogo
             BlocoGenerico[] blocosGenericosNaCena = FindObjectsOfType<BlocoGenerico>();
-            quantidadeFossils = 0;
+            fosseisParaColetar = 0;
             foreach(var item in blocosGenericosNaCena)
             {
                 if(item.BlocoSO.Tipo == NaturezaBlocoFerramenta.TipoBloco.FOSSIL)
-                    quantidadeFossils++;
+                    fosseisParaColetar++;
             }
 
-            quantidadeFosseisFase = quantidadeFossils;
             uiSliderTempo.atualizarValorSlider(1f);
         }
 
@@ -63,9 +62,9 @@ namespace PaleoAraripe {
         }
 
         public void verificarFimFosseis(ResumoInteracaoBlocoFerramenta resumo) {
-            quantidadeFossils -= resumo.QuantidadeFossilColetado;
-            quantidadeFossils -= resumo.QuantidadeFossilDestruido;
-            if (quantidadeFossils <= 0)
+            fosseisColetados += resumo.QuantidadeFossilColetado;
+            fosseisParaColetar -= resumo.QuantidadeFossilColetado + resumo.QuantidadeFossilDestruido;
+            if (fosseisParaColetar <= 0)
                 finalizarPartida();
 
         }
@@ -91,13 +90,14 @@ namespace PaleoAraripe {
 
         private void salvarFosseisColetados()
         {
-            int qtdFosseisColetados = quantidadeFosseisFase - quantidadeFossils;
-            int indiceFossilInicial =1 + lvlCarregado * 3;
-            for (int i = 0; i < qtdFosseisColetados; i++)
+            int indiceFossilInicial = 1 + lvlCarregado * 3;
+            for (int i = 0; i < fosseisColetados; i++)
             {
                 SalvarCarregar.Instance.MarcarFossilEncontrado(indiceFossilInicial + i);
             }
-            SalvarCarregar.Instance.MarcarNivelCompleto(lvlCarregado);
+
+            if(fosseisColetados > 0)
+                SalvarCarregar.Instance.MarcarNivelCompleto(lvlCarregado);
         }
 
         public void VoltarParaMenu()
