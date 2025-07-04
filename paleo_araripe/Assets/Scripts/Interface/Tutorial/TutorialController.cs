@@ -25,6 +25,13 @@ namespace PaleoAraripe
             AtualizarBotoes();
         }
 
+        void OnEnable()
+        {
+            slideAtual = 0;
+            AtualizarSlides();
+            AtualizarBotoes();
+        }
+
         public void Avancar()
         {
             if (slideAtual < slides.Length - 1)
@@ -52,6 +59,7 @@ namespace PaleoAraripe
                 slides[i].SetActive(i == slideAtual);
             }
         }
+
         public void LiberarPrimeiroFossil()
         {
             SalvarCarregar.Instance.MarcarFossilEncontrado(0);
