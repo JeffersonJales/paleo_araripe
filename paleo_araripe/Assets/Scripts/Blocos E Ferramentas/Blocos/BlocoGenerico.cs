@@ -1,6 +1,4 @@
-using System;
 using UnityEngine;
-using static UnityEngine.UI.GridLayoutGroup;
 
 namespace PaleoAraripe
 {
@@ -16,6 +14,7 @@ namespace PaleoAraripe
         [SerializeField] private GameObject objetoBloco;
         [SerializeField] private ConfiguracaoEfeito efeitoNenhum;
         [SerializeField] private GameObject particulaImune;
+        [SerializeField] private SOSonsBlocosAoSeremDestruidos sonsBloco;
 
         private Vector3 pontoImpacto;
         private Animator animatorBloco;
@@ -26,15 +25,17 @@ namespace PaleoAraripe
 
         protected MeshRenderer mr = null;
         protected BoxCollider bc = null;
+        
+        private Color corNaoSelecionado;
+        [SerializeField] private Color corSelecionado = new Color(0.839f, 0.839f, 0.839f, 0);
 
         // Getters 
         public BlocoSO BlocoSO => blocoSO;
         public string Nome {get => nome; set => nome = value;} 
         public string Descricao { get => descricao; set => descricao = value; }
+        public SOSonsBlocosAoSeremDestruidos SonsBloco { get => sonsBloco; }
 
-        [SerializeField] private Color corSelecionado = new Color(0.839f, 0.839f, 0.839f, 0);
-        private Color corNaoSelecionado;
-
+        
         public virtual void Awake()
         {
             vidaAtual = BlocoSO.Vida;

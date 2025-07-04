@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,11 +9,9 @@ namespace PaleoAraripe {
         [SerializeField] private List<BlocoGenerico> blocosAlvo;
         
         private int quantidadeTurnosRestantes = 0;
-        private Boolean ativado = false;
 
         public override void aoSerDestruido()
         {
-            ativado = true;
             bc.enabled = false;
             mr.enabled = false;
             apresentarBlocos();

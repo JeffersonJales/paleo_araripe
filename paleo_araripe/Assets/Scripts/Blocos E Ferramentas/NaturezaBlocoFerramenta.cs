@@ -40,6 +40,16 @@ namespace PaleoAraripe {
             LUPA
         }
 
+        public enum TipoSomAoSerDestruido
+        {
+            NULO,
+            ARENOSO,
+            PEDROSO,
+            VIDROSO,
+            EXPLOSIVO
+        }
+
+
         public static Boolean interacaoPodeResultarNaDestruicaoDoBloco(ResultadoInteracao resultado) 
         {
             return resultado == ResultadoInteracao.DESTRUIDO || resultado == ResultadoInteracao.COLETADO;

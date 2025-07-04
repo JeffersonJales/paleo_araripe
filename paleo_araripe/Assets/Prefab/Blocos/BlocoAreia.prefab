@@ -56,6 +56,7 @@ MonoBehaviour:
   efeitoNenhum: {fileID: 11400000, guid: fe49917676096e9498a7886bd9dcf9ef, type: 2}
   particulaImune: {fileID: 5259933331206925448, guid: c572ab481577c444fb377b7cda0b44b9,
     type: 3}
+  sonsBloco: {fileID: 11400000, guid: ceaff114cd5d44941beb31433af8e7bc, type: 2}
   corSelecionado: {r: 0.839, g: 0.839, b: 0.839, a: 0}
   inspiracao: -1
 --- !u!95 &8041331436723404028

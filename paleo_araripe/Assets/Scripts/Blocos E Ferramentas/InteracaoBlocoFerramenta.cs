@@ -13,6 +13,22 @@ namespace PaleoAraripe {
 
         public ResumoInteracaoBlocoFerramenta interacaoFerramentaComBloco(FerramentaSO ferramenta, List<BlocoGenerico> blocosGenericos, bool podeAplicarCongelamento)
         {
+            RealizarInteracoesBlocos(ferramenta, blocosGenericos, podeAplicarCongelamento);
+
+            resumoGeral.FerramentaUsada = ferramenta;
+
+            resumoGeral.AlgumBlocoDestruidoOuColeado =
+                resumoGeral.QuantidadeFossilDestruido > 0   ||
+                resumoGeral.QuantidadeFossilColetado > 0    ||
+                resumoGeral.QuantidadeAmbarColetado > 0     ||
+                resumoGeral.TipoInteracaoBloco.Contains(ResultadoInteracao.DESTRUIDO);
+
+            ReproduzirSfxs(ferramenta);
+            return resumoGeral;
+        }
+
+        private void RealizarInteracoesBlocos(FerramentaSO ferramenta, List<BlocoGenerico> blocosGenericos, bool podeAplicarCongelamento)
+        {
             foreach (BlocoGenerico bloco in blocosGenericos)
             {
                 BlocoSO blocoSO = bloco.BlocoSO;
@@ -33,18 +49,6 @@ namespace PaleoAraripe {
 
                 PopupInformacaoBloco(ferramenta, bloco);
             }
-
-            resumoGeral.FerramentaUsada = ferramenta;
-
-            resumoGeral.AlgumBlocoDestruidoOuColeado =
-                resumoGeral.QuantidadeFossilDestruido > 0   ||
-                resumoGeral.QuantidadeFossilColetado > 0    ||
-                resumoGeral.QuantidadeAmbarColetado > 0     ||
-                resumoGeral.TipoInteracaoBloco.Contains(ResultadoInteracao.DESTRUIDO);
-
-            TocarAudioInteracaoFerramenta(ferramenta);
-
-            return resumoGeral;
         }
         
         private ResultadoInteracao blocoTomaDano(FerramentaSO ferramenta, BlocoGenerico bloco, bool podeAplicarCongelamento)
@@ -91,6 +95,7 @@ namespace PaleoAraripe {
         {
             if (bloco.tomarDano(ferramenta.Dano)) {
                 resumoGeral.BlocosDestruidos.Add(bloco.gameObject);
+                resumoGeral.BlocosGenericosDestruidos.Add(bloco);
 
                 return ResultadoInteracao.DESTRUIDO;
             }
@@ -147,9 +152,9 @@ namespace PaleoAraripe {
         private ResultadoInteracao tentarExplodir(ResultadoInteracao resultadoDano, BlocoGenerico bloco)
         {
             if (resultadoDano.Equals(ResultadoInteracao.DESTRUIDO)) {
-                var blocoExplosivo = (BlocoExplosivo)bloco;
+                var blocoExplosivo = (BlocoExplosivo) bloco;
                 var listaBlocos = obterListaBlocosGenericosPorFerramenta(blocoExplosivo.FerramentaExplosiva, blocoExplosivo.gameObject, UnityEngine.Vector3.up);
-                interacaoFerramentaComBloco(blocoExplosivo.FerramentaExplosiva, listaBlocos, false);
+                RealizarInteracoesBlocos(blocoExplosivo.FerramentaExplosiva, listaBlocos, false);
             }
 
             return resultadoDano;
@@ -164,8 +169,10 @@ namespace PaleoAraripe {
             }
         }
     
-        private void TocarAudioInteracaoFerramenta(FerramentaSO ferramenta)
+        private void ReproduzirSfxs(FerramentaSO ferramenta)
         {
+            new ReproduzirSomDestruicaoBlocos().TocarAudioBlocos(resumoGeral.BlocosGenericosDestruidos);
+
             if (ferramenta.Sfxs.Count == 0)
                 return;
 

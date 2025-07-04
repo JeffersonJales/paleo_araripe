@@ -10,7 +10,8 @@ namespace PaleoAraripe {
         private FerramentaSO ferramentaUsada = null;
         private List<NaturezaBlocoFerramenta.ResultadoInteracao> tipoInteracaoBloco = new List<NaturezaBlocoFerramenta.ResultadoInteracao>();
         private List<BlocoSO> blocosAfetados = new List<BlocoSO>();
-        private List<GameObject> blocosDestruidos = new List<GameObject>();
+        private List<GameObject> goBlocosDestruidos = new List<GameObject>();
+        private List<BlocoGenerico> bgBlocosDestruidos = new List<BlocoGenerico>();
 
         private int quantidadeFossilColetado = 0;
         private int quantidadeFossilDestruido = 0;
@@ -20,6 +21,7 @@ namespace PaleoAraripe {
         private bool ferramentaCongelada = false;
         private bool usouLupa = false;
 
+
         public FerramentaSO FerramentaUsada { get => ferramentaUsada; set => ferramentaUsada = value; }
         public List<BlocoSO> BlocosAfetados { get => blocosAfetados; set => blocosAfetados = value; }
         public List<NaturezaBlocoFerramenta.ResultadoInteracao> TipoInteracaoBloco { get => tipoInteracaoBloco; set => tipoInteracaoBloco = value; }
@@ -28,7 +30,8 @@ namespace PaleoAraripe {
         public int QuantidadeAmbarColetado { get => quantidadeAmbarColetado; set => quantidadeAmbarColetado = value; }
         public bool AlgumBlocoDestruidoOuColeado { get => algumBlocoDestruidoOuColeado; set => algumBlocoDestruidoOuColeado = value; }
         public int QuantidadeInspiracaoGanha { get => quantidadeInspiracaoGanha; set => quantidadeInspiracaoGanha = value; }
-        public List<GameObject> BlocosDestruidos { get => blocosDestruidos; set => blocosDestruidos = value; }
+        public List<GameObject> BlocosDestruidos { get => goBlocosDestruidos; set => goBlocosDestruidos = value; }
+        public List<BlocoGenerico> BlocosGenericosDestruidos { get => bgBlocosDestruidos; set => bgBlocosDestruidos = value; }
         public bool FerramentaCongelada { get => ferramentaCongelada; set => ferramentaCongelada = value; }
         public bool UsouLupa { get => usouLupa; set => usouLupa = value; }
 

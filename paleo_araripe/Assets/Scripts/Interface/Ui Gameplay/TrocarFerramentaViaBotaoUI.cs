@@ -22,9 +22,7 @@ namespace PaleoAraripe {
 
         private int contadorTempo = 0;
         private int inspiracaoNecessariaUso = 0;
-        private int quantidadeUsosRestantes = 0;
         private ControladorFerramenta usarFerramenta;
-        private bool emResfriamento = false;
 
         public FerramentaSO TipoFerramenta { get => tipoFerramenta; set => tipoFerramenta = value; }
 
