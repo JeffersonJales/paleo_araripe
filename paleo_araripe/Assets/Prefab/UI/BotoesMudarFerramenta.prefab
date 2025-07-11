@@ -74,17 +74,17 @@ PrefabInstance:
     - target: {fileID: 4290308957948878291, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
       propertyPath: m_Name
-      value: FerramentaBotaoUI (2)
+      value: Marreta
       objectReference: {fileID: 0}
     - target: {fileID: 6021731363575163683, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 50
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6021731363575163683, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 50
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6021731363575163683, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
@@ -129,12 +129,12 @@ PrefabInstance:
     - target: {fileID: 6503644205157795944, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 50
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 6503644205157795944, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 50
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 6503644205157795944, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
@@ -174,12 +174,12 @@ PrefabInstance:
     - target: {fileID: 6503644205157795944, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 10
+      value: 131.5
       objectReference: {fileID: 0}
     - target: {fileID: 6503644205157795944, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 130
+      value: 172.5
       objectReference: {fileID: 0}
     - target: {fileID: 6503644205157795944, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
@@ -240,17 +240,17 @@ PrefabInstance:
     - target: {fileID: 4290308957948878291, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
       propertyPath: m_Name
-      value: FerramentaBotaoUI
+      value: Pincel
       objectReference: {fileID: 0}
     - target: {fileID: 6021731363575163683, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 50
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6021731363575163683, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 50
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6021731363575163683, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
@@ -295,12 +295,12 @@ PrefabInstance:
     - target: {fileID: 6503644205157795944, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 50
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 6503644205157795944, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 50
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 6503644205157795944, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
@@ -340,12 +340,12 @@ PrefabInstance:
     - target: {fileID: 6503644205157795944, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 10
+      value: 131.5
       objectReference: {fileID: 0}
     - target: {fileID: 6503644205157795944, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 10
+      value: 487.5
       objectReference: {fileID: 0}
     - target: {fileID: 6503644205157795944, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
@@ -411,17 +411,17 @@ PrefabInstance:
     - target: {fileID: 4290308957948878291, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
       propertyPath: m_Name
-      value: FerramentaBotaoUI (3)
+      value: Escova
       objectReference: {fileID: 0}
     - target: {fileID: 6021731363575163683, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 50
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6021731363575163683, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 50
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6021731363575163683, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
@@ -466,12 +466,12 @@ PrefabInstance:
     - target: {fileID: 6503644205157795944, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 50
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 6503644205157795944, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 50
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 6503644205157795944, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
@@ -511,12 +511,12 @@ PrefabInstance:
     - target: {fileID: 6503644205157795944, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 70
+      value: 305.5
       objectReference: {fileID: 0}
     - target: {fileID: 6503644205157795944, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 10
+      value: 487.5
       objectReference: {fileID: 0}
     - target: {fileID: 6503644205157795944, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
@@ -582,17 +582,17 @@ PrefabInstance:
     - target: {fileID: 4290308957948878291, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
       propertyPath: m_Name
-      value: FerramentaBotaoUI (4)
+      value: "P\xE1"
       objectReference: {fileID: 0}
     - target: {fileID: 6021731363575163683, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 50
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6021731363575163683, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 50
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6021731363575163683, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
@@ -637,12 +637,12 @@ PrefabInstance:
     - target: {fileID: 6503644205157795944, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 50
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 6503644205157795944, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 50
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 6503644205157795944, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
@@ -682,12 +682,12 @@ PrefabInstance:
     - target: {fileID: 6503644205157795944, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 70
+      value: 305.5
       objectReference: {fileID: 0}
     - target: {fileID: 6503644205157795944, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 70
+      value: 332.5
       objectReference: {fileID: 0}
     - target: {fileID: 6503644205157795944, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
@@ -753,17 +753,17 @@ PrefabInstance:
     - target: {fileID: 4290308957948878291, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
       propertyPath: m_Name
-      value: FerramentaBotaoUI (1)
+      value: Colherim
       objectReference: {fileID: 0}
     - target: {fileID: 6021731363575163683, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 50
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6021731363575163683, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 50
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6021731363575163683, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
@@ -808,12 +808,12 @@ PrefabInstance:
     - target: {fileID: 6503644205157795944, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 50
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 6503644205157795944, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 50
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 6503644205157795944, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
@@ -853,12 +853,12 @@ PrefabInstance:
     - target: {fileID: 6503644205157795944, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 10
+      value: 131.5
       objectReference: {fileID: 0}
     - target: {fileID: 6503644205157795944, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 70
+      value: 332.5
       objectReference: {fileID: 0}
     - target: {fileID: 6503644205157795944, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
@@ -924,17 +924,17 @@ PrefabInstance:
     - target: {fileID: 4290308957948878291, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
       propertyPath: m_Name
-      value: FerramentaBotaoUI (5)
+      value: Picareta
       objectReference: {fileID: 0}
     - target: {fileID: 6021731363575163683, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 50
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6021731363575163683, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 50
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6021731363575163683, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
@@ -979,12 +979,12 @@ PrefabInstance:
     - target: {fileID: 6503644205157795944, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 50
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 6503644205157795944, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 50
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 6503644205157795944, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
@@ -1024,12 +1024,12 @@ PrefabInstance:
     - target: {fileID: 6503644205157795944, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 70
+      value: 305.5
       objectReference: {fileID: 0}
     - target: {fileID: 6503644205157795944, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 130
+      value: 172.5
       objectReference: {fileID: 0}
     - target: {fileID: 6503644205157795944, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
@@ -1095,17 +1095,17 @@ PrefabInstance:
     - target: {fileID: 4290308957948878291, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
       propertyPath: m_Name
-      value: FerramentaBotaoUI (6)
+      value: Lupa
       objectReference: {fileID: 0}
     - target: {fileID: 6021731363575163683, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 50
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6021731363575163683, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 50
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6021731363575163683, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
@@ -1150,12 +1150,12 @@ PrefabInstance:
     - target: {fileID: 6503644205157795944, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 50
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 6503644205157795944, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 50
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 6503644205157795944, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
@@ -1195,12 +1195,12 @@ PrefabInstance:
     - target: {fileID: 6503644205157795944, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 130
+      value: 472.5
       objectReference: {fileID: 0}
     - target: {fileID: 6503644205157795944, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 10
+      value: 172.5
       objectReference: {fileID: 0}
     - target: {fileID: 6503644205157795944, guid: 98669338885524748a4cb420bfabae12,
         type: 3}
