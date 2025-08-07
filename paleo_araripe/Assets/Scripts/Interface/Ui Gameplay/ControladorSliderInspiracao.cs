@@ -6,7 +6,7 @@ namespace PaleoAraripe {
     /// </summary>
     public class ControladorSliderInspiracao : MonoBehaviour
     {
-        [SerializeField] private AtualizarValorSlider valorSlider;
+        [SerializeField] private AtualizarValorInspiracao valorSlider;
         [SerializeField] private BlackBoardInformacoesPartida informacoesPartida;
         
         void Start()
@@ -26,7 +26,7 @@ namespace PaleoAraripe {
 
         private void atualizarValorSlider(int inspiracaoAtual, int inspiracaoMaxima)
         {
-            valorSlider.atualizarValorSlider(inspiracaoAtual, inspiracaoMaxima);
+            valorSlider.atualizarValor(inspiracaoAtual, inspiracaoMaxima);
         }
     }
 }
