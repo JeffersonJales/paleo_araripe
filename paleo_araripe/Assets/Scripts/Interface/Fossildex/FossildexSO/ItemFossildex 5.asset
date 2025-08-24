@@ -20,4 +20,5 @@ MonoBehaviour:
     e jovens. Entre esses, destacam-se grandes exemplares de diplur\xEDdeos (tar\xE2ntulas)
     que constru\xEDam teias especializadas na captura de insetos saltadores, como
     grilos e gafanhotos, os mais abundantes da Forma\xE7\xE3o Crato."
-  imagem: {fileID: 21300000, guid: 3fc052abebfddf846ad82c35e9968549, type: 3}
+  imagemGrande: {fileID: 21300000, guid: 3fc052abebfddf846ad82c35e9968549, type: 3}
+  iconeBotao: {fileID: 21300000, guid: aae05bba53bdc6a4484be2be1de086a9, type: 3}

@@ -15,4 +15,5 @@ MonoBehaviour:
   fossilID: 10
   titulo: 'Hymenoptera '
   descricao: "F\xF3ssil de Abelha"
-  imagem: {fileID: 21300000, guid: ac3129688013b494b97b3a0dfba0da24, type: 3}
+  imagemGrande: {fileID: 21300000, guid: ac3129688013b494b97b3a0dfba0da24, type: 3}
+  iconeBotao: {fileID: 21300000, guid: d65c523a96351d74c96f360ec3090593, type: 3}

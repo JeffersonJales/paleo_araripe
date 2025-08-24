@@ -18,4 +18,5 @@ MonoBehaviour:
     possivelmente usada para regular a temperatura corporal, e um \"bico\" em forma
     de tesoura, semelhante ao de aves talha-mar, sugerindo que pescava com o bico
     dentro da \xE1gua."
-  imagem: {fileID: 21300000, guid: 6f9821b7b3524f145a4e9d56be6d6c67, type: 3}
+  imagemGrande: {fileID: 21300000, guid: 6f9821b7b3524f145a4e9d56be6d6c67, type: 3}
+  iconeBotao: {fileID: 21300000, guid: 41e92a03fed5ef647ae94b05b10dd7fd, type: 3}

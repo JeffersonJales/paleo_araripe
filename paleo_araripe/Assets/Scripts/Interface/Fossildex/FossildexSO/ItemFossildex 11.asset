@@ -19,4 +19,5 @@ MonoBehaviour:
     \u201Cpeg-and-socket\u201D, corpo coberto por tr\xEAs fileiras de escamas altas
     e dentes finos na parte posterior. \xC9 comum na Forma\xE7\xE3o Santana, especialmente
     no Membro Romualdo."
-  imagem: {fileID: 21300000, guid: eb7972556fbf2754694ed9d22835514f, type: 3}
+  imagemGrande: {fileID: 21300000, guid: eb7972556fbf2754694ed9d22835514f, type: 3}
+  iconeBotao: {fileID: 21300000, guid: 5b551ebb2c9e32844b02bde80731139b, type: 3}

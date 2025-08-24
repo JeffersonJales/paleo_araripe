@@ -20,4 +20,5 @@ MonoBehaviour:
     do mundo a encerrar f\xF3sseis de artr\xF3podes terrestres. Al\xE9m dos escorpi\xF5es,
     ali ocorrem restos fossilizados de aranhas e insetos que viveram durante o per\xEDodo
     Cret\xE1ceo, h\xE1 cerca de 110 milh\xF5es de anos."
-  imagem: {fileID: 21300000, guid: 15603ff507b6c244996970d3b1bd9e46, type: 3}
+  imagemGrande: {fileID: 21300000, guid: 15603ff507b6c244996970d3b1bd9e46, type: 3}
+  iconeBotao: {fileID: 21300000, guid: 502dfe3d09321384abf3dce9a64a10e1, type: 3}

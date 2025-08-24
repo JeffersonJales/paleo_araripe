@@ -18,4 +18,5 @@ MonoBehaviour:
     e nadadeira dorsal grande. N\xE3o possui nadadeira p\xE9lvica e tem cauda furcada.
     Suas escamas s\xE3o pequenas, cicloides e sobrepostas. \xC9 raro e encontrado
     no Membro Romualdo da Forma\xE7\xE3o Santana."
-  imagem: {fileID: 21300000, guid: 190276be4a8572b468ea2303c95a01bf, type: 3}
+  imagemGrande: {fileID: 21300000, guid: 190276be4a8572b468ea2303c95a01bf, type: 3}
+  iconeBotao: {fileID: 21300000, guid: 65ceb0eb0b3d92d42a84397026a5a473, type: 3}

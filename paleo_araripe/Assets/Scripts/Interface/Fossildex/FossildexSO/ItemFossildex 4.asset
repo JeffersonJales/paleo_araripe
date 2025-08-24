@@ -22,4 +22,5 @@ MonoBehaviour:
     abundante \xE9 chamada de Dastilbe cradalli (Chanidae), do qual s\xE3o encontrados
     desde formas bem jovens com menos de cinco cent\xEDmetros at\xE9 adultos, passando
     de 25 cent\xEDmetros."
-  imagem: {fileID: 21300000, guid: f5229377cf5e7c7498efb9ae9521e735, type: 3}
+  imagemGrande: {fileID: 21300000, guid: f5229377cf5e7c7498efb9ae9521e735, type: 3}
+  iconeBotao: {fileID: 21300000, guid: a927830e61b7fba40bc9a05670ad726c, type: 3}

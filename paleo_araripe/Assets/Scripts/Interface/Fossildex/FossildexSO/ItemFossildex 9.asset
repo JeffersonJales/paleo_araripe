@@ -15,4 +15,5 @@ MonoBehaviour:
   fossilID: 9
   titulo: Tenebrionidae
   descricao: "F\xF3ssil de Besouro"
-  imagem: {fileID: 21300000, guid: bf129aaf93f5eb54290d1b440f94f03f, type: 3}
+  imagemGrande: {fileID: 21300000, guid: bf129aaf93f5eb54290d1b440f94f03f, type: 3}
+  iconeBotao: {fileID: 21300000, guid: 9137a3219bcf3a841b2ea7d9379e025f, type: 3}

@@ -21,4 +21,5 @@ MonoBehaviour:
     d\u2019\xE1gua. Os insetos terrestres, como os grilos, gafanhotos, baratas, besouros,
     mosquitos, formigas-le\xE3o e cigarras, habitavam a vegeta\xE7\xE3o ao redor
     do lago."
-  imagem: {fileID: 21300000, guid: 27375aa4ec80d694e9b51171226d3da9, type: 3}
+  imagemGrande: {fileID: 21300000, guid: 27375aa4ec80d694e9b51171226d3da9, type: 3}
+  iconeBotao: {fileID: 21300000, guid: 47d260f7562bd8745b80f35977689edc, type: 3}

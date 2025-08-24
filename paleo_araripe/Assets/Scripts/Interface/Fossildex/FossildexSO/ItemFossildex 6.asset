@@ -15,4 +15,5 @@ MonoBehaviour:
   fossilID: 6
   titulo: Reptilia Squamata
   descricao: "F\xF3ssil de Lagarto do Lago Crato"
-  imagem: {fileID: 21300000, guid: cedeb4db6ff112247abc4170f08ff8f9, type: 3}
+  imagemGrande: {fileID: 21300000, guid: cedeb4db6ff112247abc4170f08ff8f9, type: 3}
+  iconeBotao: {fileID: 21300000, guid: 208d538e06c0acb4fabfda2f9aba54f4, type: 3}

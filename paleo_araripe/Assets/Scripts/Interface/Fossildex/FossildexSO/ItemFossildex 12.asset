@@ -18,4 +18,5 @@ MonoBehaviour:
     boca voltada para cima e dentes pontudos. Possui nadadeiras recuadas e cauda
     bem furcada. As escamas s\xE3o grandes, delicadas e sobrepostas. \xC9 comum nas
     Forma\xE7\xF5es Crato e Santana, especialmente no Membro Romualdo."
-  imagem: {fileID: 21300000, guid: 363bf13cde42cdc4c801a10968b80388, type: 3}
+  imagemGrande: {fileID: 21300000, guid: 363bf13cde42cdc4c801a10968b80388, type: 3}
+  iconeBotao: {fileID: 21300000, guid: 6fd88e2d7681a8d49bba7d5035032c75, type: 3}
