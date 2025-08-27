@@ -3114,6 +3114,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 526416264}
   m_CullTransparentMesh: 1
+--- !u!114 &526957213 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5570672461803974033, guid: 217ed3b76ecefd248b726a4adea5cbeb,
+    type: 3}
+  m_PrefabInstance: {fileID: 277534108}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ea821762a8b3524591b561fedfa4985, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &533464089
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9083,6 +9095,7 @@ MonoBehaviour:
   popDurDown: 0.14
   shakeDur: 0.25
   shakeAmp: 10
+  primeiraFerramenta: {fileID: 526957213}
   estagios:
   - {fileID: 8589770015909426026, guid: b1081c6fc7fc28d4bad85d7b9845ab55, type: 3}
   - {fileID: 3020766713697100334, guid: 05dc04aadf240c04b84aafd63e4c6b47, type: 3}

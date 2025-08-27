@@ -25,7 +25,7 @@ namespace PaleoAraripe
         [SerializeField] private AtualizarValorSlider uiSliderTempo; // Slider de tempo/ações
         [SerializeField] private Animator animacaoCarregamento;
         [SerializeField] private GameObject telaFinal;
-
+        
         // --- UI Final: slots dos fósseis e mensagem/botão ---
         [Header("UI Final")]
         [SerializeField] private Image[] slotsFosseis;             // 3 imagens no painel final
@@ -65,6 +65,10 @@ namespace PaleoAraripe
         private ControladorFerramenta controladorFerramentas;
         private int quantidadeAcoesInicial = 0;
 
+        // --- Animações HUD ---
+        [Header("Ferramenta inicial")]
+        [SerializeField] private TrocarFerramentaViaBotaoUI primeiraFerramenta;
+
         /// Getters / Setters
         public AtualizarValorSlider UiSliderTempo => uiSliderTempo;
         public Action AoFinalizarPartida;
@@ -101,6 +105,13 @@ namespace PaleoAraripe
 
             // Inicializa HUD com 0 encontrados/0 danificados
             atualizarHUDDeFosseis();
+
+            Invoke("equiparPrimeiraFerramenta", 0.1f); // aguarda um frame para garantir que tudo esteja ok
+        }
+
+        private void equiparPrimeiraFerramenta()
+        {
+            primeiraFerramenta.forcarTrocaFerramenta();
         }
 
         private void atualizarProfessora()

@@ -117,7 +117,6 @@ namespace PaleoAraripe {
         }
         #endregion
 
-
         #region Congelamento
         private void configurarCongelamento()
         {
