@@ -83,7 +83,7 @@ namespace PaleoAraripe {
             if (--desabilitadoQtd == 0)
             {
                 botao.interactable = true;
-                textMeshContadorJogadas.enabled = true;
+                //textMeshContadorJogadas.enabled = true;
                 spriteFerramenta.color = new Color(1, 1, 1, 1);
             }
         }
@@ -136,7 +136,7 @@ namespace PaleoAraripe {
         private void iniciarContagemRegressiva(int contagemRegressiva)
         {
             contadorTempo = contagemRegressiva;
-            textMeshContadorTempo.enabled = true;
+            //textMeshContadorTempo.enabled = true;
             textMeshContadorTempo.text = contadorTempo.ToString();
             tentarDesabilitarBotao();
             eventoTentativaTrocaFerramenta?.Invoke(null);

@@ -57,7 +57,7 @@ namespace PaleoAraripe {
                 case TipoColisaoFerramenta.VASCULHAR:   return new ColisaoFerramentaVasculhar().obterBlocos(blocoFoco, normal);
                 case TipoColisaoFerramenta.CAMERA:      return new ColisaoFerramentaCamera().obterBlocos(blocoFoco, normal);
                 case TipoColisaoFerramenta.EXPLOSAO:    return new ColisaoFerramentaExplosao().obterBlocos(blocoFoco, normal);
-                case TipoColisaoFerramenta.EXPLOSIVO:   return new ColisaoFerramentaExplosivo().obterBlocos(blocoFoco, normal);
+                case TipoColisaoFerramenta.EXPLOSIVO:   return new ColisaoFerramentaExplosao().obterBlocos(blocoFoco, normal);
                 case TipoColisaoFerramenta.RAIZ:        return new ColisaoFerramentaRaiz().obterBlocos(blocoFoco, normal);
 
                 case TipoColisaoFerramenta.NULO:
