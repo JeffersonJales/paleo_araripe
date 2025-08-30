@@ -46,7 +46,7 @@ namespace PaleoAraripe
         {
             bool temFerramenta = ferramentSo != null;
             img.enabled = temFerramenta;
-            btn.enabled = temFerramenta && UtilitariosInput.isSmartphone;
+            //btn.enabled = temFerramenta && UtilitariosInput.isSmartphone;
 
             if (!temFerramenta)
                 return;

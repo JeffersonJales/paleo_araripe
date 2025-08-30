@@ -9,6 +9,7 @@ namespace PaleoAraripe
     public class UiLupa : MonoBehaviour
     {
         [SerializeField] private GameObject containerUi;
+        [SerializeField] private GameObject professora;
         [SerializeField] private TextMeshProUGUI titulo;
         [SerializeField] private TextMeshProUGUI descricao;
 
@@ -24,11 +25,13 @@ namespace PaleoAraripe
             descricao.SetText(bloco.Descricao);
      
             containerUi.SetActive(true);
+            professora.SetActive(true);
         }
 
         public void DesligarPopup()
         {
             containerUi.SetActive(false);
+            professora.SetActive(false);
         }
     }
 }
