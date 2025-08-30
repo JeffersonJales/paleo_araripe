@@ -432,6 +432,8 @@ MonoBehaviour:
   - {fileID: 3512729436107985098}
   - {fileID: 7975857415176957728}
   - {fileID: 165032261412583722}
+  tamanhoIconeBloqueado: {x: 180, y: 180}
+  aplicarViaLayoutElement: 1
 --- !u!1 &706099215390382057
 GameObject:
   m_ObjectHideFlags: 0
@@ -632,10 +634,10 @@ RectTransform:
   - {fileID: 7956986466056475486}
   m_Father: {fileID: 5764380639673442419}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -791, y: 438}
-  m_SizeDelta: {x: 204.44629, y: -1002.41406}
+  m_AnchoredPosition: {x: -791, y: -102}
+  m_SizeDelta: {x: 204.44629, y: 77.58594}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7546335083338310253
 CanvasRenderer:
@@ -2122,7 +2124,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 8173539619940533446}
   m_Direction: 0
   m_Value: 0
-  m_Size: 0.48014766
+  m_Size: 0.48014763
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -5125,7 +5127,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 3459475783038152859}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.7189334
+  m_Size: 0.7189333
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:

@@ -28,13 +28,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 8255ea00378259f4d97d2b46e67660c9, type: 2}
   - {fileID: 11400000, guid: 6eb1d8badaed1b64288054020a896ae7, type: 2}
   - {fileID: 11400000, guid: c5cd46b27d7ef3942b43999df795fdb7, type: 2}
-  - {fileID: 11400000, guid: 523480e4ce20fef43934acafd2f93a43, type: 2}
-  - {fileID: 11400000, guid: 79ac4930029430145a18ed13cc32549a, type: 2}
-  - {fileID: 11400000, guid: 639cd407abfca5b43a70d355e908d372, type: 2}
-  - {fileID: 11400000, guid: 39017b15453942c4ea1548e82c642532, type: 2}
-  - {fileID: 11400000, guid: 7b6cede605a891f46a2fdd6580d418de, type: 2}
-  - {fileID: 11400000, guid: 796eff9c2e7213d46bee475a2de24542, type: 2}
-  - {fileID: 11400000, guid: 8a9095526fd9d8047834687af758f1af, type: 2}
   consegueColetar: []
   tipoColisao: 7
   sprite: {fileID: 21300000, guid: 103366ab3e76ff84981fd4fd61d075ad, type: 3}
+  sfxs: []

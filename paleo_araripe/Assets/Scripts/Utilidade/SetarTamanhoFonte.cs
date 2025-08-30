@@ -11,7 +11,7 @@ namespace PaleoAraripe
     /// </summary>
     public class SetarTamanhoFonte : MonoBehaviour
     {
-        public static Action<bool> mudarTamanhoFonte;
+        public static Action mudarTamanhoFonte;
         private TMP_Text texto;
         private float fonteOriginal;
 
@@ -23,14 +23,15 @@ namespace PaleoAraripe
         private void OnEnable()
         {
             mudarTamanhoFonte += MudarTamanhoFonte;
+            MudarTamanhoFonte();
         }
         private void OnDisable()
         {
             mudarTamanhoFonte -= MudarTamanhoFonte;
         }
-        private void MudarTamanhoFonte(bool pequeno)
+        private void MudarTamanhoFonte()
         {
-            if(pequeno)
+            if (Opcoes.tamanhoFonteAtual)
                 texto.fontSize = fonteOriginal;
             else
                 texto.fontSize = fonteOriginal + fonteOriginal / 2;

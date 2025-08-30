@@ -28,6 +28,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: adc76a1886d807c449db1312efaa3bd0, type: 2}
   - {fileID: 11400000, guid: 639cd407abfca5b43a70d355e908d372, type: 2}
   - {fileID: 11400000, guid: 50157d6eca47418439e1adee1b803e80, type: 2}
+  - {fileID: 11400000, guid: 6eb1d8badaed1b64288054020a896ae7, type: 2}
   consegueColetar: []
   tipoColisao: 3
   sprite: {fileID: 546312848, guid: 6c1471129b61878459d1543b529dc857, type: 3}

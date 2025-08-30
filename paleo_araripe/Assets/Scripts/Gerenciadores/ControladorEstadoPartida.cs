@@ -46,6 +46,8 @@ namespace PaleoAraripe
         [SerializeField] private Sprite spriteHUDNaoEncontrado;
         [SerializeField] private Sprite spriteHUDFoiEncontrado;
         [SerializeField] private Sprite spriteHUDDanificado;
+        [SerializeField] private GameObject fossilQuebrouFeedback;
+        [SerializeField] private GameObject fossilEncontradoFeedback;
 
         // --- Animações HUD ---
         private enum EstadoFossilHUD : byte { NaoEncontrado, Encontrado, Danificado }
@@ -338,12 +340,14 @@ namespace PaleoAraripe
         {
             PararAnim(idx, img, resetVisual: true);
             rotinasHUD[idx] = StartCoroutine(AnimPop(img));
+            fossilEncontradoFeedback.SetActive(true);
         }
 
         private void DispararAnimDanificado(int idx, Image img)
         {
             PararAnim(idx, img, resetVisual: true);
             rotinasHUD[idx] = StartCoroutine(AnimCrack(img));
+            fossilQuebrouFeedback.SetActive(true);
         }
 
         private IEnumerator AnimPop(Image img)
