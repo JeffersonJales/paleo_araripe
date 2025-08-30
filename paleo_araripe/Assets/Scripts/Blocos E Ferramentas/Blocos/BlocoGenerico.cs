@@ -56,6 +56,10 @@ namespace PaleoAraripe
 
         public bool tomarDano(int qtdDano)
         {
+            if (vidaAtual <= 0)
+            {
+                return false;
+            }
             bool destruido = false;
             vidaAtual -= qtdDano;
 
@@ -104,12 +108,14 @@ namespace PaleoAraripe
 
         public virtual void aoSerDestruido()
         {
+            bc.enabled = false;
             efeitoDeDano.IniciarEfeito(blocoSO.ConfiguracaoEfeitoVisual, blocoSO.FeedbackAoDestruir, pontoImpacto);
             animatorBloco.SetTrigger("quebrou");
         }
 
         public virtual void aoSerColetado()
         {
+            bc.enabled = false;
             efeitoDeDano.IniciarEfeito(efeitoNenhum, blocoSO.FeedbackAoColetar, pontoImpacto);
             animatorBloco.SetTrigger("quebrou");
         }

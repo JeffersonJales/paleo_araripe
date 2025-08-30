@@ -17,8 +17,9 @@ MonoBehaviour:
   tempoGastoAposUso: 0
   contagemRegressivaParaReuso: 0
   quantidadeLimiteDeUsos: 0
-  daDanoEm: []
+  daDanoEm:
+  - {fileID: 11400000, guid: 50157d6eca47418439e1adee1b803e80, type: 2}
   consegueColetar: []
   tipoColisao: 6
   sprite: {fileID: 21300000, guid: 103366ab3e76ff84981fd4fd61d075ad, type: 3}
-  configuracaoEfeitoVisual: {fileID: 0}
+  sfxs: []

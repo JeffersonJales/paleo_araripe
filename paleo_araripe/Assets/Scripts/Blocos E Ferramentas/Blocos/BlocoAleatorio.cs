@@ -15,7 +15,7 @@ namespace PaleoAraripe {
 
         public override void Awake()
         {
-            GetComponent<MeshRenderer>().enabled = false;
+            GetComponentInChildren<MeshRenderer>().enabled = false;
         }
 
         public void Start()
