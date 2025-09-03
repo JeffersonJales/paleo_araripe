@@ -27,6 +27,9 @@ namespace PaleoAraripe {
             sliderMusica.value = configuracoes.VolumeMusica;
             sliderSFX.value = configuracoes.VolumeSFX;
             arestasDestacadas.isOn = configuracoes.ModoArestaDestacada;
+            AplicarModoGrafico();
+            AplicarTamanhoFonte();
+            gameObject.SetActive(false);
         }
         public void AplicarVolumeMusica()
         {

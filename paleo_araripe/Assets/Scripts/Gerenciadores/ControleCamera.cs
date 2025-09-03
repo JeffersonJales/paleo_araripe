@@ -1,5 +1,6 @@
 using UnityEngine;
 using Cinemachine;
+using UnityEngine.Rendering;
 
 namespace PaleoAraripe
 {
@@ -10,6 +11,8 @@ namespace PaleoAraripe
     /// </summary>
     public class ControleCamera : MonoBehaviour
     {
+        [SerializeField] private ConfiguracoesSO configuracoes;
+        [SerializeField] private GameObject volume;
         /// <summary>
         /// Referência para o componente CinemachineFreeLook na cena.
         /// </summary>
@@ -32,6 +35,7 @@ namespace PaleoAraripe
         {
             // Procura o CinemachineFreeLook na cena para controlar a câmera orbital.
             freeLookCamera = FindAnyObjectByType<CinemachineFreeLook>();
+            SetarQualidadePostProcess();
         }
 
         /// <summary>
@@ -63,6 +67,11 @@ namespace PaleoAraripe
                 freeLookCamera.m_XAxis.m_MaxSpeed = 0f;
                 freeLookCamera.m_YAxis.m_MaxSpeed = 0f;
             }
+        }
+        void SetarQualidadePostProcess()
+        {
+            if(configuracoes.QualidadeVisual == 0)
+                volume.SetActive(false);
         }
     }
 }

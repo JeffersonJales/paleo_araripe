@@ -21,6 +21,7 @@ namespace PaleoAraripe
         {
             estadoSwitch = estado;
             animator.SetBool("estadoSwitch", estadoSwitch);
+            textoResultado.SetText(estadoSwitch ? textoSwitchLigado : textoSwitchDesligado);
         }
         public void Switch(){
             estadoSwitch = !estadoSwitch;
