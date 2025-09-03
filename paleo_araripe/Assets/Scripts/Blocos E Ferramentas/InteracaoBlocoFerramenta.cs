@@ -26,7 +26,7 @@ namespace PaleoAraripe {
                 {
                     resumoGeral.TipoInteracaoBloco.Add(blocoColetado(ferramenta, bloco, podeAplicarCongelamento));
                 }
-                else
+                else if (ferramenta.TipoColisao != TipoColisaoFerramenta.LUPA)
                 {
                     resumoGeral.TipoInteracaoBloco.Add(blocoImune(bloco));
                 }
