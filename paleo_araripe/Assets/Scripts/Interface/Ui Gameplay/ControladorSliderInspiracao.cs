@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace PaleoAraripe {
@@ -17,6 +18,11 @@ namespace PaleoAraripe {
                 usarFerramenta.EventoAposRealizarUsoFerramenta += autualizarSliderInspiracao;
                 atualizarValorSlider(usarFerramenta.InspiracaoAtual, usarFerramenta.InspiracaoMaxima);
             }
+
+            foreach (TrocarFerramentaViaBotaoUI item in FindObjectsOfType<TrocarFerramentaViaBotaoUI>())
+            {
+                item.eventoTentativaTrocaFerramenta += TrocouFerramenta;
+            }
         }
 
         private void autualizarSliderInspiracao(ResumoInteracaoBlocoFerramenta resumo) {
@@ -27,6 +33,11 @@ namespace PaleoAraripe {
         private void atualizarValorSlider(int inspiracaoAtual, int inspiracaoMaxima)
         {
             valorSlider.atualizarValor(inspiracaoAtual, inspiracaoMaxima);
+        }
+
+        private void TrocouFerramenta(FerramentaSO ferramentSo)
+        {
+            valorSlider.ferramentaAtualizada(ferramentSo);
         }
     }
 }

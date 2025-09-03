@@ -97,8 +97,6 @@ namespace PaleoAraripe
                     fosseisParaColetar++;
             }
 
-            uiSliderTempo.atualizarValorSlider(1f);
-
             // Estado inicial do botão (escondido até o fim)
             if (botaoTentarNovamente != null) botaoTentarNovamente.SetActive(false);
 
@@ -107,6 +105,12 @@ namespace PaleoAraripe
 
             // Inicializa HUD com 0 encontrados/0 danificados
             atualizarHUDDeFosseis();
+
+            uiSliderTempo.atualizarValorSlider(acoesParaFimJogo, quantidadeAcoesInicial);
+            foreach (TrocarFerramentaViaBotaoUI item in FindObjectsOfType<TrocarFerramentaViaBotaoUI>())
+            {
+                item.eventoTentativaTrocaFerramenta += uiSliderTempo.atualizarSlider;
+            }
 
             Invoke("equiparPrimeiraFerramenta", 0.1f); // aguarda um frame para garantir que tudo esteja ok
         }
