@@ -290,7 +290,7 @@ Transform:
   - {fileID: 7906678301710074244}
   - {fileID: 6222008215420596204}
   - {fileID: 1189593164903642247}
-  - {fileID: 8850905529544007142}
+  - {fileID: 8740280654984168887}
   m_Father: {fileID: 3464047607450306271}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7811143699902936657
@@ -10241,90 +10241,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 8639294488260097743}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &8690699278995329829
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 6412572838332112703}
-    m_Modifications:
-    - target: {fileID: 166399392675286723, guid: bbc0253576f984143862e739d68bc7b7,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 166399392675286723, guid: bbc0253576f984143862e739d68bc7b7,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 166399392675286723, guid: bbc0253576f984143862e739d68bc7b7,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 166399392675286723, guid: bbc0253576f984143862e739d68bc7b7,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 166399392675286723, guid: bbc0253576f984143862e739d68bc7b7,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 166399392675286723, guid: bbc0253576f984143862e739d68bc7b7,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 166399392675286723, guid: bbc0253576f984143862e739d68bc7b7,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 166399392675286723, guid: bbc0253576f984143862e739d68bc7b7,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 166399392675286723, guid: bbc0253576f984143862e739d68bc7b7,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 166399392675286723, guid: bbc0253576f984143862e739d68bc7b7,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2865353385313294949, guid: bbc0253576f984143862e739d68bc7b7,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2865353385313294949, guid: bbc0253576f984143862e739d68bc7b7,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4043340169641137449, guid: bbc0253576f984143862e739d68bc7b7,
-        type: 3}
-      propertyPath: m_Name
-      value: BlocoExplosivo
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: bbc0253576f984143862e739d68bc7b7, type: 3}
---- !u!4 &8850905529544007142 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 166399392675286723, guid: bbc0253576f984143862e739d68bc7b7,
-    type: 3}
-  m_PrefabInstance: {fileID: 8690699278995329829}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8825366714713580697
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10398,6 +10314,80 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 166399392675286723, guid: ce107ff0b6a34bf499a32bf5152c2ef3,
     type: 3}
   m_PrefabInstance: {fileID: 8825366714713580697}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &8864383342301973364
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 6412572838332112703}
+    m_Modifications:
+    - target: {fileID: 166399392675286723, guid: bbc0253576f984143862e739d68bc7b7,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 166399392675286723, guid: bbc0253576f984143862e739d68bc7b7,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 166399392675286723, guid: bbc0253576f984143862e739d68bc7b7,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 166399392675286723, guid: bbc0253576f984143862e739d68bc7b7,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 166399392675286723, guid: bbc0253576f984143862e739d68bc7b7,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 166399392675286723, guid: bbc0253576f984143862e739d68bc7b7,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 166399392675286723, guid: bbc0253576f984143862e739d68bc7b7,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 166399392675286723, guid: bbc0253576f984143862e739d68bc7b7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 166399392675286723, guid: bbc0253576f984143862e739d68bc7b7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 166399392675286723, guid: bbc0253576f984143862e739d68bc7b7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4043340169641137449, guid: bbc0253576f984143862e739d68bc7b7,
+        type: 3}
+      propertyPath: m_Name
+      value: BlocoExplosivo (2)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: bbc0253576f984143862e739d68bc7b7, type: 3}
+--- !u!4 &8740280654984168887 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 166399392675286723, guid: bbc0253576f984143862e739d68bc7b7,
+    type: 3}
+  m_PrefabInstance: {fileID: 8864383342301973364}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8878500402161017780
 PrefabInstance:

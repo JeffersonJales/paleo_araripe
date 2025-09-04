@@ -432,6 +432,7 @@ namespace PaleoAraripe
         {
             // Recarrega a cena atual
             Scene ativa = SceneManager.GetActiveScene();
+            GerenciadorDados.Instance.jogoFinalizado = false;
             SceneManager.LoadScene(ativa.buildIndex);
         }
     }
