@@ -24,12 +24,12 @@ MonoBehaviour:
     projectId: 
     publicShareUrl: 
     version:
-      major: 0
+      major: 1
       minor: 0
       build: 0
-      revision: 1
+      revision: 3
     nextVersion:
-      major: 0
+      major: 1
       minor: 0
       build: 0
-      revision: 2
+      revision: 4
