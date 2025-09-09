@@ -8,8 +8,8 @@ Paleo Araripe é um jogo de arqueologia ambientado nos sítios paleontológicos 
 Esse jogo é um projeto financiado pelo Edital LGPD 2023 - SECULT-CE.
 
 ## Plataformas
-- Web - [Itch.io](https://tewrocha.itch.io/paleo-araripe) 
-- Web - [GX Games](https://gx.games/pt-br/games/tcf1y8/paleo-araripe/tracks/5413ce30-4f81-4002-a0f9-48c3c1dd5dbf/)
+- Web (Navegador) - [Itch.io](https://tewrocha.itch.io/paleo-araripe) 
+- Web (Navegador) - [GX Games](https://gx.games/pt-br/games/tcf1y8/paleo-araripe/tracks/5413ce30-4f81-4002-a0f9-48c3c1dd5dbf/)
 - Windows - Download na página do [Itch.io](https://tewrocha.itch.io/paleo-araripe) 
 - Android - Aguardando liberação da Google Play
 
